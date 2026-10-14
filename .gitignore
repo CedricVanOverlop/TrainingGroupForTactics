@@ -1,0 +1,78 @@
+# ---------------------------------------------------------------------------
+# .NET
+# ---------------------------------------------------------------------------
+bin/
+obj/
+[Dd]ebug/
+[Rr]elease/
+x64/
+x86/
+*.user
+*.suo
+*.userprefs
+*.cache
+.vs/
+artifacts/
+
+# Fichiers de secrets locaux (ne JAMAIS committer)
+appsettings.*.local.json
+secrets.json
+
+# ---------------------------------------------------------------------------
+# Node / Angular
+# ---------------------------------------------------------------------------
+node_modules/
+dist/
+.angular/
+*.tsbuildinfo
+npm-debug.log*
+yarn-error.log*
+.pnpm-debug.log*
+
+# Résultats de tests
+coverage/
+*.lcov
+TestResults/
+
+# ---------------------------------------------------------------------------
+# Environnement et secrets
+# ---------------------------------------------------------------------------
+.env
+.env.*
+!.env.example
+*.pem
+*.key
+
+# ---------------------------------------------------------------------------
+# Données locales (classeurs SQLite des modules externes, cache d'images)
+# ---------------------------------------------------------------------------
+*.db
+*.db-shm
+*.db-wal
+*.sqlite
+*.sqlite3
+/data/
+/cache/
+
+# ---------------------------------------------------------------------------
+# Éditeurs
+# ---------------------------------------------------------------------------
+.idea/
+*.swp
+*~
+
+# VS Code : on garde les fichiers partagés utiles à l'équipe,
+# on ignore les réglages personnels.
+.vscode/*
+!.vscode/extensions.json
+!.vscode/launch.json
+!.vscode/tasks.json
+!.vscode/settings.json
+
+# ---------------------------------------------------------------------------
+# Système
+# ---------------------------------------------------------------------------
+Thumbs.db
+ehthumbs.db
+desktop.ini
+.DS_Store
