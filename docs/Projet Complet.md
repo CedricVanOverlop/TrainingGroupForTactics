@@ -4,7 +4,7 @@
 > En cas de contradiction avec `claude.md`, **ce fichier fait foi**.
 > En cas de contradiction avec le **cahier des charges V2** (`docs/Cedric_Van_Overlop_-_Cahier_des_Charges_Projet_integration_V2.pdf`), **le cahier des charges fait foi** — et il faut corriger ce fichier.
 >
-> **Dernière mise à jour :** 2026-10-14 · **Version :** 1.3
+> **Dernière mise à jour :** 2026-10-14 · **Version :** 1.4
 
 **Sommaire**
 [1. Le projet en une page](#1-le-projet-en-une-page) ·
@@ -484,6 +484,7 @@ L'exploitation d'une instance unique hébergeant les données de plusieurs commu
 
 | Date | Changement |
 |---|---|
+| 2026-10-14 | **Dépôt git initialisé dans `Desktop/TGFT`**, premier commit poussé sur `https://github.com/CedricVanOverlop/TrainingGroupForTactics` (branche `main`, commit `90fb241`, 37 fichiers). ⚠️ **`C:\Users\User` est lui-même un dépôt git** dont `origin` pointe sur `Padle-Site` — TGFT a donc son propre dépôt pour ne pas committer dedans. Toujours vérifier `git rev-parse --show-toplevel` avant un `git add`. |
 | 2026-10-14 | **Arborescence : `backend/` + `frontend/`** au lieu d'un `src/` unique. Les 4 projets .NET sont dans `backend/`, l'application Angular **est** `frontend/`. `TGFT.slnx` régénéré. Les deux builds repassent verts. |
 | 2026-10-14 | **Squelette créé.** Solution `TGFT.slnx` (nouveau format XML, défaut du SDK .NET 10) + `TGFT.Domain` → `TGFT.Application` → `TGFT.Infrastructure` → `TGFT.Api`, tous en `net10.0`. Angular **22.2.2** dans `src/TGFT.Web` (SCSS, routing, **sans SSR** car Caddy sert les statiques). Projets de tests différés : rien à tester tant que le domaine est vide. `TGFT.ModuleHost` différé au prototype Q6. |
 | 2026-10-14 | **Correctif sécurité au scaffold.** Le template `dotnet new webapi` tire `Microsoft.OpenApi` 2.0.0, vulnérable (**CVE-2026-49451**, CVSS 7.5, DoS par récursion non contrôlée sur références circulaires). `Microsoft.AspNetCore.OpenApi` monté 10.0.8 → **10.0.13** → résout `Microsoft.OpenApi` **2.12.2**. Plus aucun package vulnérable. **À re-vérifier à chaque ajout de dépendance** : `dotnet list package --vulnerable --include-transitive`. |
