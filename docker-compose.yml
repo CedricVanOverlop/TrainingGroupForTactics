@@ -1,0 +1,46 @@
+# Pile locale TGFT : docker compose up --build, puis http://localhost:8080
+# Seul Caddy publie un port. L'API et PostgreSQL restent sur le réseau interne.
+name: tgft
+
+services:
+  caddy:
+    build:
+      context: .
+      dockerfile: deploy/caddy/Dockerfile
+    ports:
+      # Lié à 127.0.0.1 : accessible depuis cette machine uniquement, pas depuis le réseau local.
+      - "127.0.0.1:8080:80"
+    depends_on:
+      - api
+    restart: unless-stopped
+
+  api:
+    build:
+      context: .
+      dockerfile: backend/TGFT.Api/Dockerfile
+    environment:
+      ASPNETCORE_ENVIRONMENT: Development
+      ConnectionStrings__Tgft: "Host=postgres;Port=5432;Database=tgft;Username=tgft;Password=${POSTGRES_PASSWORD}"
+    depends_on:
+      postgres:
+        condition: service_healthy
+    restart: unless-stopped
+
+  postgres:
+    image: postgres:18-alpine
+    environment:
+      POSTGRES_DB: tgft
+      POSTGRES_USER: tgft
+      POSTGRES_PASSWORD: ${POSTGRES_PASSWORD:?Copier .env.example en .env et définir POSTGRES_PASSWORD}
+    volumes:
+      # PostgreSQL 18 range ses données dans un sous-dossier versionné de /var/lib/postgresql.
+      - pgdata:/var/lib/postgresql
+    healthcheck:
+      test: ["CMD-SHELL", "pg_isready -U tgft -d tgft"]
+      interval: 5s
+      timeout: 3s
+      retries: 10
+    restart: unless-stopped
+
+volumes:
+  pgdata:

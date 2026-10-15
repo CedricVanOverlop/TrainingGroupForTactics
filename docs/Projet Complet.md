@@ -464,11 +464,11 @@ L'exploitation d'une instance unique hébergeant les données de plusieurs commu
 |---|---|
 | Cahier des charges V2 | ✅ Fait |
 | Ce fichier de mémoire | ✅ Fait (2026-10-14) |
-| Graphe de connaissance `graphify-out/` | ⏸ **Volontairement différé** — les projets sont des templates vides, il n'y a encore rien à grapher. À lancer quand le noyau aura du code réel. |
+| Graphe de connaissance `graphify-out/` | ✅ Fait (2026-10-15) — versionné dans git ; `/graphify . --update` après chaque modification du code, et une seule fois avant le commit pour la doc et la configuration |
 | **Squelette .NET** — `TGFT.slnx` + 4 projets `net10.0` dans `backend/`, références câblées, build vert | ✅ Fait (2026-10-14) |
 | **Squelette Angular 22** — `frontend/`, SCSS, routing, sans SSR, build vert | ✅ Fait (2026-10-14) |
 | `TGFT.ModuleHost` (salle des machines) | ⬜ À faire — avec le prototype Q6 |
-| Docker Compose + Caddy | ⬜ À faire |
+| Docker Compose + Caddy (local) — `docker compose up --build` → http://localhost:8080 | ✅ Fait (2026-10-15) |
 | **Prototype marketplace de bout en bout** (Javy + Wasmtime) — *premier jalon technique* | ⬜ À faire |
 | Noyau : comptes, groupes, membres, rôles, permissions | ⬜ À faire |
 | Module natif Team Builder | ⬜ À faire |
@@ -484,9 +484,11 @@ L'exploitation d'une instance unique hébergeant les données de plusieurs commu
 
 | Date | Changement |
 |---|---|
+| 2026-10-15 | **Graphe graphify créé et versionné** (`graphify-out/`, ~600 Ko) : il est disponible dans toute nouvelle session sans reconstruction (~250 000 tokens). **Règle de mise à jour assouplie** : le code est retraité après chaque modification (analyse syntaxique, gratuite), mais la doc et la configuration une seule fois avant le commit, parce que chaque fichier de doc est ré-extrait en entier par un LLM (~100 000 tokens pour ce fichier). |
+| 2026-10-15 | **Pile Docker locale.** `docker-compose.yml` : `caddy` (seul port publié, `127.0.0.1:8080`), `api` (image `aspnet:10.0`, utilisateur non-root) et `postgres` (18, volume `pgdata`, healthcheck : l'API attend que la base soit prête). Caddy sert Angular et relaie `/api/*` vers l'API, qui n'est jamais exposée directement. Mot de passe dans `.env` (ignoré par git), modèle dans `.env.example`. Salle des machines pas encore incluse (prototype Q6). |
 | 2026-10-14 | **Dépôt git initialisé dans `Desktop/TGFT`**, premier commit poussé sur `https://github.com/CedricVanOverlop/TrainingGroupForTactics` (branche `main`, commit `90fb241`, 37 fichiers). ⚠️ **`C:\Users\User` est lui-même un dépôt git** dont `origin` pointe sur `Padle-Site` — TGFT a donc son propre dépôt pour ne pas committer dedans. Toujours vérifier `git rev-parse --show-toplevel` avant un `git add`. |
 | 2026-10-14 | **Arborescence : `backend/` + `frontend/`** au lieu d'un `src/` unique. Les 4 projets .NET sont dans `backend/`, l'application Angular **est** `frontend/`. `TGFT.slnx` régénéré. Les deux builds repassent verts. |
-| 2026-10-14 | **Squelette créé.** Solution `TGFT.slnx` (nouveau format XML, défaut du SDK .NET 10) + `TGFT.Domain` → `TGFT.Application` → `TGFT.Infrastructure` → `TGFT.Api`, tous en `net10.0`. Angular **22.2.2** dans `src/TGFT.Web` (SCSS, routing, **sans SSR** car Caddy sert les statiques). Projets de tests différés : rien à tester tant que le domaine est vide. `TGFT.ModuleHost` différé au prototype Q6. |
+| 2026-10-14 | **Squelette créé.** Solution `TGFT.slnx` (nouveau format XML, défaut du SDK .NET 10) + `TGFT.Domain` → `TGFT.Application` → `TGFT.Infrastructure` → `TGFT.Api`, tous en `net10.0`. Angular **22.2.2** dans `frontend/` (créé d'abord dans `src/TGFT.Web`, déplacé ensuite, voir l'entrée ci-dessus) (SCSS, routing, **sans SSR** car Caddy sert les statiques). Projets de tests différés : rien à tester tant que le domaine est vide. `TGFT.ModuleHost` différé au prototype Q6. |
 | 2026-10-14 | **Correctif sécurité au scaffold.** Le template `dotnet new webapi` tire `Microsoft.OpenApi` 2.0.0, vulnérable (**CVE-2026-49451**, CVSS 7.5, DoS par récursion non contrôlée sur références circulaires). `Microsoft.AspNetCore.OpenApi` monté 10.0.8 → **10.0.13** → résout `Microsoft.OpenApi` **2.12.2**. Plus aucun package vulnérable. **À re-vérifier à chaque ajout de dépendance** : `dotnet list package --vulnerable --include-transitive`. |
 | 2026-10-14 | **Node minimal : 24.15.0.** Angular 22 refuse de démarrer en dessous (`^22.22.3 \|\| ^24.15.0 \|\| >=26`). Machine passée en 24.20.0. |
 | 2026-10-14 | **Graphify différé** jusqu'au squelette de solution. Un graphe de connaissance construit sur 2 documents n'apporte rien : il sert à retrouver la structure d'un code qu'on ne lit pas en entier. Tant que le projet tient dans ce fichier, il est redondant. |

@@ -31,7 +31,9 @@ Le projet utilise **graphify** pour maintenir un graphe de connaissance du code 
 
 - **En début de session**, lis `graphify-out/GRAPH_REPORT.md` pour retrouver la structure du projet avant d'explorer les fichiers un par un.
 - Pour comprendre où se trouve quelque chose ou comment deux éléments sont liés, interroge d'abord le graphe (`/graphify query "..."`, `/graphify path "A" "B"`, `/graphify explain "X"`), avant de parcourir tout le code.
-- **Après chaque modification** du code ou de la documentation, mets le graphe à jour avec `/graphify . --update`. Seuls les fichiers modifiés sont retraités.
+- **Après chaque modification du code** (C#, TypeScript), mets le graphe à jour avec `/graphify . --update`. Le code est analysé par sa syntaxe, sans coût en tokens.
+- **Pour la documentation et la configuration** (`.md`, `.pdf`, `.json`, `.yml`…), ne mets le graphe à jour **qu'une fois, à la fin d'une série de modifications, juste avant le commit qui les regroupe**. Chaque fichier de ce type est ré-extrait en entier par un LLM, et `Projet Complet.md` seul coûte environ 100 000 tokens.
+- Le graphe versionné dans git (`graphify-out/`) doit toujours correspondre au commit qui le contient.
 - Si `graphify-out/` n'existe pas encore, propose-moi de lancer `/graphify .`.
 
 Mettre à jour le graphe n'est pas écrire du code : tu peux le faire sans demander, et c'est la seule exception à la règle n°1.

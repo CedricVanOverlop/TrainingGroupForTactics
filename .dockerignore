@@ -1,0 +1,13 @@
+# Allège le contexte de build et évite d'y envoyer des secrets.
+**/bin/
+**/obj/
+**/node_modules/
+**/dist/
+**/.angular/
+.git/
+.vs/
+.vscode/
+graphify-out/
+docs/
+.env
+.env.*

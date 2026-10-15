@@ -1,0 +1,147 @@
+{
+  "TGFT.slnx": {
+    "mtime": 1791993040.9555469,
+    "ast_hash": "94a9fa828204b9a7eb8ef08f66a3417e",
+    "semantic_hash": "94a9fa828204b9a7eb8ef08f66a3417e"
+  },
+  "backend/TGFT.Api/Program.cs": {
+    "mtime": 1791992383.9577,
+    "ast_hash": "1e6df8f06b3ef3c8affcd7498add9605",
+    "semantic_hash": "1e6df8f06b3ef3c8affcd7498add9605"
+  },
+  "backend/TGFT.Api/Properties/launchSettings.json": {
+    "mtime": 1791992383.9292247,
+    "ast_hash": "4eff968c302ad72b11c709dca7f6dfde",
+    "semantic_hash": "4eff968c302ad72b11c709dca7f6dfde"
+  },
+  "backend/TGFT.Api/TGFT.Api.csproj": {
+    "mtime": 1791992465.8836,
+    "ast_hash": "1a98c13fc1c406ed195a2aa1bde33521",
+    "semantic_hash": "1a98c13fc1c406ed195a2aa1bde33521"
+  },
+  "backend/TGFT.Api/appsettings.Development.json": {
+    "mtime": 1791992383.930744,
+    "ast_hash": "804b473502a4c415cf75db61c56c32aa",
+    "semantic_hash": "804b473502a4c415cf75db61c56c32aa"
+  },
+  "backend/TGFT.Api/appsettings.json": {
+    "mtime": 1791992383.9373095,
+    "ast_hash": "f7e65dde4e5533740a0d57ac9355c0e8",
+    "semantic_hash": "f7e65dde4e5533740a0d57ac9355c0e8"
+  },
+  "backend/TGFT.Application/TGFT.Application.csproj": {
+    "mtime": 1791992428.7805226,
+    "ast_hash": "0a7ce4116a9abdbcf084fe0a64a6df32",
+    "semantic_hash": "0a7ce4116a9abdbcf084fe0a64a6df32"
+  },
+  "backend/TGFT.Domain/TGFT.Domain.csproj": {
+    "mtime": 1791992380.7377017,
+    "ast_hash": "46b0780bd56312ea2d1bab391f179e89",
+    "semantic_hash": "46b0780bd56312ea2d1bab391f179e89"
+  },
+  "backend/TGFT.Infrastructure/TGFT.Infrastructure.csproj": {
+    "mtime": 1791992429.2387574,
+    "ast_hash": "7166527530514ffaecc59eb66c3bafb9",
+    "semantic_hash": "7166527530514ffaecc59eb66c3bafb9"
+  },
+  "frontend/.vscode/extensions.json": {
+    "mtime": 1791992766.0128453,
+    "ast_hash": "66fd9e60d4633b6099fe02e06a7075ea",
+    "semantic_hash": "66fd9e60d4633b6099fe02e06a7075ea"
+  },
+  "frontend/.vscode/launch.json": {
+    "mtime": 1791992766.0143578,
+    "ast_hash": "430386a2f03e9d559664c196344c121b",
+    "semantic_hash": "430386a2f03e9d559664c196344c121b"
+  },
+  "frontend/.vscode/tasks.json": {
+    "mtime": 1791992766.0143578,
+    "ast_hash": "cb7ed9a56930402d9059ea5a9773d60e",
+    "semantic_hash": "cb7ed9a56930402d9059ea5a9773d60e"
+  },
+  "frontend/angular.json": {
+    "mtime": 1791992766.009803,
+    "ast_hash": "79b411e92a8f723f11192819fbbc88ca",
+    "semantic_hash": "79b411e92a8f723f11192819fbbc88ca"
+  },
+  "frontend/package.json": {
+    "mtime": 1791992766.009803,
+    "ast_hash": "4c4febeac235112e63cb97d7a6f39437",
+    "semantic_hash": "4c4febeac235112e63cb97d7a6f39437"
+  },
+  "frontend/src/app/app.config.ts": {
+    "mtime": 1791992766.0173843,
+    "ast_hash": "1a9a668b130542d5c52170a21db1eb61",
+    "semantic_hash": "1a9a668b130542d5c52170a21db1eb61"
+  },
+  "frontend/src/app/app.routes.ts": {
+    "mtime": 1791992766.0173843,
+    "ast_hash": "41e4bac7a1d7cd48f4d03907407942d3",
+    "semantic_hash": "41e4bac7a1d7cd48f4d03907407942d3"
+  },
+  "frontend/src/app/app.spec.ts": {
+    "mtime": 1791992766.015869,
+    "ast_hash": "6923d8465dfe2727fba6653f25abd0b3",
+    "semantic_hash": "6923d8465dfe2727fba6653f25abd0b3"
+  },
+  "frontend/src/app/app.ts": {
+    "mtime": 1791992766.015869,
+    "ast_hash": "daa56cfe4a3542aae9b163a6c8dfc0b6",
+    "semantic_hash": "daa56cfe4a3542aae9b163a6c8dfc0b6"
+  },
+  "frontend/src/main.ts": {
+    "mtime": 1791992766.0143578,
+    "ast_hash": "1289536d6d8f94242a4ffc598d094633",
+    "semantic_hash": "1289536d6d8f94242a4ffc598d094633"
+  },
+  "frontend/tsconfig.app.json": {
+    "mtime": 1791992766.0128453,
+    "ast_hash": "e36d55dc3a81c35d0328a257103d6d3d",
+    "semantic_hash": "e36d55dc3a81c35d0328a257103d6d3d"
+  },
+  "frontend/tsconfig.json": {
+    "mtime": 1791992766.011335,
+    "ast_hash": "53bc94dc8fdca030fe291132353484a9",
+    "semantic_hash": "53bc94dc8fdca030fe291132353484a9"
+  },
+  "frontend/tsconfig.spec.json": {
+    "mtime": 1791992766.0128453,
+    "ast_hash": "9e61a5663cdfef3c963a3595ac1a7813",
+    "semantic_hash": "9e61a5663cdfef3c963a3595ac1a7813"
+  },
+  "claude.md": {
+    "mtime": 1792076840.4164007,
+    "ast_hash": "4ed89dca4ac47e19399913c9f0fe501c",
+    "semantic_hash": "4ed89dca4ac47e19399913c9f0fe501c"
+  },
+  "docs/Projet Complet.md": {
+    "mtime": 1792076840.4968517,
+    "ast_hash": "44d55c194c23cf55c3c9755077daf95a",
+    "semantic_hash": "44d55c194c23cf55c3c9755077daf95a"
+  },
+  "frontend/README.md": {
+    "mtime": 1791992766.011335,
+    "ast_hash": "5bf7ff8769c778de3436c184d58a800b",
+    "semantic_hash": "5bf7ff8769c778de3436c184d58a800b"
+  },
+  "frontend/src/app/app.html": {
+    "mtime": 1791992766.0173843,
+    "ast_hash": "c636cb0abcd134e37b0da69db9e8d823",
+    "semantic_hash": "c636cb0abcd134e37b0da69db9e8d823"
+  },
+  "frontend/src/index.html": {
+    "mtime": 1791992766.0143578,
+    "ast_hash": "71f082ae2421e3346ebb7ab1d3bf4d84",
+    "semantic_hash": "71f082ae2421e3346ebb7ab1d3bf4d84"
+  },
+  "docs/Cedric_Van_Overlop_-_Cahier_des_Charges_Projet_integration_V2.pdf": {
+    "mtime": 1791978432.1565711,
+    "ast_hash": "af021f451630bd9094e26354f2054e9d",
+    "semantic_hash": "af021f451630bd9094e26354f2054e9d"
+  },
+  "docker-compose.yml": {
+    "mtime": 1792076063.6663897,
+    "ast_hash": "a5374937b81c051c1c0d9dbbd53efb58",
+    "semantic_hash": "a5374937b81c051c1c0d9dbbd53efb58"
+  }
+}

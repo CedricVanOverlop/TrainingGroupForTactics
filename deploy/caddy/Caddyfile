@@ -1,0 +1,17 @@
+# Local : HTTP sur :80 (publié en 8080 sur la machine).
+# En production, remplacer ":80" par le nom de domaine : Caddy gère alors HTTPS seul.
+:80 {
+	encode zstd gzip
+
+	# L'API n'est jamais exposée directement : tout passe par ici.
+	handle /api/* {
+		reverse_proxy api:8080
+	}
+
+	# Application Angular : toute route inconnue renvoie index.html (routage côté client).
+	handle {
+		root * /srv
+		try_files {path} /index.html
+		file_server
+	}
+}
