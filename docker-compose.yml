@@ -1,6 +1,8 @@
-# Pile locale TGFT : docker compose up --build, puis http://localhost:8080
+# Pile locale TGFT : docker compose up --build, puis http://localhost:8081
 # Seul Caddy publie un port. L'API et PostgreSQL restent sur le réseau interne.
-name: tgft
+# Nom explicite et distinct : l'ancien projet "Mes projets\TGFT" occupe déjà le nom "tgft"
+# (déduit de son dossier) et le port 8080. Un nom partagé fusionne les deux projets.
+name: tgft-platform
 
 services:
   caddy:
@@ -9,7 +11,7 @@ services:
       dockerfile: deploy/caddy/Dockerfile
     ports:
       # Lié à 127.0.0.1 : accessible depuis cette machine uniquement, pas depuis le réseau local.
-      - "127.0.0.1:8080:80"
+      - "127.0.0.1:8081:80"
     depends_on:
       - api
     restart: unless-stopped
