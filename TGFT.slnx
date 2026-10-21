@@ -5,4 +5,7 @@
     <Project Path="backend/TGFT.Domain/TGFT.Domain.csproj" />
     <Project Path="backend/TGFT.Infrastructure/TGFT.Infrastructure.csproj" />
   </Folder>
+  <Folder Name="/tests/">
+    <Project Path="tests/TGFT.ArchitectureTests/TGFT.ArchitectureTests.csproj" />
+  </Folder>
 </Solution>

@@ -4,11 +4,11 @@
   "graph": {
     "hyperedges": [
       {
-        "id": "docs_projet_complet_call_flow",
+        "id": "marketplace_call_flow",
         "label": "Deroule d'un appel de module externe",
         "nodes": [
-          "docs_projet_complet_zone_de_confiance",
           "docs_projet_complet_paquet",
+          "docs_projet_complet_zone_de_confiance",
           "docs_projet_complet_salle_des_machines",
           "docs_projet_complet_reponse",
           "docs_projet_complet_classeur"
@@ -19,17 +19,31 @@
         "source_file": "docs/Projet Complet.md"
       },
       {
-        "id": "docs_projet_complet_tenant_isolation_defense",
-        "label": "Defense en profondeur de l'isolation multi-tenant",
+        "id": "structural_tenant_isolation",
+        "label": "Isolation multi-tenant structurelle a double rempart",
         "nodes": [
+          "docs_projet_complet_multi_tenant_isolation",
           "docs_projet_complet_ef_core_global_filters",
           "docs_projet_complet_postgresql_rls",
-          "docs_projet_complet_testcontainers",
+          "docs_projet_complet_testcontainers"
+        ],
+        "relation": "form",
+        "confidence": "EXTRACTED",
+        "confidence_score": 1.0,
+        "source_file": "docs/Projet Complet.md"
+      },
+      {
+        "id": "architecture_enforcement",
+        "label": "Frontieres d'architecture verifiees par tests",
+        "nodes": [
+          "docs_projet_complet_clean_architecture",
+          "docs_projet_complet_netarchtest_boundaries",
+          "docs_projet_complet_architecture_tests_project",
           "docs_projet_complet_tests_as_security"
         ],
         "relation": "form",
-        "confidence": "INFERRED",
-        "confidence_score": 0.85,
+        "confidence": "EXTRACTED",
+        "confidence_score": 1.0,
         "source_file": "docs/Projet Complet.md"
       },
       {
@@ -50,62 +64,12 @@
   },
   "nodes": [
     {
-      "label": "TGFT.slnx",
-      "file_type": "code",
-      "source_file": "TGFT.slnx",
-      "source_location": null,
-      "_origin": "ast",
-      "community": 5,
-      "norm_label": "tgft.slnx",
-      "id": "tgft"
-    },
-    {
-      "label": "TGFT.Api.csproj",
-      "file_type": "code",
-      "source_file": "backend/TGFT.Api/TGFT.Api.csproj",
-      "source_location": null,
-      "_origin": "ast",
-      "community": 5,
-      "norm_label": "tgft.api.csproj",
-      "id": "backend_tgft_api_tgft_api"
-    },
-    {
-      "label": "TGFT.Application.csproj",
-      "file_type": "code",
-      "source_file": "backend/TGFT.Application/TGFT.Application.csproj",
-      "source_location": null,
-      "_origin": "ast",
-      "community": 5,
-      "norm_label": "tgft.application.csproj",
-      "id": "backend_tgft_application_tgft_application"
-    },
-    {
-      "label": "TGFT.Domain.csproj",
-      "file_type": "code",
-      "source_file": "backend/TGFT.Domain/TGFT.Domain.csproj",
-      "source_location": null,
-      "_origin": "ast",
-      "community": 5,
-      "norm_label": "tgft.domain.csproj",
-      "id": "backend_tgft_domain_tgft_domain"
-    },
-    {
-      "label": "TGFT.Infrastructure.csproj",
-      "file_type": "code",
-      "source_file": "backend/TGFT.Infrastructure/TGFT.Infrastructure.csproj",
-      "source_location": null,
-      "_origin": "ast",
-      "community": 5,
-      "norm_label": "tgft.infrastructure.csproj",
-      "id": "backend_tgft_infrastructure_tgft_infrastructure"
-    },
-    {
       "label": "Program.cs",
       "file_type": "code",
       "source_file": "backend/TGFT.Api/Program.cs",
       "source_location": "L1",
       "_origin": "ast",
-      "community": 13,
+      "community": 17,
       "norm_label": "program.cs",
       "id": "backend_tgft_api_program"
     },
@@ -115,7 +79,7 @@
       "source_file": "backend/TGFT.Api/Program.cs",
       "source_location": "L38",
       "_origin": "ast",
-      "community": 13,
+      "community": 17,
       "norm_label": "weatherforecast",
       "id": "backend_tgft_api_program_weatherforecast"
     },
@@ -125,7 +89,7 @@
       "source_file": "backend/TGFT.Api/Properties/launchSettings.json",
       "source_location": "L1",
       "_origin": "ast",
-      "community": 3,
+      "community": 5,
       "norm_label": "launchsettings.json",
       "id": "backend_tgft_api_properties_launchsettings"
     },
@@ -135,7 +99,7 @@
       "source_file": "backend/TGFT.Api/Properties/launchSettings.json",
       "source_location": "L2",
       "_origin": "ast",
-      "community": 3,
+      "community": 5,
       "norm_label": "$schema",
       "id": "backend_tgft_api_properties_launchsettings_schema"
     },
@@ -145,7 +109,7 @@
       "source_file": "backend/TGFT.Api/Properties/launchSettings.json",
       "source_location": "L3",
       "_origin": "ast",
-      "community": 3,
+      "community": 5,
       "norm_label": "profiles",
       "id": "backend_tgft_api_properties_launchsettings_profiles"
     },
@@ -155,7 +119,7 @@
       "source_file": "backend/TGFT.Api/Properties/launchSettings.json",
       "source_location": "L4",
       "_origin": "ast",
-      "community": 3,
+      "community": 5,
       "norm_label": "http",
       "id": "backend_tgft_api_properties_launchsettings_profiles_http"
     },
@@ -165,7 +129,7 @@
       "source_file": "backend/TGFT.Api/Properties/launchSettings.json",
       "source_location": "L5",
       "_origin": "ast",
-      "community": 3,
+      "community": 5,
       "norm_label": "commandname",
       "id": "backend_tgft_api_properties_launchsettings_http_commandname"
     },
@@ -175,7 +139,7 @@
       "source_file": "backend/TGFT.Api/Properties/launchSettings.json",
       "source_location": "L6",
       "_origin": "ast",
-      "community": 3,
+      "community": 5,
       "norm_label": "dotnetrunmessages",
       "id": "backend_tgft_api_properties_launchsettings_http_dotnetrunmessages"
     },
@@ -185,7 +149,7 @@
       "source_file": "backend/TGFT.Api/Properties/launchSettings.json",
       "source_location": "L7",
       "_origin": "ast",
-      "community": 3,
+      "community": 5,
       "norm_label": "launchbrowser",
       "id": "backend_tgft_api_properties_launchsettings_http_launchbrowser"
     },
@@ -195,7 +159,7 @@
       "source_file": "backend/TGFT.Api/Properties/launchSettings.json",
       "source_location": "L8",
       "_origin": "ast",
-      "community": 3,
+      "community": 5,
       "norm_label": "applicationurl",
       "id": "backend_tgft_api_properties_launchsettings_http_applicationurl"
     },
@@ -205,7 +169,7 @@
       "source_file": "backend/TGFT.Api/Properties/launchSettings.json",
       "source_location": "L9",
       "_origin": "ast",
-      "community": 3,
+      "community": 5,
       "norm_label": "environmentvariables",
       "id": "backend_tgft_api_properties_launchsettings_http_environmentvariables"
     },
@@ -215,7 +179,7 @@
       "source_file": "backend/TGFT.Api/Properties/launchSettings.json",
       "source_location": "L10",
       "_origin": "ast",
-      "community": 3,
+      "community": 5,
       "norm_label": "aspnetcore_environment",
       "id": "backend_tgft_api_properties_launchsettings_environmentvariables_aspnetcore_environment"
     },
@@ -225,7 +189,7 @@
       "source_file": "backend/TGFT.Api/Properties/launchSettings.json",
       "source_location": "L13",
       "_origin": "ast",
-      "community": 3,
+      "community": 5,
       "norm_label": "https",
       "id": "backend_tgft_api_properties_launchsettings_profiles_https"
     },
@@ -235,7 +199,7 @@
       "source_file": "backend/TGFT.Api/Properties/launchSettings.json",
       "source_location": "L14",
       "_origin": "ast",
-      "community": 3,
+      "community": 5,
       "norm_label": "commandname",
       "id": "backend_tgft_api_properties_launchsettings_https_commandname"
     },
@@ -245,7 +209,7 @@
       "source_file": "backend/TGFT.Api/Properties/launchSettings.json",
       "source_location": "L15",
       "_origin": "ast",
-      "community": 3,
+      "community": 5,
       "norm_label": "dotnetrunmessages",
       "id": "backend_tgft_api_properties_launchsettings_https_dotnetrunmessages"
     },
@@ -255,7 +219,7 @@
       "source_file": "backend/TGFT.Api/Properties/launchSettings.json",
       "source_location": "L16",
       "_origin": "ast",
-      "community": 3,
+      "community": 5,
       "norm_label": "launchbrowser",
       "id": "backend_tgft_api_properties_launchsettings_https_launchbrowser"
     },
@@ -265,7 +229,7 @@
       "source_file": "backend/TGFT.Api/Properties/launchSettings.json",
       "source_location": "L17",
       "_origin": "ast",
-      "community": 3,
+      "community": 5,
       "norm_label": "applicationurl",
       "id": "backend_tgft_api_properties_launchsettings_https_applicationurl"
     },
@@ -275,99 +239,9 @@
       "source_file": "backend/TGFT.Api/Properties/launchSettings.json",
       "source_location": "L18",
       "_origin": "ast",
-      "community": 3,
+      "community": 5,
       "norm_label": "environmentvariables",
       "id": "backend_tgft_api_properties_launchsettings_https_environmentvariables"
-    },
-    {
-      "label": "net10.0",
-      "file_type": "concept",
-      "source_file": "backend/TGFT.Api/TGFT.Api.csproj",
-      "source_location": null,
-      "_origin": "ast",
-      "community": 5,
-      "norm_label": "net10.0",
-      "id": "backend_tgft_api_tgft_api_csproj_framework_net10_0"
-    },
-    {
-      "label": "Microsoft.AspNetCore.OpenApi (10.0.13)",
-      "file_type": "code",
-      "source_file": "backend/TGFT.Api/TGFT.Api.csproj",
-      "source_location": null,
-      "_origin": "ast",
-      "community": 5,
-      "norm_label": "microsoft.aspnetcore.openapi (10.0.13)",
-      "id": "nuget_microsoft_aspnetcore_openapi"
-    },
-    {
-      "label": "Microsoft.NET.Sdk.Web",
-      "file_type": "concept",
-      "source_file": "backend/TGFT.Api/TGFT.Api.csproj",
-      "source_location": null,
-      "_origin": "ast",
-      "community": 5,
-      "norm_label": "microsoft.net.sdk.web",
-      "id": "sdk_microsoft_net_sdk_web"
-    },
-    {
-      "label": "net10.0",
-      "file_type": "concept",
-      "source_file": "backend/TGFT.Application/TGFT.Application.csproj",
-      "source_location": null,
-      "_origin": "ast",
-      "community": 5,
-      "norm_label": "net10.0",
-      "id": "backend_tgft_application_tgft_application_csproj_framework_net10_0"
-    },
-    {
-      "label": "Microsoft.NET.Sdk",
-      "file_type": "concept",
-      "source_file": "backend/TGFT.Application/TGFT.Application.csproj",
-      "source_location": null,
-      "_origin": "ast",
-      "community": 5,
-      "norm_label": "microsoft.net.sdk",
-      "id": "backend_tgft_application_tgft_application_csproj_sdk_microsoft_net_sdk"
-    },
-    {
-      "label": "net10.0",
-      "file_type": "concept",
-      "source_file": "backend/TGFT.Domain/TGFT.Domain.csproj",
-      "source_location": null,
-      "_origin": "ast",
-      "community": 5,
-      "norm_label": "net10.0",
-      "id": "backend_tgft_domain_tgft_domain_csproj_framework_net10_0"
-    },
-    {
-      "label": "Microsoft.NET.Sdk",
-      "file_type": "concept",
-      "source_file": "backend/TGFT.Domain/TGFT.Domain.csproj",
-      "source_location": null,
-      "_origin": "ast",
-      "community": 5,
-      "norm_label": "microsoft.net.sdk",
-      "id": "backend_tgft_domain_tgft_domain_csproj_sdk_microsoft_net_sdk"
-    },
-    {
-      "label": "net10.0",
-      "file_type": "concept",
-      "source_file": "backend/TGFT.Infrastructure/TGFT.Infrastructure.csproj",
-      "source_location": null,
-      "_origin": "ast",
-      "community": 5,
-      "norm_label": "net10.0",
-      "id": "backend_tgft_infrastructure_tgft_infrastructure_csproj_framework_net10_0"
-    },
-    {
-      "label": "Microsoft.NET.Sdk",
-      "file_type": "concept",
-      "source_file": "backend/TGFT.Infrastructure/TGFT.Infrastructure.csproj",
-      "source_location": null,
-      "_origin": "ast",
-      "community": 5,
-      "norm_label": "microsoft.net.sdk",
-      "id": "backend_tgft_infrastructure_tgft_infrastructure_csproj_sdk_microsoft_net_sdk"
     },
     {
       "label": "angular.json",
@@ -375,7 +249,7 @@
       "source_file": "frontend/angular.json",
       "source_location": "L1",
       "_origin": "ast",
-      "community": 8,
+      "community": 3,
       "norm_label": "angular.json",
       "id": "frontend_angular"
     },
@@ -385,7 +259,7 @@
       "source_file": "frontend/angular.json",
       "source_location": "L2",
       "_origin": "ast",
-      "community": 8,
+      "community": 3,
       "norm_label": "$schema",
       "id": "frontend_angular_schema"
     },
@@ -395,7 +269,7 @@
       "source_file": "frontend/angular.json",
       "source_location": "L3",
       "_origin": "ast",
-      "community": 8,
+      "community": 3,
       "norm_label": "version",
       "id": "frontend_angular_version"
     },
@@ -405,7 +279,7 @@
       "source_file": "frontend/angular.json",
       "source_location": "L4",
       "_origin": "ast",
-      "community": 10,
+      "community": 3,
       "norm_label": "cli",
       "id": "frontend_angular_cli"
     },
@@ -415,7 +289,7 @@
       "source_file": "frontend/angular.json",
       "source_location": "L5",
       "_origin": "ast",
-      "community": 10,
+      "community": 3,
       "norm_label": "packagemanager",
       "id": "frontend_angular_cli_packagemanager"
     },
@@ -425,7 +299,7 @@
       "source_file": "frontend/angular.json",
       "source_location": "L7",
       "_origin": "ast",
-      "community": 8,
+      "community": 3,
       "norm_label": "newprojectroot",
       "id": "frontend_angular_newprojectroot"
     },
@@ -435,7 +309,7 @@
       "source_file": "frontend/angular.json",
       "source_location": "L8",
       "_origin": "ast",
-      "community": 8,
+      "community": 3,
       "norm_label": "projects",
       "id": "frontend_angular_projects"
     },
@@ -445,7 +319,7 @@
       "source_file": "frontend/angular.json",
       "source_location": "L9",
       "_origin": "ast",
-      "community": 8,
+      "community": 3,
       "norm_label": "tgft.web",
       "id": "frontend_angular_projects_tgft_web"
     },
@@ -455,7 +329,7 @@
       "source_file": "frontend/angular.json",
       "source_location": "L10",
       "_origin": "ast",
-      "community": 8,
+      "community": 3,
       "norm_label": "projecttype",
       "id": "frontend_angular_tgft_web_projecttype"
     },
@@ -465,7 +339,7 @@
       "source_file": "frontend/angular.json",
       "source_location": "L11",
       "_origin": "ast",
-      "community": 8,
+      "community": 3,
       "norm_label": "schematics",
       "id": "frontend_angular_tgft_web_schematics"
     },
@@ -475,7 +349,7 @@
       "source_file": "frontend/angular.json",
       "source_location": "L12",
       "_origin": "ast",
-      "community": 8,
+      "community": 3,
       "norm_label": "@schematics/angular:component",
       "id": "frontend_angular_schematics_schematics_angular_component"
     },
@@ -485,7 +359,7 @@
       "source_file": "frontend/angular.json",
       "source_location": "L13",
       "_origin": "ast",
-      "community": 8,
+      "community": 3,
       "norm_label": "style",
       "id": "frontend_angular_schematics_angular_component_style"
     },
@@ -495,7 +369,7 @@
       "source_file": "frontend/angular.json",
       "source_location": "L16",
       "_origin": "ast",
-      "community": 8,
+      "community": 3,
       "norm_label": "root",
       "id": "frontend_angular_tgft_web_root"
     },
@@ -505,7 +379,7 @@
       "source_file": "frontend/angular.json",
       "source_location": "L17",
       "_origin": "ast",
-      "community": 8,
+      "community": 3,
       "norm_label": "sourceroot",
       "id": "frontend_angular_tgft_web_sourceroot"
     },
@@ -515,7 +389,7 @@
       "source_file": "frontend/angular.json",
       "source_location": "L18",
       "_origin": "ast",
-      "community": 8,
+      "community": 3,
       "norm_label": "prefix",
       "id": "frontend_angular_tgft_web_prefix"
     },
@@ -785,7 +659,7 @@
       "source_file": "frontend/package.json",
       "source_location": "L1",
       "_origin": "ast",
-      "community": 2,
+      "community": 4,
       "norm_label": "package.json",
       "id": "frontend_package"
     },
@@ -795,7 +669,7 @@
       "source_file": "frontend/package.json",
       "source_location": "L2",
       "_origin": "ast",
-      "community": 2,
+      "community": 4,
       "norm_label": "name",
       "id": "frontend_package_name"
     },
@@ -805,7 +679,7 @@
       "source_file": "frontend/package.json",
       "source_location": "L3",
       "_origin": "ast",
-      "community": 2,
+      "community": 4,
       "norm_label": "version",
       "id": "frontend_package_version"
     },
@@ -815,7 +689,7 @@
       "source_file": "frontend/package.json",
       "source_location": "L4",
       "_origin": "ast",
-      "community": 2,
+      "community": 4,
       "norm_label": "scripts",
       "id": "frontend_package_scripts"
     },
@@ -825,7 +699,7 @@
       "source_file": "frontend/package.json",
       "source_location": "L5",
       "_origin": "ast",
-      "community": 2,
+      "community": 4,
       "norm_label": "ng",
       "id": "frontend_package_scripts_ng"
     },
@@ -835,7 +709,7 @@
       "source_file": "frontend/package.json",
       "source_location": "L6",
       "_origin": "ast",
-      "community": 2,
+      "community": 4,
       "norm_label": "start",
       "id": "frontend_package_scripts_start"
     },
@@ -845,7 +719,7 @@
       "source_file": "frontend/package.json",
       "source_location": "L7",
       "_origin": "ast",
-      "community": 2,
+      "community": 4,
       "norm_label": "build",
       "id": "frontend_package_scripts_build"
     },
@@ -855,7 +729,7 @@
       "source_file": "frontend/package.json",
       "source_location": "L8",
       "_origin": "ast",
-      "community": 2,
+      "community": 4,
       "norm_label": "watch",
       "id": "frontend_package_scripts_watch"
     },
@@ -865,7 +739,7 @@
       "source_file": "frontend/package.json",
       "source_location": "L9",
       "_origin": "ast",
-      "community": 2,
+      "community": 4,
       "norm_label": "test",
       "id": "frontend_package_scripts_test"
     },
@@ -875,7 +749,7 @@
       "source_file": "frontend/package.json",
       "source_location": "L11",
       "_origin": "ast",
-      "community": 2,
+      "community": 4,
       "norm_label": "private",
       "id": "frontend_package_private"
     },
@@ -885,7 +759,7 @@
       "source_file": "frontend/package.json",
       "source_location": "L12",
       "_origin": "ast",
-      "community": 2,
+      "community": 4,
       "norm_label": "packagemanager",
       "id": "frontend_package_packagemanager"
     },
@@ -895,7 +769,7 @@
       "source_file": "frontend/package.json",
       "source_location": "L13",
       "_origin": "ast",
-      "community": 2,
+      "community": 4,
       "norm_label": "dependencies",
       "id": "frontend_package_dependencies"
     },
@@ -905,7 +779,7 @@
       "source_file": "frontend/package.json",
       "source_location": "L14",
       "_origin": "ast",
-      "community": 2,
+      "community": 4,
       "norm_label": "@angular/common",
       "id": "frontend_package_dependencies_angular_common"
     },
@@ -915,7 +789,7 @@
       "source_file": "frontend/package.json",
       "source_location": "L15",
       "_origin": "ast",
-      "community": 2,
+      "community": 4,
       "norm_label": "@angular/compiler",
       "id": "frontend_package_dependencies_angular_compiler"
     },
@@ -925,7 +799,7 @@
       "source_file": "frontend/package.json",
       "source_location": "L16",
       "_origin": "ast",
-      "community": 2,
+      "community": 4,
       "norm_label": "@angular/core",
       "id": "frontend_package_dependencies_angular_core"
     },
@@ -935,7 +809,7 @@
       "source_file": "frontend/package.json",
       "source_location": "L17",
       "_origin": "ast",
-      "community": 2,
+      "community": 4,
       "norm_label": "@angular/forms",
       "id": "frontend_package_dependencies_angular_forms"
     },
@@ -945,7 +819,7 @@
       "source_file": "frontend/package.json",
       "source_location": "L18",
       "_origin": "ast",
-      "community": 2,
+      "community": 4,
       "norm_label": "@angular/platform-browser",
       "id": "frontend_package_dependencies_angular_platform_browser"
     },
@@ -955,7 +829,7 @@
       "source_file": "frontend/package.json",
       "source_location": "L19",
       "_origin": "ast",
-      "community": 2,
+      "community": 4,
       "norm_label": "@angular/router",
       "id": "frontend_package_dependencies_angular_router"
     },
@@ -965,7 +839,7 @@
       "source_file": "frontend/package.json",
       "source_location": "L20",
       "_origin": "ast",
-      "community": 2,
+      "community": 4,
       "norm_label": "rxjs",
       "id": "frontend_package_dependencies_rxjs"
     },
@@ -975,7 +849,7 @@
       "source_file": "frontend/package.json",
       "source_location": "L21",
       "_origin": "ast",
-      "community": 2,
+      "community": 4,
       "norm_label": "tslib",
       "id": "frontend_package_dependencies_tslib"
     },
@@ -985,7 +859,7 @@
       "source_file": "frontend/package.json",
       "source_location": "L23",
       "_origin": "ast",
-      "community": 10,
+      "community": 3,
       "norm_label": "devdependencies",
       "id": "frontend_package_devdependencies"
     },
@@ -995,7 +869,7 @@
       "source_file": "frontend/package.json",
       "source_location": "L24",
       "_origin": "ast",
-      "community": 10,
+      "community": 3,
       "norm_label": "@angular/build",
       "id": "frontend_package_devdependencies_angular_build"
     },
@@ -1005,7 +879,7 @@
       "source_file": "frontend/package.json",
       "source_location": "L25",
       "_origin": "ast",
-      "community": 10,
+      "community": 3,
       "norm_label": "@angular/cli",
       "id": "frontend_package_devdependencies_angular_cli"
     },
@@ -1015,7 +889,7 @@
       "source_file": "frontend/package.json",
       "source_location": "L26",
       "_origin": "ast",
-      "community": 10,
+      "community": 3,
       "norm_label": "@angular/compiler-cli",
       "id": "frontend_package_devdependencies_angular_compiler_cli"
     },
@@ -1025,7 +899,7 @@
       "source_file": "frontend/package.json",
       "source_location": "L27",
       "_origin": "ast",
-      "community": 10,
+      "community": 3,
       "norm_label": "jsdom",
       "id": "frontend_package_devdependencies_jsdom"
     },
@@ -1035,7 +909,7 @@
       "source_file": "frontend/package.json",
       "source_location": "L28",
       "_origin": "ast",
-      "community": 10,
+      "community": 3,
       "norm_label": "prettier",
       "id": "frontend_package_devdependencies_prettier"
     },
@@ -1045,7 +919,7 @@
       "source_file": "frontend/package.json",
       "source_location": "L29",
       "_origin": "ast",
-      "community": 10,
+      "community": 3,
       "norm_label": "typescript",
       "id": "frontend_package_devdependencies_typescript"
     },
@@ -1055,7 +929,7 @@
       "source_file": "frontend/package.json",
       "source_location": "L30",
       "_origin": "ast",
-      "community": 10,
+      "community": 3,
       "norm_label": "vitest",
       "id": "frontend_package_devdependencies_vitest"
     },
@@ -1065,7 +939,7 @@
       "source_file": "frontend/src/app/app.config.ts",
       "source_location": "L1",
       "_origin": "ast",
-      "community": 11,
+      "community": 10,
       "norm_label": "app.config.ts",
       "id": "frontend_src_app_app_config"
     },
@@ -1075,7 +949,7 @@
       "source_file": "frontend/src/app/app.config.ts",
       "source_location": "L5",
       "_origin": "ast",
-      "community": 11,
+      "community": 10,
       "norm_label": "appconfig",
       "id": "frontend_src_app_app_config_appconfig"
     },
@@ -1085,7 +959,7 @@
       "source_file": "frontend/src/app/app.routes.ts",
       "source_location": "L1",
       "_origin": "ast",
-      "community": 11,
+      "community": 10,
       "norm_label": "app.routes.ts",
       "id": "frontend_src_app_app_routes"
     },
@@ -1095,7 +969,7 @@
       "source_file": "frontend/src/app/app.routes.ts",
       "source_location": "L3",
       "_origin": "ast",
-      "community": 11,
+      "community": 10,
       "norm_label": "routes",
       "id": "frontend_src_app_app_routes_routes"
     },
@@ -1105,7 +979,7 @@
       "source_file": "frontend/src/app/app.spec.ts",
       "source_location": "L1",
       "_origin": "ast",
-      "community": 11,
+      "community": 10,
       "norm_label": "app.spec.ts",
       "id": "frontend_src_app_app_spec"
     },
@@ -1115,7 +989,7 @@
       "source_file": "frontend/src/app/app.ts",
       "source_location": "L1",
       "_origin": "ast",
-      "community": 11,
+      "community": 10,
       "norm_label": "app.ts",
       "id": "frontend_src_app_app"
     },
@@ -1125,7 +999,7 @@
       "source_file": "frontend/src/app/app.ts",
       "source_location": "L10",
       "_origin": "ast",
-      "community": 11,
+      "community": 10,
       "norm_label": "app",
       "id": "frontend_src_app_app_app"
     },
@@ -1135,7 +1009,7 @@
       "source_file": "",
       "source_location": "",
       "_origin": "ast",
-      "community": 11,
+      "community": 10,
       "norm_label": "component",
       "id": "component"
     },
@@ -1145,7 +1019,7 @@
       "source_file": "frontend/src/main.ts",
       "source_location": "L1",
       "_origin": "ast",
-      "community": 11,
+      "community": 10,
       "norm_label": "main.ts",
       "id": "frontend_src_main"
     },
@@ -1158,7 +1032,7 @@
       "captured_at": null,
       "author": "C\u00e9dric Van Overlop",
       "contributor": null,
-      "community": 7,
+      "community": 12,
       "norm_label": "cahier des charges v2 (tgft specification)",
       "id": "docs_cedric_van_overlop___cahier_des_charges_projet_integration_v2_cahier_des_charges_v2"
     },
@@ -1171,7 +1045,7 @@
       "captured_at": null,
       "author": null,
       "contributor": null,
-      "community": 4,
+      "community": 2,
       "norm_label": "defis techniques et points d'interet (8 challenges)",
       "id": "docs_cedric_van_overlop___cahier_des_charges_projet_integration_v2_technical_challenges"
     },
@@ -1197,7 +1071,7 @@
       "captured_at": null,
       "author": null,
       "contributor": null,
-      "community": 14,
+      "community": 18,
       "norm_label": "tgftweb angular 22.2.2 app (readme)",
       "id": "frontend_readme_tgftweb"
     },
@@ -1210,7 +1084,7 @@
       "captured_at": null,
       "author": null,
       "contributor": null,
-      "community": 14,
+      "community": 18,
       "norm_label": "vitest test runner",
       "id": "frontend_readme_vitest"
     },
@@ -1223,7 +1097,7 @@
       "captured_at": null,
       "author": null,
       "contributor": null,
-      "community": 15,
+      "community": 19,
       "norm_label": "angular cli placeholder root template",
       "id": "frontend_src_app_app_placeholder_template"
     },
@@ -1236,7 +1110,7 @@
       "captured_at": null,
       "author": null,
       "contributor": null,
-      "community": 16,
+      "community": 20,
       "norm_label": "<router-outlet> (routing host)",
       "id": "frontend_src_app_app_router_outlet"
     },
@@ -1249,50 +1123,9 @@
       "captured_at": null,
       "author": null,
       "contributor": null,
-      "community": 15,
+      "community": 19,
       "norm_label": "index.html <app-root> bootstrap host",
       "id": "frontend_src_index_app_root"
-    },
-    {
-      "label": "CLAUDE.md (Projet TGFT)",
-      "file_type": "document",
-      "source_file": "claude.md",
-      "source_location": "L1",
-      "source_url": null,
-      "captured_at": null,
-      "author": null,
-      "contributor": null,
-      "community": 7,
-      "norm_label": "claude.md (projet tgft)",
-      "id": "claude_document"
-    },
-    {
-      "label": "Regle n1 : ne jamais coder sans demande explicite",
-      "file_type": "rationale",
-      "source_file": "claude.md",
-      "source_location": "L3",
-      "source_url": null,
-      "captured_at": null,
-      "author": null,
-      "contributor": null,
-      "rationale": "Projet evalue : l'etudiant doit comprendre et maitriser tout ce qui est ecrit.",
-      "community": 7,
-      "norm_label": "regle n1 : ne jamais coder sans demande explicite",
-      "id": "claude_rule_no_code_without_request"
-    },
-    {
-      "label": "Regle de mise a jour graphify (code apres chaque modif, doc/config une fois avant commit)",
-      "file_type": "rationale",
-      "source_file": "claude.md",
-      "source_location": "L28-L39",
-      "source_url": null,
-      "captured_at": null,
-      "author": null,
-      "contributor": null,
-      "rationale": "Le code est analyse syntaxiquement sans cout en tokens ; chaque fichier de doc/config est re-extrait en entier par un LLM (Projet Complet.md ~100 000 tokens). Le graphe versionne doit correspondre au commit qui le contient. Seule exception a la regle n1.",
-      "community": 7,
-      "norm_label": "regle de mise a jour graphify (code apres chaque modif, doc/config une fois avant commit)",
-      "id": "claude_graphify_update_rule"
     },
     {
       "label": "docker-compose.yml (tgft-platform)",
@@ -1303,9 +1136,9 @@
       "captured_at": null,
       "author": null,
       "contributor": null,
-      "id": "docker_compose",
-      "community": 6,
-      "norm_label": "docker-compose.yml (tgft-platform)"
+      "community": 2,
+      "norm_label": "docker-compose.yml (tgft-platform)",
+      "id": "docker_compose"
     },
     {
       "label": "caddy service (127.0.0.1:8081)",
@@ -1317,9 +1150,9 @@
       "author": null,
       "contributor": null,
       "rationale": "Seul service a publier un port, lie a 127.0.0.1 pour n'etre accessible que depuis la machine locale.",
-      "id": "docker_compose_caddy_service",
-      "community": 6,
-      "norm_label": "caddy service (127.0.0.1:8081)"
+      "community": 2,
+      "norm_label": "caddy service (127.0.0.1:8081)",
+      "id": "docker_compose_caddy_service"
     },
     {
       "label": "api service (TGFT.Api)",
@@ -1330,9 +1163,9 @@
       "captured_at": null,
       "author": null,
       "contributor": null,
-      "id": "docker_compose_api_service",
-      "community": 6,
-      "norm_label": "api service (tgft.api)"
+      "community": 2,
+      "norm_label": "api service (tgft.api)",
+      "id": "docker_compose_api_service"
     },
     {
       "label": "postgres service (postgres:18-alpine)",
@@ -1343,9 +1176,9 @@
       "captured_at": null,
       "author": null,
       "contributor": null,
-      "id": "docker_compose_postgres_service",
-      "community": 6,
-      "norm_label": "postgres service (postgres:18-alpine)"
+      "community": 2,
+      "norm_label": "postgres service (postgres:18-alpine)",
+      "id": "docker_compose_postgres_service"
     },
     {
       "label": "pgdata volume",
@@ -1356,9 +1189,9 @@
       "captured_at": null,
       "author": null,
       "contributor": null,
-      "id": "docker_compose_pgdata_volume",
-      "community": 6,
-      "norm_label": "pgdata volume"
+      "community": 2,
+      "norm_label": "pgdata volume",
+      "id": "docker_compose_pgdata_volume"
     },
     {
       "label": "POSTGRES_PASSWORD (.env)",
@@ -1369,23 +1202,511 @@
       "captured_at": null,
       "author": null,
       "contributor": null,
-      "id": "docker_compose_postgres_password",
-      "community": 6,
-      "norm_label": "postgres_password (.env)"
+      "community": 2,
+      "norm_label": "postgres_password (.env)",
+      "id": "docker_compose_postgres_password"
     },
     {
-      "label": "Compose project rename tgft -> tgft-platform (port 8080 -> 8081)",
+      "label": "TGFT.slnx",
+      "file_type": "code",
+      "source_file": "TGFT.slnx",
+      "source_location": null,
+      "_origin": "ast",
+      "community": 7,
+      "norm_label": "tgft.slnx",
+      "id": "tgft"
+    },
+    {
+      "label": "TGFT.Api",
+      "file_type": "code",
+      "source_file": "backend/TGFT.Api/TGFT.Api.csproj",
+      "source_location": null,
+      "_origin": "ast",
+      "community": 7,
+      "norm_label": "tgft.api",
+      "id": "c_users_user_desktop_tgft_backend_tgft_api_tgft_api_csproj"
+    },
+    {
+      "label": "TGFT.Application",
+      "file_type": "code",
+      "source_file": "backend/TGFT.Application/TGFT.Application.csproj",
+      "source_location": null,
+      "_origin": "ast",
+      "community": 7,
+      "norm_label": "tgft.application",
+      "id": "c_users_user_desktop_tgft_backend_tgft_application_tgft_application_csproj"
+    },
+    {
+      "label": "TGFT.Domain",
+      "file_type": "code",
+      "source_file": "backend/TGFT.Domain/TGFT.Domain.csproj",
+      "source_location": null,
+      "_origin": "ast",
+      "community": 7,
+      "norm_label": "tgft.domain",
+      "id": "c_users_user_desktop_tgft_backend_tgft_domain_tgft_domain_csproj"
+    },
+    {
+      "label": "TGFT.Infrastructure",
+      "file_type": "code",
+      "source_file": "backend/TGFT.Infrastructure/TGFT.Infrastructure.csproj",
+      "source_location": null,
+      "_origin": "ast",
+      "community": 7,
+      "norm_label": "tgft.infrastructure",
+      "id": "c_users_user_desktop_tgft_backend_tgft_infrastructure_tgft_infrastructure_csproj"
+    },
+    {
+      "label": "TGFT.ArchitectureTests",
+      "file_type": "code",
+      "source_file": "tests/TGFT.ArchitectureTests/TGFT.ArchitectureTests.csproj",
+      "source_location": null,
+      "_origin": "ast",
+      "community": 7,
+      "norm_label": "tgft.architecturetests",
+      "id": "tests_tgft_architecturetests_tgft_architecturetests"
+    },
+    {
+      "label": "AssemblyMarker.cs",
+      "file_type": "code",
+      "source_file": "backend/TGFT.Api/AssemblyMarker.cs",
+      "source_location": "L1",
+      "_origin": "ast",
+      "community": 13,
+      "norm_label": "assemblymarker.cs",
+      "id": "backend_tgft_api_assemblymarker"
+    },
+    {
+      "label": "TGFT.Api",
+      "file_type": "code",
+      "source_file": "backend/TGFT.Api/AssemblyMarker.cs",
+      "source_location": "L1",
+      "type": "namespace",
+      "metadata": {
+        "kind": "csharp_namespace",
+        "namespace": "TGFT.Api"
+      },
+      "_origin": "ast",
+      "community": 13,
+      "norm_label": "tgft.api",
+      "id": "csharp_namespace:4f983fce32839e40"
+    },
+    {
+      "label": "AssemblyMarker",
+      "file_type": "code",
+      "source_file": "backend/TGFT.Api/AssemblyMarker.cs",
+      "source_location": "L6",
+      "metadata": {
+        "namespace": "TGFT.Api",
+        "scope_chain": [
+          "s0"
+        ]
+      },
+      "_origin": "ast",
+      "community": 13,
+      "norm_label": "assemblymarker",
+      "id": "backend_tgft_api_assemblymarker_tgft_api_assemblymarker"
+    },
+    {
+      "label": "AssemblyMarker.cs",
+      "file_type": "code",
+      "source_file": "backend/TGFT.Application/AssemblyMarker.cs",
+      "source_location": "L1",
+      "_origin": "ast",
+      "community": 14,
+      "norm_label": "assemblymarker.cs",
+      "id": "backend_tgft_application_assemblymarker"
+    },
+    {
+      "label": "TGFT.Application",
+      "file_type": "code",
+      "source_file": "backend/TGFT.Application/AssemblyMarker.cs",
+      "source_location": "L1",
+      "type": "namespace",
+      "metadata": {
+        "kind": "csharp_namespace",
+        "namespace": "TGFT.Application"
+      },
+      "_origin": "ast",
+      "community": 14,
+      "norm_label": "tgft.application",
+      "id": "csharp_namespace:c904f89e29232f27"
+    },
+    {
+      "label": "AssemblyMarker",
+      "file_type": "code",
+      "source_file": "backend/TGFT.Application/AssemblyMarker.cs",
+      "source_location": "L6",
+      "metadata": {
+        "namespace": "TGFT.Application",
+        "scope_chain": [
+          "s0"
+        ]
+      },
+      "_origin": "ast",
+      "community": 14,
+      "norm_label": "assemblymarker",
+      "id": "backend_tgft_application_assemblymarker_tgft_application_assemblymarker"
+    },
+    {
+      "label": "AssemblyMarker.cs",
+      "file_type": "code",
+      "source_file": "backend/TGFT.Domain/AssemblyMarker.cs",
+      "source_location": "L1",
+      "_origin": "ast",
+      "community": 15,
+      "norm_label": "assemblymarker.cs",
+      "id": "backend_tgft_domain_assemblymarker"
+    },
+    {
+      "label": "TGFT.Domain",
+      "file_type": "code",
+      "source_file": "backend/TGFT.Domain/AssemblyMarker.cs",
+      "source_location": "L1",
+      "type": "namespace",
+      "metadata": {
+        "kind": "csharp_namespace",
+        "namespace": "TGFT.Domain"
+      },
+      "_origin": "ast",
+      "community": 15,
+      "norm_label": "tgft.domain",
+      "id": "csharp_namespace:da0941348f8667e2"
+    },
+    {
+      "label": "AssemblyMarker",
+      "file_type": "code",
+      "source_file": "backend/TGFT.Domain/AssemblyMarker.cs",
+      "source_location": "L6",
+      "metadata": {
+        "namespace": "TGFT.Domain",
+        "scope_chain": [
+          "s0"
+        ]
+      },
+      "_origin": "ast",
+      "community": 15,
+      "norm_label": "assemblymarker",
+      "id": "backend_tgft_domain_assemblymarker_tgft_domain_assemblymarker"
+    },
+    {
+      "label": "AssemblyMarker.cs",
+      "file_type": "code",
+      "source_file": "backend/TGFT.Infrastructure/AssemblyMarker.cs",
+      "source_location": "L1",
+      "_origin": "ast",
+      "community": 16,
+      "norm_label": "assemblymarker.cs",
+      "id": "backend_tgft_infrastructure_assemblymarker"
+    },
+    {
+      "label": "TGFT.Infrastructure",
+      "file_type": "code",
+      "source_file": "backend/TGFT.Infrastructure/AssemblyMarker.cs",
+      "source_location": "L1",
+      "type": "namespace",
+      "metadata": {
+        "kind": "csharp_namespace",
+        "namespace": "TGFT.Infrastructure"
+      },
+      "_origin": "ast",
+      "community": 16,
+      "norm_label": "tgft.infrastructure",
+      "id": "csharp_namespace:91deb468cbb123bf"
+    },
+    {
+      "label": "AssemblyMarker",
+      "file_type": "code",
+      "source_file": "backend/TGFT.Infrastructure/AssemblyMarker.cs",
+      "source_location": "L6",
+      "metadata": {
+        "namespace": "TGFT.Infrastructure",
+        "scope_chain": [
+          "s0"
+        ]
+      },
+      "_origin": "ast",
+      "community": 16,
+      "norm_label": "assemblymarker",
+      "id": "backend_tgft_infrastructure_assemblymarker_tgft_infrastructure_assemblymarker"
+    },
+    {
+      "label": "LayerDependencyTests.cs",
+      "file_type": "code",
+      "source_file": "tests/TGFT.ArchitectureTests/LayerDependencyTests.cs",
+      "source_location": "L1",
+      "_origin": "ast",
+      "community": 6,
+      "norm_label": "layerdependencytests.cs",
+      "id": "tests_tgft_architecturetests_layerdependencytests"
+    },
+    {
+      "label": "TGFT.ArchitectureTests",
+      "file_type": "code",
+      "source_file": "tests/TGFT.ArchitectureTests/LayerDependencyTests.cs",
+      "source_location": "L4",
+      "type": "namespace",
+      "metadata": {
+        "kind": "csharp_namespace",
+        "namespace": "TGFT.ArchitectureTests"
+      },
+      "_origin": "ast",
+      "community": 6,
+      "norm_label": "tgft.architecturetests",
+      "id": "csharp_namespace:3227bbac6c339516"
+    },
+    {
+      "label": "LayerDependencyTests",
+      "file_type": "code",
+      "source_file": "tests/TGFT.ArchitectureTests/LayerDependencyTests.cs",
+      "source_location": "L10",
+      "metadata": {
+        "namespace": "TGFT.ArchitectureTests",
+        "scope_chain": [
+          "s51"
+        ]
+      },
+      "_origin": "ast",
+      "community": 6,
+      "norm_label": "layerdependencytests",
+      "id": "tests_tgft_architecturetests_layerdependencytests_tgft_architecturetests_layerdependencytests"
+    },
+    {
+      "label": "Assembly",
+      "file_type": "code",
+      "source_file": "",
+      "source_location": "",
+      "_origin": "ast",
+      "community": 6,
+      "norm_label": "assembly",
+      "id": "assembly"
+    },
+    {
+      "label": "string",
+      "file_type": "code",
+      "source_file": "",
+      "source_location": "",
+      "_origin": "ast",
+      "community": 6,
+      "norm_label": "string",
+      "id": "string"
+    },
+    {
+      "label": ".Domain_ShouldNotDependOnOtherLayers()",
+      "file_type": "code",
+      "source_file": "tests/TGFT.ArchitectureTests/LayerDependencyTests.cs",
+      "source_location": "L24",
+      "metadata": {
+        "namespace": "TGFT.ArchitectureTests",
+        "scope_chain": [
+          "s51"
+        ]
+      },
+      "_origin": "ast",
+      "community": 6,
+      "norm_label": ".domain_shouldnotdependonotherlayers()",
+      "id": "tests_tgft_architecturetests_layerdependencytests_tgft_architecturetests_layerdependencytests_domain_shouldnotdependonotherlayers"
+    },
+    {
+      "label": "Fact",
+      "file_type": "code",
+      "source_file": "",
+      "source_location": "",
+      "_origin": "ast",
+      "community": 6,
+      "norm_label": "fact",
+      "id": "fact"
+    },
+    {
+      "label": ".Domain_ShouldNotDependOnFrameworks()",
+      "file_type": "code",
+      "source_file": "tests/TGFT.ArchitectureTests/LayerDependencyTests.cs",
+      "source_location": "L35",
+      "metadata": {
+        "namespace": "TGFT.ArchitectureTests",
+        "scope_chain": [
+          "s51"
+        ]
+      },
+      "_origin": "ast",
+      "community": 6,
+      "norm_label": ".domain_shouldnotdependonframeworks()",
+      "id": "tests_tgft_architecturetests_layerdependencytests_tgft_architecturetests_layerdependencytests_domain_shouldnotdependonframeworks"
+    },
+    {
+      "label": ".Application_ShouldNotDependOnInfrastructureOrApi()",
+      "file_type": "code",
+      "source_file": "tests/TGFT.ArchitectureTests/LayerDependencyTests.cs",
+      "source_location": "L46",
+      "metadata": {
+        "namespace": "TGFT.ArchitectureTests",
+        "scope_chain": [
+          "s51"
+        ]
+      },
+      "_origin": "ast",
+      "community": 6,
+      "norm_label": ".application_shouldnotdependoninfrastructureorapi()",
+      "id": "tests_tgft_architecturetests_layerdependencytests_tgft_architecturetests_layerdependencytests_application_shouldnotdependoninfrastructureorapi"
+    },
+    {
+      "label": ".Application_ShouldNotDependOnEfCore()",
+      "file_type": "code",
+      "source_file": "tests/TGFT.ArchitectureTests/LayerDependencyTests.cs",
+      "source_location": "L57",
+      "metadata": {
+        "namespace": "TGFT.ArchitectureTests",
+        "scope_chain": [
+          "s51"
+        ]
+      },
+      "_origin": "ast",
+      "community": 6,
+      "norm_label": ".application_shouldnotdependonefcore()",
+      "id": "tests_tgft_architecturetests_layerdependencytests_tgft_architecturetests_layerdependencytests_application_shouldnotdependonefcore"
+    },
+    {
+      "label": ".Infrastructure_ShouldNotDependOnApi()",
+      "file_type": "code",
+      "source_file": "tests/TGFT.ArchitectureTests/LayerDependencyTests.cs",
+      "source_location": "L68",
+      "metadata": {
+        "namespace": "TGFT.ArchitectureTests",
+        "scope_chain": [
+          "s51"
+        ]
+      },
+      "_origin": "ast",
+      "community": 6,
+      "norm_label": ".infrastructure_shouldnotdependonapi()",
+      "id": "tests_tgft_architecturetests_layerdependencytests_tgft_architecturetests_layerdependencytests_infrastructure_shouldnotdependonapi"
+    },
+    {
+      "label": ".AssertSuccessful()",
+      "file_type": "code",
+      "source_file": "tests/TGFT.ArchitectureTests/LayerDependencyTests.cs",
+      "source_location": "L80",
+      "metadata": {
+        "namespace": "TGFT.ArchitectureTests",
+        "scope_chain": [
+          "s51"
+        ]
+      },
+      "_origin": "ast",
+      "community": 6,
+      "norm_label": ".assertsuccessful()",
+      "id": "tests_tgft_architecturetests_layerdependencytests_tgft_architecturetests_layerdependencytests_assertsuccessful"
+    },
+    {
+      "label": "TestResult",
+      "file_type": "code",
+      "source_file": "",
+      "source_location": "",
+      "_origin": "ast",
+      "community": 6,
+      "norm_label": "testresult",
+      "id": "testresult"
+    },
+    {
+      "label": "net10.0",
       "file_type": "concept",
-      "source_file": "docs/Projet Complet.md",
-      "source_location": "L487",
+      "source_file": "tests/TGFT.ArchitectureTests/TGFT.ArchitectureTests.csproj",
+      "source_location": null,
+      "_origin": "ast",
+      "community": 7,
+      "norm_label": "net10.0",
+      "id": "framework_net10_0"
+    },
+    {
+      "label": "Microsoft.NET.Test.Sdk (17.14.1)",
+      "file_type": "code",
+      "source_file": "tests/TGFT.ArchitectureTests/TGFT.ArchitectureTests.csproj",
+      "source_location": null,
+      "_origin": "ast",
+      "community": 7,
+      "norm_label": "microsoft.net.test.sdk (17.14.1)",
+      "id": "nuget_microsoft_net_test_sdk"
+    },
+    {
+      "label": "NetArchTest.Rules (1.3.2)",
+      "file_type": "code",
+      "source_file": "tests/TGFT.ArchitectureTests/TGFT.ArchitectureTests.csproj",
+      "source_location": null,
+      "_origin": "ast",
+      "community": 7,
+      "norm_label": "netarchtest.rules (1.3.2)",
+      "id": "nuget_netarchtest_rules"
+    },
+    {
+      "label": "xunit (2.9.3)",
+      "file_type": "code",
+      "source_file": "tests/TGFT.ArchitectureTests/TGFT.ArchitectureTests.csproj",
+      "source_location": null,
+      "_origin": "ast",
+      "community": 7,
+      "norm_label": "xunit (2.9.3)",
+      "id": "nuget_xunit"
+    },
+    {
+      "label": "xunit.runner.visualstudio (3.1.4)",
+      "file_type": "code",
+      "source_file": "tests/TGFT.ArchitectureTests/TGFT.ArchitectureTests.csproj",
+      "source_location": null,
+      "_origin": "ast",
+      "community": 7,
+      "norm_label": "xunit.runner.visualstudio (3.1.4)",
+      "id": "nuget_xunit_runner_visualstudio"
+    },
+    {
+      "label": "Microsoft.NET.Sdk",
+      "file_type": "concept",
+      "source_file": "tests/TGFT.ArchitectureTests/TGFT.ArchitectureTests.csproj",
+      "source_location": null,
+      "_origin": "ast",
+      "community": 7,
+      "norm_label": "microsoft.net.sdk",
+      "id": "sdk_microsoft_net_sdk"
+    },
+    {
+      "label": "CLAUDE.md (Projet TGFT)",
+      "file_type": "document",
+      "source_file": "claude.md",
+      "source_location": null,
       "source_url": null,
       "captured_at": null,
       "author": null,
       "contributor": null,
-      "rationale": "L'ancien projet Desktop\\Mes projets\\TGFT porte deja le nom 'tgft' (deduit du dossier) et publie 127.0.0.1:8080 ; un nom identique a fait fusionner les deux projets et le service api a ecrase tgft-api-1. Regle : toujours un name: explicite et unique dans le compose.",
-      "id": "docs_projet_complet_compose_project_rename",
-      "community": 6,
-      "norm_label": "compose project rename tgft -> tgft-platform (port 8080 -> 8081)"
+      "id": "claude_document",
+      "community": 11,
+      "norm_label": "claude.md (projet tgft)"
+    },
+    {
+      "label": "Regle n1 : ne jamais coder sans demande explicite",
+      "file_type": "rationale",
+      "source_file": "claude.md",
+      "source_location": "L3",
+      "source_url": null,
+      "captured_at": null,
+      "author": null,
+      "contributor": null,
+      "rationale": "Etudiant evalue : doit comprendre et maitriser tout ce qui est ecrit ; questions != demandes de code ; plan court avant changement multi-fichiers.",
+      "id": "claude_rule_no_code_without_request",
+      "community": 11,
+      "norm_label": "regle n1 : ne jamais coder sans demande explicite"
+    },
+    {
+      "label": "Regle de mise a jour graphify (une seule mise a jour juste avant le commit, code et doc)",
+      "file_type": "rationale",
+      "source_file": "claude.md",
+      "source_location": "L34",
+      "source_url": null,
+      "captured_at": null,
+      "author": null,
+      "contributor": null,
+      "rationale": "Code analyse sans LLM mais ~15-20k tokens de contexte par mise a jour ; doc re-extraite par LLM (~100k tokens pour Projet Complet.md). Graphe versionne doit correspondre a son commit.",
+      "id": "claude_graphify_update_rule",
+      "community": 11,
+      "norm_label": "regle de mise a jour graphify (une seule mise a jour juste avant le commit, code et doc)"
     },
     {
       "label": "Projet Complet.md (memoire vivante)",
@@ -1394,36 +1715,36 @@
       "source_location": null,
       "source_url": null,
       "captured_at": null,
-      "author": "Cedric Van Overlop",
+      "author": null,
       "contributor": null,
-      "id": "docs_projet_complet",
-      "community": 7,
+      "id": "docs_projet_complet_projet_complet",
+      "community": 11,
       "norm_label": "projet complet.md (memoire vivante)"
     },
     {
       "label": "Hierarchie des sources (CdC V2 > Projet Complet > claude.md)",
-      "file_type": "concept",
+      "file_type": "rationale",
       "source_file": "docs/Projet Complet.md",
-      "source_location": "L527",
+      "source_location": "L533",
       "source_url": null,
       "captured_at": null,
       "author": null,
       "contributor": null,
       "id": "docs_projet_complet_source_hierarchy",
-      "community": 7,
+      "community": 11,
       "norm_label": "hierarchie des sources (cdc v2 > projet complet > claude.md)"
     },
     {
       "label": "TGFT platform",
       "file_type": "concept",
       "source_file": "docs/Projet Complet.md",
-      "source_location": "L29",
+      "source_location": "L31",
       "source_url": null,
       "captured_at": null,
       "author": null,
       "contributor": null,
       "id": "docs_projet_complet_tgft_platform",
-      "community": 7,
+      "community": 12,
       "norm_label": "tgft platform"
     },
     {
@@ -1436,7 +1757,7 @@
       "author": null,
       "contributor": null,
       "id": "docs_projet_complet_cahier_des_charges_v2",
-      "community": 7,
+      "community": 11,
       "norm_label": "cahier des charges v2"
     },
     {
@@ -1449,21 +1770,21 @@
       "author": null,
       "contributor": null,
       "id": "docs_projet_complet_noyau_minimal",
-      "community": 4,
+      "community": 0,
       "norm_label": "noyau minimal"
     },
     {
       "label": "Marketplace ouverte",
       "file_type": "concept",
       "source_file": "docs/Projet Complet.md",
-      "source_location": "L129",
+      "source_location": "L41",
       "source_url": null,
       "captured_at": null,
       "author": null,
       "contributor": null,
-      "rationale": "Valeur premiere : contraindre le developpeur lui-meme a passer par des contrats publics, empechant la derive vers un monolithe accidentel ; l'ouverture aux tiers en est une consequence.",
+      "rationale": "Sa valeur premiere est la contrainte imposee au developpeur : tout passe par des contrats publics, empechant le monolithe accidentel.",
       "id": "docs_projet_complet_marketplace",
-      "community": 7,
+      "community": 12,
       "norm_label": "marketplace ouverte"
     },
     {
@@ -1476,7 +1797,7 @@
       "author": null,
       "contributor": null,
       "id": "docs_projet_complet_odoo",
-      "community": 7,
+      "community": 12,
       "norm_label": "odoo (reference)"
     },
     {
@@ -1489,34 +1810,34 @@
       "author": null,
       "contributor": null,
       "id": "docs_projet_complet_shopify_functions",
-      "community": 7,
+      "community": 0,
       "norm_label": "shopify functions (reference)"
     },
     {
       "label": "Groupe (tenant)",
       "file_type": "concept",
       "source_file": "docs/Projet Complet.md",
-      "source_location": "L504",
+      "source_location": "L510",
       "source_url": null,
       "captured_at": null,
       "author": null,
       "contributor": null,
       "id": "docs_projet_complet_groupe",
-      "community": 4,
+      "community": 2,
       "norm_label": "groupe (tenant)"
     },
     {
       "label": "Isolation multi-tenant structurelle",
-      "file_type": "concept",
+      "file_type": "rationale",
       "source_file": "docs/Projet Complet.md",
       "source_location": "L260",
       "source_url": null,
       "captured_at": null,
       "author": null,
       "contributor": null,
-      "rationale": "Ne jamais compter sur un filtre ajoute a la main : une seule omission suffit et elle est silencieuse.",
+      "rationale": "Une seule omission de filtre manuel suffit et elle est silencieuse.",
       "id": "docs_projet_complet_multi_tenant_isolation",
-      "community": 4,
+      "community": 2,
       "norm_label": "isolation multi-tenant structurelle"
     },
     {
@@ -1529,7 +1850,7 @@
       "author": null,
       "contributor": null,
       "id": "docs_projet_complet_budget_constraint",
-      "community": 0,
+      "community": 8,
       "norm_label": "budget < 10 eur/mois, un serveur x86"
     },
     {
@@ -1541,8 +1862,9 @@
       "captured_at": null,
       "author": null,
       "contributor": null,
+      "rationale": "Contributeur produit du contenu et rien d'autre (C7, C8), verifie par tests d'autorisation.",
       "id": "docs_projet_complet_roles",
-      "community": 4,
+      "community": 0,
       "norm_label": "roles (fondateur, admin, contributeur, lecteur)"
     },
     {
@@ -1555,7 +1877,7 @@
       "author": null,
       "contributor": null,
       "id": "docs_projet_complet_native_modules",
-      "community": 12,
+      "community": 0,
       "norm_label": "modules natifs"
     },
     {
@@ -1568,12 +1890,12 @@
       "author": null,
       "contributor": null,
       "id": "docs_projet_complet_external_modules",
-      "community": 9,
+      "community": 12,
       "norm_label": "modules externes"
     },
     {
       "label": "Contrats partages des modules",
-      "file_type": "concept",
+      "file_type": "rationale",
       "source_file": "docs/Projet Complet.md",
       "source_location": "L115",
       "source_url": null,
@@ -1581,20 +1903,20 @@
       "author": null,
       "contributor": null,
       "id": "docs_projet_complet_shared_module_contracts",
-      "community": 9,
+      "community": 2,
       "norm_label": "contrats partages des modules"
     },
     {
       "label": "Manifeste",
       "file_type": "concept",
       "source_file": "docs/Projet Complet.md",
-      "source_location": "L512",
+      "source_location": "L518",
       "source_url": null,
       "captured_at": null,
       "author": null,
       "contributor": null,
       "id": "docs_projet_complet_manifeste",
-      "community": 9,
+      "community": 2,
       "norm_label": "manifeste"
     },
     {
@@ -1607,7 +1929,7 @@
       "author": null,
       "contributor": null,
       "id": "docs_projet_complet_team_builder",
-      "community": 12,
+      "community": 0,
       "norm_label": "team builder"
     },
     {
@@ -1619,9 +1941,8 @@
       "captured_at": null,
       "author": null,
       "contributor": null,
-      "rationale": "Les identifiants du jeu changent a chaque set (~4 mois) : un ancien lien doit rester interpretable.",
       "id": "docs_projet_complet_versioned_url_encoding",
-      "community": 12,
+      "community": 0,
       "norm_label": "encodage d'url versionne"
     },
     {
@@ -1634,27 +1955,27 @@
       "author": null,
       "contributor": null,
       "id": "docs_projet_complet_tier_lists",
-      "community": 12,
+      "community": 0,
       "norm_label": "tier lists"
     },
     {
       "label": "Module Tournoi (M16)",
       "file_type": "concept",
       "source_file": "docs/Projet Complet.md",
-      "source_location": "L108",
+      "source_location": "L380",
       "source_url": null,
       "captured_at": null,
       "author": null,
       "contributor": null,
       "id": "docs_projet_complet_tournoi_module",
-      "community": 9,
+      "community": 12,
       "norm_label": "module tournoi (m16)"
     },
     {
       "label": "Bac a sable WebAssembly",
       "file_type": "concept",
       "source_file": "docs/Projet Complet.md",
-      "source_location": "L136",
+      "source_location": "L137",
       "source_url": null,
       "captured_at": null,
       "author": null,
@@ -1665,62 +1986,62 @@
     },
     {
       "label": "Pas de fonctions hotes",
-      "file_type": "concept",
+      "file_type": "rationale",
       "source_file": "docs/Projet Complet.md",
-      "source_location": "L432",
+      "source_location": "L139",
       "source_url": null,
       "captured_at": null,
       "author": null,
       "contributor": null,
-      "rationale": "Chaque question qu'un module pourrait poser serait une porte supplementaire a surveiller ; seule la reponse est a controler.",
+      "rationale": "Chaque question posee par le module serait une porte de plus a surveiller.",
       "id": "docs_projet_complet_no_host_functions",
-      "community": 7,
+      "community": 0,
       "norm_label": "pas de fonctions hotes"
     },
     {
       "label": "Paquet",
       "file_type": "concept",
       "source_file": "docs/Projet Complet.md",
-      "source_location": "L506",
+      "source_location": "L512",
       "source_url": null,
       "captured_at": null,
       "author": null,
       "contributor": null,
       "id": "docs_projet_complet_paquet",
-      "community": 0,
+      "community": 8,
       "norm_label": "paquet"
     },
     {
       "label": "Reponse",
       "file_type": "concept",
       "source_file": "docs/Projet Complet.md",
-      "source_location": "L507",
+      "source_location": "L513",
       "source_url": null,
       "captured_at": null,
       "author": null,
       "contributor": null,
       "id": "docs_projet_complet_reponse",
-      "community": 0,
+      "community": 8,
       "norm_label": "reponse"
     },
     {
       "label": "Zone de confiance (API)",
       "file_type": "concept",
       "source_file": "docs/Projet Complet.md",
-      "source_location": "L509",
+      "source_location": "L515",
       "source_url": null,
       "captured_at": null,
       "author": null,
       "contributor": null,
       "id": "docs_projet_complet_zone_de_confiance",
-      "community": 0,
+      "community": 8,
       "norm_label": "zone de confiance (api)"
     },
     {
       "label": "Salle des machines",
       "file_type": "concept",
       "source_file": "docs/Projet Complet.md",
-      "source_location": "L159",
+      "source_location": "L514",
       "source_url": null,
       "captured_at": null,
       "author": null,
@@ -1733,13 +2054,13 @@
       "label": "Classeur (SQLite par module et par groupe)",
       "file_type": "concept",
       "source_file": "docs/Projet Complet.md",
-      "source_location": "L161",
+      "source_location": "L511",
       "source_url": null,
       "captured_at": null,
       "author": null,
       "contributor": null,
       "id": "docs_projet_complet_classeur",
-      "community": 0,
+      "community": 8,
       "norm_label": "classeur (sqlite par module et par groupe)"
     },
     {
@@ -1752,20 +2073,20 @@
       "author": null,
       "contributor": null,
       "id": "docs_projet_complet_call_serialization",
-      "community": 0,
+      "community": 8,
       "norm_label": "serialisation des appels"
     },
     {
       "label": "Pseudonymes",
       "file_type": "concept",
       "source_file": "docs/Projet Complet.md",
-      "source_location": "L162",
+      "source_location": "L519",
       "source_url": null,
       "captured_at": null,
       "author": null,
       "contributor": null,
       "id": "docs_projet_complet_pseudonymes",
-      "community": 0,
+      "community": 8,
       "norm_label": "pseudonymes"
     },
     {
@@ -1791,7 +2112,7 @@
       "author": null,
       "contributor": null,
       "id": "docs_projet_complet_trust_levels",
-      "community": 9,
+      "community": 0,
       "norm_label": "niveaux de confiance + arret d'urgence"
     },
     {
@@ -1804,7 +2125,7 @@
       "author": null,
       "contributor": null,
       "id": "docs_projet_complet_hostile_module_suite",
-      "community": 4,
+      "community": 0,
       "norm_label": "suite de modules hostiles (m10)"
     },
     {
@@ -1830,7 +2151,7 @@
       "author": null,
       "contributor": null,
       "id": "docs_projet_complet_javy",
-      "community": 9,
+      "community": 0,
       "norm_label": "javy"
     },
     {
@@ -1848,7 +2169,7 @@
     },
     {
       "label": "Plan de repli Jint",
-      "file_type": "concept",
+      "file_type": "rationale",
       "source_file": "docs/Projet Complet.md",
       "source_location": "L221",
       "source_url": null,
@@ -1869,7 +2190,7 @@
       "author": null,
       "contributor": null,
       "id": "docs_projet_complet_module_lifecycle",
-      "community": 9,
+      "community": 0,
       "norm_label": "cycle de vie d'un module externe"
     },
     {
@@ -1895,7 +2216,7 @@
       "author": null,
       "contributor": null,
       "id": "docs_projet_complet_attested_build",
-      "community": 9,
+      "community": 0,
       "norm_label": "compilation attestee (m4)"
     },
     {
@@ -1908,7 +2229,7 @@
       "author": null,
       "contributor": null,
       "id": "docs_projet_complet_discord_external_commands",
-      "community": 6,
+      "community": 2,
       "norm_label": "commandes discord des modules externes (p3)"
     },
     {
@@ -1921,7 +2242,7 @@
       "author": null,
       "contributor": null,
       "id": "docs_projet_complet_rgpd",
-      "community": 12,
+      "community": 8,
       "norm_label": "rgpd"
     },
     {
@@ -1934,21 +2255,21 @@
       "author": null,
       "contributor": null,
       "id": "docs_projet_complet_d11_native_purge_contract",
-      "community": 12,
+      "community": 8,
       "norm_label": "d11 contrat purge/anonymisation natif"
     },
     {
       "label": "B8 suppression du groupe",
       "file_type": "concept",
       "source_file": "docs/Projet Complet.md",
-      "source_location": "L330",
+      "source_location": "L328",
       "source_url": null,
       "captured_at": null,
       "author": null,
       "contributor": null,
-      "rationale": "Seule story qui exerce reellement le contrat de purge D11 et la suppression des classeurs M13 : une garantie qu'on n'exerce pas est une garantie qu'on ne possede pas.",
+      "rationale": "Seule story qui exerce reellement le contrat de purge D11 et la suppression des classeurs M13.",
       "id": "docs_projet_complet_b8_group_deletion",
-      "community": 12,
+      "community": 8,
       "norm_label": "b8 suppression du groupe"
     },
     {
@@ -1961,7 +2282,7 @@
       "author": null,
       "contributor": null,
       "id": "docs_projet_complet_atlassian_forge_sql",
-      "community": 0,
+      "community": 8,
       "norm_label": "atlassian forge sql (reference)"
     },
     {
@@ -1979,7 +2300,7 @@
     },
     {
       "label": "Regles d'exploitation Wasmtime (x86, compilateur par defaut, MAJ rapides)",
-      "file_type": "concept",
+      "file_type": "rationale",
       "source_file": "docs/Projet Complet.md",
       "source_location": "L202",
       "source_url": null,
@@ -1999,8 +2320,9 @@
       "captured_at": null,
       "author": null,
       "contributor": null,
+      "rationale": "Domain et Application separes pour que la bascule Javy->Jint ne touche qu'Infrastructure et que NetArchTest verifie mecaniquement Domain.",
       "id": "docs_projet_complet_clean_architecture",
-      "community": 4,
+      "community": 9,
       "norm_label": "clean architecture (domain/application/infrastructure/api)"
     },
     {
@@ -2013,7 +2335,7 @@
       "author": null,
       "contributor": null,
       "id": "docs_projet_complet_imodulerunner",
-      "community": 0,
+      "community": 9,
       "norm_label": "imodulerunner (port)"
     },
     {
@@ -2026,7 +2348,7 @@
       "author": null,
       "contributor": null,
       "id": "docs_projet_complet_wasmtimemodulerunner",
-      "community": 0,
+      "community": 9,
       "norm_label": "wasmtimemodulerunner"
     },
     {
@@ -2039,7 +2361,7 @@
       "author": null,
       "contributor": null,
       "id": "docs_projet_complet_iclasseurstore",
-      "community": 4,
+      "community": 9,
       "norm_label": "iclasseurstore (port)"
     },
     {
@@ -2052,12 +2374,12 @@
       "author": null,
       "contributor": null,
       "id": "docs_projet_complet_netarchtest_boundaries",
-      "community": 4,
+      "community": 9,
       "norm_label": "frontieres netarchtest (d8)"
     },
     {
       "label": "Les tests sont la protection",
-      "file_type": "concept",
+      "file_type": "rationale",
       "source_file": "docs/Projet Complet.md",
       "source_location": "L276",
       "source_url": null,
@@ -2065,7 +2387,7 @@
       "author": null,
       "contributor": null,
       "id": "docs_projet_complet_tests_as_security",
-      "community": 4,
+      "community": 9,
       "norm_label": "les tests sont la protection"
     },
     {
@@ -2078,7 +2400,7 @@
       "author": null,
       "contributor": null,
       "id": "docs_projet_complet_testcontainers",
-      "community": 4,
+      "community": 2,
       "norm_label": "testcontainers"
     },
     {
@@ -2091,7 +2413,7 @@
       "author": null,
       "contributor": null,
       "id": "docs_projet_complet_postgresql_rls",
-      "community": 4,
+      "community": 2,
       "norm_label": "postgresql row level security"
     },
     {
@@ -2104,7 +2426,7 @@
       "author": null,
       "contributor": null,
       "id": "docs_projet_complet_ef_core_global_filters",
-      "community": 4,
+      "community": 2,
       "norm_label": "filtres globaux ef core"
     },
     {
@@ -2117,7 +2439,7 @@
       "author": null,
       "contributor": null,
       "id": "docs_projet_complet_caddy",
-      "community": 6,
+      "community": 2,
       "norm_label": "caddy (proxy inverse)"
     },
     {
@@ -2130,7 +2452,7 @@
       "author": null,
       "contributor": null,
       "id": "docs_projet_complet_docker_compose",
-      "community": 6,
+      "community": 2,
       "norm_label": "docker / docker compose"
     },
     {
@@ -2156,7 +2478,7 @@
       "author": null,
       "contributor": null,
       "id": "docs_projet_complet_aspnet_core",
-      "community": 6,
+      "community": 2,
       "norm_label": "asp.net core (c#)"
     },
     {
@@ -2169,7 +2491,7 @@
       "author": null,
       "contributor": null,
       "id": "docs_projet_complet_discord_bot",
-      "community": 6,
+      "community": 2,
       "norm_label": "bot discord (discord.net)"
     },
     {
@@ -2187,7 +2509,7 @@
     },
     {
       "label": "Pas de Redis",
-      "file_type": "concept",
+      "file_type": "rationale",
       "source_file": "docs/Projet Complet.md",
       "source_location": "L434",
       "source_url": null,
@@ -2195,7 +2517,7 @@
       "author": null,
       "contributor": null,
       "id": "docs_projet_complet_no_redis",
-      "community": 0,
+      "community": 8,
       "norm_label": "pas de redis"
     },
     {
@@ -2207,8 +2529,9 @@
       "captured_at": null,
       "author": null,
       "contributor": null,
+      "rationale": "Clause reseau couvre l'exploitation en service en ligne.",
       "id": "docs_projet_complet_agpl_license",
-      "community": 9,
+      "community": 0,
       "norm_label": "licence agpl-3.0 + dco"
     },
     {
@@ -2221,12 +2544,12 @@
       "author": null,
       "contributor": null,
       "id": "docs_projet_complet_riot_rules",
-      "community": 9,
+      "community": 12,
       "norm_label": "regles riot games"
     },
     {
       "label": "Pas de modules externes en DLL",
-      "file_type": "concept",
+      "file_type": "rationale",
       "source_file": "docs/Projet Complet.md",
       "source_location": "L427",
       "source_url": null,
@@ -2239,7 +2562,7 @@
     },
     {
       "label": "Pas d'Extism",
-      "file_type": "concept",
+      "file_type": "rationale",
       "source_file": "docs/Projet Complet.md",
       "source_location": "L431",
       "source_url": null,
@@ -2260,7 +2583,7 @@
       "author": null,
       "contributor": null,
       "id": "docs_projet_complet_open_questions",
-      "community": 12,
+      "community": 0,
       "norm_label": "questions ouvertes (q1-q7)"
     },
     {
@@ -2280,7 +2603,7 @@
       "label": "TGFT.ModuleHost",
       "file_type": "concept",
       "source_file": "docs/Projet Complet.md",
-      "source_location": "L470",
+      "source_location": "L478",
       "source_url": null,
       "captured_at": null,
       "author": null,
@@ -2293,222 +2616,203 @@
       "label": "Correctif CVE-2026-49451 (Microsoft.OpenApi)",
       "file_type": "concept",
       "source_file": "docs/Projet Complet.md",
-      "source_location": "L493",
+      "source_location": "L499",
       "source_url": null,
       "captured_at": null,
       "author": null,
       "contributor": null,
       "id": "docs_projet_complet_cve_2026_49451_fix",
-      "community": 4,
+      "community": 9,
       "norm_label": "correctif cve-2026-49451 (microsoft.openapi)"
     },
     {
       "label": "graphify-out versionne dans git",
       "file_type": "concept",
       "source_file": "docs/Projet Complet.md",
-      "source_location": "L488",
+      "source_location": "L494",
       "source_url": null,
       "captured_at": null,
       "author": null,
       "contributor": null,
       "id": "docs_projet_complet_graphify_out_versioned",
-      "community": 7,
+      "community": 11,
       "norm_label": "graphify-out versionne dans git"
     },
     {
       "label": "Squelette de solution (.NET 10 + Angular 22)",
       "file_type": "concept",
       "source_file": "docs/Projet Complet.md",
-      "source_location": "L492",
+      "source_location": "L498",
       "source_url": null,
       "captured_at": null,
       "author": null,
       "contributor": null,
       "id": "docs_projet_complet_solution_skeleton",
-      "community": 4,
+      "community": 9,
       "norm_label": "squelette de solution (.net 10 + angular 22)"
     },
     {
       "label": "Pile Docker locale (caddy, api, postgres)",
       "file_type": "concept",
       "source_file": "docs/Projet Complet.md",
-      "source_location": "L489",
+      "source_location": "L495",
       "source_url": null,
       "captured_at": null,
       "author": null,
       "contributor": null,
       "id": "docs_projet_complet_local_docker_stack",
-      "community": 6,
+      "community": 2,
       "norm_label": "pile docker locale (caddy, api, postgres)"
     },
     {
       "label": "Depot git separe dans Desktop/TGFT",
       "file_type": "concept",
       "source_file": "docs/Projet Complet.md",
-      "source_location": "L490",
+      "source_location": "L496",
       "source_url": null,
       "captured_at": null,
       "author": null,
       "contributor": null,
       "id": "docs_projet_complet_separate_git_repo",
-      "community": 6,
+      "community": 9,
       "norm_label": "depot git separe dans desktop/tgft"
+    },
+    {
+      "label": "Compose project rename tgft -> tgft-platform (port 8080 -> 8081)",
+      "file_type": "concept",
+      "source_file": "docs/Projet Complet.md",
+      "source_location": "L493",
+      "source_url": null,
+      "captured_at": null,
+      "author": null,
+      "contributor": null,
+      "id": "docs_projet_complet_compose_project_rename",
+      "community": 2,
+      "norm_label": "compose project rename tgft -> tgft-platform (port 8080 -> 8081)"
+    },
+    {
+      "label": "tests/TGFT.ArchitectureTests (xUnit + NetArchTest, 5 regles)",
+      "file_type": "concept",
+      "source_file": "docs/Projet Complet.md",
+      "source_location": "L491",
+      "source_url": null,
+      "captured_at": null,
+      "author": null,
+      "contributor": null,
+      "rationale": "Cree en premier pour que les frontieres soient verifiees des la premiere ligne de code metier.",
+      "id": "docs_projet_complet_architecture_tests_project",
+      "community": 9,
+      "norm_label": "tests/tgft.architecturetests (xunit + netarchtest, 5 regles)"
+    },
+    {
+      "label": "AssemblyMarker (classe vide par projet)",
+      "file_type": "concept",
+      "source_file": "docs/Projet Complet.md",
+      "source_location": "L491",
+      "source_url": null,
+      "captured_at": null,
+      "author": null,
+      "contributor": null,
+      "id": "docs_projet_complet_assembly_marker",
+      "community": 9,
+      "norm_label": "assemblymarker (classe vide par projet)"
+    },
+    {
+      "label": "Ordre de realisation (tests archi -> noyau -> modules natifs -> marketplace)",
+      "file_type": "rationale",
+      "source_file": "docs/Projet Complet.md",
+      "source_location": "L463",
+      "source_url": null,
+      "captured_at": null,
+      "author": null,
+      "contributor": null,
+      "rationale": "Q6 tranchee plus tard ; risque limite car le repli Jint ne touche qu'Infrastructure et la salle des machines.",
+      "id": "docs_projet_complet_realization_order",
+      "community": 0,
+      "norm_label": "ordre de realisation (tests archi -> noyau -> modules natifs -> marketplace)"
+    },
+    {
+      "label": "Decision 2026-10-21 : graphify mis a jour une seule fois avant le commit",
+      "file_type": "rationale",
+      "source_file": "docs/Projet Complet.md",
+      "source_location": "L490",
+      "source_url": null,
+      "captured_at": null,
+      "author": null,
+      "contributor": null,
+      "rationale": "Hook post-commit ecarte : il laisserait le graphe versionne avec un commit de retard.",
+      "id": "docs_projet_complet_graphify_single_update_decision",
+      "community": 11,
+      "norm_label": "decision 2026-10-21 : graphify mis a jour une seule fois avant le commit"
+    },
+    {
+      "label": "PostgreSQL",
+      "file_type": "concept",
+      "source_file": "docs/Projet Complet.md",
+      "source_location": "L231",
+      "source_url": null,
+      "captured_at": null,
+      "author": null,
+      "contributor": null,
+      "id": "docs_projet_complet_postgresql",
+      "community": 2,
+      "norm_label": "postgresql"
+    },
+    {
+      "label": "GitHub Actions (CI)",
+      "file_type": "concept",
+      "source_file": "docs/Projet Complet.md",
+      "source_location": "L242",
+      "source_url": null,
+      "captured_at": null,
+      "author": null,
+      "contributor": null,
+      "id": "docs_projet_complet_github_actions_ci",
+      "community": 0,
+      "norm_label": "github actions (ci)"
+    },
+    {
+      "label": "L4 commandes du bot selon modules actives",
+      "file_type": "concept",
+      "source_file": "docs/Projet Complet.md",
+      "source_location": "L419",
+      "source_url": null,
+      "captured_at": null,
+      "author": null,
+      "contributor": null,
+      "rationale": "Prouve que la modularite traverse toute la plateforme, pas seulement le web.",
+      "id": "docs_projet_complet_l4_bot_commands_per_module",
+      "community": 2,
+      "norm_label": "l4 commandes du bot selon modules actives"
+    },
+    {
+      "label": "M8 interruption d'un module depassant ses limites",
+      "file_type": "concept",
+      "source_file": "docs/Projet Complet.md",
+      "source_location": "L372",
+      "source_url": null,
+      "captured_at": null,
+      "author": null,
+      "contributor": null,
+      "id": "docs_projet_complet_resource_limits_m8",
+      "community": 0,
+      "norm_label": "m8 interruption d'un module depassant ses limites"
+    },
+    {
+      "label": "M12 modules externes ne connaissent jamais l'identite reelle",
+      "file_type": "concept",
+      "source_file": "docs/Projet Complet.md",
+      "source_location": "L376",
+      "source_url": null,
+      "captured_at": null,
+      "author": null,
+      "contributor": null,
+      "id": "docs_projet_complet_pseudonym_property_m12",
+      "community": 0,
+      "norm_label": "m12 modules externes ne connaissent jamais l'identite reelle"
     }
   ],
   "links": [
-    {
-      "relation": "contains",
-      "confidence": "EXTRACTED",
-      "source_file": "TGFT.slnx",
-      "weight": 1.0,
-      "confidence_score": 1.0,
-      "source": "tgft",
-      "target": "backend_tgft_api_tgft_api"
-    },
-    {
-      "relation": "contains",
-      "confidence": "EXTRACTED",
-      "source_file": "TGFT.slnx",
-      "weight": 1.0,
-      "confidence_score": 1.0,
-      "source": "tgft",
-      "target": "backend_tgft_application_tgft_application"
-    },
-    {
-      "relation": "contains",
-      "confidence": "EXTRACTED",
-      "source_file": "TGFT.slnx",
-      "weight": 1.0,
-      "confidence_score": 1.0,
-      "source": "tgft",
-      "target": "backend_tgft_domain_tgft_domain"
-    },
-    {
-      "relation": "contains",
-      "confidence": "EXTRACTED",
-      "source_file": "TGFT.slnx",
-      "weight": 1.0,
-      "confidence_score": 1.0,
-      "source": "tgft",
-      "target": "backend_tgft_infrastructure_tgft_infrastructure"
-    },
-    {
-      "relation": "references",
-      "confidence": "EXTRACTED",
-      "source_file": "backend/TGFT.Api/TGFT.Api.csproj",
-      "weight": 1.0,
-      "confidence_score": 1.0,
-      "source": "backend_tgft_api_tgft_api",
-      "target": "backend_tgft_api_tgft_api_csproj_framework_net10_0"
-    },
-    {
-      "relation": "imports",
-      "confidence": "EXTRACTED",
-      "source_file": "backend/TGFT.Api/TGFT.Api.csproj",
-      "weight": 1.0,
-      "confidence_score": 1.0,
-      "source": "backend_tgft_api_tgft_api",
-      "target": "backend_tgft_application_tgft_application"
-    },
-    {
-      "relation": "imports",
-      "confidence": "EXTRACTED",
-      "source_file": "backend/TGFT.Api/TGFT.Api.csproj",
-      "weight": 1.0,
-      "confidence_score": 1.0,
-      "source": "backend_tgft_api_tgft_api",
-      "target": "backend_tgft_infrastructure_tgft_infrastructure"
-    },
-    {
-      "relation": "imports",
-      "confidence": "EXTRACTED",
-      "source_file": "backend/TGFT.Api/TGFT.Api.csproj",
-      "weight": 1.0,
-      "confidence_score": 1.0,
-      "source": "backend_tgft_api_tgft_api",
-      "target": "nuget_microsoft_aspnetcore_openapi"
-    },
-    {
-      "relation": "references",
-      "confidence": "EXTRACTED",
-      "source_file": "backend/TGFT.Api/TGFT.Api.csproj",
-      "weight": 1.0,
-      "confidence_score": 1.0,
-      "source": "backend_tgft_api_tgft_api",
-      "target": "sdk_microsoft_net_sdk_web"
-    },
-    {
-      "relation": "references",
-      "confidence": "EXTRACTED",
-      "source_file": "backend/TGFT.Application/TGFT.Application.csproj",
-      "weight": 1.0,
-      "confidence_score": 1.0,
-      "source": "backend_tgft_application_tgft_application",
-      "target": "backend_tgft_application_tgft_application_csproj_framework_net10_0"
-    },
-    {
-      "relation": "references",
-      "confidence": "EXTRACTED",
-      "source_file": "backend/TGFT.Application/TGFT.Application.csproj",
-      "weight": 1.0,
-      "confidence_score": 1.0,
-      "source": "backend_tgft_application_tgft_application",
-      "target": "backend_tgft_application_tgft_application_csproj_sdk_microsoft_net_sdk"
-    },
-    {
-      "relation": "imports",
-      "confidence": "EXTRACTED",
-      "source_file": "backend/TGFT.Application/TGFT.Application.csproj",
-      "weight": 1.0,
-      "confidence_score": 1.0,
-      "source": "backend_tgft_application_tgft_application",
-      "target": "backend_tgft_domain_tgft_domain"
-    },
-    {
-      "relation": "imports",
-      "confidence": "EXTRACTED",
-      "source_file": "backend/TGFT.Infrastructure/TGFT.Infrastructure.csproj",
-      "weight": 1.0,
-      "confidence_score": 1.0,
-      "source": "backend_tgft_infrastructure_tgft_infrastructure",
-      "target": "backend_tgft_application_tgft_application"
-    },
-    {
-      "relation": "references",
-      "confidence": "EXTRACTED",
-      "source_file": "backend/TGFT.Domain/TGFT.Domain.csproj",
-      "weight": 1.0,
-      "confidence_score": 1.0,
-      "source": "backend_tgft_domain_tgft_domain",
-      "target": "backend_tgft_domain_tgft_domain_csproj_framework_net10_0"
-    },
-    {
-      "relation": "references",
-      "confidence": "EXTRACTED",
-      "source_file": "backend/TGFT.Domain/TGFT.Domain.csproj",
-      "weight": 1.0,
-      "confidence_score": 1.0,
-      "source": "backend_tgft_domain_tgft_domain",
-      "target": "backend_tgft_domain_tgft_domain_csproj_sdk_microsoft_net_sdk"
-    },
-    {
-      "relation": "references",
-      "confidence": "EXTRACTED",
-      "source_file": "backend/TGFT.Infrastructure/TGFT.Infrastructure.csproj",
-      "weight": 1.0,
-      "confidence_score": 1.0,
-      "source": "backend_tgft_infrastructure_tgft_infrastructure",
-      "target": "backend_tgft_infrastructure_tgft_infrastructure_csproj_framework_net10_0"
-    },
-    {
-      "relation": "references",
-      "confidence": "EXTRACTED",
-      "source_file": "backend/TGFT.Infrastructure/TGFT.Infrastructure.csproj",
-      "weight": 1.0,
-      "confidence_score": 1.0,
-      "source": "backend_tgft_infrastructure_tgft_infrastructure",
-      "target": "backend_tgft_infrastructure_tgft_infrastructure_csproj_sdk_microsoft_net_sdk"
-    },
     {
       "relation": "contains",
       "confidence": "EXTRACTED",
@@ -3540,16 +3844,6 @@
       "target": "docs_projet_complet_tgft_platform"
     },
     {
-      "relation": "cites",
-      "confidence": "EXTRACTED",
-      "confidence_score": 1.0,
-      "source_file": "docs/Projet Complet.md",
-      "source_location": "L5",
-      "weight": 1.0,
-      "source": "docs_projet_complet_cahier_des_charges_v2",
-      "target": "docs_cedric_van_overlop___cahier_des_charges_projet_integration_v2_cahier_des_charges_v2"
-    },
-    {
       "relation": "references",
       "confidence": "EXTRACTED",
       "confidence_score": 1.0,
@@ -3613,96 +3907,6 @@
       "relation": "references",
       "confidence": "EXTRACTED",
       "confidence_score": 1.0,
-      "source_file": "claude.md",
-      "source_location": "L28",
-      "weight": 1.0,
-      "source": "claude_document",
-      "target": "claude_graphify_update_rule"
-    },
-    {
-      "relation": "references",
-      "confidence": "EXTRACTED",
-      "confidence_score": 1.0,
-      "source_file": "claude.md",
-      "source_location": "L3",
-      "weight": 1.0,
-      "source": "claude_document",
-      "target": "claude_rule_no_code_without_request"
-    },
-    {
-      "relation": "references",
-      "confidence": "EXTRACTED",
-      "confidence_score": 1.0,
-      "source_file": "claude.md",
-      "source_location": "L24",
-      "weight": 1.0,
-      "source": "claude_document",
-      "target": "docs_projet_complet"
-    },
-    {
-      "relation": "cites",
-      "confidence": "EXTRACTED",
-      "confidence_score": 1.0,
-      "source_file": "claude.md",
-      "source_location": "L45",
-      "weight": 1.0,
-      "source": "claude_document",
-      "target": "docs_projet_complet_cahier_des_charges_v2"
-    },
-    {
-      "relation": "references",
-      "confidence": "EXTRACTED",
-      "confidence_score": 1.0,
-      "source_file": "claude.md",
-      "source_location": "L89",
-      "weight": 1.0,
-      "source": "claude_document",
-      "target": "docs_projet_complet_protection_layers"
-    },
-    {
-      "relation": "references",
-      "confidence": "EXTRACTED",
-      "confidence_score": 1.0,
-      "source_file": "claude.md",
-      "source_location": "L43",
-      "weight": 1.0,
-      "source": "claude_document",
-      "target": "docs_projet_complet_tgft_platform"
-    },
-    {
-      "relation": "references",
-      "confidence": "EXTRACTED",
-      "confidence_score": 1.0,
-      "source_file": "docs/Projet Complet.md",
-      "source_location": "L4",
-      "weight": 1.0,
-      "source": "docs_projet_complet_source_hierarchy",
-      "target": "claude_document"
-    },
-    {
-      "relation": "conceptually_related_to",
-      "confidence": "EXTRACTED",
-      "confidence_score": 1.0,
-      "source_file": "claude.md",
-      "source_location": "L39",
-      "weight": 1.0,
-      "source": "claude_graphify_update_rule",
-      "target": "claude_rule_no_code_without_request"
-    },
-    {
-      "relation": "conceptually_related_to",
-      "confidence": "EXTRACTED",
-      "confidence_score": 1.0,
-      "source_file": "docs/Projet Complet.md",
-      "source_location": "L488",
-      "weight": 1.0,
-      "source": "docs_projet_complet_graphify_out_versioned",
-      "target": "claude_graphify_update_rule"
-    },
-    {
-      "relation": "references",
-      "confidence": "EXTRACTED",
-      "confidence_score": 1.0,
       "source_file": "docker-compose.yml",
       "source_location": "L19",
       "weight": 1.0,
@@ -3748,16 +3952,6 @@
       "weight": 1.0,
       "source": "docker_compose",
       "target": "docs_projet_complet_docker_compose"
-    },
-    {
-      "relation": "implements",
-      "confidence": "EXTRACTED",
-      "confidence_score": 1.0,
-      "source_file": "docs/Projet Complet.md",
-      "source_location": "L489",
-      "weight": 1.0,
-      "source": "docker_compose",
-      "target": "docs_projet_complet_local_docker_stack"
     },
     {
       "relation": "rationale_for",
@@ -3860,43 +4054,535 @@
       "target": "docs_projet_complet_postgresql_rls"
     },
     {
-      "relation": "conceptually_related_to",
+      "relation": "contains",
       "confidence": "EXTRACTED",
-      "confidence_score": 1.0,
-      "source_file": "docs/Projet Complet.md",
-      "source_location": "L489",
+      "source_file": "TGFT.slnx",
       "weight": 1.0,
-      "source": "docs_projet_complet_compose_project_rename",
-      "target": "docs_projet_complet_local_docker_stack"
+      "confidence_score": 1.0,
+      "source": "tgft",
+      "target": "c_users_user_desktop_tgft_backend_tgft_api_tgft_api_csproj"
     },
     {
-      "relation": "semantically_similar_to",
-      "confidence": "INFERRED",
-      "confidence_score": 0.65,
-      "source_file": "docs/Projet Complet.md",
-      "source_location": "L487",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "TGFT.slnx",
       "weight": 1.0,
-      "source": "docs_projet_complet_compose_project_rename",
-      "target": "docs_projet_complet_separate_git_repo"
+      "confidence_score": 1.0,
+      "source": "tgft",
+      "target": "c_users_user_desktop_tgft_backend_tgft_application_tgft_application_csproj"
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "TGFT.slnx",
+      "weight": 1.0,
+      "confidence_score": 1.0,
+      "source": "tgft",
+      "target": "c_users_user_desktop_tgft_backend_tgft_domain_tgft_domain_csproj"
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "TGFT.slnx",
+      "weight": 1.0,
+      "confidence_score": 1.0,
+      "source": "tgft",
+      "target": "c_users_user_desktop_tgft_backend_tgft_infrastructure_tgft_infrastructure_csproj"
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "TGFT.slnx",
+      "weight": 1.0,
+      "confidence_score": 1.0,
+      "source": "tgft",
+      "target": "tests_tgft_architecturetests_tgft_architecturetests"
+    },
+    {
+      "relation": "imports",
+      "confidence": "EXTRACTED",
+      "source_file": "tests/TGFT.ArchitectureTests/TGFT.ArchitectureTests.csproj",
+      "weight": 1.0,
+      "confidence_score": 1.0,
+      "source": "tests_tgft_architecturetests_tgft_architecturetests",
+      "target": "c_users_user_desktop_tgft_backend_tgft_api_tgft_api_csproj"
+    },
+    {
+      "relation": "imports",
+      "confidence": "EXTRACTED",
+      "source_file": "tests/TGFT.ArchitectureTests/TGFT.ArchitectureTests.csproj",
+      "weight": 1.0,
+      "confidence_score": 1.0,
+      "source": "tests_tgft_architecturetests_tgft_architecturetests",
+      "target": "c_users_user_desktop_tgft_backend_tgft_application_tgft_application_csproj"
+    },
+    {
+      "relation": "imports",
+      "confidence": "EXTRACTED",
+      "source_file": "tests/TGFT.ArchitectureTests/TGFT.ArchitectureTests.csproj",
+      "weight": 1.0,
+      "confidence_score": 1.0,
+      "source": "tests_tgft_architecturetests_tgft_architecturetests",
+      "target": "c_users_user_desktop_tgft_backend_tgft_domain_tgft_domain_csproj"
+    },
+    {
+      "relation": "imports",
+      "confidence": "EXTRACTED",
+      "source_file": "tests/TGFT.ArchitectureTests/TGFT.ArchitectureTests.csproj",
+      "weight": 1.0,
+      "confidence_score": 1.0,
+      "source": "tests_tgft_architecturetests_tgft_architecturetests",
+      "target": "c_users_user_desktop_tgft_backend_tgft_infrastructure_tgft_infrastructure_csproj"
+    },
+    {
+      "relation": "references",
+      "confidence": "EXTRACTED",
+      "source_file": "tests/TGFT.ArchitectureTests/TGFT.ArchitectureTests.csproj",
+      "weight": 1.0,
+      "confidence_score": 1.0,
+      "source": "tests_tgft_architecturetests_tgft_architecturetests",
+      "target": "framework_net10_0"
+    },
+    {
+      "relation": "imports",
+      "confidence": "EXTRACTED",
+      "source_file": "tests/TGFT.ArchitectureTests/TGFT.ArchitectureTests.csproj",
+      "weight": 1.0,
+      "confidence_score": 1.0,
+      "source": "tests_tgft_architecturetests_tgft_architecturetests",
+      "target": "nuget_microsoft_net_test_sdk"
+    },
+    {
+      "relation": "imports",
+      "confidence": "EXTRACTED",
+      "source_file": "tests/TGFT.ArchitectureTests/TGFT.ArchitectureTests.csproj",
+      "weight": 1.0,
+      "confidence_score": 1.0,
+      "source": "tests_tgft_architecturetests_tgft_architecturetests",
+      "target": "nuget_netarchtest_rules"
+    },
+    {
+      "relation": "imports",
+      "confidence": "EXTRACTED",
+      "source_file": "tests/TGFT.ArchitectureTests/TGFT.ArchitectureTests.csproj",
+      "weight": 1.0,
+      "confidence_score": 1.0,
+      "source": "tests_tgft_architecturetests_tgft_architecturetests",
+      "target": "nuget_xunit"
+    },
+    {
+      "relation": "imports",
+      "confidence": "EXTRACTED",
+      "source_file": "tests/TGFT.ArchitectureTests/TGFT.ArchitectureTests.csproj",
+      "weight": 1.0,
+      "confidence_score": 1.0,
+      "source": "tests_tgft_architecturetests_tgft_architecturetests",
+      "target": "nuget_xunit_runner_visualstudio"
+    },
+    {
+      "relation": "references",
+      "confidence": "EXTRACTED",
+      "source_file": "tests/TGFT.ArchitectureTests/TGFT.ArchitectureTests.csproj",
+      "weight": 1.0,
+      "confidence_score": 1.0,
+      "source": "tests_tgft_architecturetests_tgft_architecturetests",
+      "target": "sdk_microsoft_net_sdk"
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "backend/TGFT.Api/AssemblyMarker.cs",
+      "source_location": "L6",
+      "weight": 1.0,
+      "confidence_score": 1.0,
+      "source": "backend_tgft_api_assemblymarker",
+      "target": "backend_tgft_api_assemblymarker_tgft_api_assemblymarker"
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "backend/TGFT.Api/AssemblyMarker.cs",
+      "source_location": "L1",
+      "weight": 1.0,
+      "confidence_score": 1.0,
+      "source": "backend_tgft_api_assemblymarker",
+      "target": "csharp_namespace:4f983fce32839e40"
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "backend/TGFT.Application/AssemblyMarker.cs",
+      "source_location": "L6",
+      "weight": 1.0,
+      "confidence_score": 1.0,
+      "source": "backend_tgft_application_assemblymarker",
+      "target": "backend_tgft_application_assemblymarker_tgft_application_assemblymarker"
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "backend/TGFT.Application/AssemblyMarker.cs",
+      "source_location": "L1",
+      "weight": 1.0,
+      "confidence_score": 1.0,
+      "source": "backend_tgft_application_assemblymarker",
+      "target": "csharp_namespace:c904f89e29232f27"
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "backend/TGFT.Domain/AssemblyMarker.cs",
+      "source_location": "L6",
+      "weight": 1.0,
+      "confidence_score": 1.0,
+      "source": "backend_tgft_domain_assemblymarker",
+      "target": "backend_tgft_domain_assemblymarker_tgft_domain_assemblymarker"
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "backend/TGFT.Domain/AssemblyMarker.cs",
+      "source_location": "L1",
+      "weight": 1.0,
+      "confidence_score": 1.0,
+      "source": "backend_tgft_domain_assemblymarker",
+      "target": "csharp_namespace:da0941348f8667e2"
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "backend/TGFT.Infrastructure/AssemblyMarker.cs",
+      "source_location": "L6",
+      "weight": 1.0,
+      "confidence_score": 1.0,
+      "source": "backend_tgft_infrastructure_assemblymarker",
+      "target": "backend_tgft_infrastructure_assemblymarker_tgft_infrastructure_assemblymarker"
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "backend/TGFT.Infrastructure/AssemblyMarker.cs",
+      "source_location": "L1",
+      "weight": 1.0,
+      "confidence_score": 1.0,
+      "source": "backend_tgft_infrastructure_assemblymarker",
+      "target": "csharp_namespace:91deb468cbb123bf"
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "tests/TGFT.ArchitectureTests/LayerDependencyTests.cs",
+      "source_location": "L4",
+      "weight": 1.0,
+      "confidence_score": 1.0,
+      "source": "tests_tgft_architecturetests_layerdependencytests",
+      "target": "csharp_namespace:3227bbac6c339516"
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "tests/TGFT.ArchitectureTests/LayerDependencyTests.cs",
+      "source_location": "L10",
+      "weight": 1.0,
+      "confidence_score": 1.0,
+      "source": "tests_tgft_architecturetests_layerdependencytests",
+      "target": "tests_tgft_architecturetests_layerdependencytests_tgft_architecturetests_layerdependencytests"
+    },
+    {
+      "relation": "references",
+      "confidence": "EXTRACTED",
+      "source_file": "tests/TGFT.ArchitectureTests/LayerDependencyTests.cs",
+      "source_location": "L14",
+      "weight": 1.0,
+      "context": "field",
+      "metadata": {
+        "ref_token": "Assembly"
+      },
+      "confidence_score": 1.0,
+      "source": "tests_tgft_architecturetests_layerdependencytests_tgft_architecturetests_layerdependencytests",
+      "target": "assembly"
+    },
+    {
+      "relation": "references",
+      "confidence": "EXTRACTED",
+      "source_file": "tests/TGFT.ArchitectureTests/LayerDependencyTests.cs",
+      "source_location": "L22",
+      "weight": 1.0,
+      "context": "field",
+      "metadata": {
+        "ref_token": "string"
+      },
+      "confidence_score": 1.0,
+      "source": "tests_tgft_architecturetests_layerdependencytests_tgft_architecturetests_layerdependencytests",
+      "target": "string"
+    },
+    {
+      "relation": "method",
+      "confidence": "EXTRACTED",
+      "source_file": "tests/TGFT.ArchitectureTests/LayerDependencyTests.cs",
+      "source_location": "L57",
+      "weight": 1.0,
+      "confidence_score": 1.0,
+      "source": "tests_tgft_architecturetests_layerdependencytests_tgft_architecturetests_layerdependencytests",
+      "target": "tests_tgft_architecturetests_layerdependencytests_tgft_architecturetests_layerdependencytests_application_shouldnotdependonefcore"
+    },
+    {
+      "relation": "method",
+      "confidence": "EXTRACTED",
+      "source_file": "tests/TGFT.ArchitectureTests/LayerDependencyTests.cs",
+      "source_location": "L46",
+      "weight": 1.0,
+      "confidence_score": 1.0,
+      "source": "tests_tgft_architecturetests_layerdependencytests_tgft_architecturetests_layerdependencytests",
+      "target": "tests_tgft_architecturetests_layerdependencytests_tgft_architecturetests_layerdependencytests_application_shouldnotdependoninfrastructureorapi"
+    },
+    {
+      "relation": "method",
+      "confidence": "EXTRACTED",
+      "source_file": "tests/TGFT.ArchitectureTests/LayerDependencyTests.cs",
+      "source_location": "L80",
+      "weight": 1.0,
+      "confidence_score": 1.0,
+      "source": "tests_tgft_architecturetests_layerdependencytests_tgft_architecturetests_layerdependencytests",
+      "target": "tests_tgft_architecturetests_layerdependencytests_tgft_architecturetests_layerdependencytests_assertsuccessful"
+    },
+    {
+      "relation": "method",
+      "confidence": "EXTRACTED",
+      "source_file": "tests/TGFT.ArchitectureTests/LayerDependencyTests.cs",
+      "source_location": "L35",
+      "weight": 1.0,
+      "confidence_score": 1.0,
+      "source": "tests_tgft_architecturetests_layerdependencytests_tgft_architecturetests_layerdependencytests",
+      "target": "tests_tgft_architecturetests_layerdependencytests_tgft_architecturetests_layerdependencytests_domain_shouldnotdependonframeworks"
+    },
+    {
+      "relation": "method",
+      "confidence": "EXTRACTED",
+      "source_file": "tests/TGFT.ArchitectureTests/LayerDependencyTests.cs",
+      "source_location": "L24",
+      "weight": 1.0,
+      "confidence_score": 1.0,
+      "source": "tests_tgft_architecturetests_layerdependencytests_tgft_architecturetests_layerdependencytests",
+      "target": "tests_tgft_architecturetests_layerdependencytests_tgft_architecturetests_layerdependencytests_domain_shouldnotdependonotherlayers"
+    },
+    {
+      "relation": "method",
+      "confidence": "EXTRACTED",
+      "source_file": "tests/TGFT.ArchitectureTests/LayerDependencyTests.cs",
+      "source_location": "L68",
+      "weight": 1.0,
+      "confidence_score": 1.0,
+      "source": "tests_tgft_architecturetests_layerdependencytests_tgft_architecturetests_layerdependencytests",
+      "target": "tests_tgft_architecturetests_layerdependencytests_tgft_architecturetests_layerdependencytests_infrastructure_shouldnotdependonapi"
+    },
+    {
+      "relation": "references",
+      "confidence": "EXTRACTED",
+      "source_file": "tests/TGFT.ArchitectureTests/LayerDependencyTests.cs",
+      "source_location": "L24",
+      "weight": 1.0,
+      "context": "attribute",
+      "metadata": {
+        "ref_token": "Fact"
+      },
+      "confidence_score": 1.0,
+      "source": "tests_tgft_architecturetests_layerdependencytests_tgft_architecturetests_layerdependencytests_domain_shouldnotdependonotherlayers",
+      "target": "fact"
+    },
+    {
+      "relation": "calls",
+      "context": "call",
+      "confidence": "EXTRACTED",
+      "source_file": "tests/TGFT.ArchitectureTests/LayerDependencyTests.cs",
+      "source_location": "L32",
+      "weight": 1.0,
+      "confidence_score": 1.0,
+      "source": "tests_tgft_architecturetests_layerdependencytests_tgft_architecturetests_layerdependencytests_domain_shouldnotdependonotherlayers",
+      "target": "tests_tgft_architecturetests_layerdependencytests_tgft_architecturetests_layerdependencytests_assertsuccessful"
+    },
+    {
+      "relation": "references",
+      "confidence": "EXTRACTED",
+      "source_file": "tests/TGFT.ArchitectureTests/LayerDependencyTests.cs",
+      "source_location": "L57",
+      "weight": 1.0,
+      "context": "attribute",
+      "metadata": {
+        "ref_token": "Fact"
+      },
+      "confidence_score": 1.0,
+      "source": "tests_tgft_architecturetests_layerdependencytests_tgft_architecturetests_layerdependencytests_application_shouldnotdependonefcore",
+      "target": "fact"
+    },
+    {
+      "relation": "references",
+      "confidence": "EXTRACTED",
+      "source_file": "tests/TGFT.ArchitectureTests/LayerDependencyTests.cs",
+      "source_location": "L46",
+      "weight": 1.0,
+      "context": "attribute",
+      "metadata": {
+        "ref_token": "Fact"
+      },
+      "confidence_score": 1.0,
+      "source": "tests_tgft_architecturetests_layerdependencytests_tgft_architecturetests_layerdependencytests_application_shouldnotdependoninfrastructureorapi",
+      "target": "fact"
+    },
+    {
+      "relation": "references",
+      "confidence": "EXTRACTED",
+      "source_file": "tests/TGFT.ArchitectureTests/LayerDependencyTests.cs",
+      "source_location": "L35",
+      "weight": 1.0,
+      "context": "attribute",
+      "metadata": {
+        "ref_token": "Fact"
+      },
+      "confidence_score": 1.0,
+      "source": "tests_tgft_architecturetests_layerdependencytests_tgft_architecturetests_layerdependencytests_domain_shouldnotdependonframeworks",
+      "target": "fact"
+    },
+    {
+      "relation": "references",
+      "confidence": "EXTRACTED",
+      "source_file": "tests/TGFT.ArchitectureTests/LayerDependencyTests.cs",
+      "source_location": "L68",
+      "weight": 1.0,
+      "context": "attribute",
+      "metadata": {
+        "ref_token": "Fact"
+      },
+      "confidence_score": 1.0,
+      "source": "tests_tgft_architecturetests_layerdependencytests_tgft_architecturetests_layerdependencytests_infrastructure_shouldnotdependonapi",
+      "target": "fact"
+    },
+    {
+      "relation": "calls",
+      "context": "call",
+      "confidence": "EXTRACTED",
+      "source_file": "tests/TGFT.ArchitectureTests/LayerDependencyTests.cs",
+      "source_location": "L43",
+      "weight": 1.0,
+      "confidence_score": 1.0,
+      "source": "tests_tgft_architecturetests_layerdependencytests_tgft_architecturetests_layerdependencytests_domain_shouldnotdependonframeworks",
+      "target": "tests_tgft_architecturetests_layerdependencytests_tgft_architecturetests_layerdependencytests_assertsuccessful"
+    },
+    {
+      "relation": "calls",
+      "context": "call",
+      "confidence": "EXTRACTED",
+      "source_file": "tests/TGFT.ArchitectureTests/LayerDependencyTests.cs",
+      "source_location": "L54",
+      "weight": 1.0,
+      "confidence_score": 1.0,
+      "source": "tests_tgft_architecturetests_layerdependencytests_tgft_architecturetests_layerdependencytests_application_shouldnotdependoninfrastructureorapi",
+      "target": "tests_tgft_architecturetests_layerdependencytests_tgft_architecturetests_layerdependencytests_assertsuccessful"
+    },
+    {
+      "relation": "calls",
+      "context": "call",
+      "confidence": "EXTRACTED",
+      "source_file": "tests/TGFT.ArchitectureTests/LayerDependencyTests.cs",
+      "source_location": "L65",
+      "weight": 1.0,
+      "confidence_score": 1.0,
+      "source": "tests_tgft_architecturetests_layerdependencytests_tgft_architecturetests_layerdependencytests_application_shouldnotdependonefcore",
+      "target": "tests_tgft_architecturetests_layerdependencytests_tgft_architecturetests_layerdependencytests_assertsuccessful"
+    },
+    {
+      "relation": "calls",
+      "context": "call",
+      "confidence": "EXTRACTED",
+      "source_file": "tests/TGFT.ArchitectureTests/LayerDependencyTests.cs",
+      "source_location": "L76",
+      "weight": 1.0,
+      "confidence_score": 1.0,
+      "source": "tests_tgft_architecturetests_layerdependencytests_tgft_architecturetests_layerdependencytests_infrastructure_shouldnotdependonapi",
+      "target": "tests_tgft_architecturetests_layerdependencytests_tgft_architecturetests_layerdependencytests_assertsuccessful"
+    },
+    {
+      "relation": "references",
+      "confidence": "EXTRACTED",
+      "source_file": "tests/TGFT.ArchitectureTests/LayerDependencyTests.cs",
+      "source_location": "L80",
+      "weight": 1.0,
+      "context": "parameter_type",
+      "metadata": {
+        "ref_token": "TestResult"
+      },
+      "confidence_score": 1.0,
+      "source": "tests_tgft_architecturetests_layerdependencytests_tgft_architecturetests_layerdependencytests_assertsuccessful",
+      "target": "testresult"
     },
     {
       "relation": "references",
       "confidence": "EXTRACTED",
       "confidence_score": 1.0,
-      "source_file": "docs/Projet Complet.md",
-      "source_location": "L527",
+      "source_file": "claude.md",
+      "source_location": null,
       "weight": 1.0,
-      "source": "docs_projet_complet",
-      "target": "docs_projet_complet_source_hierarchy"
+      "source": "claude_document",
+      "target": "claude_graphify_update_rule"
     },
     {
       "relation": "references",
       "confidence": "EXTRACTED",
       "confidence_score": 1.0,
-      "source_file": "docs/Projet Complet.md",
-      "source_location": "L29",
+      "source_file": "claude.md",
+      "source_location": null,
       "weight": 1.0,
-      "source": "docs_projet_complet",
+      "source": "claude_document",
+      "target": "claude_rule_no_code_without_request"
+    },
+    {
+      "relation": "cites",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "source_file": "claude.md",
+      "source_location": null,
+      "weight": 1.0,
+      "source": "claude_document",
+      "target": "docs_projet_complet_cahier_des_charges_v2"
+    },
+    {
+      "relation": "references",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "source_file": "claude.md",
+      "source_location": null,
+      "weight": 1.0,
+      "source": "claude_document",
+      "target": "docs_projet_complet_clean_architecture"
+    },
+    {
+      "relation": "references",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "source_file": "claude.md",
+      "source_location": null,
+      "weight": 1.0,
+      "source": "claude_document",
+      "target": "docs_projet_complet_projet_complet"
+    },
+    {
+      "relation": "references",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "source_file": "claude.md",
+      "source_location": null,
+      "weight": 1.0,
+      "source": "claude_document",
+      "target": "docs_projet_complet_protection_layers"
+    },
+    {
+      "relation": "references",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "source_file": "claude.md",
+      "source_location": null,
+      "weight": 1.0,
+      "source": "claude_document",
       "target": "docs_projet_complet_tgft_platform"
     },
     {
@@ -3904,7 +4590,67 @@
       "confidence": "EXTRACTED",
       "confidence_score": 1.0,
       "source_file": "docs/Projet Complet.md",
-      "source_location": "L5",
+      "source_location": null,
+      "weight": 1.0,
+      "source": "docs_projet_complet_source_hierarchy",
+      "target": "claude_document"
+    },
+    {
+      "relation": "conceptually_related_to",
+      "confidence": "INFERRED",
+      "confidence_score": 0.65,
+      "source_file": "claude.md",
+      "source_location": null,
+      "weight": 1.0,
+      "source": "claude_rule_no_code_without_request",
+      "target": "docs_projet_complet_graphify_single_update_decision"
+    },
+    {
+      "relation": "conceptually_related_to",
+      "confidence": "INFERRED",
+      "confidence_score": 0.85,
+      "source_file": "claude.md",
+      "source_location": null,
+      "weight": 1.0,
+      "source": "claude_graphify_update_rule",
+      "target": "docs_projet_complet_graphify_out_versioned"
+    },
+    {
+      "relation": "rationale_for",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "source_file": "docs/Projet Complet.md",
+      "source_location": null,
+      "weight": 1.0,
+      "source": "docs_projet_complet_graphify_single_update_decision",
+      "target": "claude_graphify_update_rule"
+    },
+    {
+      "relation": "cites",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "source_file": "docs/Projet Complet.md",
+      "source_location": null,
+      "weight": 1.0,
+      "source": "docs_projet_complet_projet_complet",
+      "target": "docs_projet_complet_cahier_des_charges_v2"
+    },
+    {
+      "relation": "references",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "source_file": "docs/Projet Complet.md",
+      "source_location": null,
+      "weight": 1.0,
+      "source": "docs_projet_complet_projet_complet",
+      "target": "docs_projet_complet_source_hierarchy"
+    },
+    {
+      "relation": "references",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "source_file": "docs/Projet Complet.md",
+      "source_location": null,
       "weight": 1.0,
       "source": "docs_projet_complet_source_hierarchy",
       "target": "docs_projet_complet_cahier_des_charges_v2"
@@ -3914,7 +4660,7 @@
       "confidence": "EXTRACTED",
       "confidence_score": 1.0,
       "source_file": "docs/Projet Complet.md",
-      "source_location": "L41",
+      "source_location": null,
       "weight": 1.0,
       "source": "docs_projet_complet_tgft_platform",
       "target": "docs_projet_complet_marketplace"
@@ -3924,7 +4670,7 @@
       "confidence": "EXTRACTED",
       "confidence_score": 1.0,
       "source_file": "docs/Projet Complet.md",
-      "source_location": "L39",
+      "source_location": null,
       "weight": 1.0,
       "source": "docs_projet_complet_tgft_platform",
       "target": "docs_projet_complet_noyau_minimal"
@@ -3934,19 +4680,79 @@
       "confidence": "EXTRACTED",
       "confidence_score": 1.0,
       "source_file": "docs/Projet Complet.md",
-      "source_location": "L43",
+      "source_location": null,
       "weight": 1.0,
       "source": "docs_projet_complet_tgft_platform",
       "target": "docs_projet_complet_odoo"
+    },
+    {
+      "relation": "cites",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "source_file": "docs/Projet Complet.md",
+      "source_location": null,
+      "weight": 1.0,
+      "source": "docs_projet_complet_tgft_platform",
+      "target": "docs_projet_complet_shopify_functions"
     },
     {
       "relation": "references",
       "confidence": "EXTRACTED",
       "confidence_score": 1.0,
       "source_file": "docs/Projet Complet.md",
-      "source_location": "L39",
+      "source_location": null,
       "weight": 1.0,
-      "source": "docs_projet_complet_noyau_minimal",
+      "source": "docs_projet_complet_realization_order",
+      "target": "docs_projet_complet_noyau_minimal"
+    },
+    {
+      "relation": "references",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "source_file": "docs/Projet Complet.md",
+      "source_location": null,
+      "weight": 1.0,
+      "source": "docs_projet_complet_roles",
+      "target": "docs_projet_complet_noyau_minimal"
+    },
+    {
+      "relation": "references",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "source_file": "docs/Projet Complet.md",
+      "source_location": null,
+      "weight": 1.0,
+      "source": "docs_projet_complet_marketplace",
+      "target": "docs_projet_complet_external_modules"
+    },
+    {
+      "relation": "cites",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "source_file": "docs/Projet Complet.md",
+      "source_location": null,
+      "weight": 1.0,
+      "source": "docs_projet_complet_javy",
+      "target": "docs_projet_complet_shopify_functions"
+    },
+    {
+      "relation": "cites",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "source_file": "docs/Projet Complet.md",
+      "source_location": null,
+      "weight": 1.0,
+      "source": "docs_projet_complet_no_host_functions",
+      "target": "docs_projet_complet_shopify_functions"
+    },
+    {
+      "relation": "references",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "source_file": "docs/Projet Complet.md",
+      "source_location": null,
+      "weight": 1.0,
+      "source": "docs_projet_complet_multi_tenant_isolation",
       "target": "docs_projet_complet_groupe"
     },
     {
@@ -3954,57 +4760,7 @@
       "confidence": "EXTRACTED",
       "confidence_score": 1.0,
       "source_file": "docs/Projet Complet.md",
-      "source_location": "L39",
-      "weight": 1.0,
-      "source": "docs_projet_complet_noyau_minimal",
-      "target": "docs_projet_complet_roles"
-    },
-    {
-      "relation": "conceptually_related_to",
-      "confidence": "INFERRED",
-      "confidence_score": 0.85,
-      "source_file": "docs/Projet Complet.md",
-      "source_location": "L46",
-      "weight": 1.0,
-      "source": "docs_projet_complet_marketplace",
-      "target": "docs_projet_complet_netarchtest_boundaries"
-    },
-    {
-      "relation": "cites",
-      "confidence": "EXTRACTED",
-      "confidence_score": 1.0,
-      "source_file": "docs/Projet Complet.md",
-      "source_location": "L139",
-      "weight": 1.0,
-      "source": "docs_projet_complet_marketplace",
-      "target": "docs_projet_complet_shopify_functions"
-    },
-    {
-      "relation": "cites",
-      "confidence": "EXTRACTED",
-      "confidence_score": 1.0,
-      "source_file": "docs/Projet Complet.md",
-      "source_location": "L139",
-      "weight": 1.0,
-      "source": "docs_projet_complet_no_host_functions",
-      "target": "docs_projet_complet_shopify_functions"
-    },
-    {
-      "relation": "conceptually_related_to",
-      "confidence": "EXTRACTED",
-      "confidence_score": 1.0,
-      "source_file": "docs/Projet Complet.md",
-      "source_location": "L74",
-      "weight": 1.0,
-      "source": "docs_projet_complet_groupe",
-      "target": "docs_projet_complet_multi_tenant_isolation"
-    },
-    {
-      "relation": "references",
-      "confidence": "EXTRACTED",
-      "confidence_score": 1.0,
-      "source_file": "docs/Projet Complet.md",
-      "source_location": "L260",
+      "source_location": null,
       "weight": 1.0,
       "source": "docs_projet_complet_multi_tenant_isolation",
       "target": "docs_projet_complet_ef_core_global_filters"
@@ -4014,129 +4770,119 @@
       "confidence": "EXTRACTED",
       "confidence_score": 1.0,
       "source_file": "docs/Projet Complet.md",
-      "source_location": "L260",
+      "source_location": null,
       "weight": 1.0,
       "source": "docs_projet_complet_multi_tenant_isolation",
       "target": "docs_projet_complet_postgresql_rls"
     },
     {
-      "relation": "conceptually_related_to",
+      "relation": "references",
       "confidence": "EXTRACTED",
       "confidence_score": 1.0,
       "source_file": "docs/Projet Complet.md",
-      "source_location": "L243",
+      "source_location": null,
       "weight": 1.0,
       "source": "docs_projet_complet_testcontainers",
       "target": "docs_projet_complet_multi_tenant_isolation"
     },
     {
       "relation": "rationale_for",
-      "confidence": "INFERRED",
-      "confidence_score": 0.85,
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
       "source_file": "docs/Projet Complet.md",
-      "source_location": "L77",
+      "source_location": null,
       "weight": 1.0,
       "source": "docs_projet_complet_budget_constraint",
       "target": "docs_projet_complet_classeur"
     },
     {
-      "relation": "rationale_for",
-      "confidence": "INFERRED",
-      "confidence_score": 0.75,
-      "source_file": "docs/Projet Complet.md",
-      "source_location": "L236",
-      "weight": 1.0,
-      "source": "docs_projet_complet_budget_constraint",
-      "target": "docs_projet_complet_no_redis"
-    },
-    {
-      "relation": "references",
-      "confidence": "EXTRACTED",
-      "confidence_score": 1.0,
-      "source_file": "docs/Projet Complet.md",
-      "source_location": "L187",
-      "weight": 1.0,
-      "source": "docs_projet_complet_d11_native_purge_contract",
-      "target": "docs_projet_complet_native_modules"
-    },
-    {
-      "relation": "implements",
-      "confidence": "EXTRACTED",
-      "confidence_score": 1.0,
-      "source_file": "docs/Projet Complet.md",
-      "source_location": "L115",
-      "weight": 1.0,
-      "source": "docs_projet_complet_native_modules",
-      "target": "docs_projet_complet_shared_module_contracts"
-    },
-    {
-      "relation": "implements",
-      "confidence": "EXTRACTED",
-      "confidence_score": 1.0,
-      "source_file": "docs/Projet Complet.md",
-      "source_location": "L108",
-      "weight": 1.0,
-      "source": "docs_projet_complet_team_builder",
-      "target": "docs_projet_complet_native_modules"
-    },
-    {
-      "relation": "implements",
-      "confidence": "EXTRACTED",
-      "confidence_score": 1.0,
-      "source_file": "docs/Projet Complet.md",
-      "source_location": "L108",
-      "weight": 1.0,
-      "source": "docs_projet_complet_tier_lists",
-      "target": "docs_projet_complet_native_modules"
-    },
-    {
       "relation": "conceptually_related_to",
       "confidence": "EXTRACTED",
       "confidence_score": 1.0,
       "source_file": "docs/Projet Complet.md",
-      "source_location": "L286",
+      "source_location": null,
       "weight": 1.0,
-      "source": "docs_projet_complet_agpl_license",
-      "target": "docs_projet_complet_external_modules"
-    },
-    {
-      "relation": "implements",
-      "confidence": "EXTRACTED",
-      "confidence_score": 1.0,
-      "source_file": "docs/Projet Complet.md",
-      "source_location": "L115",
-      "weight": 1.0,
-      "source": "docs_projet_complet_external_modules",
-      "target": "docs_projet_complet_shared_module_contracts"
+      "source": "docs_projet_complet_no_redis",
+      "target": "docs_projet_complet_budget_constraint"
     },
     {
       "relation": "references",
       "confidence": "EXTRACTED",
       "confidence_score": 1.0,
       "source_file": "docs/Projet Complet.md",
-      "source_location": "L137",
+      "source_location": null,
+      "weight": 1.0,
+      "source": "docs_projet_complet_agpl_license",
+      "target": "docs_projet_complet_native_modules"
+    },
+    {
+      "relation": "references",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "source_file": "docs/Projet Complet.md",
+      "source_location": null,
+      "weight": 1.0,
+      "source": "docs_projet_complet_native_modules",
+      "target": "docs_projet_complet_team_builder"
+    },
+    {
+      "relation": "references",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "source_file": "docs/Projet Complet.md",
+      "source_location": null,
+      "weight": 1.0,
+      "source": "docs_projet_complet_native_modules",
+      "target": "docs_projet_complet_tier_lists"
+    },
+    {
+      "relation": "references",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "source_file": "docs/Projet Complet.md",
+      "source_location": null,
+      "weight": 1.0,
+      "source": "docs_projet_complet_realization_order",
+      "target": "docs_projet_complet_native_modules"
+    },
+    {
+      "relation": "references",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "source_file": "docs/Projet Complet.md",
+      "source_location": null,
+      "weight": 1.0,
+      "source": "docs_projet_complet_shared_module_contracts",
+      "target": "docs_projet_complet_native_modules"
+    },
+    {
+      "relation": "references",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "source_file": "docs/Projet Complet.md",
+      "source_location": null,
+      "weight": 1.0,
+      "source": "docs_projet_complet_external_modules",
+      "target": "docs_projet_complet_tournoi_module"
+    },
+    {
+      "relation": "references",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "source_file": "docs/Projet Complet.md",
+      "source_location": null,
       "weight": 1.0,
       "source": "docs_projet_complet_external_modules",
       "target": "docs_projet_complet_wasm_sandbox"
     },
     {
-      "relation": "conceptually_related_to",
+      "relation": "references",
       "confidence": "EXTRACTED",
       "confidence_score": 1.0,
       "source_file": "docs/Projet Complet.md",
-      "source_location": "L293",
+      "source_location": null,
       "weight": 1.0,
       "source": "docs_projet_complet_riot_rules",
-      "target": "docs_projet_complet_external_modules"
-    },
-    {
-      "relation": "implements",
-      "confidence": "EXTRACTED",
-      "confidence_score": 1.0,
-      "source_file": "docs/Projet Complet.md",
-      "source_location": "L108",
-      "weight": 1.0,
-      "source": "docs_projet_complet_tournoi_module",
       "target": "docs_projet_complet_external_modules"
     },
     {
@@ -4144,7 +4890,27 @@
       "confidence": "EXTRACTED",
       "confidence_score": 1.0,
       "source_file": "docs/Projet Complet.md",
-      "source_location": "L116",
+      "source_location": null,
+      "weight": 1.0,
+      "source": "docs_projet_complet_shared_module_contracts",
+      "target": "docs_projet_complet_external_modules"
+    },
+    {
+      "relation": "references",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "source_file": "docs/Projet Complet.md",
+      "source_location": null,
+      "weight": 1.0,
+      "source": "docs_projet_complet_shared_module_contracts",
+      "target": "docs_projet_complet_d11_native_purge_contract"
+    },
+    {
+      "relation": "references",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "source_file": "docs/Projet Complet.md",
+      "source_location": null,
       "weight": 1.0,
       "source": "docs_projet_complet_shared_module_contracts",
       "target": "docs_projet_complet_manifeste"
@@ -4154,7 +4920,7 @@
       "confidence": "EXTRACTED",
       "confidence_score": 1.0,
       "source_file": "docs/Projet Complet.md",
-      "source_location": "L176",
+      "source_location": null,
       "weight": 1.0,
       "source": "docs_projet_complet_discord_external_commands",
       "target": "docs_projet_complet_manifeste"
@@ -4164,9 +4930,9 @@
       "confidence": "EXTRACTED",
       "confidence_score": 1.0,
       "source_file": "docs/Projet Complet.md",
-      "source_location": "L170",
+      "source_location": null,
       "weight": 1.0,
-      "source": "docs_projet_complet_module_lifecycle",
+      "source": "docs_projet_complet_l4_bot_commands_per_module",
       "target": "docs_projet_complet_manifeste"
     },
     {
@@ -4174,19 +4940,9 @@
       "confidence": "EXTRACTED",
       "confidence_score": 1.0,
       "source_file": "docs/Projet Complet.md",
-      "source_location": "L124",
+      "source_location": null,
       "weight": 1.0,
       "source": "docs_projet_complet_team_builder",
-      "target": "docs_projet_complet_versioned_url_encoding"
-    },
-    {
-      "relation": "conceptually_related_to",
-      "confidence": "INFERRED",
-      "confidence_score": 0.65,
-      "source_file": "docs/Projet Complet.md",
-      "source_location": "L244",
-      "weight": 1.0,
-      "source": "docs_projet_complet_data_dragon",
       "target": "docs_projet_complet_versioned_url_encoding"
     },
     {
@@ -4194,7 +4950,7 @@
       "confidence": "EXTRACTED",
       "confidence_score": 1.0,
       "source_file": "docs/Projet Complet.md",
-      "source_location": "L449",
+      "source_location": null,
       "weight": 1.0,
       "source": "docs_projet_complet_open_questions",
       "target": "docs_projet_complet_versioned_url_encoding"
@@ -4204,7 +4960,7 @@
       "confidence": "EXTRACTED",
       "confidence_score": 1.0,
       "source_file": "docs/Projet Complet.md",
-      "source_location": "L134",
+      "source_location": null,
       "weight": 1.0,
       "source": "docs_projet_complet_no_dll_modules",
       "target": "docs_projet_complet_wasm_sandbox"
@@ -4214,7 +4970,7 @@
       "confidence": "EXTRACTED",
       "confidence_score": 1.0,
       "source_file": "docs/Projet Complet.md",
-      "source_location": "L158",
+      "source_location": null,
       "weight": 1.0,
       "source": "docs_projet_complet_protection_layers",
       "target": "docs_projet_complet_wasm_sandbox"
@@ -4224,37 +4980,67 @@
       "confidence": "EXTRACTED",
       "confidence_score": 1.0,
       "source_file": "docs/Projet Complet.md",
-      "source_location": "L139",
+      "source_location": null,
+      "weight": 1.0,
+      "source": "docs_projet_complet_resource_limits_m8",
+      "target": "docs_projet_complet_wasm_sandbox"
+    },
+    {
+      "relation": "references",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "source_file": "docs/Projet Complet.md",
+      "source_location": null,
+      "weight": 1.0,
+      "source": "docs_projet_complet_salle_des_machines",
+      "target": "docs_projet_complet_wasm_sandbox"
+    },
+    {
+      "relation": "references",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "source_file": "docs/Projet Complet.md",
+      "source_location": null,
       "weight": 1.0,
       "source": "docs_projet_complet_wasm_sandbox",
       "target": "docs_projet_complet_no_host_functions"
     },
     {
-      "relation": "implements",
+      "relation": "references",
       "confidence": "EXTRACTED",
       "confidence_score": 1.0,
       "source_file": "docs/Projet Complet.md",
-      "source_location": "L158",
+      "source_location": null,
       "weight": 1.0,
       "source": "docs_projet_complet_wasm_sandbox",
       "target": "docs_projet_complet_wasmtime"
     },
     {
-      "relation": "shares_data_with",
+      "relation": "semantically_similar_to",
+      "confidence": "INFERRED",
+      "confidence_score": 0.65,
+      "source_file": "docs/Projet Complet.md",
+      "source_location": null,
+      "weight": 1.0,
+      "source": "docs_projet_complet_no_host_functions",
+      "target": "docs_projet_complet_declarative_ui"
+    },
+    {
+      "relation": "references",
       "confidence": "EXTRACTED",
       "confidence_score": 1.0,
       "source_file": "docs/Projet Complet.md",
-      "source_location": "L147",
+      "source_location": null,
       "weight": 1.0,
       "source": "docs_projet_complet_paquet",
       "target": "docs_projet_complet_classeur"
     },
     {
-      "relation": "shares_data_with",
+      "relation": "references",
       "confidence": "EXTRACTED",
       "confidence_score": 1.0,
       "source_file": "docs/Projet Complet.md",
-      "source_location": "L147",
+      "source_location": null,
       "weight": 1.0,
       "source": "docs_projet_complet_paquet",
       "target": "docs_projet_complet_pseudonymes"
@@ -4264,7 +5050,7 @@
       "confidence": "EXTRACTED",
       "confidence_score": 1.0,
       "source_file": "docs/Projet Complet.md",
-      "source_location": "L147",
+      "source_location": null,
       "weight": 1.0,
       "source": "docs_projet_complet_zone_de_confiance",
       "target": "docs_projet_complet_paquet"
@@ -4274,17 +5060,7 @@
       "confidence": "EXTRACTED",
       "confidence_score": 1.0,
       "source_file": "docs/Projet Complet.md",
-      "source_location": "L151",
-      "weight": 1.0,
-      "source": "docs_projet_complet_dev_kit",
-      "target": "docs_projet_complet_reponse"
-    },
-    {
-      "relation": "shares_data_with",
-      "confidence": "EXTRACTED",
-      "confidence_score": 1.0,
-      "source_file": "docs/Projet Complet.md",
-      "source_location": "L160",
+      "source_location": null,
       "weight": 1.0,
       "source": "docs_projet_complet_reponse",
       "target": "docs_projet_complet_classeur"
@@ -4294,37 +5070,17 @@
       "confidence": "EXTRACTED",
       "confidence_score": 1.0,
       "source_file": "docs/Projet Complet.md",
-      "source_location": "L148",
+      "source_location": null,
       "weight": 1.0,
-      "source": "docs_projet_complet_reponse",
-      "target": "docs_projet_complet_declarative_ui"
-    },
-    {
-      "relation": "references",
-      "confidence": "EXTRACTED",
-      "confidence_score": 1.0,
-      "source_file": "docs/Projet Complet.md",
-      "source_location": "L148",
-      "weight": 1.0,
-      "source": "docs_projet_complet_salle_des_machines",
+      "source": "docs_projet_complet_zone_de_confiance",
       "target": "docs_projet_complet_reponse"
     },
     {
-      "relation": "calls",
-      "confidence": "EXTRACTED",
-      "confidence_score": 1.0,
-      "source_file": "docs/Projet Complet.md",
-      "source_location": "L159",
-      "weight": 1.0,
-      "source": "docs_projet_complet_zone_de_confiance",
-      "target": "docs_projet_complet_salle_des_machines"
-    },
-    {
       "relation": "references",
       "confidence": "EXTRACTED",
       "confidence_score": 1.0,
       "source_file": "docs/Projet Complet.md",
-      "source_location": "L221",
+      "source_location": null,
       "weight": 1.0,
       "source": "docs_projet_complet_jint_fallback",
       "target": "docs_projet_complet_salle_des_machines"
@@ -4334,7 +5090,7 @@
       "confidence": "EXTRACTED",
       "confidence_score": 1.0,
       "source_file": "docs/Projet Complet.md",
-      "source_location": "L159",
+      "source_location": null,
       "weight": 1.0,
       "source": "docs_projet_complet_protection_layers",
       "target": "docs_projet_complet_salle_des_machines"
@@ -4344,7 +5100,7 @@
       "confidence": "EXTRACTED",
       "confidence_score": 1.0,
       "source_file": "docs/Projet Complet.md",
-      "source_location": "L470",
+      "source_location": null,
       "weight": 1.0,
       "source": "docs_projet_complet_tgft_modulehost",
       "target": "docs_projet_complet_salle_des_machines"
@@ -4354,7 +5110,7 @@
       "confidence": "EXTRACTED",
       "confidence_score": 1.0,
       "source_file": "docs/Projet Complet.md",
-      "source_location": "L202",
+      "source_location": null,
       "weight": 1.0,
       "source": "docs_projet_complet_wasmtime_x86_rules",
       "target": "docs_projet_complet_salle_des_machines"
@@ -4364,17 +5120,17 @@
       "confidence": "EXTRACTED",
       "confidence_score": 1.0,
       "source_file": "docs/Projet Complet.md",
-      "source_location": "L184",
+      "source_location": null,
       "weight": 1.0,
       "source": "docs_projet_complet_b8_group_deletion",
       "target": "docs_projet_complet_classeur"
     },
     {
-      "relation": "rationale_for",
+      "relation": "references",
       "confidence": "EXTRACTED",
       "confidence_score": 1.0,
       "source_file": "docs/Projet Complet.md",
-      "source_location": "L151",
+      "source_location": null,
       "weight": 1.0,
       "source": "docs_projet_complet_call_serialization",
       "target": "docs_projet_complet_classeur"
@@ -4384,27 +5140,17 @@
       "confidence": "EXTRACTED",
       "confidence_score": 1.0,
       "source_file": "docs/Projet Complet.md",
-      "source_location": "L194",
+      "source_location": null,
       "weight": 1.0,
       "source": "docs_projet_complet_classeur",
       "target": "docs_projet_complet_atlassian_forge_sql"
     },
     {
       "relation": "references",
-      "confidence": "INFERRED",
-      "confidence_score": 0.95,
-      "source_file": "docs/Projet Complet.md",
-      "source_location": "L268",
-      "weight": 1.0,
-      "source": "docs_projet_complet_iclasseurstore",
-      "target": "docs_projet_complet_classeur"
-    },
-    {
-      "relation": "references",
       "confidence": "EXTRACTED",
       "confidence_score": 1.0,
       "source_file": "docs/Projet Complet.md",
-      "source_location": "L161",
+      "source_location": null,
       "weight": 1.0,
       "source": "docs_projet_complet_protection_layers",
       "target": "docs_projet_complet_classeur"
@@ -4414,7 +5160,7 @@
       "confidence": "EXTRACTED",
       "confidence_score": 1.0,
       "source_file": "docs/Projet Complet.md",
-      "source_location": "L179",
+      "source_location": null,
       "weight": 1.0,
       "source": "docs_projet_complet_discord_external_commands",
       "target": "docs_projet_complet_pseudonymes"
@@ -4424,47 +5170,57 @@
       "confidence": "EXTRACTED",
       "confidence_score": 1.0,
       "source_file": "docs/Projet Complet.md",
-      "source_location": "L162",
+      "source_location": null,
       "weight": 1.0,
       "source": "docs_projet_complet_protection_layers",
       "target": "docs_projet_complet_pseudonymes"
-    },
-    {
-      "relation": "conceptually_related_to",
-      "confidence": "INFERRED",
-      "confidence_score": 0.65,
-      "source_file": "docs/Projet Complet.md",
-      "source_location": "L231",
-      "weight": 1.0,
-      "source": "docs_projet_complet_pseudonymes",
-      "target": "docs_projet_complet_postgresql_rls"
     },
     {
       "relation": "references",
       "confidence": "EXTRACTED",
       "confidence_score": 1.0,
       "source_file": "docs/Projet Complet.md",
-      "source_location": "L185",
+      "source_location": null,
+      "weight": 1.0,
+      "source": "docs_projet_complet_pseudonym_property_m12",
+      "target": "docs_projet_complet_pseudonymes"
+    },
+    {
+      "relation": "shares_data_with",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "source_file": "docs/Projet Complet.md",
+      "source_location": null,
+      "weight": 1.0,
+      "source": "docs_projet_complet_pseudonymes",
+      "target": "docs_projet_complet_postgresql"
+    },
+    {
+      "relation": "references",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "source_file": "docs/Projet Complet.md",
+      "source_location": null,
       "weight": 1.0,
       "source": "docs_projet_complet_rgpd",
       "target": "docs_projet_complet_pseudonymes"
     },
     {
-      "relation": "conceptually_related_to",
+      "relation": "references",
       "confidence": "EXTRACTED",
       "confidence_score": 1.0,
       "source_file": "docs/Projet Complet.md",
-      "source_location": "L230",
+      "source_location": null,
       "weight": 1.0,
-      "source": "docs_projet_complet_declarative_ui",
-      "target": "docs_projet_complet_angular_lazy_loading"
+      "source": "docs_projet_complet_angular_lazy_loading",
+      "target": "docs_projet_complet_declarative_ui"
     },
     {
       "relation": "cites",
       "confidence": "EXTRACTED",
       "confidence_score": 1.0,
       "source_file": "docs/Projet Complet.md",
-      "source_location": "L195",
+      "source_location": null,
       "weight": 1.0,
       "source": "docs_projet_complet_declarative_ui",
       "target": "docs_projet_complet_shopify_ui_extensions"
@@ -4474,7 +5230,7 @@
       "confidence": "EXTRACTED",
       "confidence_score": 1.0,
       "source_file": "docs/Projet Complet.md",
-      "source_location": "L163",
+      "source_location": null,
       "weight": 1.0,
       "source": "docs_projet_complet_protection_layers",
       "target": "docs_projet_complet_declarative_ui"
@@ -4484,7 +5240,7 @@
       "confidence": "EXTRACTED",
       "confidence_score": 1.0,
       "source_file": "docs/Projet Complet.md",
-      "source_location": "L171",
+      "source_location": null,
       "weight": 1.0,
       "source": "docs_projet_complet_module_lifecycle",
       "target": "docs_projet_complet_trust_levels"
@@ -4494,7 +5250,7 @@
       "confidence": "EXTRACTED",
       "confidence_score": 1.0,
       "source_file": "docs/Projet Complet.md",
-      "source_location": "L164",
+      "source_location": null,
       "weight": 1.0,
       "source": "docs_projet_complet_protection_layers",
       "target": "docs_projet_complet_trust_levels"
@@ -4504,19 +5260,29 @@
       "confidence": "EXTRACTED",
       "confidence_score": 1.0,
       "source_file": "docs/Projet Complet.md",
-      "source_location": "L165",
+      "source_location": null,
       "weight": 1.0,
-      "source": "docs_projet_complet_protection_layers",
-      "target": "docs_projet_complet_hostile_module_suite"
+      "source": "docs_projet_complet_hostile_module_suite",
+      "target": "docs_projet_complet_pseudonym_property_m12"
     },
     {
-      "relation": "conceptually_related_to",
+      "relation": "references",
       "confidence": "EXTRACTED",
       "confidence_score": 1.0,
       "source_file": "docs/Projet Complet.md",
-      "source_location": "L243",
+      "source_location": null,
       "weight": 1.0,
-      "source": "docs_projet_complet_testcontainers",
+      "source": "docs_projet_complet_hostile_module_suite",
+      "target": "docs_projet_complet_resource_limits_m8"
+    },
+    {
+      "relation": "references",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "source_file": "docs/Projet Complet.md",
+      "source_location": null,
+      "weight": 1.0,
+      "source": "docs_projet_complet_protection_layers",
       "target": "docs_projet_complet_hostile_module_suite"
     },
     {
@@ -4524,7 +5290,7 @@
       "confidence": "EXTRACTED",
       "confidence_score": 1.0,
       "source_file": "docs/Projet Complet.md",
-      "source_location": "L276",
+      "source_location": null,
       "weight": 1.0,
       "source": "docs_projet_complet_tests_as_security",
       "target": "docs_projet_complet_hostile_module_suite"
@@ -4534,7 +5300,7 @@
       "confidence": "EXTRACTED",
       "confidence_score": 1.0,
       "source_file": "docs/Projet Complet.md",
-      "source_location": "L169",
+      "source_location": null,
       "weight": 1.0,
       "source": "docs_projet_complet_module_lifecycle",
       "target": "docs_projet_complet_javy"
@@ -4544,17 +5310,17 @@
       "confidence": "EXTRACTED",
       "confidence_score": 1.0,
       "source_file": "docs/Projet Complet.md",
-      "source_location": "L219",
+      "source_location": null,
       "weight": 1.0,
       "source": "docs_projet_complet_q6_prototype",
       "target": "docs_projet_complet_javy"
     },
     {
-      "relation": "rationale_for",
-      "confidence": "INFERRED",
-      "confidence_score": 0.75,
+      "relation": "conceptually_related_to",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
       "source_file": "docs/Projet Complet.md",
-      "source_location": "L431",
+      "source_location": null,
       "weight": 1.0,
       "source": "docs_projet_complet_no_extism",
       "target": "docs_projet_complet_wasmtime"
@@ -4564,7 +5330,7 @@
       "confidence": "EXTRACTED",
       "confidence_score": 1.0,
       "source_file": "docs/Projet Complet.md",
-      "source_location": "L219",
+      "source_location": null,
       "weight": 1.0,
       "source": "docs_projet_complet_q6_prototype",
       "target": "docs_projet_complet_wasmtime"
@@ -4574,17 +5340,17 @@
       "confidence": "EXTRACTED",
       "confidence_score": 1.0,
       "source_file": "docs/Projet Complet.md",
-      "source_location": "L202",
+      "source_location": null,
       "weight": 1.0,
       "source": "docs_projet_complet_wasmtime_x86_rules",
       "target": "docs_projet_complet_wasmtime"
     },
     {
-      "relation": "calls",
-      "confidence": "INFERRED",
-      "confidence_score": 0.95,
+      "relation": "references",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
       "source_file": "docs/Projet Complet.md",
-      "source_location": "L269",
+      "source_location": null,
       "weight": 1.0,
       "source": "docs_projet_complet_wasmtimemodulerunner",
       "target": "docs_projet_complet_wasmtime"
@@ -4594,9 +5360,9 @@
       "confidence": "EXTRACTED",
       "confidence_score": 1.0,
       "source_file": "docs/Projet Complet.md",
-      "source_location": "L274",
+      "source_location": null,
       "weight": 1.0,
-      "source": "docs_projet_complet_imodulerunner",
+      "source": "docs_projet_complet_clean_architecture",
       "target": "docs_projet_complet_jint_fallback"
     },
     {
@@ -4604,9 +5370,19 @@
       "confidence": "EXTRACTED",
       "confidence_score": 1.0,
       "source_file": "docs/Projet Complet.md",
-      "source_location": "L221",
+      "source_location": null,
       "weight": 1.0,
-      "source": "docs_projet_complet_q6_prototype",
+      "source": "docs_projet_complet_jint_fallback",
+      "target": "docs_projet_complet_q6_prototype"
+    },
+    {
+      "relation": "references",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "source_file": "docs/Projet Complet.md",
+      "source_location": null,
+      "weight": 1.0,
+      "source": "docs_projet_complet_realization_order",
       "target": "docs_projet_complet_jint_fallback"
     },
     {
@@ -4614,7 +5390,7 @@
       "confidence": "EXTRACTED",
       "confidence_score": 1.0,
       "source_file": "docs/Projet Complet.md",
-      "source_location": "L169",
+      "source_location": null,
       "weight": 1.0,
       "source": "docs_projet_complet_module_lifecycle",
       "target": "docs_projet_complet_attested_build"
@@ -4624,27 +5400,37 @@
       "confidence": "EXTRACTED",
       "confidence_score": 1.0,
       "source_file": "docs/Projet Complet.md",
-      "source_location": "L168",
+      "source_location": null,
       "weight": 1.0,
       "source": "docs_projet_complet_module_lifecycle",
       "target": "docs_projet_complet_dev_kit"
-    },
-    {
-      "relation": "conceptually_related_to",
-      "confidence": "EXTRACTED",
-      "confidence_score": 1.0,
-      "source_file": "docs/Projet Complet.md",
-      "source_location": "L286",
-      "weight": 1.0,
-      "source": "docs_projet_complet_attested_build",
-      "target": "docs_projet_complet_agpl_license"
     },
     {
       "relation": "references",
       "confidence": "EXTRACTED",
       "confidence_score": 1.0,
       "source_file": "docs/Projet Complet.md",
-      "source_location": "L176",
+      "source_location": null,
+      "weight": 1.0,
+      "source": "docs_projet_complet_agpl_license",
+      "target": "docs_projet_complet_attested_build"
+    },
+    {
+      "relation": "references",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "source_file": "docs/Projet Complet.md",
+      "source_location": null,
+      "weight": 1.0,
+      "source": "docs_projet_complet_attested_build",
+      "target": "docs_projet_complet_github_actions_ci"
+    },
+    {
+      "relation": "references",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "source_file": "docs/Projet Complet.md",
+      "source_location": null,
       "weight": 1.0,
       "source": "docs_projet_complet_discord_external_commands",
       "target": "docs_projet_complet_discord_bot"
@@ -4654,7 +5440,7 @@
       "confidence": "EXTRACTED",
       "confidence_score": 1.0,
       "source_file": "docs/Projet Complet.md",
-      "source_location": "L184",
+      "source_location": null,
       "weight": 1.0,
       "source": "docs_projet_complet_rgpd",
       "target": "docs_projet_complet_b8_group_deletion"
@@ -4664,7 +5450,7 @@
       "confidence": "EXTRACTED",
       "confidence_score": 1.0,
       "source_file": "docs/Projet Complet.md",
-      "source_location": "L187",
+      "source_location": null,
       "weight": 1.0,
       "source": "docs_projet_complet_rgpd",
       "target": "docs_projet_complet_d11_native_purge_contract"
@@ -4674,7 +5460,7 @@
       "confidence": "EXTRACTED",
       "confidence_score": 1.0,
       "source_file": "docs/Projet Complet.md",
-      "source_location": "L330",
+      "source_location": null,
       "weight": 1.0,
       "source": "docs_projet_complet_b8_group_deletion",
       "target": "docs_projet_complet_d11_native_purge_contract"
@@ -4684,7 +5470,17 @@
       "confidence": "EXTRACTED",
       "confidence_score": 1.0,
       "source_file": "docs/Projet Complet.md",
-      "source_location": "L268",
+      "source_location": null,
+      "weight": 1.0,
+      "source": "docs_projet_complet_architecture_tests_project",
+      "target": "docs_projet_complet_clean_architecture"
+    },
+    {
+      "relation": "references",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "source_file": "docs/Projet Complet.md",
+      "source_location": null,
       "weight": 1.0,
       "source": "docs_projet_complet_clean_architecture",
       "target": "docs_projet_complet_iclasseurstore"
@@ -4694,27 +5490,27 @@
       "confidence": "EXTRACTED",
       "confidence_score": 1.0,
       "source_file": "docs/Projet Complet.md",
-      "source_location": "L268",
+      "source_location": null,
       "weight": 1.0,
       "source": "docs_projet_complet_clean_architecture",
       "target": "docs_projet_complet_imodulerunner"
     },
     {
-      "relation": "conceptually_related_to",
+      "relation": "references",
       "confidence": "EXTRACTED",
       "confidence_score": 1.0,
       "source_file": "docs/Projet Complet.md",
-      "source_location": "L274",
+      "source_location": null,
       "weight": 1.0,
-      "source": "docs_projet_complet_clean_architecture",
-      "target": "docs_projet_complet_netarchtest_boundaries"
+      "source": "docs_projet_complet_netarchtest_boundaries",
+      "target": "docs_projet_complet_clean_architecture"
     },
     {
       "relation": "implements",
       "confidence": "EXTRACTED",
       "confidence_score": 1.0,
       "source_file": "docs/Projet Complet.md",
-      "source_location": "L492",
+      "source_location": null,
       "weight": 1.0,
       "source": "docs_projet_complet_solution_skeleton",
       "target": "docs_projet_complet_clean_architecture"
@@ -4724,27 +5520,67 @@
       "confidence": "EXTRACTED",
       "confidence_score": 1.0,
       "source_file": "docs/Projet Complet.md",
-      "source_location": "L269",
+      "source_location": null,
       "weight": 1.0,
       "source": "docs_projet_complet_wasmtimemodulerunner",
       "target": "docs_projet_complet_imodulerunner"
+    },
+    {
+      "relation": "implements",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "source_file": "docs/Projet Complet.md",
+      "source_location": null,
+      "weight": 1.0,
+      "source": "docs_projet_complet_architecture_tests_project",
+      "target": "docs_projet_complet_netarchtest_boundaries"
     },
     {
       "relation": "references",
       "confidence": "EXTRACTED",
       "confidence_score": 1.0,
       "source_file": "docs/Projet Complet.md",
-      "source_location": "L276",
+      "source_location": null,
       "weight": 1.0,
       "source": "docs_projet_complet_tests_as_security",
       "target": "docs_projet_complet_netarchtest_boundaries"
     },
     {
-      "relation": "calls",
+      "relation": "conceptually_related_to",
       "confidence": "INFERRED",
       "confidence_score": 0.85,
       "source_file": "docs/Projet Complet.md",
-      "source_location": "L241",
+      "source_location": null,
+      "weight": 1.0,
+      "source": "docs_projet_complet_tests_as_security",
+      "target": "docs_projet_complet_architecture_tests_project"
+    },
+    {
+      "relation": "semantically_similar_to",
+      "confidence": "INFERRED",
+      "confidence_score": 0.75,
+      "source_file": "docs/Projet Complet.md",
+      "source_location": null,
+      "weight": 1.0,
+      "source": "docs_projet_complet_ef_core_global_filters",
+      "target": "docs_projet_complet_postgresql_rls"
+    },
+    {
+      "relation": "references",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "source_file": "docs/Projet Complet.md",
+      "source_location": null,
+      "weight": 1.0,
+      "source": "docs_projet_complet_postgresql_rls",
+      "target": "docs_projet_complet_postgresql"
+    },
+    {
+      "relation": "references",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "source_file": "docs/Projet Complet.md",
+      "source_location": null,
       "weight": 1.0,
       "source": "docs_projet_complet_caddy",
       "target": "docs_projet_complet_aspnet_core"
@@ -4754,37 +5590,57 @@
       "confidence": "EXTRACTED",
       "confidence_score": 1.0,
       "source_file": "docs/Projet Complet.md",
-      "source_location": "L489",
+      "source_location": null,
       "weight": 1.0,
       "source": "docs_projet_complet_local_docker_stack",
       "target": "docs_projet_complet_caddy"
-    },
-    {
-      "relation": "implements",
-      "confidence": "EXTRACTED",
-      "confidence_score": 1.0,
-      "source_file": "docs/Projet Complet.md",
-      "source_location": "L489",
-      "weight": 1.0,
-      "source": "docs_projet_complet_local_docker_stack",
-      "target": "docs_projet_complet_docker_compose"
-    },
-    {
-      "relation": "shares_data_with",
-      "confidence": "EXTRACTED",
-      "confidence_score": 1.0,
-      "source_file": "docs/Projet Complet.md",
-      "source_location": "L229",
-      "weight": 1.0,
-      "source": "docs_projet_complet_aspnet_core",
-      "target": "docs_projet_complet_discord_bot"
     },
     {
       "relation": "references",
       "confidence": "EXTRACTED",
       "confidence_score": 1.0,
       "source_file": "docs/Projet Complet.md",
-      "source_location": "L454",
+      "source_location": null,
+      "weight": 1.0,
+      "source": "docs_projet_complet_local_docker_stack",
+      "target": "docs_projet_complet_docker_compose"
+    },
+    {
+      "relation": "references",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "source_file": "docs/Projet Complet.md",
+      "source_location": null,
+      "weight": 1.0,
+      "source": "docs_projet_complet_discord_bot",
+      "target": "docs_projet_complet_aspnet_core"
+    },
+    {
+      "relation": "references",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "source_file": "docs/Projet Complet.md",
+      "source_location": null,
+      "weight": 1.0,
+      "source": "docs_projet_complet_l4_bot_commands_per_module",
+      "target": "docs_projet_complet_discord_bot"
+    },
+    {
+      "relation": "conceptually_related_to",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "source_file": "docs/Projet Complet.md",
+      "source_location": null,
+      "weight": 1.0,
+      "source": "docs_projet_complet_riot_rules",
+      "target": "docs_projet_complet_data_dragon"
+    },
+    {
+      "relation": "references",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "source_file": "docs/Projet Complet.md",
+      "source_location": null,
       "weight": 1.0,
       "source": "docs_projet_complet_open_questions",
       "target": "docs_projet_complet_q6_prototype"
@@ -4794,19 +5650,9 @@
       "confidence": "EXTRACTED",
       "confidence_score": 1.0,
       "source_file": "docs/Projet Complet.md",
-      "source_location": "L470",
+      "source_location": null,
       "weight": 1.0,
-      "source": "docs_projet_complet_tgft_modulehost",
-      "target": "docs_projet_complet_q6_prototype"
-    },
-    {
-      "relation": "conceptually_related_to",
-      "confidence": "EXTRACTED",
-      "confidence_score": 1.0,
-      "source_file": "docs/Projet Complet.md",
-      "source_location": "L489",
-      "weight": 1.0,
-      "source": "docs_projet_complet_local_docker_stack",
+      "source": "docs_projet_complet_q6_prototype",
       "target": "docs_projet_complet_tgft_modulehost"
     },
     {
@@ -4814,19 +5660,109 @@
       "confidence": "EXTRACTED",
       "confidence_score": 1.0,
       "source_file": "docs/Projet Complet.md",
-      "source_location": "L493",
+      "source_location": null,
       "weight": 1.0,
-      "source": "docs_projet_complet_cve_2026_49451_fix",
+      "source": "docs_projet_complet_realization_order",
+      "target": "docs_projet_complet_q6_prototype"
+    },
+    {
+      "relation": "references",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "source_file": "docs/Projet Complet.md",
+      "source_location": null,
+      "weight": 1.0,
+      "source": "docs_projet_complet_solution_skeleton",
+      "target": "docs_projet_complet_cve_2026_49451_fix"
+    },
+    {
+      "relation": "references",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "source_file": "docs/Projet Complet.md",
+      "source_location": null,
+      "weight": 1.0,
+      "source": "docs_projet_complet_graphify_single_update_decision",
+      "target": "docs_projet_complet_graphify_out_versioned"
+    },
+    {
+      "relation": "references",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "source_file": "docs/Projet Complet.md",
+      "source_location": null,
+      "weight": 1.0,
+      "source": "docs_projet_complet_architecture_tests_project",
       "target": "docs_projet_complet_solution_skeleton"
+    },
+    {
+      "relation": "references",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "source_file": "docs/Projet Complet.md",
+      "source_location": null,
+      "weight": 1.0,
+      "source": "docs_projet_complet_separate_git_repo",
+      "target": "docs_projet_complet_solution_skeleton"
+    },
+    {
+      "relation": "references",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "source_file": "docs/Projet Complet.md",
+      "source_location": null,
+      "weight": 1.0,
+      "source": "docs_projet_complet_compose_project_rename",
+      "target": "docs_projet_complet_local_docker_stack"
+    },
+    {
+      "relation": "references",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "source_file": "docs/Projet Complet.md",
+      "source_location": null,
+      "weight": 1.0,
+      "source": "docs_projet_complet_local_docker_stack",
+      "target": "docs_projet_complet_postgresql"
+    },
+    {
+      "relation": "references",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "source_file": "docs/Projet Complet.md",
+      "source_location": null,
+      "weight": 1.0,
+      "source": "docs_projet_complet_architecture_tests_project",
+      "target": "docs_projet_complet_assembly_marker"
+    },
+    {
+      "relation": "references",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "source_file": "docs/Projet Complet.md",
+      "source_location": null,
+      "weight": 1.0,
+      "source": "docs_projet_complet_architecture_tests_project",
+      "target": "docs_projet_complet_github_actions_ci"
+    },
+    {
+      "relation": "references",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "source_file": "docs/Projet Complet.md",
+      "source_location": null,
+      "weight": 1.0,
+      "source": "docs_projet_complet_realization_order",
+      "target": "docs_projet_complet_architecture_tests_project"
     }
   ],
   "hyperedges": [
     {
-      "id": "docs_projet_complet_call_flow",
+      "id": "marketplace_call_flow",
       "label": "Deroule d'un appel de module externe",
       "nodes": [
-        "docs_projet_complet_zone_de_confiance",
         "docs_projet_complet_paquet",
+        "docs_projet_complet_zone_de_confiance",
         "docs_projet_complet_salle_des_machines",
         "docs_projet_complet_reponse",
         "docs_projet_complet_classeur"
@@ -4837,17 +5773,31 @@
       "source_file": "docs/Projet Complet.md"
     },
     {
-      "id": "docs_projet_complet_tenant_isolation_defense",
-      "label": "Defense en profondeur de l'isolation multi-tenant",
+      "id": "structural_tenant_isolation",
+      "label": "Isolation multi-tenant structurelle a double rempart",
       "nodes": [
+        "docs_projet_complet_multi_tenant_isolation",
         "docs_projet_complet_ef_core_global_filters",
         "docs_projet_complet_postgresql_rls",
-        "docs_projet_complet_testcontainers",
+        "docs_projet_complet_testcontainers"
+      ],
+      "relation": "form",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "source_file": "docs/Projet Complet.md"
+    },
+    {
+      "id": "architecture_enforcement",
+      "label": "Frontieres d'architecture verifiees par tests",
+      "nodes": [
+        "docs_projet_complet_clean_architecture",
+        "docs_projet_complet_netarchtest_boundaries",
+        "docs_projet_complet_architecture_tests_project",
         "docs_projet_complet_tests_as_security"
       ],
       "relation": "form",
-      "confidence": "INFERRED",
-      "confidence_score": 0.85,
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
       "source_file": "docs/Projet Complet.md"
     },
     {
@@ -4865,5 +5815,5 @@
       "source_file": "docker-compose.yml"
     }
   ],
-  "built_at_commit": "7e607bf8b37aebda88513c70752673668ea5a471"
+  "built_at_commit": "01311dfdf0806749a6e36709949376d6bb65373d"
 }

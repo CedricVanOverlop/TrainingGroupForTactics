@@ -1,8 +1,8 @@
 {
   "TGFT.slnx": {
-    "mtime": 1791993040.9555469,
-    "ast_hash": "94a9fa828204b9a7eb8ef08f66a3417e",
-    "semantic_hash": "94a9fa828204b9a7eb8ef08f66a3417e"
+    "mtime": 1792569851.1882386,
+    "ast_hash": "243b0f8a2d05097b511e5f1c1b1d8a84",
+    "semantic_hash": "243b0f8a2d05097b511e5f1c1b1d8a84"
   },
   "backend/TGFT.Api/Program.cs": {
     "mtime": 1791992383.9577,
@@ -110,14 +110,14 @@
     "semantic_hash": "9e61a5663cdfef3c963a3595ac1a7813"
   },
   "claude.md": {
-    "mtime": 1792076840.4164007,
-    "ast_hash": "4ed89dca4ac47e19399913c9f0fe501c",
-    "semantic_hash": "4ed89dca4ac47e19399913c9f0fe501c"
+    "mtime": 1792570241.2064643,
+    "ast_hash": "d0c4cd140dfdbe56a20d544ed4dc7724",
+    "semantic_hash": "d0c4cd140dfdbe56a20d544ed4dc7724"
   },
   "docs/Projet Complet.md": {
-    "mtime": 1792080821.766345,
-    "ast_hash": "fba6be39db44c07ffbd37612c402a2d7",
-    "semantic_hash": "fba6be39db44c07ffbd37612c402a2d7"
+    "mtime": 1792570241.404253,
+    "ast_hash": "78afda89a71a14b7bc2ab5eb206692aa",
+    "semantic_hash": "78afda89a71a14b7bc2ab5eb206692aa"
   },
   "frontend/README.md": {
     "mtime": 1791992766.011335,
@@ -143,5 +143,35 @@
     "mtime": 1792080672.7853982,
     "ast_hash": "dda8b7cacf1664f4423187f59eee960d",
     "semantic_hash": "dda8b7cacf1664f4423187f59eee960d"
+  },
+  "backend/TGFT.Api/AssemblyMarker.cs": {
+    "mtime": 1792569870.5300937,
+    "ast_hash": "e6f398700606c1fbc1180099fc4e4409",
+    "semantic_hash": "e6f398700606c1fbc1180099fc4e4409"
+  },
+  "backend/TGFT.Application/AssemblyMarker.cs": {
+    "mtime": 1792569870.3644917,
+    "ast_hash": "01e0e31b9f2b61e1851790c3cb9bc7af",
+    "semantic_hash": "01e0e31b9f2b61e1851790c3cb9bc7af"
+  },
+  "backend/TGFT.Domain/AssemblyMarker.cs": {
+    "mtime": 1792569870.3001618,
+    "ast_hash": "c37b3f1ab5965c354eb4cacf0d0be669",
+    "semantic_hash": "c37b3f1ab5965c354eb4cacf0d0be669"
+  },
+  "backend/TGFT.Infrastructure/AssemblyMarker.cs": {
+    "mtime": 1792569870.4145849,
+    "ast_hash": "7c984d2646def9d9121859884f887c72",
+    "semantic_hash": "7c984d2646def9d9121859884f887c72"
+  },
+  "tests/TGFT.ArchitectureTests/LayerDependencyTests.cs": {
+    "mtime": 1792569870.66178,
+    "ast_hash": "adffd8e545f09a593ec360ca1454e419",
+    "semantic_hash": "adffd8e545f09a593ec360ca1454e419"
+  },
+  "tests/TGFT.ArchitectureTests/TGFT.ArchitectureTests.csproj": {
+    "mtime": 1792569850.577222,
+    "ast_hash": "7e519bcc2b61c0b1e2687ae64922fa12",
+    "semantic_hash": "7e519bcc2b61c0b1e2687ae64922fa12"
   }
 }

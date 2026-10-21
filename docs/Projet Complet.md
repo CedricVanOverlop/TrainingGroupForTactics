@@ -4,7 +4,7 @@
 > En cas de contradiction avec `claude.md`, **ce fichier fait foi**.
 > En cas de contradiction avec le **cahier des charges V2** (`docs/Cedric_Van_Overlop_-_Cahier_des_Charges_Projet_integration_V2.pdf`), **le cahier des charges fait foi** — et il faut corriger ce fichier.
 >
-> **Dernière mise à jour :** 2026-10-14 · **Version :** 1.4
+> **Dernière mise à jour :** 2026-10-21 · **Version :** 1.5
 
 **Sommaire**
 [1. Le projet en une page](#1-le-projet-en-une-page) ·
@@ -216,7 +216,7 @@ Le module déclare ses commandes dans son manifeste : **une commande par module,
 *Les mécanismes différés sont **conçus et documentés** dans le cahier des charges même s'ils ne sont pas implémentés : **l'isolation entre groupes ne dépend d'aucun d'eux**.*
 
 ### 6.11 Premier jalon technique et plan de repli
-**Premier livrable de la marketplace = un prototype de bout en bout** : un module JavaScript compilé avec Javy, exécuté depuis .NET avec ses plafonds.
+**Premier livrable de la marketplace = un prototype de bout en bout** : un module JavaScript compilé avec Javy, exécuté depuis .NET avec ses plafonds. *La marketplace vient après le noyau et un ou deux modules natifs (ordre fixé le 2026-10-21, voir §13 et §14).*
 
 **S'il échoue → bascule sur Jint** (interpréteur JavaScript écrit en C#), dans la **même salle des machines isolée**. Ses auteurs précisant qu'il ne constitue pas à lui seul une frontière de sécurité, la couche 2 deviendrait alors la protection principale. **Tout le reste est inchangé** : paquet, réponse, classeurs, pseudonymes, interface.
 
@@ -458,23 +458,26 @@ L'exploitation d'une instance unique hébergeant les données de plusieurs commu
 
 ## 13. État d'avancement
 
-**Phase actuelle : cadrage terminé, aucun code écrit.**
+**Phase actuelle : squelettes, pile locale et tests d'architecture en place, aucun code métier. Prochaine étape : le noyau.**
+
+**Ordre de réalisation** (décidé le 2026-10-21) : **1.** tests d'architecture → **2.** noyau → **3.** un ou deux modules natifs → **4.** marketplace (prototype Javy + Wasmtime, puis le reste).
 
 | Jalon | État |
 |---|---|
 | Cahier des charges V2 | ✅ Fait |
 | Ce fichier de mémoire | ✅ Fait (2026-10-14) |
-| Graphe de connaissance `graphify-out/` | ✅ Fait (2026-10-15) — versionné dans git ; `/graphify . --update` après chaque modification du code, et une seule fois avant le commit pour la doc et la configuration |
+| Graphe de connaissance `graphify-out/` | ✅ Fait (2026-10-15) — versionné dans git ; `/graphify . --update` une seule fois, juste avant le commit, pour le code comme pour la doc et la configuration |
 | **Squelette .NET** — `TGFT.slnx` + 4 projets `net10.0` dans `backend/`, références câblées, build vert | ✅ Fait (2026-10-14) |
 | **Squelette Angular 22** — `frontend/`, SCSS, routing, sans SSR, build vert | ✅ Fait (2026-10-14) |
-| `TGFT.ModuleHost` (salle des machines) | ⬜ À faire — avec le prototype Q6 |
 | Docker Compose + Caddy (local) — projet `tgft-platform`, `docker compose up --build` → http://localhost:8081 | ✅ Fait (2026-10-15) |
-| **Prototype marketplace de bout en bout** (Javy + Wasmtime) — *premier jalon technique* | ⬜ À faire |
-| Noyau : comptes, groupes, membres, rôles, permissions | ⬜ À faire |
-| Module natif Team Builder | ⬜ À faire |
-| Module natif Tier Lists | ⬜ À faire |
-| Module de démonstration Tournoi (M16) | ⬜ À faire |
-| Suite de modules hostiles (M10) | ⬜ À faire |
+| **1. Tests d'architecture** — `tests/TGFT.ArchitectureTests` (xUnit + NetArchTest), 5 règles Clean Architecture, verts | ✅ Fait (2026-10-21) — CI GitHub Actions différée |
+| **2. Noyau** : comptes, groupes, membres, rôles, permissions | ⬜ À faire |
+| **3. Module natif Team Builder** | ⬜ À faire |
+| **3. Module natif Tier Lists** | ⬜ À faire |
+| **4. Prototype marketplace de bout en bout** (Javy + Wasmtime) — premier jalon de la marketplace | ⬜ À faire |
+| **4.** `TGFT.ModuleHost` (salle des machines) | ⬜ À faire — avec le prototype Q6 |
+| **4.** Module de démonstration Tournoi (M16) | ⬜ À faire |
+| **4.** Suite de modules hostiles (M10) | ⬜ À faire |
 
 ---
 
@@ -484,6 +487,9 @@ L'exploitation d'une instance unique hébergeant les données de plusieurs commu
 
 | Date | Changement |
 |---|---|
+| 2026-10-21 | **Règle graphify simplifiée : une seule mise à jour, juste avant le commit, pour le code comme pour la doc.** L'analyse du code ne fait pas appel au LLM, mais chaque mise à jour consomme environ 15 000 à 20 000 tokens de contexte dans la session (instructions du skill, commandes). Le graphe n'est utile que dans git, et la règle « le graphe versionné correspond à son commit » reste respectée. Le hook git `post-commit` a été écarté, car il laisserait le graphe versionné avec un commit de retard. |
+| 2026-10-21 | **Tests d'architecture créés.** Projet `tests/TGFT.ArchitectureTests` (xUnit 2.9.3, NetArchTest.Rules 1.3.2), ajouté à `TGFT.slnx` dans le dossier `/tests/`. Cinq règles : Domain ne dépend ni des autres couches ni d'EF Core ou d'ASP.NET Core ; Application ne dépend ni d'Infrastructure, ni d'Api, ni d'EF Core ; Infrastructure ne dépend pas d'Api. Une classe vide `AssemblyMarker` par projet sert à charger chaque assembly. `coverlet.collector` (ajouté par le template) a été retiré, car il n'est pas utile pour l'instant. Aucun paquet vulnérable. Les règles propres aux modules natifs viendront avec le premier module. CI différée. |
+| 2026-10-21 | **Ordre de réalisation fixé : tests d'architecture → noyau → un ou deux modules natifs → marketplace.** Le prototype Javy + Wasmtime n'est plus le premier jalon technique du projet, mais il reste le premier livrable de la marketplace (§6.11). Conséquence assumée : la question Q6 (Javy tient-il ?) sera tranchée plus tard. Le risque est limité, car le plan de repli Jint ne change que l'`Infrastructure` et la salle des machines, pas le noyau ni les modules natifs. Les tests d'architecture viennent en premier pour que les frontières soient vérifiées dès la première ligne de code métier. |
 | 2026-10-15 | **Projet Compose renommé `tgft` → `tgft-platform`, port 8080 → 8081.** L'ancien projet `Desktop\Mes projets\TGFT` (MySQL, web, bot) porte déjà le nom `tgft`, que Docker déduit de son dossier, et publie aussi `127.0.0.1:8080`. Avec un nom identique, Docker a fusionné les deux projets et le nouveau service `api` a écrasé l'ancien conteneur `tgft-api-1` et son image. Aucune donnée n'a été perdue : les volumes `tgft_mysql-data` et `tgft_images` sont intacts, et l'ancienne API se reconstruit depuis son dossier. ⚠️ **Toujours un `name:` explicite et unique dans le compose.** |
 | 2026-10-15 | **Graphe graphify créé et versionné** (`graphify-out/`, ~600 Ko) : il est disponible dans toute nouvelle session sans reconstruction (~250 000 tokens). **Règle de mise à jour assouplie** : le code est retraité après chaque modification (analyse syntaxique, gratuite), mais la doc et la configuration une seule fois avant le commit, parce que chaque fichier de doc est ré-extrait en entier par un LLM (~100 000 tokens pour ce fichier). |
 | 2026-10-15 | **Pile Docker locale.** `docker-compose.yml` : `caddy` (seul port publié, `127.0.0.1:8080`, devenu 8081 : voir l'entrée ci-dessus), `api` (image `aspnet:10.0`, utilisateur non-root) et `postgres` (18, volume `pgdata`, healthcheck : l'API attend que la base soit prête). Caddy sert Angular et relaie `/api/*` vers l'API, qui n'est jamais exposée directement. Mot de passe dans `.env` (ignoré par git), modèle dans `.env.example`. Salle des machines pas encore incluse (prototype Q6). |

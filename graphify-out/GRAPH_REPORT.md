@@ -1,53 +1,58 @@
-# Graph Report - .  (2026-10-15)
+# Graph Report - .  (2026-10-21)
 
 ## Corpus Check
-- Corpus is ~13,097 words - fits in a single context window. You may not need a graph.
+- 2 files · ~13,831 words
+- Verdict: corpus is large enough that graph structure adds value.
 
 ## Summary
-- 202 nodes · 247 edges · 17 communities (13 shown, 4 thin omitted)
-- Extraction: 94% EXTRACTED · 6% INFERRED · 0% AMBIGUOUS · INFERRED: 16 edges (avg confidence: 0.82)
-- Token cost: 104,967 input · 0 output
+- 234 nodes · 291 edges · 21 communities (13 shown, 8 thin omitted)
+- Extraction: 96% EXTRACTED · 4% INFERRED · 0% AMBIGUOUS · INFERRED: 11 edges (avg confidence: 0.82)
+- Token cost: 93,509 input · 0 output
 
 ## Community Hubs (Navigation)
-- [[_COMMUNITY_Projets .NET (csproj)|Projets .NET (csproj)]]
-- [[_COMMUNITY_Template API WeatherForecast|Template API WeatherForecast]]
-- [[_COMMUNITY_Profils de lancement API|Profils de lancement API]]
-- [[_COMMUNITY_Configuration angular.json|Configuration angular.json]]
-- [[_COMMUNITY_Outillage dev frontend|Outillage dev frontend]]
-- [[_COMMUNITY_Cibles de build Angular|Cibles de build Angular]]
-- [[_COMMUNITY_Dépendances Angular|Dépendances Angular]]
-- [[_COMMUNITY_Composants Angular|Composants Angular]]
-- [[_COMMUNITY_Sources de référence et règles|Sources de référence et règles]]
-- [[_COMMUNITY_Noyau, isolation et tests|Noyau, isolation et tests]]
 - [[_COMMUNITY_Flux d appel et salle des machines|Flux d appel et salle des machines]]
+- [[_COMMUNITY_Cibles de build Angular|Cibles de build Angular]]
+- [[_COMMUNITY_Pile Docker locale|Pile Docker locale]]
+- [[_COMMUNITY_Configuration angular.json|Configuration angular.json]]
+- [[_COMMUNITY_Dépendances Angular|Dépendances Angular]]
+- [[_COMMUNITY_Profils de lancement API|Profils de lancement API]]
+- [[_COMMUNITY_Tests d architecture (code)|Tests d architecture (code)]]
+- [[_COMMUNITY_Projets .NET (csproj)|Projets .NET (csproj)]]
+- [[_COMMUNITY_Classeur, données et exigences|Classeur, données et exigences]]
+- [[_COMMUNITY_Clean Architecture et ports|Clean Architecture et ports]]
+- [[_COMMUNITY_Composants Angular|Composants Angular]]
+- [[_COMMUNITY_Règles de travail et graphify|Règles de travail et graphify]]
+- [[_COMMUNITY_Sources de référence et marketplace|Sources de référence et marketplace]]
+- [[_COMMUNITY_Marqueur assembly Api|Marqueur assembly Api]]
+- [[_COMMUNITY_Marqueur assembly Application|Marqueur assembly Application]]
+- [[_COMMUNITY_Marqueur assembly Domain|Marqueur assembly Domain]]
+- [[_COMMUNITY_Marqueur assembly Infrastructure|Marqueur assembly Infrastructure]]
+- [[_COMMUNITY_Template API WeatherForecast|Template API WeatherForecast]]
 - [[_COMMUNITY_README frontend|README frontend]]
 - [[_COMMUNITY_Template racine Angular|Template racine Angular]]
 - [[_COMMUNITY_Routage Angular|Routage Angular]]
-- [[_COMMUNITY_Pile Docker locale|Pile Docker locale]]
-- [[_COMMUNITY_Modules natifs, externes et Discord|Modules natifs, externes et Discord]]
-- [[_COMMUNITY_Classeur, données et exigences|Classeur, données et exigences]]
 
 ## God Nodes (most connected - your core abstractions)
-1. `Classeur (SQLite par module et par groupe)` - 8 edges
-2. `8 couches de protection` - 8 edges
-3. `TGFT.Web` - 7 edges
-4. `CLAUDE.md (Projet TGFT)` - 7 edges
-5. `docker-compose.yml (tgft-platform)` - 7 edges
-6. `Salle des machines` - 7 edges
-7. `http` - 6 edges
-8. `https` - 6 edges
-9. `options` - 6 edges
-10. `development` - 6 edges
+1. `TGFT.ArchitectureTests` - 11 edges
+2. `LayerDependencyTests` - 9 edges
+3. `CLAUDE.md (Projet TGFT)` - 8 edges
+4. `8 couches de protection` - 8 edges
+5. `TGFT.Web` - 7 edges
+6. `Bac a sable WebAssembly` - 7 edges
+7. `Classeur (SQLite par module et par groupe)` - 7 edges
+8. `Clean Architecture (Domain/Application/Infrastructure/Api)` - 7 edges
+9. `tests/TGFT.ArchitectureTests (xUnit + NetArchTest, 5 regles)` - 7 edges
+10. `http` - 6 edges
 
 ## Surprising Connections (you probably didn't know these)
 - `docker-compose.yml (tgft-platform)` --implements--> `Docker / Docker Compose`  [INFERRED]
   docker-compose.yml → docs/Projet Complet.md
-- `postgres service (postgres:18-alpine)` --conceptually_related_to--> `PostgreSQL Row Level Security`  [INFERRED]
-  docker-compose.yml → docs/Projet Complet.md
+- `Défis techniques et points d'intérêt (8 challenges)` --references--> `Les tests sont la protection`  [EXTRACTED]
+  docs/Cedric_Van_Overlop_-_Cahier_des_Charges_Projet_integration_V2.pdf → docs/Projet Complet.md
 - `Diagram: zone de confiance / salle des machines call flow` --references--> `Salle des machines`  [EXTRACTED]
   docs/Cedric_Van_Overlop_-_Cahier_des_Charges_Projet_integration_V2.pdf → docs/Projet Complet.md
-- `CLAUDE.md (Projet TGFT)` --references--> `8 couches de protection`  [EXTRACTED]
-  claude.md → docs/Projet Complet.md
+- `Diagram: zone de confiance / salle des machines call flow` --references--> `Zone de confiance (API)`  [EXTRACTED]
+  docs/Cedric_Van_Overlop_-_Cahier_des_Charges_Projet_integration_V2.pdf → docs/Projet Complet.md
 - `caddy service (127.0.0.1:8081)` --implements--> `Caddy (proxy inverse)`  [INFERRED]
   docker-compose.yml → docs/Projet Complet.md
 
@@ -55,83 +60,84 @@
 - None detected.
 
 ## Hyperedges (group relationships)
-- **Deroule d'un appel de module externe** — docs_projet_complet_zone_de_confiance, docs_projet_complet_paquet, docs_projet_complet_salle_des_machines, docs_projet_complet_reponse, docs_projet_complet_classeur [EXTRACTED 1.00]
-- **Defense en profondeur de l'isolation multi-tenant** — docs_projet_complet_ef_core_global_filters, docs_projet_complet_postgresql_rls, docs_projet_complet_testcontainers, docs_projet_complet_tests_as_security [INFERRED 0.85]
+- **Deroule d'un appel de module externe** — docs_projet_complet_paquet, docs_projet_complet_zone_de_confiance, docs_projet_complet_salle_des_machines, docs_projet_complet_reponse, docs_projet_complet_classeur [EXTRACTED 1.00]
+- **Isolation multi-tenant structurelle a double rempart** — docs_projet_complet_multi_tenant_isolation, docs_projet_complet_ef_core_global_filters, docs_projet_complet_postgresql_rls, docs_projet_complet_testcontainers [EXTRACTED 1.00]
+- **Frontieres d'architecture verifiees par tests** — docs_projet_complet_clean_architecture, docs_projet_complet_netarchtest_boundaries, docs_projet_complet_architecture_tests_project, docs_projet_complet_tests_as_security [EXTRACTED 1.00]
 - **Pile locale tgft-platform (caddy -> api -> postgres)** — docker_compose_caddy_service, docker_compose_api_service, docker_compose_postgres_service, docker_compose_pgdata_volume [EXTRACTED 1.00]
 
-## Communities (17 total, 4 thin omitted)
+## Communities (21 total, 8 thin omitted)
 
-### Community 5 - "Projets .NET (csproj)"
-Cohesion: 0.19
-Nodes (9): net10.0, Microsoft.AspNetCore.OpenApi (10.0.13), Microsoft.NET.Sdk.Web, net10.0, Microsoft.NET.Sdk, net10.0, Microsoft.NET.Sdk, net10.0 (+1 more)
-
-### Community 3 - "Profils de lancement API"
-Cohesion: 0.13
-Nodes (15): $schema, profiles, http, commandName, dotnetRunMessages, launchBrowser, applicationUrl, environmentVariables (+7 more)
-
-### Community 8 - "Configuration angular.json"
-Cohesion: 0.15
-Nodes (12): $schema, version, newProjectRoot, projects, TGFT.Web, projectType, schematics, @schematics/angular:component (+4 more)
-
-### Community 10 - "Outillage dev frontend"
-Cohesion: 0.20
-Nodes (10): cli, packageManager, devDependencies, @angular/build, @angular/cli, @angular/compiler-cli, jsdom, prettier (+2 more)
+### Community 0 - "Flux d appel et salle des machines"
+Cohesion: 0.08
+Nodes (34): Diagram: zone de confiance / salle des machines call flow, Licence AGPL-3.0 + DCO, Angular, chargement differe, Compilation attestee (M4), Interface declarative, Kit de developpement TGFT, GitHub Actions (CI), Suite de modules hostiles (M10) (+26 more)
 
 ### Community 1 - "Cibles de build Angular"
 Cohesion: 0.08
-Nodes (26): architect, build, builder, options, browser, tsConfig, inlineStyleLanguage, assets (+18 more)
+Nodes (26): build, serve, test, builder, configurations, defaultConfiguration, options, development (+18 more)
 
-### Community 2 - "Dépendances Angular"
+### Community 2 - "Pile Docker locale"
+Cohesion: 0.13
+Nodes (23): docker-compose.yml (tgft-platform), api service (TGFT.Api), caddy service (127.0.0.1:8081), pgdata volume, POSTGRES_PASSWORD (.env), postgres service (postgres:18-alpine), Défis techniques et points d'intérêt (8 challenges), ASP.NET Core (C#) (+15 more)
+
+### Community 3 - "Configuration angular.json"
+Cohesion: 0.09
+Nodes (22): cli, packageManager, newProjectRoot, projects, TGFT.Web, $schema, style, @schematics/angular:component (+14 more)
+
+### Community 4 - "Dépendances Angular"
 Cohesion: 0.10
-Nodes (19): name, version, scripts, ng, start, build, watch, test (+11 more)
+Nodes (19): dependencies, @angular/common, @angular/compiler, @angular/core, @angular/forms, @angular/platform-browser, @angular/router, rxjs (+11 more)
 
-### Community 11 - "Composants Angular"
-Cohesion: 0.33
-Nodes (4): appConfig, routes, App, Component
+### Community 5 - "Profils de lancement API"
+Cohesion: 0.13
+Nodes (15): ASPNETCORE_ENVIRONMENT, applicationUrl, commandName, dotnetRunMessages, environmentVariables, launchBrowser, applicationUrl, commandName (+7 more)
 
-### Community 7 - "Sources de référence et règles"
+### Community 6 - "Tests d architecture (code)"
+Cohesion: 0.27
+Nodes (6): Assembly, TGFT.ArchitectureTests, Fact, string, TestResult, LayerDependencyTests
+
+### Community 7 - "Projets .NET (csproj)"
 Cohesion: 0.23
-Nodes (13): Cahier des charges V2 (TGFT specification), CLAUDE.md (Projet TGFT), Regle n1 : ne jamais coder sans demande explicite, Regle de mise a jour graphify (code apres chaque modif, doc/config une fois avant commit), Projet Complet.md (memoire vivante), Hierarchie des sources (CdC V2 > Projet Complet > claude.md), TGFT platform, Cahier des charges V2 (+5 more)
+Nodes (11): TGFT.Api, TGFT.Application, TGFT.Domain, TGFT.Infrastructure, net10.0, Microsoft.NET.Test.Sdk (17.14.1), NetArchTest.Rules (1.3.2), xunit (2.9.3) (+3 more)
 
-### Community 4 - "Noyau, isolation et tests"
-Cohesion: 0.14
-Nodes (15): Défis techniques et points d'intérêt (8 challenges), Noyau minimal, Groupe (tenant), Isolation multi-tenant structurelle, Roles (Fondateur, Admin, Contributeur, Lecteur), Suite de modules hostiles (M10), Clean Architecture (Domain/Application/Infrastructure/Api), IClasseurStore (port) (+7 more)
+### Community 8 - "Classeur, données et exigences"
+Cohesion: 0.21
+Nodes (12): Atlassian Forge SQL (reference), B8 suppression du groupe, Budget < 10 EUR/mois, un serveur x86, Serialisation des appels, Classeur (SQLite par module et par groupe), D11 contrat purge/anonymisation natif, Pas de Redis, Paquet (+4 more)
 
-### Community 0 - "Flux d appel et salle des machines"
-Cohesion: 0.10
-Nodes (26): Diagram: zone de confiance / salle des machines call flow, Budget < 10 EUR/mois, un serveur x86, Bac a sable WebAssembly, Paquet, Reponse, Zone de confiance (API), Salle des machines, Classeur (SQLite par module et par groupe) (+18 more)
-
-### Community 6 - "Pile Docker locale"
+### Community 9 - "Clean Architecture et ports"
 Cohesion: 0.24
-Nodes (14): docker-compose.yml (tgft-platform), caddy service (127.0.0.1:8081), api service (TGFT.Api), postgres service (postgres:18-alpine), pgdata volume, POSTGRES_PASSWORD (.env), Compose project rename tgft -> tgft-platform (port 8080 -> 8081), Commandes Discord des modules externes (P3) (+6 more)
+Nodes (11): tests/TGFT.ArchitectureTests (xUnit + NetArchTest, 5 regles), AssemblyMarker (classe vide par projet), Clean Architecture (Domain/Application/Infrastructure/Api), Correctif CVE-2026-49451 (Microsoft.OpenApi), IClasseurStore (port), IModuleRunner (port), Frontieres NetArchTest (D8), Depot git separe dans Desktop/TGFT (+3 more)
 
-### Community 12 - "Modules natifs, externes et Discord"
-Cohesion: 0.25
-Nodes (9): Modules natifs, Team Builder, Encodage d'URL versionne, Tier Lists, RGPD, D11 contrat purge/anonymisation natif, B8 suppression du groupe, Data Dragon (Riot) (+1 more)
+### Community 10 - "Composants Angular"
+Cohesion: 0.33
+Nodes (4): Component, App, appConfig, routes
 
-### Community 9 - "Classeur, données et exigences"
-Cohesion: 0.22
-Nodes (10): Modules externes, Contrats partages des modules, Manifeste, Module Tournoi (M16), Niveaux de confiance + arret d'urgence, Javy, Cycle de vie d'un module externe, Compilation attestee (M4) (+2 more)
+### Community 11 - "Règles de travail et graphify"
+Cohesion: 0.43
+Nodes (8): CLAUDE.md (Projet TGFT), Regle de mise a jour graphify (une seule mise a jour juste avant le commit, code et doc), Regle n1 : ne jamais coder sans demande explicite, Cahier des charges V2, graphify-out versionne dans git, Decision 2026-10-21 : graphify mis a jour une seule fois avant le commit, Projet Complet.md (memoire vivante), Hierarchie des sources (CdC V2 > Projet Complet > claude.md)
+
+### Community 12 - "Sources de référence et marketplace"
+Cohesion: 0.29
+Nodes (8): Cahier des charges V2 (TGFT specification), Data Dragon (Riot), Modules externes, Marketplace ouverte, Odoo (reference), Regles Riot Games, TGFT platform, Module Tournoi (M16)
 
 ## Knowledge Gaps
-- **90 isolated node(s):** `WeatherForecast`, `$schema`, `commandName`, `dotnetRunMessages`, `launchBrowser` (+85 more)
+- **95 isolated node(s):** `WeatherForecast`, `$schema`, `commandName`, `dotnetRunMessages`, `launchBrowser` (+90 more)
   These have ≤1 connection - possible missing edges or undocumented components.
-- **4 thin communities (<3 nodes) omitted from report** — run `graphify query` to explore isolated nodes.
+- **8 thin communities (<3 nodes) omitted from report** — run `graphify query` to explore isolated nodes.
 
 ## Suggested Questions
 _Questions this graph is uniquely positioned to answer:_
 
-- **Why does `8 couches de protection` connect `Flux d appel et salle des machines` to `Classeur, données et exigences`, `Noyau, isolation et tests`, `Sources de référence et règles`?**
-  _High betweenness centrality (0.078) - this node is a cross-community bridge._
+- **Why does `8 couches de protection` connect `Flux d appel et salle des machines` to `Classeur, données et exigences`, `Règles de travail et graphify`?**
+  _High betweenness centrality (0.064) - this node is a cross-community bridge._
 - **Why does `TGFT.Web` connect `Configuration angular.json` to `Cibles de build Angular`?**
-  _High betweenness centrality (0.067) - this node is a cross-community bridge._
-- **Why does `devDependencies` connect `Outillage dev frontend` to `Dépendances Angular`?**
-  _High betweenness centrality (0.061) - this node is a cross-community bridge._
-- **Are the 2 inferred relationships involving `Classeur (SQLite par module et par groupe)` (e.g. with `Budget < 10 EUR/mois, un serveur x86` and `IClasseurStore (port)`) actually correct?**
-  _`Classeur (SQLite par module et par groupe)` has 2 INFERRED edges - model-reasoned connections that need verification._
+  _High betweenness centrality (0.050) - this node is a cross-community bridge._
+- **Why does `devDependencies` connect `Configuration angular.json` to `Dépendances Angular`?**
+  _High betweenness centrality (0.045) - this node is a cross-community bridge._
 - **What connects `WeatherForecast`, `$schema`, `commandName` to the rest of the system?**
-  _90 weakly-connected nodes found - possible documentation gaps or missing edges._
-- **Should `Profils de lancement API` be split into smaller, more focused modules?**
-  _Cohesion score 0.13333333333333333 - nodes in this community are weakly interconnected._
+  _98 weakly-connected nodes found - possible documentation gaps or missing edges._
+- **Should `Flux d appel et salle des machines` be split into smaller, more focused modules?**
+  _Cohesion score 0.0784313725490196 - nodes in this community are weakly interconnected._
 - **Should `Cibles de build Angular` be split into smaller, more focused modules?**
   _Cohesion score 0.08307692307692308 - nodes in this community are weakly interconnected._
+- **Should `Pile Docker locale` be split into smaller, more focused modules?**
+  _Cohesion score 0.13043478260869565 - nodes in this community are weakly interconnected._

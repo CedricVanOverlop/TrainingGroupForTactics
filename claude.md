@@ -31,8 +31,9 @@ Le projet utilise **graphify** pour maintenir un graphe de connaissance du code 
 
 - **En début de session**, lis `graphify-out/GRAPH_REPORT.md` pour retrouver la structure du projet avant d'explorer les fichiers un par un.
 - Pour comprendre où se trouve quelque chose ou comment deux éléments sont liés, interroge d'abord le graphe (`/graphify query "..."`, `/graphify path "A" "B"`, `/graphify explain "X"`), avant de parcourir tout le code.
-- **Après chaque modification du code** (C#, TypeScript), mets le graphe à jour avec `/graphify . --update`. Le code est analysé par sa syntaxe, sans coût en tokens.
-- **Pour la documentation et la configuration** (`.md`, `.pdf`, `.json`, `.yml`…), ne mets le graphe à jour **qu'une fois, à la fin d'une série de modifications, juste avant le commit qui les regroupe**. Chaque fichier de ce type est ré-extrait en entier par un LLM, et `Projet Complet.md` seul coûte environ 100 000 tokens.
+- **Mets le graphe à jour une seule fois, juste avant le commit**, avec `/graphify . --update`, pour le code comme pour la documentation et la configuration. Jamais après chaque modification.
+  - Le code (C#, TypeScript) est analysé par sa syntaxe, sans appel au LLM, mais chaque mise à jour consomme quand même environ 15 000 à 20 000 tokens de contexte dans la session (instructions du skill, commandes).
+  - La documentation et la configuration (`.md`, `.pdf`, `.json`, `.yml`…) sont ré-extraites en entier par un LLM : `Projet Complet.md` seul coûte environ 100 000 tokens.
 - Le graphe versionné dans git (`graphify-out/`) doit toujours correspondre au commit qui le contient.
 - Si `graphify-out/` n'existe pas encore, propose-moi de lancer `/graphify .`.
 
