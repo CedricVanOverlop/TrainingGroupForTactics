@@ -72,7 +72,7 @@
       "source_file": "backend/TGFT.Api/Program.cs",
       "source_location": "L1",
       "_origin": "ast",
-      "community": 18,
+      "community": 19,
       "norm_label": "program.cs",
       "id": "backend_tgft_api_program"
     },
@@ -82,7 +82,7 @@
       "source_file": "backend/TGFT.Api/Program.cs",
       "source_location": "L38",
       "_origin": "ast",
-      "community": 18,
+      "community": 19,
       "norm_label": "weatherforecast",
       "id": "backend_tgft_api_program_weatherforecast"
     },
@@ -1061,7 +1061,7 @@
       "captured_at": null,
       "author": null,
       "contributor": null,
-      "community": 3,
+      "community": 2,
       "norm_label": "diagram: zone de confiance / salle des machines call flow",
       "id": "docs_cedric_van_overlop___cahier_des_charges_projet_integration_v2_call_flow_diagram"
     },
@@ -1074,7 +1074,7 @@
       "captured_at": null,
       "author": null,
       "contributor": null,
-      "community": 20,
+      "community": 21,
       "norm_label": "tgftweb angular 22.2.2 app (readme)",
       "id": "frontend_readme_tgftweb"
     },
@@ -1087,7 +1087,7 @@
       "captured_at": null,
       "author": null,
       "contributor": null,
-      "community": 20,
+      "community": 21,
       "norm_label": "vitest test runner",
       "id": "frontend_readme_vitest"
     },
@@ -1100,7 +1100,7 @@
       "captured_at": null,
       "author": null,
       "contributor": null,
-      "community": 21,
+      "community": 22,
       "norm_label": "angular cli placeholder root template",
       "id": "frontend_src_app_app_placeholder_template"
     },
@@ -1113,7 +1113,7 @@
       "captured_at": null,
       "author": null,
       "contributor": null,
-      "community": 22,
+      "community": 23,
       "norm_label": "<router-outlet> (routing host)",
       "id": "frontend_src_app_app_router_outlet"
     },
@@ -1126,7 +1126,7 @@
       "captured_at": null,
       "author": null,
       "contributor": null,
-      "community": 21,
+      "community": 22,
       "norm_label": "index.html <app-root> bootstrap host",
       "id": "frontend_src_index_app_root"
     },
@@ -1139,7 +1139,7 @@
       "captured_at": null,
       "author": null,
       "contributor": null,
-      "community": 13,
+      "community": 14,
       "norm_label": "docker-compose.yml (tgft-platform)",
       "id": "docker_compose"
     },
@@ -1153,7 +1153,7 @@
       "author": null,
       "contributor": null,
       "rationale": "Seul service a publier un port, lie a 127.0.0.1 pour n'etre accessible que depuis la machine locale.",
-      "community": 13,
+      "community": 14,
       "norm_label": "caddy service (127.0.0.1:8081)",
       "id": "docker_compose_caddy_service"
     },
@@ -1166,7 +1166,7 @@
       "captured_at": null,
       "author": null,
       "contributor": null,
-      "community": 13,
+      "community": 14,
       "norm_label": "api service (tgft.api)",
       "id": "docker_compose_api_service"
     },
@@ -1179,7 +1179,7 @@
       "captured_at": null,
       "author": null,
       "contributor": null,
-      "community": 13,
+      "community": 14,
       "norm_label": "postgres service (postgres:18-alpine)",
       "id": "docker_compose_postgres_service"
     },
@@ -1192,7 +1192,7 @@
       "captured_at": null,
       "author": null,
       "contributor": null,
-      "community": 13,
+      "community": 14,
       "norm_label": "pgdata volume",
       "id": "docker_compose_pgdata_volume"
     },
@@ -1205,7 +1205,7 @@
       "captured_at": null,
       "author": null,
       "contributor": null,
-      "community": 13,
+      "community": 14,
       "norm_label": "postgres_password (.env)",
       "id": "docker_compose_postgres_password"
     },
@@ -1275,7 +1275,7 @@
       "source_file": "backend/TGFT.Api/AssemblyMarker.cs",
       "source_location": "L1",
       "_origin": "ast",
-      "community": 14,
+      "community": 15,
       "norm_label": "assemblymarker.cs",
       "id": "backend_tgft_api_assemblymarker"
     },
@@ -1290,7 +1290,7 @@
         "namespace": "TGFT.Api"
       },
       "_origin": "ast",
-      "community": 14,
+      "community": 15,
       "norm_label": "tgft.api",
       "id": "csharp_namespace:4f983fce32839e40"
     },
@@ -1306,7 +1306,7 @@
         ]
       },
       "_origin": "ast",
-      "community": 14,
+      "community": 15,
       "norm_label": "assemblymarker",
       "id": "backend_tgft_api_assemblymarker_tgft_api_assemblymarker"
     },
@@ -1316,7 +1316,7 @@
       "source_file": "backend/TGFT.Application/AssemblyMarker.cs",
       "source_location": "L1",
       "_origin": "ast",
-      "community": 15,
+      "community": 16,
       "norm_label": "assemblymarker.cs",
       "id": "backend_tgft_application_assemblymarker"
     },
@@ -1331,7 +1331,7 @@
         "namespace": "TGFT.Application"
       },
       "_origin": "ast",
-      "community": 15,
+      "community": 16,
       "norm_label": "tgft.application",
       "id": "csharp_namespace:c904f89e29232f27"
     },
@@ -1347,7 +1347,7 @@
         ]
       },
       "_origin": "ast",
-      "community": 15,
+      "community": 16,
       "norm_label": "assemblymarker",
       "id": "backend_tgft_application_assemblymarker_tgft_application_assemblymarker"
     },
@@ -1357,7 +1357,7 @@
       "source_file": "backend/TGFT.Domain/AssemblyMarker.cs",
       "source_location": "L1",
       "_origin": "ast",
-      "community": 16,
+      "community": 17,
       "norm_label": "assemblymarker.cs",
       "id": "backend_tgft_domain_assemblymarker"
     },
@@ -1372,7 +1372,7 @@
         "namespace": "TGFT.Domain"
       },
       "_origin": "ast",
-      "community": 16,
+      "community": 17,
       "norm_label": "tgft.domain",
       "id": "csharp_namespace:da0941348f8667e2"
     },
@@ -1388,7 +1388,7 @@
         ]
       },
       "_origin": "ast",
-      "community": 16,
+      "community": 17,
       "norm_label": "assemblymarker",
       "id": "backend_tgft_domain_assemblymarker_tgft_domain_assemblymarker"
     },
@@ -1398,7 +1398,7 @@
       "source_file": "backend/TGFT.Infrastructure/AssemblyMarker.cs",
       "source_location": "L1",
       "_origin": "ast",
-      "community": 17,
+      "community": 18,
       "norm_label": "assemblymarker.cs",
       "id": "backend_tgft_infrastructure_assemblymarker"
     },
@@ -1413,7 +1413,7 @@
         "namespace": "TGFT.Infrastructure"
       },
       "_origin": "ast",
-      "community": 17,
+      "community": 18,
       "norm_label": "tgft.infrastructure",
       "id": "csharp_namespace:91deb468cbb123bf"
     },
@@ -1429,7 +1429,7 @@
         ]
       },
       "_origin": "ast",
-      "community": 17,
+      "community": 18,
       "norm_label": "assemblymarker",
       "id": "backend_tgft_infrastructure_assemblymarker_tgft_infrastructure_assemblymarker"
     },
@@ -1679,9 +1679,9 @@
       "captured_at": null,
       "author": null,
       "contributor": null,
-      "id": "claude_claude_md",
       "community": 9,
-      "norm_label": "claude.md \u2014 projet tgft instructions"
+      "norm_label": "claude.md \u2014 projet tgft instructions",
+      "id": "claude_claude_md"
     },
     {
       "label": "R\u00e8gle n\u00b01: never code without explicit request",
@@ -1693,9 +1693,9 @@
       "author": null,
       "contributor": null,
       "rationale": "Student project under evaluation: the author must understand and master everything written.",
-      "id": "claude_regle_1_pas_de_code_sans_demande",
       "community": 9,
-      "norm_label": "regle n\u00b01: never code without explicit request"
+      "norm_label": "regle n\u00b01: never code without explicit request",
+      "id": "claude_regle_1_pas_de_code_sans_demande"
     },
     {
       "label": "Cahier des charges V2.1 (\u00e9volutions)",
@@ -1706,9 +1706,9 @@
       "captured_at": null,
       "author": null,
       "contributor": null,
-      "id": "docs_cahier_des_charges____volutions_v2_1_cahier_des_charges_v2_1",
       "community": 9,
-      "norm_label": "cahier des charges v2.1 (evolutions)"
+      "norm_label": "cahier des charges v2.1 (evolutions)",
+      "id": "docs_cahier_des_charges____volutions_v2_1_cahier_des_charges_v2_1"
     },
     {
       "label": "V2.1 \u00a71: External module access to platform data",
@@ -1720,9 +1720,9 @@
       "author": null,
       "contributor": null,
       "rationale": "Without access, a module working on group content would copy it into its classeur; two copies diverge and data loses its single source of truth.",
-      "id": "docs_cahier_des_charges____volutions_v2_1_evolution_acces_modules_donnees",
-      "community": 3,
-      "norm_label": "v2.1 \u00a71: external module access to platform data"
+      "community": 2,
+      "norm_label": "v2.1 \u00a71: external module access to platform data",
+      "id": "docs_cahier_des_charges____volutions_v2_1_evolution_acces_modules_donnees"
     },
     {
       "label": "V2.1 \u00a72: Export added to module contract (D11)",
@@ -1734,9 +1734,9 @@
       "author": null,
       "contributor": null,
       "rationale": "Right of access and portability (A3) is MVP for legal reasons; without module-side export it would cover only core data.",
-      "id": "docs_cahier_des_charges____volutions_v2_1_evolution_export_d11",
-      "community": 3,
-      "norm_label": "v2.1 \u00a72: export added to module contract (d11)"
+      "community": 2,
+      "norm_label": "v2.1 \u00a72: export added to module contract (d11)",
+      "id": "docs_cahier_des_charges____volutions_v2_1_evolution_export_d11"
     },
     {
       "label": "V2.1 \u00a73: Base modules enabled by default",
@@ -1748,9 +1748,9 @@
       "author": null,
       "contributor": null,
       "rationale": "A newly created group is usable immediately; per-group activation principle unchanged.",
-      "id": "docs_cahier_des_charges____volutions_v2_1_evolution_modules_base_defaut",
       "community": 9,
-      "norm_label": "v2.1 \u00a73: base modules enabled by default"
+      "norm_label": "v2.1 \u00a73: base modules enabled by default",
+      "id": "docs_cahier_des_charges____volutions_v2_1_evolution_modules_base_defaut"
     },
     {
       "label": "Projet Complet.md (living project memory)",
@@ -1761,9 +1761,9 @@
       "captured_at": null,
       "author": null,
       "contributor": null,
-      "id": "docs_projet_complet_projet_complet",
       "community": 9,
-      "norm_label": "projet complet.md (living project memory)"
+      "norm_label": "projet complet.md (living project memory)",
+      "id": "docs_projet_complet_projet_complet"
     },
     {
       "label": "Cahier des charges V2 (PDF)",
@@ -1774,9 +1774,9 @@
       "captured_at": null,
       "author": null,
       "contributor": null,
-      "id": "docs_projet_complet_cahier_des_charges_v2",
       "community": 9,
-      "norm_label": "cahier des charges v2 (pdf)"
+      "norm_label": "cahier des charges v2 (pdf)",
+      "id": "docs_projet_complet_cahier_des_charges_v2"
     },
     {
       "label": "TGFT platform",
@@ -1787,9 +1787,9 @@
       "captured_at": null,
       "author": null,
       "contributor": null,
-      "id": "docs_projet_complet_tgft_platform",
       "community": 12,
-      "norm_label": "tgft platform"
+      "norm_label": "tgft platform",
+      "id": "docs_projet_complet_tgft_platform"
     },
     {
       "label": "Noyau minimal (core)",
@@ -1800,9 +1800,9 @@
       "captured_at": null,
       "author": null,
       "contributor": null,
-      "id": "docs_projet_complet_noyau_minimal",
       "community": 12,
-      "norm_label": "noyau minimal (core)"
+      "norm_label": "noyau minimal (core)",
+      "id": "docs_projet_complet_noyau_minimal"
     },
     {
       "label": "Marketplace (external modules)",
@@ -1814,9 +1814,9 @@
       "author": null,
       "contributor": null,
       "rationale": "Primary value is the discipline it imposes: all features go through public contracts, preventing drift toward an accidental monolith.",
-      "id": "docs_projet_complet_marketplace",
       "community": 12,
-      "norm_label": "marketplace (external modules)"
+      "norm_label": "marketplace (external modules)",
+      "id": "docs_projet_complet_marketplace"
     },
     {
       "label": "Modules natifs / modules de base",
@@ -1827,9 +1827,9 @@
       "captured_at": null,
       "author": null,
       "contributor": null,
-      "id": "docs_projet_complet_modules_natifs",
-      "community": 2,
-      "norm_label": "modules natifs / modules de base"
+      "community": 3,
+      "norm_label": "modules natifs / modules de base",
+      "id": "docs_projet_complet_modules_natifs"
     },
     {
       "label": "Modules externes (JS \u2192 Wasm)",
@@ -1840,9 +1840,9 @@
       "captured_at": null,
       "author": null,
       "contributor": null,
-      "id": "docs_projet_complet_modules_externes",
-      "community": 2,
-      "norm_label": "modules externes (js \u2192 wasm)"
+      "community": 3,
+      "norm_label": "modules externes (js \u2192 wasm)",
+      "id": "docs_projet_complet_modules_externes"
     },
     {
       "label": "Shared module contracts (manifest, activation, permissions, purge/anonymisation/export)",
@@ -1853,9 +1853,9 @@
       "captured_at": null,
       "author": null,
       "contributor": null,
-      "id": "docs_projet_complet_contrats_communs_modules",
-      "community": 2,
-      "norm_label": "shared module contracts (manifest, activation, permissions, purge/anonymisation/export)"
+      "community": 3,
+      "norm_label": "shared module contracts (manifest, activation, permissions, purge/anonymisation/export)",
+      "id": "docs_projet_complet_contrats_communs_modules"
     },
     {
       "label": "Team Builder module",
@@ -1867,9 +1867,9 @@
       "author": null,
       "contributor": null,
       "rationale": "Chosen for technical richness and visual demo value; state encoded in versioned URL so old links survive set changes.",
-      "id": "docs_projet_complet_team_builder",
-      "community": 2,
-      "norm_label": "team builder module"
+      "community": 3,
+      "norm_label": "team builder module",
+      "id": "docs_projet_complet_team_builder"
     },
     {
       "label": "Tier Lists module",
@@ -1881,9 +1881,9 @@
       "author": null,
       "contributor": null,
       "rationale": "Least costly module in the catalogue; two native modules needed to prove modularity rather than mere separation.",
-      "id": "docs_projet_complet_tier_lists",
-      "community": 2,
-      "norm_label": "tier lists module"
+      "community": 3,
+      "norm_label": "tier lists module",
+      "id": "docs_projet_complet_tier_lists"
     },
     {
       "label": "Tournoi demo module (M16)",
@@ -1894,9 +1894,9 @@
       "captured_at": null,
       "author": null,
       "contributor": null,
-      "id": "docs_projet_complet_module_tournoi",
-      "community": 2,
-      "norm_label": "tournoi demo module (m16)"
+      "community": 3,
+      "norm_label": "tournoi demo module (m16)",
+      "id": "docs_projet_complet_module_tournoi"
     },
     {
       "label": "Paquet \u2192 r\u00e9ponse model (Shopify Functions)",
@@ -1908,9 +1908,9 @@
       "author": null,
       "contributor": null,
       "rationale": "Each question a module could ask is another door to watch; giving everything upfront leaves only the response to check.",
-      "id": "docs_projet_complet_modele_paquet_reponse",
       "community": 12,
-      "norm_label": "paquet \u2192 reponse model (shopify functions)"
+      "norm_label": "paquet \u2192 reponse model (shopify functions)",
+      "id": "docs_projet_complet_modele_paquet_reponse"
     },
     {
       "label": "Call flow (event, preparation, execution, verification)",
@@ -1921,9 +1921,9 @@
       "captured_at": null,
       "author": null,
       "contributor": null,
-      "id": "docs_projet_complet_deroule_appel",
-      "community": 3,
-      "norm_label": "call flow (event, preparation, execution, verification)"
+      "community": 2,
+      "norm_label": "call flow (event, preparation, execution, verification)",
+      "id": "docs_projet_complet_deroule_appel"
     },
     {
       "label": "Salle des machines (isolated module host)",
@@ -1934,9 +1934,9 @@
       "captured_at": null,
       "author": null,
       "contributor": null,
-      "id": "docs_projet_complet_salle_des_machines",
-      "community": 3,
-      "norm_label": "salle des machines (isolated module host)"
+      "community": 2,
+      "norm_label": "salle des machines (isolated module host)",
+      "id": "docs_projet_complet_salle_des_machines"
     },
     {
       "label": "Classeur (SQLite per module per group)",
@@ -1947,9 +1947,9 @@
       "captured_at": null,
       "author": null,
       "contributor": null,
-      "id": "docs_projet_complet_classeur",
-      "community": 3,
-      "norm_label": "classeur (sqlite per module per group)"
+      "community": 2,
+      "norm_label": "classeur (sqlite per module per group)",
+      "id": "docs_projet_complet_classeur"
     },
     {
       "label": "8 layers of protection",
@@ -1961,9 +1961,9 @@
       "author": null,
       "contributor": null,
       "rationale": "Layers are independent: failure of one does not compromise the system.",
-      "id": "docs_projet_complet_couches_protection",
-      "community": 3,
-      "norm_label": "8 layers of protection"
+      "community": 2,
+      "norm_label": "8 layers of protection",
+      "id": "docs_projet_complet_couches_protection"
     },
     {
       "label": "Layer 3: R\u00e9ponse v\u00e9rifi\u00e9e",
@@ -1974,9 +1974,9 @@
       "captured_at": null,
       "author": null,
       "contributor": null,
-      "id": "docs_projet_complet_reponse_verifiee",
-      "community": 3,
-      "norm_label": "layer 3: reponse verifiee"
+      "community": 2,
+      "norm_label": "layer 3: reponse verifiee",
+      "id": "docs_projet_complet_reponse_verifiee"
     },
     {
       "label": "Per-module pseudonyms",
@@ -1987,9 +1987,9 @@
       "captured_at": null,
       "author": null,
       "contributor": null,
-      "id": "docs_projet_complet_pseudonymes",
-      "community": 3,
-      "norm_label": "per-module pseudonyms"
+      "community": 2,
+      "norm_label": "per-module pseudonyms",
+      "id": "docs_projet_complet_pseudonymes"
     },
     {
       "label": "Declarative UI (no third-party code in browser)",
@@ -2000,9 +2000,9 @@
       "captured_at": null,
       "author": null,
       "contributor": null,
-      "id": "docs_projet_complet_interface_declarative",
-      "community": 3,
-      "norm_label": "declarative ui (no third-party code in browser)"
+      "community": 2,
+      "norm_label": "declarative ui (no third-party code in browser)",
+      "id": "docs_projet_complet_interface_declarative"
     },
     {
       "label": "Hostile module suite (M10)",
@@ -2013,9 +2013,9 @@
       "captured_at": null,
       "author": null,
       "contributor": null,
-      "id": "docs_projet_complet_suite_modules_hostiles",
       "community": 5,
-      "norm_label": "hostile module suite (m10)"
+      "norm_label": "hostile module suite (m10)",
+      "id": "docs_projet_complet_suite_modules_hostiles"
     },
     {
       "label": "Trust levels and emergency stop (M5, M7)",
@@ -2026,9 +2026,9 @@
       "captured_at": null,
       "author": null,
       "contributor": null,
-      "id": "docs_projet_complet_niveaux_confiance",
-      "community": 3,
-      "norm_label": "trust levels and emergency stop (m5, m7)"
+      "community": 2,
+      "norm_label": "trust levels and emergency stop (m5, m7)",
+      "id": "docs_projet_complet_niveaux_confiance"
     },
     {
       "label": "\u00a76.4 bis Module access to platform data",
@@ -2039,9 +2039,9 @@
       "captured_at": null,
       "author": null,
       "contributor": null,
-      "id": "docs_projet_complet_acces_donnees_plateforme",
-      "community": 3,
-      "norm_label": "\u00a76.4 bis module access to platform data"
+      "community": 2,
+      "norm_label": "\u00a76.4 bis module access to platform data",
+      "id": "docs_projet_complet_acces_donnees_plateforme"
     },
     {
       "label": "External module lifecycle",
@@ -2052,9 +2052,9 @@
       "captured_at": null,
       "author": null,
       "contributor": null,
-      "id": "docs_projet_complet_cycle_vie_module_externe",
-      "community": 2,
-      "norm_label": "external module lifecycle"
+      "community": 3,
+      "norm_label": "external module lifecycle",
+      "id": "docs_projet_complet_cycle_vie_module_externe"
     },
     {
       "label": "RGPD made simple by architecture (purge, anonymisation, export)",
@@ -2065,9 +2065,9 @@
       "captured_at": null,
       "author": null,
       "contributor": null,
-      "id": "docs_projet_complet_rgpd_architecture",
-      "community": 3,
-      "norm_label": "rgpd made simple by architecture (purge, anonymisation, export)"
+      "community": 2,
+      "norm_label": "rgpd made simple by architecture (purge, anonymisation, export)",
+      "id": "docs_projet_complet_rgpd_architecture"
     },
     {
       "label": "D11 native module data contract",
@@ -2079,9 +2079,9 @@
       "author": null,
       "contributor": null,
       "rationale": "Must be set before the first module; cannot be retrofitted once the catalogue exists.",
-      "id": "docs_projet_complet_contrat_d11",
-      "community": 3,
-      "norm_label": "d11 native module data contract"
+      "community": 2,
+      "norm_label": "d11 native module data contract",
+      "id": "docs_projet_complet_contrat_d11"
     },
     {
       "label": "Wasmtime .NET 48 LTS",
@@ -2093,9 +2093,9 @@
       "author": null,
       "contributor": null,
       "rationale": "Engine designed for untrusted code, public CVE process, 24 months security fixes, official .NET library.",
-      "id": "docs_projet_complet_wasmtime",
-      "community": 2,
-      "norm_label": "wasmtime .net 48 lts"
+      "community": 3,
+      "norm_label": "wasmtime .net 48 lts",
+      "id": "docs_projet_complet_wasmtime"
     },
     {
       "label": "Javy (JS \u2192 Wasm compiler)",
@@ -2107,9 +2107,9 @@
       "author": null,
       "contributor": null,
       "rationale": "JS engine compiled into the module so its flaws stay confined; JS lowers the entry barrier.",
-      "id": "docs_projet_complet_javy",
-      "community": 2,
-      "norm_label": "javy (js \u2192 wasm compiler)"
+      "community": 3,
+      "norm_label": "javy (js \u2192 wasm compiler)",
+      "id": "docs_projet_complet_javy"
     },
     {
       "label": "Jint fallback plan",
@@ -2120,9 +2120,9 @@
       "captured_at": null,
       "author": null,
       "contributor": null,
-      "id": "docs_projet_complet_jint_fallback",
-      "community": 2,
-      "norm_label": "jint fallback plan"
+      "community": 3,
+      "norm_label": "jint fallback plan",
+      "id": "docs_projet_complet_jint_fallback"
     },
     {
       "label": "Javy + Wasmtime end-to-end prototype (Q6)",
@@ -2133,9 +2133,9 @@
       "captured_at": null,
       "author": null,
       "contributor": null,
-      "id": "docs_projet_complet_prototype_javy_wasmtime",
-      "community": 2,
-      "norm_label": "javy + wasmtime end-to-end prototype (q6)"
+      "community": 3,
+      "norm_label": "javy + wasmtime end-to-end prototype (q6)",
+      "id": "docs_projet_complet_prototype_javy_wasmtime"
     },
     {
       "label": "Clean Architecture (Domain/Application/Infrastructure/Api)",
@@ -2147,9 +2147,9 @@
       "author": null,
       "contributor": null,
       "rationale": "Domain and Application split so IModuleRunner port lets Javy\u2192Jint switch touch only Infrastructure, and NetArchTest can assert Domain references nothing (D8).",
-      "id": "docs_projet_complet_clean_architecture",
-      "community": 2,
-      "norm_label": "clean architecture (domain/application/infrastructure/api)"
+      "community": 3,
+      "norm_label": "clean architecture (domain/application/infrastructure/api)",
+      "id": "docs_projet_complet_clean_architecture"
     },
     {
       "label": "IModuleRunner port",
@@ -2160,9 +2160,9 @@
       "captured_at": null,
       "author": null,
       "contributor": null,
-      "id": "docs_projet_complet_imodulerunner",
-      "community": 2,
-      "norm_label": "imodulerunner port"
+      "community": 3,
+      "norm_label": "imodulerunner port",
+      "id": "docs_projet_complet_imodulerunner"
     },
     {
       "label": "Structural multi-tenant isolation",
@@ -2174,9 +2174,9 @@
       "author": null,
       "contributor": null,
       "rationale": "Never rely on a manually added per-query filter: one silent omission suffices.",
-      "id": "docs_projet_complet_isolation_multi_tenant",
       "community": 5,
-      "norm_label": "structural multi-tenant isolation"
+      "norm_label": "structural multi-tenant isolation",
+      "id": "docs_projet_complet_isolation_multi_tenant"
     },
     {
       "label": "NetArchTest boundaries (D8)",
@@ -2187,9 +2187,9 @@
       "captured_at": null,
       "author": null,
       "contributor": null,
-      "id": "docs_projet_complet_netarchtest_frontieres",
-      "community": 2,
-      "norm_label": "netarchtest boundaries (d8)"
+      "community": 5,
+      "norm_label": "netarchtest boundaries (d8)",
+      "id": "docs_projet_complet_netarchtest_frontieres"
     },
     {
       "label": "Tests are the security mechanism",
@@ -2200,9 +2200,9 @@
       "captured_at": null,
       "author": null,
       "contributor": null,
-      "id": "docs_projet_complet_tests_sont_la_protection",
       "community": 5,
-      "norm_label": "tests are the security mechanism"
+      "norm_label": "tests are the security mechanism",
+      "id": "docs_projet_complet_tests_sont_la_protection"
     },
     {
       "label": "Hosting budget < 10 \u20ac/month, single x86 VPS",
@@ -2213,9 +2213,9 @@
       "captured_at": null,
       "author": null,
       "contributor": null,
-      "id": "docs_projet_complet_budget_10_euros",
       "community": 12,
-      "norm_label": "hosting budget < 10 \u20ac/month, single x86 vps"
+      "norm_label": "hosting budget < 10 \u20ac/month, single x86 vps",
+      "id": "docs_projet_complet_budget_10_euros"
     },
     {
       "label": "Settled decisions \u2014 do not repropose",
@@ -2226,9 +2226,9 @@
       "captured_at": null,
       "author": null,
       "contributor": null,
-      "id": "docs_projet_complet_decisions_tranchees",
       "community": 12,
-      "norm_label": "settled decisions \u2014 do not repropose"
+      "norm_label": "settled decisions \u2014 do not repropose",
+      "id": "docs_projet_complet_decisions_tranchees"
     },
     {
       "label": "Riot Games legal constraints",
@@ -2239,9 +2239,9 @@
       "captured_at": null,
       "author": null,
       "contributor": null,
-      "id": "docs_projet_complet_cadre_riot",
-      "community": 2,
-      "norm_label": "riot games legal constraints"
+      "community": 3,
+      "norm_label": "riot games legal constraints",
+      "id": "docs_projet_complet_cadre_riot"
     },
     {
       "label": "AGPL-3.0 licence + DCO",
@@ -2253,9 +2253,9 @@
       "author": null,
       "contributor": null,
       "rationale": "Network clause covers software offered as an online service; external modules require public OSI-licensed source.",
-      "id": "docs_projet_complet_licence_agpl",
-      "community": 2,
-      "norm_label": "agpl-3.0 licence + dco"
+      "community": 3,
+      "norm_label": "agpl-3.0 licence + dco",
+      "id": "docs_projet_complet_licence_agpl"
     },
     {
       "label": "Open questions Q1\u2013Q9",
@@ -2266,9 +2266,9 @@
       "captured_at": null,
       "author": null,
       "contributor": null,
-      "id": "docs_projet_complet_questions_ouvertes",
-      "community": 2,
-      "norm_label": "open questions q1\u2013q9"
+      "community": 3,
+      "norm_label": "open questions q1\u2013q9",
+      "id": "docs_projet_complet_questions_ouvertes"
     },
     {
       "label": "User stories (epics A\u2013M)",
@@ -2279,9 +2279,9 @@
       "captured_at": null,
       "author": null,
       "contributor": null,
-      "id": "docs_projet_complet_user_stories",
-      "community": 3,
-      "norm_label": "user stories (epics a\u2013m)"
+      "community": 2,
+      "norm_label": "user stories (epics a\u2013m)",
+      "id": "docs_projet_complet_user_stories"
     },
     {
       "label": "Progress status (milestones)",
@@ -2292,9 +2292,9 @@
       "captured_at": null,
       "author": null,
       "contributor": null,
-      "id": "docs_projet_complet_etat_avancement",
       "community": 5,
-      "norm_label": "progress status (milestones)"
+      "norm_label": "progress status (milestones)",
+      "id": "docs_projet_complet_etat_avancement"
     },
     {
       "label": "Decision log",
@@ -2305,9 +2305,9 @@
       "captured_at": null,
       "author": null,
       "contributor": null,
-      "id": "docs_projet_complet_journal_decisions",
       "community": 9,
-      "norm_label": "decision log"
+      "norm_label": "decision log",
+      "id": "docs_projet_complet_journal_decisions"
     },
     {
       "label": "Source hierarchy (cahier > Projet Complet > claude.md)",
@@ -2318,9 +2318,9 @@
       "captured_at": null,
       "author": null,
       "contributor": null,
-      "id": "docs_projet_complet_hierarchie_sources",
       "community": 9,
-      "norm_label": "source hierarchy (cahier > projet complet > claude.md)"
+      "norm_label": "source hierarchy (cahier > projet complet > claude.md)",
+      "id": "docs_projet_complet_hierarchie_sources"
     },
     {
       "label": "TGFT \u2014 Plan du noyau",
@@ -2331,9 +2331,9 @@
       "captured_at": null,
       "author": "C\u00e9dric",
       "contributor": null,
-      "id": "docs_tgft___plan_du_noyau_plan_du_noyau",
       "community": 9,
-      "norm_label": "tgft \u2014 plan du noyau"
+      "norm_label": "tgft \u2014 plan du noyau",
+      "id": "docs_tgft___plan_du_noyau_plan_du_noyau"
     },
     {
       "label": "Core build order (CI, schema, users/groups, modules)",
@@ -2344,9 +2344,9 @@
       "captured_at": null,
       "author": "C\u00e9dric",
       "contributor": null,
-      "id": "docs_tgft___plan_du_noyau_ordre_realisation",
       "community": 9,
-      "norm_label": "core build order (ci, schema, users/groups, modules)"
+      "norm_label": "core build order (ci, schema, users/groups, modules)",
+      "id": "docs_tgft___plan_du_noyau_ordre_realisation"
     },
     {
       "label": "Schema: utilisateurs, groupes, adh\u00e9sions, invitations, demandes",
@@ -2357,9 +2357,9 @@
       "captured_at": null,
       "author": "C\u00e9dric",
       "contributor": null,
-      "id": "docs_tgft___plan_du_noyau_schema_utilisateurs_groupes",
-      "community": 19,
-      "norm_label": "schema: utilisateurs, groupes, adhesions, invitations, demandes"
+      "community": 20,
+      "norm_label": "schema: utilisateurs, groupes, adhesions, invitations, demandes",
+      "id": "docs_tgft___plan_du_noyau_schema_utilisateurs_groupes"
     },
     {
       "label": "Exactly one founder per group (DB-enforced)",
@@ -2371,9 +2371,9 @@
       "author": "C\u00e9dric",
       "contributor": null,
       "rationale": "Founder is a membership, not a column: unique partial index plus group created with its founder atomically; ownership transfer = two role changes.",
-      "id": "docs_tgft___plan_du_noyau_un_seul_fondateur",
-      "community": 19,
-      "norm_label": "exactly one founder per group (db-enforced)"
+      "community": 20,
+      "norm_label": "exactly one founder per group (db-enforced)",
+      "id": "docs_tgft___plan_du_noyau_un_seul_fondateur"
     },
     {
       "label": "A module has no door of its own (same use cases as the site)",
@@ -2385,9 +2385,9 @@
       "author": "C\u00e9dric",
       "contributor": null,
       "rationale": "A module can do nothing a member could not do with their own rights; security does not rely on the module.",
-      "id": "docs_tgft___plan_du_noyau_principe_pas_de_porte",
-      "community": 3,
-      "norm_label": "a module has no door of its own (same use cases as the site)"
+      "community": 2,
+      "norm_label": "a module has no door of its own (same use cases as the site)",
+      "id": "docs_tgft___plan_du_noyau_principe_pas_de_porte"
     },
     {
       "label": "Seuil plancher (minimum role floor)",
@@ -2398,9 +2398,9 @@
       "captured_at": null,
       "author": "C\u00e9dric",
       "contributor": null,
-      "id": "docs_tgft___plan_du_noyau_seuil_plancher",
-      "community": 3,
-      "norm_label": "seuil plancher (minimum role floor)"
+      "community": 2,
+      "norm_label": "seuil plancher (minimum role floor)",
+      "id": "docs_tgft___plan_du_noyau_seuil_plancher"
     },
     {
       "label": "Schema: game data per set + group content (compos, classements)",
@@ -2412,9 +2412,9 @@
       "author": "C\u00e9dric",
       "contributor": null,
       "rationale": "Compo tier list is the tier of each compo, not a separate table: data lives in one place.",
-      "id": "docs_tgft___plan_du_noyau_schema_contenu_jeu",
-      "community": 2,
-      "norm_label": "schema: game data per set + group content (compos, classements)"
+      "community": 3,
+      "norm_label": "schema: game data per set + group content (compos, classements)",
+      "id": "docs_tgft___plan_du_noyau_schema_contenu_jeu"
     },
     {
       "label": "Request isolation chain (group in URL, membership check, groupe en cours)",
@@ -2425,9 +2425,9 @@
       "captured_at": null,
       "author": "C\u00e9dric",
       "contributor": null,
-      "id": "docs_tgft___plan_du_noyau_chaine_isolation",
       "community": 5,
-      "norm_label": "request isolation chain (group in url, membership check, groupe en cours)"
+      "norm_label": "request isolation chain (group in url, membership check, groupe en cours)",
+      "id": "docs_tgft___plan_du_noyau_chaine_isolation"
     },
     {
       "label": "Groupe en cours (per-request context)",
@@ -2438,9 +2438,9 @@
       "captured_at": null,
       "author": "C\u00e9dric",
       "contributor": null,
-      "id": "docs_tgft___plan_du_noyau_groupe_en_cours",
       "community": 5,
-      "norm_label": "groupe en cours (per-request context)"
+      "norm_label": "groupe en cours (per-request context)",
+      "id": "docs_tgft___plan_du_noyau_groupe_en_cours"
     },
     {
       "label": "EF Core global query filters (first rampart)",
@@ -2451,9 +2451,9 @@
       "captured_at": null,
       "author": "C\u00e9dric",
       "contributor": null,
-      "id": "docs_tgft___plan_du_noyau_ef_core_global_filters",
       "community": 5,
-      "norm_label": "ef core global query filters (first rampart)"
+      "norm_label": "ef core global query filters (first rampart)",
+      "id": "docs_tgft___plan_du_noyau_ef_core_global_filters"
     },
     {
       "label": "PostgreSQL Row Level Security (second rampart)",
@@ -2464,9 +2464,9 @@
       "captured_at": null,
       "author": "C\u00e9dric",
       "contributor": null,
-      "id": "docs_tgft___plan_du_noyau_postgresql_rls",
       "community": 5,
-      "norm_label": "postgresql row level security (second rampart)"
+      "norm_label": "postgresql row level security (second rampart)",
+      "id": "docs_tgft___plan_du_noyau_postgresql_rls"
     },
     {
       "label": "Two PostgreSQL roles (owner vs application), forced RLS",
@@ -2477,9 +2477,9 @@
       "captured_at": null,
       "author": "C\u00e9dric",
       "contributor": null,
-      "id": "docs_tgft___plan_du_noyau_deux_roles_postgresql",
       "community": 5,
-      "norm_label": "two postgresql roles (owner vs application), forced rls"
+      "norm_label": "two postgresql roles (owner vs application), forced rls",
+      "id": "docs_tgft___plan_du_noyau_deux_roles_postgresql"
     },
     {
       "label": "Session cookie (site) + service key (bot)",
@@ -2491,9 +2491,9 @@
       "author": "C\u00e9dric",
       "contributor": null,
       "rationale": "Server-side session makes exclusion/deletion immediate; role re-read each request so changes apply at once.",
-      "id": "docs_tgft___plan_du_noyau_authentification",
       "community": 5,
-      "norm_label": "session cookie (site) + service key (bot)"
+      "norm_label": "session cookie (site) + service key (bot)",
+      "id": "docs_tgft___plan_du_noyau_authentification"
     },
     {
       "label": "Fixed permission grid with named permissions",
@@ -2504,9 +2504,9 @@
       "captured_at": null,
       "author": "C\u00e9dric",
       "contributor": null,
-      "id": "docs_tgft___plan_du_noyau_grille_permissions",
       "community": 5,
-      "norm_label": "fixed permission grid with named permissions"
+      "norm_label": "fixed permission grid with named permissions",
+      "id": "docs_tgft___plan_du_noyau_grille_permissions"
     },
     {
       "label": "Permission exhaustiveness and matrix tests",
@@ -2517,9 +2517,9 @@
       "captured_at": null,
       "author": "C\u00e9dric",
       "contributor": null,
-      "id": "docs_tgft___plan_du_noyau_tests_exhaustivite_matrice",
       "community": 5,
-      "norm_label": "permission exhaustiveness and matrix tests"
+      "norm_label": "permission exhaustiveness and matrix tests",
+      "id": "docs_tgft___plan_du_noyau_tests_exhaustivite_matrice"
     },
     {
       "label": "EF Core migrations applied by separate step",
@@ -2531,9 +2531,9 @@
       "author": "C\u00e9dric",
       "contributor": null,
       "rationale": "API never holds owner-role credentials; RLS/roles written as SQL inside migrations.",
-      "id": "docs_tgft___plan_du_noyau_migrations_ef_core",
       "community": 5,
-      "norm_label": "ef core migrations applied by separate step"
+      "norm_label": "ef core migrations applied by separate step",
+      "id": "docs_tgft___plan_du_noyau_migrations_ef_core"
     },
     {
       "label": "Core test families (domain, API isolation, DB isolation, authorization, architecture)",
@@ -2545,9 +2545,9 @@
       "author": "C\u00e9dric",
       "contributor": null,
       "rationale": "DB isolation test disables EF filters on purpose to prove the two ramparts are independent.",
-      "id": "docs_tgft___plan_du_noyau_tests_noyau",
       "community": 5,
-      "norm_label": "core test families (domain, api isolation, db isolation, authorization, architecture)"
+      "norm_label": "core test families (domain, api isolation, db isolation, authorization, architecture)",
+      "id": "docs_tgft___plan_du_noyau_tests_noyau"
     },
     {
       "label": "Personal data lifecycle in modules (purge/anonymise/export table)",
@@ -2558,9 +2558,9 @@
       "captured_at": null,
       "author": "C\u00e9dric",
       "contributor": null,
-      "id": "docs_tgft___plan_du_noyau_donnees_personnelles_modules",
-      "community": 3,
-      "norm_label": "personal data lifecycle in modules (purge/anonymise/export table)"
+      "community": 2,
+      "norm_label": "personal data lifecycle in modules (purge/anonymise/export table)",
+      "id": "docs_tgft___plan_du_noyau_donnees_personnelles_modules"
     },
     {
       "label": "Core steps 0\u20136 (backend + Angular screens each)",
@@ -2571,9 +2571,9 @@
       "captured_at": null,
       "author": "C\u00e9dric",
       "contributor": null,
-      "id": "docs_tgft___plan_du_noyau_etapes_noyau",
       "community": 5,
-      "norm_label": "core steps 0\u20136 (backend + angular screens each)"
+      "norm_label": "core steps 0\u20136 (backend + angular screens each)",
+      "id": "docs_tgft___plan_du_noyau_etapes_noyau"
     },
     {
       "label": "Data Dragon sync (traits/thresholds missing, Q8)",
@@ -2584,9 +2584,9 @@
       "captured_at": null,
       "author": "C\u00e9dric",
       "contributor": null,
-      "id": "docs_tgft___plan_du_noyau_data_dragon",
-      "community": 2,
-      "norm_label": "data dragon sync (traits/thresholds missing, q8)"
+      "community": 3,
+      "norm_label": "data dragon sync (traits/thresholds missing, q8)",
+      "id": "docs_tgft___plan_du_noyau_data_dragon"
     },
     {
       "label": "Graphify update once before commit",
@@ -2598,9 +2598,101 @@
       "author": null,
       "contributor": null,
       "rationale": "Each update costs 15-20k tokens for code, ~100k for Projet Complet.md; versioned graph must match its commit.",
-      "id": "claude_graphify_update_rule",
       "community": 9,
-      "norm_label": "graphify update once before commit"
+      "norm_label": "graphify update once before commit",
+      "id": "claude_graphify_update_rule"
+    },
+    {
+      "label": "CI workflow (ci.yml)",
+      "file_type": "code",
+      "source_file": ".github/workflows/ci.yml",
+      "source_location": "L6",
+      "source_url": null,
+      "captured_at": null,
+      "author": null,
+      "contributor": null,
+      "id": "_github_workflows_ci",
+      "community": 13,
+      "norm_label": "ci workflow (ci.yml)"
+    },
+    {
+      "label": "CI backend job",
+      "file_type": "code",
+      "source_file": ".github/workflows/ci.yml",
+      "source_location": "L18",
+      "source_url": null,
+      "captured_at": null,
+      "author": null,
+      "contributor": null,
+      "id": "_github_workflows_ci_backend_job",
+      "community": 13,
+      "norm_label": "ci backend job"
+    },
+    {
+      "label": "CI frontend job",
+      "file_type": "code",
+      "source_file": ".github/workflows/ci.yml",
+      "source_location": "L46",
+      "source_url": null,
+      "captured_at": null,
+      "author": null,
+      "contributor": null,
+      "id": "_github_workflows_ci_frontend_job",
+      "community": 13,
+      "norm_label": "ci frontend job"
+    },
+    {
+      "label": "Vulnerable packages check",
+      "file_type": "code",
+      "source_file": ".github/workflows/ci.yml",
+      "source_location": "L38",
+      "source_url": null,
+      "captured_at": null,
+      "author": null,
+      "contributor": null,
+      "id": "_github_workflows_ci_vulnerable_packages_check",
+      "community": 13,
+      "norm_label": "vulnerable packages check"
+    },
+    {
+      "label": "TGFT.slnx solution",
+      "file_type": "code",
+      "source_file": ".github/workflows/ci.yml",
+      "source_location": "L29",
+      "source_url": null,
+      "captured_at": null,
+      "author": null,
+      "contributor": null,
+      "id": "_github_workflows_ci_tgft_slnx",
+      "community": 13,
+      "norm_label": "tgft.slnx solution"
+    },
+    {
+      "label": "frontend npm package (package-lock.json)",
+      "file_type": "code",
+      "source_file": ".github/workflows/ci.yml",
+      "source_location": "L59",
+      "source_url": null,
+      "captured_at": null,
+      "author": null,
+      "contributor": null,
+      "id": "_github_workflows_ci_frontend_package",
+      "community": 13,
+      "norm_label": "frontend npm package (package-lock.json)"
+    },
+    {
+      "label": "Tests are the security mechanism (never bypass CI jobs)",
+      "file_type": "rationale",
+      "source_file": ".github/workflows/ci.yml",
+      "source_location": "L1-L4",
+      "source_url": null,
+      "captured_at": null,
+      "author": null,
+      "contributor": null,
+      "rationale": "Every push/PR to main must build and pass all tests because isolation, architecture and hostile-module tests are the project's security mechanism; jobs must never be disabled or bypassed.",
+      "id": "_github_workflows_ci_tests_as_security_mechanism",
+      "community": 13,
+      "norm_label": "tests are the security mechanism (never bypass ci jobs)"
     }
   ],
   "links": [
@@ -5135,6 +5227,86 @@
       "weight": 1.0,
       "source": "docs_tgft___plan_du_noyau_tests_noyau",
       "target": "docs_tgft___plan_du_noyau_tests_exhaustivite_matrice"
+    },
+    {
+      "relation": "references",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "source_file": ".github/workflows/ci.yml",
+      "source_location": "L18",
+      "weight": 1.0,
+      "source": "_github_workflows_ci",
+      "target": "_github_workflows_ci_backend_job"
+    },
+    {
+      "relation": "references",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "source_file": ".github/workflows/ci.yml",
+      "source_location": "L46",
+      "weight": 1.0,
+      "source": "_github_workflows_ci",
+      "target": "_github_workflows_ci_frontend_job"
+    },
+    {
+      "relation": "rationale_for",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "source_file": ".github/workflows/ci.yml",
+      "source_location": "L1-L4",
+      "weight": 1.0,
+      "source": "_github_workflows_ci_tests_as_security_mechanism",
+      "target": "_github_workflows_ci"
+    },
+    {
+      "relation": "references",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "source_file": ".github/workflows/ci.yml",
+      "source_location": "L29-L35",
+      "weight": 1.0,
+      "source": "_github_workflows_ci_backend_job",
+      "target": "_github_workflows_ci_tgft_slnx"
+    },
+    {
+      "relation": "calls",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "source_file": ".github/workflows/ci.yml",
+      "source_location": "L38",
+      "weight": 1.0,
+      "source": "_github_workflows_ci_backend_job",
+      "target": "_github_workflows_ci_vulnerable_packages_check"
+    },
+    {
+      "relation": "references",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "source_file": ".github/workflows/ci.yml",
+      "source_location": "L59-L68",
+      "weight": 1.0,
+      "source": "_github_workflows_ci_frontend_job",
+      "target": "_github_workflows_ci_frontend_package"
+    },
+    {
+      "relation": "conceptually_related_to",
+      "confidence": "INFERRED",
+      "confidence_score": 0.75,
+      "source_file": ".github/workflows/ci.yml",
+      "source_location": "L37",
+      "weight": 1.0,
+      "source": "_github_workflows_ci_vulnerable_packages_check",
+      "target": "_github_workflows_ci_tests_as_security_mechanism"
+    },
+    {
+      "relation": "references",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "source_file": ".github/workflows/ci.yml",
+      "source_location": "L40",
+      "weight": 1.0,
+      "source": "_github_workflows_ci_vulnerable_packages_check",
+      "target": "_github_workflows_ci_tgft_slnx"
     }
   ],
   "hyperedges": [
@@ -5199,5 +5371,5 @@
       "source_file": "docker-compose.yml"
     }
   ],
-  "built_at_commit": "d63188080230af60d4b97cf67c60ceccd1348ba2"
+  "built_at_commit": "8791aa5b06a02a6a22d20ad1b68c1fba3d9d1706"
 }

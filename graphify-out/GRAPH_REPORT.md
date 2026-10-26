@@ -1,19 +1,19 @@
 # Graph Report - .  (2026-10-26)
 
 ## Corpus Check
-- 5 files · ~21,449 words
+- 1 files · ~21,634 words
 - Verdict: corpus is large enough that graph structure adds value.
 
 ## Summary
-- 217 nodes · 250 edges · 23 communities (14 shown, 9 thin omitted)
-- Extraction: 96% EXTRACTED · 4% INFERRED · 0% AMBIGUOUS · INFERRED: 10 edges (avg confidence: 0.89)
-- Token cost: 118,057 input · 0 output
+- 224 nodes · 258 edges · 24 communities (15 shown, 9 thin omitted)
+- Extraction: 96% EXTRACTED · 4% INFERRED · 0% AMBIGUOUS · INFERRED: 11 edges (avg confidence: 0.88)
+- Token cost: 50,578 input · 0 output
 
 ## Community Hubs (Navigation)
 - [[_COMMUNITY_Cibles de build Angular|Cibles de build Angular]]
 - [[_COMMUNITY_Dépendances Angular|Dépendances Angular]]
-- [[_COMMUNITY_Clean Architecture et marketplace|Clean Architecture et marketplace]]
 - [[_COMMUNITY_Accès aux données et protection|Accès aux données et protection]]
+- [[_COMMUNITY_Clean Architecture et marketplace|Clean Architecture et marketplace]]
 - [[_COMMUNITY_Profils de lancement API|Profils de lancement API]]
 - [[_COMMUNITY_Isolation, sécurité et tests|Isolation, sécurité et tests]]
 - [[_COMMUNITY_Tests d architecture (code)|Tests d architecture (code)]]
@@ -23,6 +23,7 @@
 - [[_COMMUNITY_Outillage Angular CLI|Outillage Angular CLI]]
 - [[_COMMUNITY_Composants Angular|Composants Angular]]
 - [[_COMMUNITY_Sources de référence et noyau|Sources de référence et noyau]]
+- [[_COMMUNITY_Intégration continue (CI)|Intégration continue (CI)]]
 - [[_COMMUNITY_Pile Docker locale|Pile Docker locale]]
 - [[_COMMUNITY_Marqueur assembly Api|Marqueur assembly Api]]
 - [[_COMMUNITY_Marqueur assembly Application|Marqueur assembly Application]]
@@ -67,7 +68,7 @@
 - **V2.1 module access to platform data with member rights and role floor** — docs_cahier_des_charges____volutions_v2_1_evolution_acces_modules_donnees, docs_projet_complet_acces_donnees_plateforme, docs_tgft___plan_du_noyau_principe_pas_de_porte, docs_tgft___plan_du_noyau_seuil_plancher, docs_projet_complet_reponse_verifiee [EXTRACTED 1.00]
 - **Pile locale tgft-platform (caddy -> api -> postgres)** — docker_compose_caddy_service, docker_compose_api_service, docker_compose_postgres_service, docker_compose_pgdata_volume [EXTRACTED 1.00]
 
-## Communities (23 total, 9 thin omitted)
+## Communities (24 total, 9 thin omitted)
 
 ### Community 0 - "Cibles de build Angular"
 Cohesion: 0.08
@@ -77,21 +78,21 @@ Nodes (26): build, serve, test, builder, configurations, defaultConfiguration, o
 Cohesion: 0.10
 Nodes (19): dependencies, @angular/common, @angular/compiler, @angular/core, @angular/forms, @angular/platform-browser, @angular/router, rxjs (+11 more)
 
-### Community 2 - "Clean Architecture et marketplace"
-Cohesion: 0.11
-Nodes (19): Riot Games legal constraints, Clean Architecture (Domain/Application/Infrastructure/Api), Shared module contracts (manifest, activation, permissions, purge/anonymisation/export), External module lifecycle, IModuleRunner port, Javy (JS → Wasm compiler), Jint fallback plan, AGPL-3.0 licence + DCO (+11 more)
-
-### Community 3 - "Accès aux données et protection"
+### Community 2 - "Accès aux données et protection"
 Cohesion: 0.17
 Nodes (18): V2.1 §1: External module access to platform data, V2.1 §2: Export added to module contract (D11), Diagram: zone de confiance / salle des machines call flow, §6.4 bis Module access to platform data, Classeur (SQLite per module per group), D11 native module data contract, 8 layers of protection, Call flow (event, preparation, execution, verification) (+10 more)
+
+### Community 3 - "Clean Architecture et marketplace"
+Cohesion: 0.12
+Nodes (18): Riot Games legal constraints, Clean Architecture (Domain/Application/Infrastructure/Api), Shared module contracts (manifest, activation, permissions, purge/anonymisation/export), External module lifecycle, IModuleRunner port, Javy (JS → Wasm compiler), Jint fallback plan, AGPL-3.0 licence + DCO (+10 more)
 
 ### Community 4 - "Profils de lancement API"
 Cohesion: 0.13
 Nodes (15): ASPNETCORE_ENVIRONMENT, applicationUrl, commandName, dotnetRunMessages, environmentVariables, launchBrowser, applicationUrl, commandName (+7 more)
 
 ### Community 5 - "Isolation, sécurité et tests"
-Cohesion: 0.16
-Nodes (15): Progress status (milestones), Structural multi-tenant isolation, Hostile module suite (M10), Tests are the security mechanism, Session cookie (site) + service key (bot), Request isolation chain (group in URL, membership check, groupe en cours), Two PostgreSQL roles (owner vs application), forced RLS, EF Core global query filters (first rampart) (+7 more)
+Cohesion: 0.15
+Nodes (16): Progress status (milestones), Structural multi-tenant isolation, NetArchTest boundaries (D8), Hostile module suite (M10), Tests are the security mechanism, Session cookie (site) + service key (bot), Request isolation chain (group in URL, membership check, groupe en cours), Two PostgreSQL roles (owner vs application), forced RLS (+8 more)
 
 ### Community 6 - "Tests d architecture (code)"
 Cohesion: 0.27
@@ -121,12 +122,16 @@ Nodes (4): Component, App, appConfig, routes
 Cohesion: 0.29
 Nodes (8): Cahier des charges V2 (TGFT specification), Défis techniques et points d'intérêt (8 challenges), Hosting budget < 10 €/month, single x86 VPS, Settled decisions — do not repropose, Marketplace (external modules), Paquet → réponse model (Shopify Functions), Noyau minimal (core), TGFT platform
 
-### Community 13 - "Pile Docker locale"
+### Community 13 - "Intégration continue (CI)"
+Cohesion: 0.38
+Nodes (7): CI workflow (ci.yml), CI backend job, CI frontend job, frontend npm package (package-lock.json), Tests are the security mechanism (never bypass CI jobs), TGFT.slnx solution, Vulnerable packages check
+
+### Community 14 - "Pile Docker locale"
 Cohesion: 0.60
 Nodes (6): docker-compose.yml (tgft-platform), api service (TGFT.Api), caddy service (127.0.0.1:8081), pgdata volume, POSTGRES_PASSWORD (.env), postgres service (postgres:18-alpine)
 
 ## Knowledge Gaps
-- **95 isolated node(s):** `WeatherForecast`, `$schema`, `commandName`, `dotnetRunMessages`, `launchBrowser` (+90 more)
+- **96 isolated node(s):** `WeatherForecast`, `$schema`, `commandName`, `dotnetRunMessages`, `launchBrowser` (+91 more)
   These have ≤1 connection - possible missing edges or undocumented components.
 - **9 thin communities (<3 nodes) omitted from report** — run `graphify query` to explore isolated nodes.
 
@@ -134,16 +139,16 @@ Nodes (6): docker-compose.yml (tgft-platform), api service (TGFT.Api), caddy ser
 _Questions this graph is uniquely positioned to answer:_
 
 - **Why does `TGFT.Web` connect `Configuration angular.json` to `Cibles de build Angular`?**
-  _High betweenness centrality (0.058) - this node is a cross-community bridge._
+  _High betweenness centrality (0.055) - this node is a cross-community bridge._
 - **Why does `devDependencies` connect `Outillage Angular CLI` to `Dépendances Angular`?**
-  _High betweenness centrality (0.053) - this node is a cross-community bridge._
-- **Why does `cli` connect `Outillage Angular CLI` to `Configuration angular.json`?**
   _High betweenness centrality (0.050) - this node is a cross-community bridge._
+- **Why does `cli` connect `Outillage Angular CLI` to `Configuration angular.json`?**
+  _High betweenness centrality (0.047) - this node is a cross-community bridge._
 - **What connects `WeatherForecast`, `$schema`, `commandName` to the rest of the system?**
-  _98 weakly-connected nodes found - possible documentation gaps or missing edges._
+  _99 weakly-connected nodes found - possible documentation gaps or missing edges._
 - **Should `Cibles de build Angular` be split into smaller, more focused modules?**
   _Cohesion score 0.08307692307692308 - nodes in this community are weakly interconnected._
 - **Should `Dépendances Angular` be split into smaller, more focused modules?**
   _Cohesion score 0.1 - nodes in this community are weakly interconnected._
 - **Should `Clean Architecture et marketplace` be split into smaller, more focused modules?**
-  _Cohesion score 0.1111111111111111 - nodes in this community are weakly interconnected._
+  _Cohesion score 0.11764705882352941 - nodes in this community are weakly interconnected._
