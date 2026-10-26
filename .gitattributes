@@ -1,0 +1,4 @@
+# Markdown files keep LF line endings in the working copy too.
+# Without this, core.autocrlf rewrites them as CRLF on checkout and
+# graphify sees an unchanged document as modified (costly re-extraction).
+*.md text eol=lf
