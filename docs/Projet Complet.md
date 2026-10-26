@@ -538,7 +538,9 @@ L'exploitation d'une instance unique hébergeant les données de plusieurs commu
 
 ## 13. État d'avancement
 
-**Phase actuelle : plan du noyau validé (2026-10-26), aucun code métier. Prochaine étape : étape 0 du noyau (intégration continue GitHub Actions).**
+**Phase actuelle : plan du noyau validé, CI en place et bloquante (2026-10-26), aucun code métier. Prochaine étape : étape 1 du noyau (connexion Discord et compte).**
+
+**Flux de travail** (depuis le 2026-10-26) : plus de push direct sur `main`. Chaque étape = une branche → une pull request → fusion seulement si les jobs `backend` et `frontend` sont verts.
 
 **Ordre de réalisation** (décidé le 2026-10-21, précisé le 2026-10-26) : **1.** tests d'architecture → **2.** noyau (CI, schéma, utilisateurs, groupes, rôles et permissions, puis ce qu'est un module et son activation par groupe) → **3.** un ou deux modules natifs → **4.** marketplace (prototype Javy + Wasmtime, puis le reste).
 
@@ -554,7 +556,7 @@ L'exploitation d'une instance unique hébergeant les données de plusieurs commu
 | Docker Compose + Caddy (local) — projet `tgft-platform`, `docker compose up --build` → http://localhost:8081 | ✅ Fait (2026-10-15) |
 | **1. Tests d'architecture** — `tests/TGFT.ArchitectureTests` (xUnit + NetArchTest), 5 règles Clean Architecture, verts | ✅ Fait (2026-10-21) — CI = étape 0 du noyau |
 | **2. Plan du noyau** — `docs/TGFT — Plan du noyau.md` | ✅ Validé (2026-10-26) |
-| **2.0** CI GitHub Actions : compilation + tests à chaque envoi, tests d'architecture bloquants | ⬜ À faire |
+| **2.0** CI GitHub Actions : compilation + tests à chaque envoi, tests d'architecture bloquants | ✅ Fait (2026-10-26) — `.github/workflows/ci.yml`, règle de protection `main` active |
 | **2.1** Se connecter avec Discord et voir son compte (A1, A2) — EF Core, deux rôles PostgreSQL, étape de migration séparée, Testcontainers, cookie de session ; écrans accueil (mention « non approuvé par Riot ») et mon compte | ⬜ À faire |
 | **2.2** Créer ses groupes et passer de l'un à l'autre (B1, B2, B3) — adhésions, groupe dans l'adresse, grille des permissions, **isolation** ; écrans mes groupes, sélecteur, création, réglages | ⬜ À faire |
 | **2.3** Gérer les membres (C1, C2, C3, C7) — liste, rôle, exclusion ; écran membres | ⬜ À faire |
@@ -577,6 +579,7 @@ L'exploitation d'une instance unique hébergeant les données de plusieurs commu
 
 | Date | Changement |
 |---|---|
+| 2026-10-26 | **Étape 0 terminée : CI GitHub Actions bloquante.** Workflow `.github/workflows/ci.yml` : job `backend` (restore, build Release, tests, échec si paquet NuGet vulnérable) et job `frontend` (`npm ci`, build, tests Vitest), à chaque push sur `main` et chaque pull request. Avertissements C# tolérés. **Dépôt rendu public** (cohérent avec l'AGPL ; la protection de branche n'est pas appliquée sur un dépôt privé avec un compte gratuit). Historique vérifié avant : aucun secret commité. **Ruleset `main`** : suppression interdite, force push bloqué, pull request obligatoire (0 approbation, développeur seul), checks `backend` et `frontend` obligatoires, liste de contournement vide. |
 | 2026-10-26 | **Cahier des charges V2.1 : couche 3 « réponse vérifiée » étendue** (évolution notée et justifiée dans `docs/Cahier des charges — évolutions/V2.1.md`). Un module externe modifie son classeur **et** le contenu du groupe pour lequel il a reçu le droit, dans la limite des droits du membre, via les mêmes cas d'usage que le site (§6.4, §6.4 bis). Accès aux données de la plateforme sur trois niveaux : gestion (aucun), membres (lecture en pseudonymes), contenu (lecture et écriture, groupe en cours). Raison : éviter qu'un module recopie dans son classeur des données qui existent déjà ; une donnée vit à un seul endroit. Sécurité inchangée : groupe fixé par la plateforme, droits du membre, seuil plancher, pas d'appel pendant l'exécution. |
 | 2026-10-26 | **Plan du noyau validé** (`docs/TGFT — Plan du noyau.md`). Décisions : groupe dans l'adresse ; isolation en deux remparts indépendants (filtres EF + RLS par variable de transaction) avec deux rôles PostgreSQL et RLS forcée ; cookie de session pour le site, clé de service pour le bot, rôle relu à chaque requête ; grille de permissions fixe, permissions nommées, tests d'exhaustivité et de matrice ; migrations EF Core appliquées par une étape séparée ; schéma (utilisateurs, groupes, adhésions, invitations, demandes d'adhésion ; données du jeu par set ; compos, classements des augments et des objets) ; un seul fondateur garanti par la base ; la connexion ne donne aucun droit ; dépendances du noyau ; sept étapes (0 à 6), chacune avec back-end + écrans. |
 | 2026-10-26 | **Contrat D11 étendu à l'export (A3).** Modules natifs : export obligatoire, vérifié à la compilation. Modules externes : la plateforme extrait elle-même des classeurs les entrées aux pseudonymes de l'utilisateur, en JSON. |
