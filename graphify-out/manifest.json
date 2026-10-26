@@ -109,11 +109,6 @@
     "ast_hash": "9e61a5663cdfef3c963a3595ac1a7813",
     "semantic_hash": "9e61a5663cdfef3c963a3595ac1a7813"
   },
-  "claude.md": {
-    "mtime": 1792570241.2064643,
-    "ast_hash": "d0c4cd140dfdbe56a20d544ed4dc7724",
-    "semantic_hash": "d0c4cd140dfdbe56a20d544ed4dc7724"
-  },
   "docs/Projet Complet.md": {
     "mtime": 1793035755.0072446,
     "ast_hash": "1ba27bafcbf8061b9046b37be09316ef",
