@@ -19,11 +19,15 @@ Réponds en **français**, de façon claire et concise. Le code, les noms de cla
 
 ## Mémoire du projet
 
-Deux sources te permettent de garder le projet en tête. Utilise-les **avant de répondre** à une question d'architecture ou de conception, et chaque fois que tu as un doute.
+Trois sources te permettent de garder le projet en tête. Utilise-les **avant de répondre** à une question d'architecture ou de conception, et chaque fois que tu as un doute.
 
 ### `docs/Projet Complet.md`
 
 Ce fichier décrit le projet en entier : objectifs, architecture, marketplace, user stories, stack et décisions. **Tu peux le relire à tout moment** pour te remémorer le projet, notamment en début de session, après une longue conversation, ou quand une demande touche une partie que tu n'as pas encore vue. En cas de contradiction avec ce `CLAUDE.md`, c'est **`docs/Projet Complet.md` qui fait foi**. Signale-moi la contradiction.
+
+### `docs/TGFT — Plan du noyau.md`
+
+Plan détaillé du noyau, validé le 2026-10-26 : schéma, isolation entre groupes, authentification, permissions, tests, étapes 0 à 6. **Relis-le avant de coder une étape du noyau.** Ses décisions sont reportées dans `Projet Complet.md`.
 
 ### Graphify
 
@@ -43,7 +47,7 @@ Mettre à jour le graphe n'est pas écrire du code : tu peux le faire sans deman
 
 **TGFT** est une plateforme web destinée aux communautés organisées de joueurs de **Teamfight Tactics** (TFT, Riot Games) : serveurs Discord, associations, groupes d'entraînement. Chaque groupe y construit sa base de connaissance et ses outils de travail.
 
-C'est mon **projet de fin de bachelier** (projet d'intégration). Le document de référence est le **cahier des charges V2** : en cas de doute ou de contradiction, c'est lui qui fait foi. Demande-moi de te le fournir si tu en as besoin.
+C'est mon **projet de fin de bachelier** (projet d'intégration). Le document de référence est le **cahier des charges V2**, complété par ses évolutions dans `docs/Cahier des charges — évolutions/` (V2.1…) : en cas de doute ou de contradiction, c'est lui qui fait foi. Demande-moi de te le fournir si tu en as besoin.
 
 **L'intérêt évalué n'est pas les fonctionnalités, mais l'architecture** :
 - un **noyau minimal** (comptes, groupes, membres, rôles, permissions) ;
@@ -61,6 +65,10 @@ C'est mon **projet de fin de bachelier** (projet d'intégration). Le document de
 
 Fondateur, Administrateur, Contributeur, Lecteur. Le contributeur produit du contenu mais n'a **aucun** droit sur les membres ni sur l'activation ou la configuration des modules.
 
+- **Grille fixe** dans le code, identique pour tous les groupes. Permissions nommées ; **chaque point d'accès déclare la permission qu'il exige** (test d'exhaustivité + test de matrice).
+- Le rôle est porté par l'**adhésion** (utilisateur + groupe + rôle). Le fondateur est une adhésion, pas une colonne du groupe ; un seul fondateur, garanti par la base.
+- La connexion ne donne aucun droit. Le rôle n'est jamais stocké dans la session : il est relu à chaque requête.
+
 ### Modules
 
 | | Modules natifs | Modules externes |
@@ -72,7 +80,8 @@ Fondateur, Administrateur, Contributeur, Lecteur. Le contributeur produit du con
 - **Team Builder** (MVP) : éditeur de plateau hexagonal en glisser-déposer, synergies calculées en temps réel, état complet encodé dans l'URL (le lien est l'objet partagé, rien n'est stocké). Les identifiants du jeu changent à chaque set : un ancien lien doit rester interprétable (encodage versionné).
 - **Tier Lists** (MVP) : cinq tier lists par groupe (compositions, augments, objets composables, emblèmes, objets forgés), réordonnables par glisser-déposer.
 - **Compos** et **Spotchecks** : différés (P2).
-- Les deux catégories partagent les mêmes **contrats** : un manifeste (écrans, réglages, commandes Discord), l'activation par groupe, les permissions par rôle, l'obligation de purge et d'anonymisation. Seule l'exécution diffère.
+- Les deux catégories partagent les mêmes **contrats** : un manifeste (écrans, réglages, commandes Discord, données de la plateforme lues et modifiées), l'activation par groupe, les permissions par rôle, l'obligation de purge, d'anonymisation et d'export. Seule l'exécution diffère.
+- Les modules natifs sont aussi appelés **modules de base** : activés par défaut dans un groupe, désactivables.
 
 ## Architecture de la marketplace (modules externes)
 
@@ -81,9 +90,20 @@ C'est le cœur du projet. Le modèle est celui des **Shopify Functions** : le mo
 ### Déroulé d'un appel
 
 1. **Événement** : un membre clique dans l'interface d'un module ou tape une de ses commandes Discord.
-2. **Préparation** (API, zone de confiance) : la plateforme ouvre le **classeur** du module pour ce groupe et construit le **paquet** : l'événement, le contenu du classeur, le contexte (pseudonyme et rôle du membre, données de jeu utiles).
+2. **Préparation** (API, zone de confiance) : la plateforme ouvre le **classeur** du module pour ce groupe et construit le **paquet** : l'événement, le contenu du classeur, le contexte (pseudonyme et rôle du membre, données de jeu utiles), les données de la plateforme déclarées dans le manifeste.
 3. **Exécution** (salle des machines, zone isolée) : le module tourne dans une boîte WebAssembly, avec des plafonds de calcul (fuel) et de mémoire. Il rend une **réponse** : les modifications de son classeur, la description de l'écran à afficher, les messages éventuels.
-4. **Vérification et application** (API) : la réponse est validée (format, taille, portée limitée au classeur du module pour ce groupe), puis appliquée.
+4. **Vérification et application** (API) : la réponse est validée (format, taille, portée limitée au classeur du module et au contenu du groupe qu'il a le droit de modifier, pour ce groupe, dans la limite des droits du membre), puis appliquée.
+
+### Accès aux données de la plateforme (validé le 2026-10-26)
+
+| Données | Accès du module externe |
+|---|---|
+| Gestion des utilisateurs et des groupes (rôles, invitations, réglages) | Aucun |
+| Liste des membres | Lecture seule, en pseudonymes |
+| Contenu du groupe (compos, tier lists…) | Lecture et écriture, groupe en cours uniquement |
+| Son classeur | Tout |
+
+**Un module n'a pas de porte à lui** : une modification demandée par un module passe par le même cas d'usage que depuis le site. Groupe fixé par la plateforme, droits du membre, droits déclarés dans le manifeste, **seuil plancher** de rôle fixé par la plateforme (un module peut l'élever, jamais l'abaisser). Le module ne recopie jamais une donnée de la plateforme : il stocke des références.
 
 Les appels d'un même module pour un même groupe sont **sérialisés** (un par un).
 
@@ -91,7 +111,7 @@ Les appels d'un même module pour un même groupe sont **sérialisés** (un par 
 
 1. **Bac à sable WebAssembly** (Wasmtime) : aucun accès aux fichiers, au réseau, aux bases ni à la mémoire de la plateforme. Plafonds de calcul et de mémoire à chaque appel.
 2. **Salle des machines séparée** : un conteneur Docker distinct de l'API, sans secret, sans réseau sortant, sans accès aux bases, en lecture seule, avec CPU et mémoire plafonnés. Seule l'API peut l'appeler.
-3. **Réponse vérifiée** : un module ne peut modifier que son propre classeur, pour le groupe en cours.
+3. **Réponse vérifiée** : un module ne peut modifier que son propre classeur et le contenu du groupe pour lequel il a reçu le droit, pour le groupe en cours, dans la limite des droits du membre. *(Étendue le 2026-10-26 : évolution V2.1 du cahier des charges, voir `docs/Cahier des charges — évolutions/V2.1.md`.)*
 4. **Classeur par module et par groupe** : un fichier **SQLite** choisi par la plateforme, jamais par le module, et plafonné en taille. **Le module n'écrit jamais de SQL** : la plateforme lit et écrit pour lui.
 5. **Pseudonymes** : le module ne connaît les membres que par un pseudonyme propre à lui. La correspondance est stockée dans PostgreSQL.
 6. **Interface déclarative** : le module décrit son écran avec les composants de la plateforme, et Angular l'affiche. **Aucun code tiers ne s'exécute dans le navigateur.** Une iframe isolée pour les développeurs vérifiés est prévue en P3 seulement.
@@ -114,7 +134,8 @@ Le module déclare ses commandes dans son manifeste, sous la forme d'**une comma
 
 - **Purge d'un groupe** : suppression de ses classeurs.
 - **Anonymisation d'un utilisateur** : suppression de la correspondance avec ses pseudonymes.
-- **Modules natifs** : ils doivent implémenter l'anonymisation et la purge, et c'est vérifié à la compilation.
+- **Export des données d'un utilisateur** : la plateforme extrait elle-même des classeurs les entrées contenant ses pseudonymes (JSON).
+- **Modules natifs** : ils doivent implémenter l'anonymisation, la purge et l'export, et c'est vérifié à la compilation.
 
 ### Plan de repli
 
@@ -128,6 +149,10 @@ Si le prototype Javy + Wasmtime échoue, l'exécution bascule sur **Jint** (inte
 - Pas d'Extism (sa partie .NET n'est pas à jour pour les correctifs de sécurité).
 - Pas de fonctions hôtes appelées par le module pendant son exécution : il ne fait que recevoir un paquet et rendre une réponse.
 - Pas de SQL écrit par les modules externes.
+- Groupe en cours dans l'adresse (`/api/groups/{id}/…`), pas dans un en-tête.
+- Cookie de session pour le site (pas de JWT), clé de service pour le bot.
+- Grille de permissions fixe, pas personnalisable par groupe (pour l'instant).
+- Migrations EF Core appliquées par une étape séparée avec le rôle propriétaire, jamais par l'API au démarrage.
 
 Si tu penses qu'une de ces décisions pose un vrai problème, dis-le avec des arguments, mais ne change rien de toi-même.
 
@@ -148,11 +173,13 @@ Si tu penses qu'une de ces décisions pose un vrai problème, dis-le avec des ar
 | Proxy inverse | Caddy (HTTPS, fichiers statiques) |
 | CI | GitHub Actions |
 | Tests | xUnit, Testcontainers, NetArchTest |
-| Données de jeu | Data Dragon (Riot), sans clé d'API, vérifié une fois par jour |
+| Données de jeu | Data Dragon (Riot), sans clé d'API, vérifié une fois par jour, derrière un port d'Application. Traits et seuils absents au 2026-10-26 : point de contrôle avant le Team Builder |
+| Authentification | Connexion Discord (reprise de la V0), cookie de session + CSRF pour le site, clé de service pour le bot. Jetons Discord non conservés |
+| Migrations | EF Core Migrations, SQL à la main dedans pour la RLS et les rôles |
 
 ### Principes d'architecture à respecter
 
-- **Isolation multi-tenant structurelle** : filtres globaux EF Core + RLS PostgreSQL. Ne jamais compter sur un filtre ajouté à la main requête par requête.
+- **Isolation multi-tenant structurelle** : filtres globaux EF Core + RLS PostgreSQL. Ne jamais compter sur un filtre ajouté à la main requête par requête. Chaîne : groupe dans l'adresse → vérification d'appartenance (refus identique à « groupe inexistant ») → contexte « groupe en cours » → filtres EF → RLS par variable de transaction. Deux rôles PostgreSQL (propriétaire pour les migrations, applicatif pour l'API), RLS forcée. Identifiant de groupe sur chaque table de contenu, enfants compris. L'isolation et ses tests arrivent avec la première donnée de groupe, jamais après.
 - **Clean Architecture** : le domaine et les cas d'usage ignorent la technologie d'exécution des modules. Les ports sont dans Application, les implémentations dans Infrastructure.
 - **Frontières vérifiées par NetArchTest** : un module natif ne référence ni la couche de données du noyau, ni un autre module.
 - **Les tests sont le mécanisme de sécurité** : les tests d'isolation, d'architecture et la suite de modules hostiles sont bloquants en CI. Ne jamais proposer de les désactiver ou de les contourner.
@@ -176,3 +203,8 @@ Le bot Discord n'a **aucune** fonctionnalité MVP. Ne propose pas d'avancer sur 
 - **Paquet** : les données envoyées au module pour un appel.
 - **Réponse** : ce que le module renvoie (modifications, écran, messages).
 - **Salle des machines** : le service .NET isolé qui exécute les modules WebAssembly.
+- **Adhésion** : un utilisateur dans un groupe, avec un rôle.
+- **Groupe en cours** : le groupe vérifié pour une requête, lu par tout le code et transmis à PostgreSQL.
+- **Module de base** : synonyme de module natif.
+- **Seuil plancher** : rôle minimum fixé par la plateforme pour une action sur ses données.
+- **V0** : l'ancien projet TGFT (`Desktop\Mes projets\TGFT`).

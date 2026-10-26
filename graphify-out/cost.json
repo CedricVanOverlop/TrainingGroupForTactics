@@ -36,8 +36,14 @@
       "output_tokens": 0,
       "files": 2,
       "note": "subagent total tokens (input/output split unavailable)"
+    },
+    {
+      "date": "2026-10-26T10:59:58.115652+00:00",
+      "input_tokens": 118057,
+      "output_tokens": 0,
+      "files": 5
     }
   ],
-  "total_input_tokens": 555985,
+  "total_input_tokens": 674042,
   "total_output_tokens": 0
 }

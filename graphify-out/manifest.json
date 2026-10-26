@@ -115,9 +115,9 @@
     "semantic_hash": "d0c4cd140dfdbe56a20d544ed4dc7724"
   },
   "docs/Projet Complet.md": {
-    "mtime": 1792570241.404253,
-    "ast_hash": "78afda89a71a14b7bc2ab5eb206692aa",
-    "semantic_hash": "78afda89a71a14b7bc2ab5eb206692aa"
+    "mtime": 1793012009.5354092,
+    "ast_hash": "f3d6c0e3b140ec6513a484063d7359d6",
+    "semantic_hash": "f3d6c0e3b140ec6513a484063d7359d6"
   },
   "frontend/README.md": {
     "mtime": 1791992766.011335,
@@ -173,5 +173,25 @@
     "mtime": 1792569850.577222,
     "ast_hash": "7e519bcc2b61c0b1e2687ae64922fa12",
     "semantic_hash": "7e519bcc2b61c0b1e2687ae64922fa12"
+  },
+  ".claude/settings.local.json": {
+    "mtime": 1792574832.0547347,
+    "ast_hash": "1c654f6c8432baad80a2502a545a1fe7",
+    "semantic_hash": "1c654f6c8432baad80a2502a545a1fe7"
+  },
+  "CLAUDE.md": {
+    "mtime": 1793012013.6915655,
+    "ast_hash": "ecce1db88b89495e0489338eeab63c25",
+    "semantic_hash": "ecce1db88b89495e0489338eeab63c25"
+  },
+  "docs/Cahier des charges \u2014 \u00e9volutions/V2.1.md": {
+    "mtime": 1793012009.3573644,
+    "ast_hash": "ab065d46bd0703f33f1b49af76cb1423",
+    "semantic_hash": "ab065d46bd0703f33f1b49af76cb1423"
+  },
+  "docs/TGFT \u2014 Plan du noyau.md": {
+    "mtime": 1793011802.6552153,
+    "ast_hash": "15e7eacba4b9cbe42886653b7b8cb875",
+    "semantic_hash": "15e7eacba4b9cbe42886653b7b8cb875"
   }
 }

@@ -4,14 +4,30 @@
   "graph": {
     "hyperedges": [
       {
-        "id": "marketplace_call_flow",
-        "label": "Deroule d'un appel de module externe",
+        "id": "two_rampart_tenant_isolation",
+        "label": "Two independent ramparts for tenant isolation",
         "nodes": [
-          "docs_projet_complet_paquet",
-          "docs_projet_complet_zone_de_confiance",
+          "docs_tgft___plan_du_noyau_groupe_en_cours",
+          "docs_tgft___plan_du_noyau_ef_core_global_filters",
+          "docs_tgft___plan_du_noyau_postgresql_rls",
+          "docs_tgft___plan_du_noyau_deux_roles_postgresql",
+          "docs_tgft___plan_du_noyau_tests_noyau"
+        ],
+        "relation": "form",
+        "confidence": "EXTRACTED",
+        "confidence_score": 1.0,
+        "source_file": "docs/TGFT \u2014 Plan du noyau.md"
+      },
+      {
+        "id": "external_module_call_pipeline",
+        "label": "External module call pipeline (paquet \u2192 sandbox \u2192 verified response)",
+        "nodes": [
+          "docs_projet_complet_deroule_appel",
+          "docs_projet_complet_modele_paquet_reponse",
           "docs_projet_complet_salle_des_machines",
-          "docs_projet_complet_reponse",
-          "docs_projet_complet_classeur"
+          "docs_projet_complet_wasmtime",
+          "docs_projet_complet_classeur",
+          "docs_projet_complet_reponse_verifiee"
         ],
         "relation": "participate_in",
         "confidence": "EXTRACTED",
@@ -19,32 +35,19 @@
         "source_file": "docs/Projet Complet.md"
       },
       {
-        "id": "structural_tenant_isolation",
-        "label": "Isolation multi-tenant structurelle a double rempart",
+        "id": "module_platform_data_access_v2_1",
+        "label": "V2.1 module access to platform data with member rights and role floor",
         "nodes": [
-          "docs_projet_complet_multi_tenant_isolation",
-          "docs_projet_complet_ef_core_global_filters",
-          "docs_projet_complet_postgresql_rls",
-          "docs_projet_complet_testcontainers"
+          "docs_cahier_des_charges____volutions_v2_1_evolution_acces_modules_donnees",
+          "docs_projet_complet_acces_donnees_plateforme",
+          "docs_tgft___plan_du_noyau_principe_pas_de_porte",
+          "docs_tgft___plan_du_noyau_seuil_plancher",
+          "docs_projet_complet_reponse_verifiee"
         ],
         "relation": "form",
         "confidence": "EXTRACTED",
         "confidence_score": 1.0,
-        "source_file": "docs/Projet Complet.md"
-      },
-      {
-        "id": "architecture_enforcement",
-        "label": "Frontieres d'architecture verifiees par tests",
-        "nodes": [
-          "docs_projet_complet_clean_architecture",
-          "docs_projet_complet_netarchtest_boundaries",
-          "docs_projet_complet_architecture_tests_project",
-          "docs_projet_complet_tests_as_security"
-        ],
-        "relation": "form",
-        "confidence": "EXTRACTED",
-        "confidence_score": 1.0,
-        "source_file": "docs/Projet Complet.md"
+        "source_file": "docs/Cahier des charges \u2014 \u00e9volutions/V2.1.md"
       },
       {
         "id": "docker_compose_local_stack",
@@ -69,7 +72,7 @@
       "source_file": "backend/TGFT.Api/Program.cs",
       "source_location": "L1",
       "_origin": "ast",
-      "community": 17,
+      "community": 18,
       "norm_label": "program.cs",
       "id": "backend_tgft_api_program"
     },
@@ -79,7 +82,7 @@
       "source_file": "backend/TGFT.Api/Program.cs",
       "source_location": "L38",
       "_origin": "ast",
-      "community": 17,
+      "community": 18,
       "norm_label": "weatherforecast",
       "id": "backend_tgft_api_program_weatherforecast"
     },
@@ -89,7 +92,7 @@
       "source_file": "backend/TGFT.Api/Properties/launchSettings.json",
       "source_location": "L1",
       "_origin": "ast",
-      "community": 5,
+      "community": 4,
       "norm_label": "launchsettings.json",
       "id": "backend_tgft_api_properties_launchsettings"
     },
@@ -99,7 +102,7 @@
       "source_file": "backend/TGFT.Api/Properties/launchSettings.json",
       "source_location": "L2",
       "_origin": "ast",
-      "community": 5,
+      "community": 4,
       "norm_label": "$schema",
       "id": "backend_tgft_api_properties_launchsettings_schema"
     },
@@ -109,7 +112,7 @@
       "source_file": "backend/TGFT.Api/Properties/launchSettings.json",
       "source_location": "L3",
       "_origin": "ast",
-      "community": 5,
+      "community": 4,
       "norm_label": "profiles",
       "id": "backend_tgft_api_properties_launchsettings_profiles"
     },
@@ -119,7 +122,7 @@
       "source_file": "backend/TGFT.Api/Properties/launchSettings.json",
       "source_location": "L4",
       "_origin": "ast",
-      "community": 5,
+      "community": 4,
       "norm_label": "http",
       "id": "backend_tgft_api_properties_launchsettings_profiles_http"
     },
@@ -129,7 +132,7 @@
       "source_file": "backend/TGFT.Api/Properties/launchSettings.json",
       "source_location": "L5",
       "_origin": "ast",
-      "community": 5,
+      "community": 4,
       "norm_label": "commandname",
       "id": "backend_tgft_api_properties_launchsettings_http_commandname"
     },
@@ -139,7 +142,7 @@
       "source_file": "backend/TGFT.Api/Properties/launchSettings.json",
       "source_location": "L6",
       "_origin": "ast",
-      "community": 5,
+      "community": 4,
       "norm_label": "dotnetrunmessages",
       "id": "backend_tgft_api_properties_launchsettings_http_dotnetrunmessages"
     },
@@ -149,7 +152,7 @@
       "source_file": "backend/TGFT.Api/Properties/launchSettings.json",
       "source_location": "L7",
       "_origin": "ast",
-      "community": 5,
+      "community": 4,
       "norm_label": "launchbrowser",
       "id": "backend_tgft_api_properties_launchsettings_http_launchbrowser"
     },
@@ -159,7 +162,7 @@
       "source_file": "backend/TGFT.Api/Properties/launchSettings.json",
       "source_location": "L8",
       "_origin": "ast",
-      "community": 5,
+      "community": 4,
       "norm_label": "applicationurl",
       "id": "backend_tgft_api_properties_launchsettings_http_applicationurl"
     },
@@ -169,7 +172,7 @@
       "source_file": "backend/TGFT.Api/Properties/launchSettings.json",
       "source_location": "L9",
       "_origin": "ast",
-      "community": 5,
+      "community": 4,
       "norm_label": "environmentvariables",
       "id": "backend_tgft_api_properties_launchsettings_http_environmentvariables"
     },
@@ -179,7 +182,7 @@
       "source_file": "backend/TGFT.Api/Properties/launchSettings.json",
       "source_location": "L10",
       "_origin": "ast",
-      "community": 5,
+      "community": 4,
       "norm_label": "aspnetcore_environment",
       "id": "backend_tgft_api_properties_launchsettings_environmentvariables_aspnetcore_environment"
     },
@@ -189,7 +192,7 @@
       "source_file": "backend/TGFT.Api/Properties/launchSettings.json",
       "source_location": "L13",
       "_origin": "ast",
-      "community": 5,
+      "community": 4,
       "norm_label": "https",
       "id": "backend_tgft_api_properties_launchsettings_profiles_https"
     },
@@ -199,7 +202,7 @@
       "source_file": "backend/TGFT.Api/Properties/launchSettings.json",
       "source_location": "L14",
       "_origin": "ast",
-      "community": 5,
+      "community": 4,
       "norm_label": "commandname",
       "id": "backend_tgft_api_properties_launchsettings_https_commandname"
     },
@@ -209,7 +212,7 @@
       "source_file": "backend/TGFT.Api/Properties/launchSettings.json",
       "source_location": "L15",
       "_origin": "ast",
-      "community": 5,
+      "community": 4,
       "norm_label": "dotnetrunmessages",
       "id": "backend_tgft_api_properties_launchsettings_https_dotnetrunmessages"
     },
@@ -219,7 +222,7 @@
       "source_file": "backend/TGFT.Api/Properties/launchSettings.json",
       "source_location": "L16",
       "_origin": "ast",
-      "community": 5,
+      "community": 4,
       "norm_label": "launchbrowser",
       "id": "backend_tgft_api_properties_launchsettings_https_launchbrowser"
     },
@@ -229,7 +232,7 @@
       "source_file": "backend/TGFT.Api/Properties/launchSettings.json",
       "source_location": "L17",
       "_origin": "ast",
-      "community": 5,
+      "community": 4,
       "norm_label": "applicationurl",
       "id": "backend_tgft_api_properties_launchsettings_https_applicationurl"
     },
@@ -239,7 +242,7 @@
       "source_file": "backend/TGFT.Api/Properties/launchSettings.json",
       "source_location": "L18",
       "_origin": "ast",
-      "community": 5,
+      "community": 4,
       "norm_label": "environmentvariables",
       "id": "backend_tgft_api_properties_launchsettings_https_environmentvariables"
     },
@@ -249,7 +252,7 @@
       "source_file": "frontend/angular.json",
       "source_location": "L1",
       "_origin": "ast",
-      "community": 3,
+      "community": 7,
       "norm_label": "angular.json",
       "id": "frontend_angular"
     },
@@ -259,7 +262,7 @@
       "source_file": "frontend/angular.json",
       "source_location": "L2",
       "_origin": "ast",
-      "community": 3,
+      "community": 7,
       "norm_label": "$schema",
       "id": "frontend_angular_schema"
     },
@@ -269,7 +272,7 @@
       "source_file": "frontend/angular.json",
       "source_location": "L3",
       "_origin": "ast",
-      "community": 3,
+      "community": 7,
       "norm_label": "version",
       "id": "frontend_angular_version"
     },
@@ -279,7 +282,7 @@
       "source_file": "frontend/angular.json",
       "source_location": "L4",
       "_origin": "ast",
-      "community": 3,
+      "community": 10,
       "norm_label": "cli",
       "id": "frontend_angular_cli"
     },
@@ -289,7 +292,7 @@
       "source_file": "frontend/angular.json",
       "source_location": "L5",
       "_origin": "ast",
-      "community": 3,
+      "community": 10,
       "norm_label": "packagemanager",
       "id": "frontend_angular_cli_packagemanager"
     },
@@ -299,7 +302,7 @@
       "source_file": "frontend/angular.json",
       "source_location": "L7",
       "_origin": "ast",
-      "community": 3,
+      "community": 7,
       "norm_label": "newprojectroot",
       "id": "frontend_angular_newprojectroot"
     },
@@ -309,7 +312,7 @@
       "source_file": "frontend/angular.json",
       "source_location": "L8",
       "_origin": "ast",
-      "community": 3,
+      "community": 7,
       "norm_label": "projects",
       "id": "frontend_angular_projects"
     },
@@ -319,7 +322,7 @@
       "source_file": "frontend/angular.json",
       "source_location": "L9",
       "_origin": "ast",
-      "community": 3,
+      "community": 7,
       "norm_label": "tgft.web",
       "id": "frontend_angular_projects_tgft_web"
     },
@@ -329,7 +332,7 @@
       "source_file": "frontend/angular.json",
       "source_location": "L10",
       "_origin": "ast",
-      "community": 3,
+      "community": 7,
       "norm_label": "projecttype",
       "id": "frontend_angular_tgft_web_projecttype"
     },
@@ -339,7 +342,7 @@
       "source_file": "frontend/angular.json",
       "source_location": "L11",
       "_origin": "ast",
-      "community": 3,
+      "community": 7,
       "norm_label": "schematics",
       "id": "frontend_angular_tgft_web_schematics"
     },
@@ -349,7 +352,7 @@
       "source_file": "frontend/angular.json",
       "source_location": "L12",
       "_origin": "ast",
-      "community": 3,
+      "community": 7,
       "norm_label": "@schematics/angular:component",
       "id": "frontend_angular_schematics_schematics_angular_component"
     },
@@ -359,7 +362,7 @@
       "source_file": "frontend/angular.json",
       "source_location": "L13",
       "_origin": "ast",
-      "community": 3,
+      "community": 7,
       "norm_label": "style",
       "id": "frontend_angular_schematics_angular_component_style"
     },
@@ -369,7 +372,7 @@
       "source_file": "frontend/angular.json",
       "source_location": "L16",
       "_origin": "ast",
-      "community": 3,
+      "community": 7,
       "norm_label": "root",
       "id": "frontend_angular_tgft_web_root"
     },
@@ -379,7 +382,7 @@
       "source_file": "frontend/angular.json",
       "source_location": "L17",
       "_origin": "ast",
-      "community": 3,
+      "community": 7,
       "norm_label": "sourceroot",
       "id": "frontend_angular_tgft_web_sourceroot"
     },
@@ -389,7 +392,7 @@
       "source_file": "frontend/angular.json",
       "source_location": "L18",
       "_origin": "ast",
-      "community": 3,
+      "community": 7,
       "norm_label": "prefix",
       "id": "frontend_angular_tgft_web_prefix"
     },
@@ -399,7 +402,7 @@
       "source_file": "frontend/angular.json",
       "source_location": "L19",
       "_origin": "ast",
-      "community": 1,
+      "community": 0,
       "norm_label": "architect",
       "id": "frontend_angular_tgft_web_architect"
     },
@@ -409,7 +412,7 @@
       "source_file": "frontend/angular.json",
       "source_location": "L20",
       "_origin": "ast",
-      "community": 1,
+      "community": 0,
       "norm_label": "build",
       "id": "frontend_angular_architect_build"
     },
@@ -419,7 +422,7 @@
       "source_file": "frontend/angular.json",
       "source_location": "L21",
       "_origin": "ast",
-      "community": 1,
+      "community": 0,
       "norm_label": "builder",
       "id": "frontend_angular_build_builder"
     },
@@ -429,7 +432,7 @@
       "source_file": "frontend/angular.json",
       "source_location": "L22",
       "_origin": "ast",
-      "community": 1,
+      "community": 0,
       "norm_label": "options",
       "id": "frontend_angular_build_options"
     },
@@ -439,7 +442,7 @@
       "source_file": "frontend/angular.json",
       "source_location": "L23",
       "_origin": "ast",
-      "community": 1,
+      "community": 0,
       "norm_label": "browser",
       "id": "frontend_angular_options_browser"
     },
@@ -449,7 +452,7 @@
       "source_file": "frontend/angular.json",
       "source_location": "L24",
       "_origin": "ast",
-      "community": 1,
+      "community": 0,
       "norm_label": "tsconfig",
       "id": "frontend_angular_options_tsconfig"
     },
@@ -459,7 +462,7 @@
       "source_file": "frontend/angular.json",
       "source_location": "L25",
       "_origin": "ast",
-      "community": 1,
+      "community": 0,
       "norm_label": "inlinestylelanguage",
       "id": "frontend_angular_options_inlinestylelanguage"
     },
@@ -469,7 +472,7 @@
       "source_file": "frontend/angular.json",
       "source_location": "L26",
       "_origin": "ast",
-      "community": 1,
+      "community": 0,
       "norm_label": "assets",
       "id": "frontend_angular_options_assets"
     },
@@ -479,7 +482,7 @@
       "source_file": "frontend/angular.json",
       "source_location": "L32",
       "_origin": "ast",
-      "community": 1,
+      "community": 0,
       "norm_label": "styles",
       "id": "frontend_angular_options_styles"
     },
@@ -489,7 +492,7 @@
       "source_file": "frontend/angular.json",
       "source_location": "L36",
       "_origin": "ast",
-      "community": 1,
+      "community": 0,
       "norm_label": "configurations",
       "id": "frontend_angular_build_configurations"
     },
@@ -499,7 +502,7 @@
       "source_file": "frontend/angular.json",
       "source_location": "L37",
       "_origin": "ast",
-      "community": 1,
+      "community": 0,
       "norm_label": "production",
       "id": "frontend_angular_configurations_production"
     },
@@ -509,7 +512,7 @@
       "source_file": "frontend/angular.json",
       "source_location": "L38",
       "_origin": "ast",
-      "community": 1,
+      "community": 0,
       "norm_label": "budgets",
       "id": "frontend_angular_production_budgets"
     },
@@ -519,7 +522,7 @@
       "source_file": "frontend/angular.json",
       "source_location": "L50",
       "_origin": "ast",
-      "community": 1,
+      "community": 0,
       "norm_label": "outputhashing",
       "id": "frontend_angular_production_outputhashing"
     },
@@ -529,7 +532,7 @@
       "source_file": "frontend/angular.json",
       "source_location": "L52",
       "_origin": "ast",
-      "community": 1,
+      "community": 0,
       "norm_label": "development",
       "id": "frontend_angular_configurations_development"
     },
@@ -539,7 +542,7 @@
       "source_file": "frontend/angular.json",
       "source_location": "L53",
       "_origin": "ast",
-      "community": 1,
+      "community": 0,
       "norm_label": "optimization",
       "id": "frontend_angular_development_optimization"
     },
@@ -549,7 +552,7 @@
       "source_file": "frontend/angular.json",
       "source_location": "L54",
       "_origin": "ast",
-      "community": 1,
+      "community": 0,
       "norm_label": "extractlicenses",
       "id": "frontend_angular_development_extractlicenses"
     },
@@ -559,7 +562,7 @@
       "source_file": "frontend/angular.json",
       "source_location": "L55",
       "_origin": "ast",
-      "community": 1,
+      "community": 0,
       "norm_label": "sourcemap",
       "id": "frontend_angular_development_sourcemap"
     },
@@ -569,7 +572,7 @@
       "source_file": "frontend/angular.json",
       "source_location": "L58",
       "_origin": "ast",
-      "community": 1,
+      "community": 0,
       "norm_label": "defaultconfiguration",
       "id": "frontend_angular_build_defaultconfiguration"
     },
@@ -579,7 +582,7 @@
       "source_file": "frontend/angular.json",
       "source_location": "L60",
       "_origin": "ast",
-      "community": 1,
+      "community": 0,
       "norm_label": "serve",
       "id": "frontend_angular_architect_serve"
     },
@@ -589,7 +592,7 @@
       "source_file": "frontend/angular.json",
       "source_location": "L61",
       "_origin": "ast",
-      "community": 1,
+      "community": 0,
       "norm_label": "builder",
       "id": "frontend_angular_serve_builder"
     },
@@ -599,7 +602,7 @@
       "source_file": "frontend/angular.json",
       "source_location": "L62",
       "_origin": "ast",
-      "community": 1,
+      "community": 0,
       "norm_label": "configurations",
       "id": "frontend_angular_serve_configurations"
     },
@@ -609,7 +612,7 @@
       "source_file": "frontend/angular.json",
       "source_location": "L64",
       "_origin": "ast",
-      "community": 1,
+      "community": 0,
       "norm_label": "buildtarget",
       "id": "frontend_angular_production_buildtarget"
     },
@@ -619,7 +622,7 @@
       "source_file": "frontend/angular.json",
       "source_location": "L67",
       "_origin": "ast",
-      "community": 1,
+      "community": 0,
       "norm_label": "buildtarget",
       "id": "frontend_angular_development_buildtarget"
     },
@@ -629,7 +632,7 @@
       "source_file": "frontend/angular.json",
       "source_location": "L70",
       "_origin": "ast",
-      "community": 1,
+      "community": 0,
       "norm_label": "defaultconfiguration",
       "id": "frontend_angular_serve_defaultconfiguration"
     },
@@ -639,7 +642,7 @@
       "source_file": "frontend/angular.json",
       "source_location": "L72",
       "_origin": "ast",
-      "community": 1,
+      "community": 0,
       "norm_label": "test",
       "id": "frontend_angular_architect_test"
     },
@@ -649,7 +652,7 @@
       "source_file": "frontend/angular.json",
       "source_location": "L73",
       "_origin": "ast",
-      "community": 1,
+      "community": 0,
       "norm_label": "builder",
       "id": "frontend_angular_test_builder"
     },
@@ -659,7 +662,7 @@
       "source_file": "frontend/package.json",
       "source_location": "L1",
       "_origin": "ast",
-      "community": 4,
+      "community": 1,
       "norm_label": "package.json",
       "id": "frontend_package"
     },
@@ -669,7 +672,7 @@
       "source_file": "frontend/package.json",
       "source_location": "L2",
       "_origin": "ast",
-      "community": 4,
+      "community": 1,
       "norm_label": "name",
       "id": "frontend_package_name"
     },
@@ -679,7 +682,7 @@
       "source_file": "frontend/package.json",
       "source_location": "L3",
       "_origin": "ast",
-      "community": 4,
+      "community": 1,
       "norm_label": "version",
       "id": "frontend_package_version"
     },
@@ -689,7 +692,7 @@
       "source_file": "frontend/package.json",
       "source_location": "L4",
       "_origin": "ast",
-      "community": 4,
+      "community": 1,
       "norm_label": "scripts",
       "id": "frontend_package_scripts"
     },
@@ -699,7 +702,7 @@
       "source_file": "frontend/package.json",
       "source_location": "L5",
       "_origin": "ast",
-      "community": 4,
+      "community": 1,
       "norm_label": "ng",
       "id": "frontend_package_scripts_ng"
     },
@@ -709,7 +712,7 @@
       "source_file": "frontend/package.json",
       "source_location": "L6",
       "_origin": "ast",
-      "community": 4,
+      "community": 1,
       "norm_label": "start",
       "id": "frontend_package_scripts_start"
     },
@@ -719,7 +722,7 @@
       "source_file": "frontend/package.json",
       "source_location": "L7",
       "_origin": "ast",
-      "community": 4,
+      "community": 1,
       "norm_label": "build",
       "id": "frontend_package_scripts_build"
     },
@@ -729,7 +732,7 @@
       "source_file": "frontend/package.json",
       "source_location": "L8",
       "_origin": "ast",
-      "community": 4,
+      "community": 1,
       "norm_label": "watch",
       "id": "frontend_package_scripts_watch"
     },
@@ -739,7 +742,7 @@
       "source_file": "frontend/package.json",
       "source_location": "L9",
       "_origin": "ast",
-      "community": 4,
+      "community": 1,
       "norm_label": "test",
       "id": "frontend_package_scripts_test"
     },
@@ -749,7 +752,7 @@
       "source_file": "frontend/package.json",
       "source_location": "L11",
       "_origin": "ast",
-      "community": 4,
+      "community": 1,
       "norm_label": "private",
       "id": "frontend_package_private"
     },
@@ -759,7 +762,7 @@
       "source_file": "frontend/package.json",
       "source_location": "L12",
       "_origin": "ast",
-      "community": 4,
+      "community": 1,
       "norm_label": "packagemanager",
       "id": "frontend_package_packagemanager"
     },
@@ -769,7 +772,7 @@
       "source_file": "frontend/package.json",
       "source_location": "L13",
       "_origin": "ast",
-      "community": 4,
+      "community": 1,
       "norm_label": "dependencies",
       "id": "frontend_package_dependencies"
     },
@@ -779,7 +782,7 @@
       "source_file": "frontend/package.json",
       "source_location": "L14",
       "_origin": "ast",
-      "community": 4,
+      "community": 1,
       "norm_label": "@angular/common",
       "id": "frontend_package_dependencies_angular_common"
     },
@@ -789,7 +792,7 @@
       "source_file": "frontend/package.json",
       "source_location": "L15",
       "_origin": "ast",
-      "community": 4,
+      "community": 1,
       "norm_label": "@angular/compiler",
       "id": "frontend_package_dependencies_angular_compiler"
     },
@@ -799,7 +802,7 @@
       "source_file": "frontend/package.json",
       "source_location": "L16",
       "_origin": "ast",
-      "community": 4,
+      "community": 1,
       "norm_label": "@angular/core",
       "id": "frontend_package_dependencies_angular_core"
     },
@@ -809,7 +812,7 @@
       "source_file": "frontend/package.json",
       "source_location": "L17",
       "_origin": "ast",
-      "community": 4,
+      "community": 1,
       "norm_label": "@angular/forms",
       "id": "frontend_package_dependencies_angular_forms"
     },
@@ -819,7 +822,7 @@
       "source_file": "frontend/package.json",
       "source_location": "L18",
       "_origin": "ast",
-      "community": 4,
+      "community": 1,
       "norm_label": "@angular/platform-browser",
       "id": "frontend_package_dependencies_angular_platform_browser"
     },
@@ -829,7 +832,7 @@
       "source_file": "frontend/package.json",
       "source_location": "L19",
       "_origin": "ast",
-      "community": 4,
+      "community": 1,
       "norm_label": "@angular/router",
       "id": "frontend_package_dependencies_angular_router"
     },
@@ -839,7 +842,7 @@
       "source_file": "frontend/package.json",
       "source_location": "L20",
       "_origin": "ast",
-      "community": 4,
+      "community": 1,
       "norm_label": "rxjs",
       "id": "frontend_package_dependencies_rxjs"
     },
@@ -849,7 +852,7 @@
       "source_file": "frontend/package.json",
       "source_location": "L21",
       "_origin": "ast",
-      "community": 4,
+      "community": 1,
       "norm_label": "tslib",
       "id": "frontend_package_dependencies_tslib"
     },
@@ -859,7 +862,7 @@
       "source_file": "frontend/package.json",
       "source_location": "L23",
       "_origin": "ast",
-      "community": 3,
+      "community": 10,
       "norm_label": "devdependencies",
       "id": "frontend_package_devdependencies"
     },
@@ -869,7 +872,7 @@
       "source_file": "frontend/package.json",
       "source_location": "L24",
       "_origin": "ast",
-      "community": 3,
+      "community": 10,
       "norm_label": "@angular/build",
       "id": "frontend_package_devdependencies_angular_build"
     },
@@ -879,7 +882,7 @@
       "source_file": "frontend/package.json",
       "source_location": "L25",
       "_origin": "ast",
-      "community": 3,
+      "community": 10,
       "norm_label": "@angular/cli",
       "id": "frontend_package_devdependencies_angular_cli"
     },
@@ -889,7 +892,7 @@
       "source_file": "frontend/package.json",
       "source_location": "L26",
       "_origin": "ast",
-      "community": 3,
+      "community": 10,
       "norm_label": "@angular/compiler-cli",
       "id": "frontend_package_devdependencies_angular_compiler_cli"
     },
@@ -899,7 +902,7 @@
       "source_file": "frontend/package.json",
       "source_location": "L27",
       "_origin": "ast",
-      "community": 3,
+      "community": 10,
       "norm_label": "jsdom",
       "id": "frontend_package_devdependencies_jsdom"
     },
@@ -909,7 +912,7 @@
       "source_file": "frontend/package.json",
       "source_location": "L28",
       "_origin": "ast",
-      "community": 3,
+      "community": 10,
       "norm_label": "prettier",
       "id": "frontend_package_devdependencies_prettier"
     },
@@ -919,7 +922,7 @@
       "source_file": "frontend/package.json",
       "source_location": "L29",
       "_origin": "ast",
-      "community": 3,
+      "community": 10,
       "norm_label": "typescript",
       "id": "frontend_package_devdependencies_typescript"
     },
@@ -929,7 +932,7 @@
       "source_file": "frontend/package.json",
       "source_location": "L30",
       "_origin": "ast",
-      "community": 3,
+      "community": 10,
       "norm_label": "vitest",
       "id": "frontend_package_devdependencies_vitest"
     },
@@ -939,7 +942,7 @@
       "source_file": "frontend/src/app/app.config.ts",
       "source_location": "L1",
       "_origin": "ast",
-      "community": 10,
+      "community": 11,
       "norm_label": "app.config.ts",
       "id": "frontend_src_app_app_config"
     },
@@ -949,7 +952,7 @@
       "source_file": "frontend/src/app/app.config.ts",
       "source_location": "L5",
       "_origin": "ast",
-      "community": 10,
+      "community": 11,
       "norm_label": "appconfig",
       "id": "frontend_src_app_app_config_appconfig"
     },
@@ -959,7 +962,7 @@
       "source_file": "frontend/src/app/app.routes.ts",
       "source_location": "L1",
       "_origin": "ast",
-      "community": 10,
+      "community": 11,
       "norm_label": "app.routes.ts",
       "id": "frontend_src_app_app_routes"
     },
@@ -969,7 +972,7 @@
       "source_file": "frontend/src/app/app.routes.ts",
       "source_location": "L3",
       "_origin": "ast",
-      "community": 10,
+      "community": 11,
       "norm_label": "routes",
       "id": "frontend_src_app_app_routes_routes"
     },
@@ -979,7 +982,7 @@
       "source_file": "frontend/src/app/app.spec.ts",
       "source_location": "L1",
       "_origin": "ast",
-      "community": 10,
+      "community": 11,
       "norm_label": "app.spec.ts",
       "id": "frontend_src_app_app_spec"
     },
@@ -989,7 +992,7 @@
       "source_file": "frontend/src/app/app.ts",
       "source_location": "L1",
       "_origin": "ast",
-      "community": 10,
+      "community": 11,
       "norm_label": "app.ts",
       "id": "frontend_src_app_app"
     },
@@ -999,7 +1002,7 @@
       "source_file": "frontend/src/app/app.ts",
       "source_location": "L10",
       "_origin": "ast",
-      "community": 10,
+      "community": 11,
       "norm_label": "app",
       "id": "frontend_src_app_app_app"
     },
@@ -1009,7 +1012,7 @@
       "source_file": "",
       "source_location": "",
       "_origin": "ast",
-      "community": 10,
+      "community": 11,
       "norm_label": "component",
       "id": "component"
     },
@@ -1019,7 +1022,7 @@
       "source_file": "frontend/src/main.ts",
       "source_location": "L1",
       "_origin": "ast",
-      "community": 10,
+      "community": 11,
       "norm_label": "main.ts",
       "id": "frontend_src_main"
     },
@@ -1045,7 +1048,7 @@
       "captured_at": null,
       "author": null,
       "contributor": null,
-      "community": 2,
+      "community": 12,
       "norm_label": "defis techniques et points d'interet (8 challenges)",
       "id": "docs_cedric_van_overlop___cahier_des_charges_projet_integration_v2_technical_challenges"
     },
@@ -1058,7 +1061,7 @@
       "captured_at": null,
       "author": null,
       "contributor": null,
-      "community": 0,
+      "community": 3,
       "norm_label": "diagram: zone de confiance / salle des machines call flow",
       "id": "docs_cedric_van_overlop___cahier_des_charges_projet_integration_v2_call_flow_diagram"
     },
@@ -1071,7 +1074,7 @@
       "captured_at": null,
       "author": null,
       "contributor": null,
-      "community": 18,
+      "community": 20,
       "norm_label": "tgftweb angular 22.2.2 app (readme)",
       "id": "frontend_readme_tgftweb"
     },
@@ -1084,7 +1087,7 @@
       "captured_at": null,
       "author": null,
       "contributor": null,
-      "community": 18,
+      "community": 20,
       "norm_label": "vitest test runner",
       "id": "frontend_readme_vitest"
     },
@@ -1097,7 +1100,7 @@
       "captured_at": null,
       "author": null,
       "contributor": null,
-      "community": 19,
+      "community": 21,
       "norm_label": "angular cli placeholder root template",
       "id": "frontend_src_app_app_placeholder_template"
     },
@@ -1110,7 +1113,7 @@
       "captured_at": null,
       "author": null,
       "contributor": null,
-      "community": 20,
+      "community": 22,
       "norm_label": "<router-outlet> (routing host)",
       "id": "frontend_src_app_app_router_outlet"
     },
@@ -1123,7 +1126,7 @@
       "captured_at": null,
       "author": null,
       "contributor": null,
-      "community": 19,
+      "community": 21,
       "norm_label": "index.html <app-root> bootstrap host",
       "id": "frontend_src_index_app_root"
     },
@@ -1136,7 +1139,7 @@
       "captured_at": null,
       "author": null,
       "contributor": null,
-      "community": 2,
+      "community": 13,
       "norm_label": "docker-compose.yml (tgft-platform)",
       "id": "docker_compose"
     },
@@ -1150,7 +1153,7 @@
       "author": null,
       "contributor": null,
       "rationale": "Seul service a publier un port, lie a 127.0.0.1 pour n'etre accessible que depuis la machine locale.",
-      "community": 2,
+      "community": 13,
       "norm_label": "caddy service (127.0.0.1:8081)",
       "id": "docker_compose_caddy_service"
     },
@@ -1163,7 +1166,7 @@
       "captured_at": null,
       "author": null,
       "contributor": null,
-      "community": 2,
+      "community": 13,
       "norm_label": "api service (tgft.api)",
       "id": "docker_compose_api_service"
     },
@@ -1176,7 +1179,7 @@
       "captured_at": null,
       "author": null,
       "contributor": null,
-      "community": 2,
+      "community": 13,
       "norm_label": "postgres service (postgres:18-alpine)",
       "id": "docker_compose_postgres_service"
     },
@@ -1189,7 +1192,7 @@
       "captured_at": null,
       "author": null,
       "contributor": null,
-      "community": 2,
+      "community": 13,
       "norm_label": "pgdata volume",
       "id": "docker_compose_pgdata_volume"
     },
@@ -1202,7 +1205,7 @@
       "captured_at": null,
       "author": null,
       "contributor": null,
-      "community": 2,
+      "community": 13,
       "norm_label": "postgres_password (.env)",
       "id": "docker_compose_postgres_password"
     },
@@ -1212,7 +1215,7 @@
       "source_file": "TGFT.slnx",
       "source_location": null,
       "_origin": "ast",
-      "community": 7,
+      "community": 8,
       "norm_label": "tgft.slnx",
       "id": "tgft"
     },
@@ -1222,7 +1225,7 @@
       "source_file": "backend/TGFT.Api/TGFT.Api.csproj",
       "source_location": null,
       "_origin": "ast",
-      "community": 7,
+      "community": 8,
       "norm_label": "tgft.api",
       "id": "c_users_user_desktop_tgft_backend_tgft_api_tgft_api_csproj"
     },
@@ -1232,7 +1235,7 @@
       "source_file": "backend/TGFT.Application/TGFT.Application.csproj",
       "source_location": null,
       "_origin": "ast",
-      "community": 7,
+      "community": 8,
       "norm_label": "tgft.application",
       "id": "c_users_user_desktop_tgft_backend_tgft_application_tgft_application_csproj"
     },
@@ -1242,7 +1245,7 @@
       "source_file": "backend/TGFT.Domain/TGFT.Domain.csproj",
       "source_location": null,
       "_origin": "ast",
-      "community": 7,
+      "community": 8,
       "norm_label": "tgft.domain",
       "id": "c_users_user_desktop_tgft_backend_tgft_domain_tgft_domain_csproj"
     },
@@ -1252,7 +1255,7 @@
       "source_file": "backend/TGFT.Infrastructure/TGFT.Infrastructure.csproj",
       "source_location": null,
       "_origin": "ast",
-      "community": 7,
+      "community": 8,
       "norm_label": "tgft.infrastructure",
       "id": "c_users_user_desktop_tgft_backend_tgft_infrastructure_tgft_infrastructure_csproj"
     },
@@ -1262,7 +1265,7 @@
       "source_file": "tests/TGFT.ArchitectureTests/TGFT.ArchitectureTests.csproj",
       "source_location": null,
       "_origin": "ast",
-      "community": 7,
+      "community": 8,
       "norm_label": "tgft.architecturetests",
       "id": "tests_tgft_architecturetests_tgft_architecturetests"
     },
@@ -1272,7 +1275,7 @@
       "source_file": "backend/TGFT.Api/AssemblyMarker.cs",
       "source_location": "L1",
       "_origin": "ast",
-      "community": 13,
+      "community": 14,
       "norm_label": "assemblymarker.cs",
       "id": "backend_tgft_api_assemblymarker"
     },
@@ -1287,7 +1290,7 @@
         "namespace": "TGFT.Api"
       },
       "_origin": "ast",
-      "community": 13,
+      "community": 14,
       "norm_label": "tgft.api",
       "id": "csharp_namespace:4f983fce32839e40"
     },
@@ -1303,7 +1306,7 @@
         ]
       },
       "_origin": "ast",
-      "community": 13,
+      "community": 14,
       "norm_label": "assemblymarker",
       "id": "backend_tgft_api_assemblymarker_tgft_api_assemblymarker"
     },
@@ -1313,7 +1316,7 @@
       "source_file": "backend/TGFT.Application/AssemblyMarker.cs",
       "source_location": "L1",
       "_origin": "ast",
-      "community": 14,
+      "community": 15,
       "norm_label": "assemblymarker.cs",
       "id": "backend_tgft_application_assemblymarker"
     },
@@ -1328,7 +1331,7 @@
         "namespace": "TGFT.Application"
       },
       "_origin": "ast",
-      "community": 14,
+      "community": 15,
       "norm_label": "tgft.application",
       "id": "csharp_namespace:c904f89e29232f27"
     },
@@ -1344,7 +1347,7 @@
         ]
       },
       "_origin": "ast",
-      "community": 14,
+      "community": 15,
       "norm_label": "assemblymarker",
       "id": "backend_tgft_application_assemblymarker_tgft_application_assemblymarker"
     },
@@ -1354,7 +1357,7 @@
       "source_file": "backend/TGFT.Domain/AssemblyMarker.cs",
       "source_location": "L1",
       "_origin": "ast",
-      "community": 15,
+      "community": 16,
       "norm_label": "assemblymarker.cs",
       "id": "backend_tgft_domain_assemblymarker"
     },
@@ -1369,7 +1372,7 @@
         "namespace": "TGFT.Domain"
       },
       "_origin": "ast",
-      "community": 15,
+      "community": 16,
       "norm_label": "tgft.domain",
       "id": "csharp_namespace:da0941348f8667e2"
     },
@@ -1385,7 +1388,7 @@
         ]
       },
       "_origin": "ast",
-      "community": 15,
+      "community": 16,
       "norm_label": "assemblymarker",
       "id": "backend_tgft_domain_assemblymarker_tgft_domain_assemblymarker"
     },
@@ -1395,7 +1398,7 @@
       "source_file": "backend/TGFT.Infrastructure/AssemblyMarker.cs",
       "source_location": "L1",
       "_origin": "ast",
-      "community": 16,
+      "community": 17,
       "norm_label": "assemblymarker.cs",
       "id": "backend_tgft_infrastructure_assemblymarker"
     },
@@ -1410,7 +1413,7 @@
         "namespace": "TGFT.Infrastructure"
       },
       "_origin": "ast",
-      "community": 16,
+      "community": 17,
       "norm_label": "tgft.infrastructure",
       "id": "csharp_namespace:91deb468cbb123bf"
     },
@@ -1426,7 +1429,7 @@
         ]
       },
       "_origin": "ast",
-      "community": 16,
+      "community": 17,
       "norm_label": "assemblymarker",
       "id": "backend_tgft_infrastructure_assemblymarker_tgft_infrastructure_assemblymarker"
     },
@@ -1613,7 +1616,7 @@
       "source_file": "tests/TGFT.ArchitectureTests/TGFT.ArchitectureTests.csproj",
       "source_location": null,
       "_origin": "ast",
-      "community": 7,
+      "community": 8,
       "norm_label": "net10.0",
       "id": "framework_net10_0"
     },
@@ -1623,7 +1626,7 @@
       "source_file": "tests/TGFT.ArchitectureTests/TGFT.ArchitectureTests.csproj",
       "source_location": null,
       "_origin": "ast",
-      "community": 7,
+      "community": 8,
       "norm_label": "microsoft.net.test.sdk (17.14.1)",
       "id": "nuget_microsoft_net_test_sdk"
     },
@@ -1633,7 +1636,7 @@
       "source_file": "tests/TGFT.ArchitectureTests/TGFT.ArchitectureTests.csproj",
       "source_location": null,
       "_origin": "ast",
-      "community": 7,
+      "community": 8,
       "norm_label": "netarchtest.rules (1.3.2)",
       "id": "nuget_netarchtest_rules"
     },
@@ -1643,7 +1646,7 @@
       "source_file": "tests/TGFT.ArchitectureTests/TGFT.ArchitectureTests.csproj",
       "source_location": null,
       "_origin": "ast",
-      "community": 7,
+      "community": 8,
       "norm_label": "xunit (2.9.3)",
       "id": "nuget_xunit"
     },
@@ -1653,7 +1656,7 @@
       "source_file": "tests/TGFT.ArchitectureTests/TGFT.ArchitectureTests.csproj",
       "source_location": null,
       "_origin": "ast",
-      "community": 7,
+      "community": 8,
       "norm_label": "xunit.runner.visualstudio (3.1.4)",
       "id": "nuget_xunit_runner_visualstudio"
     },
@@ -1663,53 +1666,94 @@
       "source_file": "tests/TGFT.ArchitectureTests/TGFT.ArchitectureTests.csproj",
       "source_location": null,
       "_origin": "ast",
-      "community": 7,
+      "community": 8,
       "norm_label": "microsoft.net.sdk",
       "id": "sdk_microsoft_net_sdk"
     },
     {
-      "label": "CLAUDE.md (Projet TGFT)",
+      "label": "CLAUDE.md \u2014 Projet TGFT instructions",
       "file_type": "document",
-      "source_file": "claude.md",
+      "source_file": "CLAUDE.md",
       "source_location": null,
       "source_url": null,
       "captured_at": null,
       "author": null,
       "contributor": null,
-      "id": "claude_document",
-      "community": 11,
-      "norm_label": "claude.md (projet tgft)"
+      "id": "claude_claude_md",
+      "community": 9,
+      "norm_label": "claude.md \u2014 projet tgft instructions"
     },
     {
-      "label": "Regle n1 : ne jamais coder sans demande explicite",
+      "label": "R\u00e8gle n\u00b01: never code without explicit request",
       "file_type": "rationale",
-      "source_file": "claude.md",
-      "source_location": "L3",
+      "source_file": "CLAUDE.md",
+      "source_location": null,
       "source_url": null,
       "captured_at": null,
       "author": null,
       "contributor": null,
-      "rationale": "Etudiant evalue : doit comprendre et maitriser tout ce qui est ecrit ; questions != demandes de code ; plan court avant changement multi-fichiers.",
-      "id": "claude_rule_no_code_without_request",
-      "community": 11,
-      "norm_label": "regle n1 : ne jamais coder sans demande explicite"
+      "rationale": "Student project under evaluation: the author must understand and master everything written.",
+      "id": "claude_regle_1_pas_de_code_sans_demande",
+      "community": 9,
+      "norm_label": "regle n\u00b01: never code without explicit request"
     },
     {
-      "label": "Regle de mise a jour graphify (une seule mise a jour juste avant le commit, code et doc)",
-      "file_type": "rationale",
-      "source_file": "claude.md",
-      "source_location": "L34",
+      "label": "Cahier des charges V2.1 (\u00e9volutions)",
+      "file_type": "document",
+      "source_file": "docs/Cahier des charges \u2014 \u00e9volutions/V2.1.md",
+      "source_location": null,
       "source_url": null,
       "captured_at": null,
       "author": null,
       "contributor": null,
-      "rationale": "Code analyse sans LLM mais ~15-20k tokens de contexte par mise a jour ; doc re-extraite par LLM (~100k tokens pour Projet Complet.md). Graphe versionne doit correspondre a son commit.",
-      "id": "claude_graphify_update_rule",
-      "community": 11,
-      "norm_label": "regle de mise a jour graphify (une seule mise a jour juste avant le commit, code et doc)"
+      "id": "docs_cahier_des_charges____volutions_v2_1_cahier_des_charges_v2_1",
+      "community": 9,
+      "norm_label": "cahier des charges v2.1 (evolutions)"
     },
     {
-      "label": "Projet Complet.md (memoire vivante)",
+      "label": "V2.1 \u00a71: External module access to platform data",
+      "file_type": "concept",
+      "source_file": "docs/Cahier des charges \u2014 \u00e9volutions/V2.1.md",
+      "source_location": "\u00a71",
+      "source_url": null,
+      "captured_at": null,
+      "author": null,
+      "contributor": null,
+      "rationale": "Without access, a module working on group content would copy it into its classeur; two copies diverge and data loses its single source of truth.",
+      "id": "docs_cahier_des_charges____volutions_v2_1_evolution_acces_modules_donnees",
+      "community": 3,
+      "norm_label": "v2.1 \u00a71: external module access to platform data"
+    },
+    {
+      "label": "V2.1 \u00a72: Export added to module contract (D11)",
+      "file_type": "concept",
+      "source_file": "docs/Cahier des charges \u2014 \u00e9volutions/V2.1.md",
+      "source_location": "\u00a72",
+      "source_url": null,
+      "captured_at": null,
+      "author": null,
+      "contributor": null,
+      "rationale": "Right of access and portability (A3) is MVP for legal reasons; without module-side export it would cover only core data.",
+      "id": "docs_cahier_des_charges____volutions_v2_1_evolution_export_d11",
+      "community": 3,
+      "norm_label": "v2.1 \u00a72: export added to module contract (d11)"
+    },
+    {
+      "label": "V2.1 \u00a73: Base modules enabled by default",
+      "file_type": "concept",
+      "source_file": "docs/Cahier des charges \u2014 \u00e9volutions/V2.1.md",
+      "source_location": "\u00a73",
+      "source_url": null,
+      "captured_at": null,
+      "author": null,
+      "contributor": null,
+      "rationale": "A newly created group is usable immediately; per-group activation principle unchanged.",
+      "id": "docs_cahier_des_charges____volutions_v2_1_evolution_modules_base_defaut",
+      "community": 9,
+      "norm_label": "v2.1 \u00a73: base modules enabled by default"
+    },
+    {
+      "label": "Projet Complet.md (living project memory)",
       "file_type": "document",
       "source_file": "docs/Projet Complet.md",
       "source_location": null,
@@ -1718,27 +1762,27 @@
       "author": null,
       "contributor": null,
       "id": "docs_projet_complet_projet_complet",
-      "community": 11,
-      "norm_label": "projet complet.md (memoire vivante)"
+      "community": 9,
+      "norm_label": "projet complet.md (living project memory)"
     },
     {
-      "label": "Hierarchie des sources (CdC V2 > Projet Complet > claude.md)",
-      "file_type": "rationale",
+      "label": "Cahier des charges V2 (PDF)",
+      "file_type": "document",
       "source_file": "docs/Projet Complet.md",
-      "source_location": "L533",
+      "source_location": null,
       "source_url": null,
       "captured_at": null,
       "author": null,
       "contributor": null,
-      "id": "docs_projet_complet_source_hierarchy",
-      "community": 11,
-      "norm_label": "hierarchie des sources (cdc v2 > projet complet > claude.md)"
+      "id": "docs_projet_complet_cahier_des_charges_v2",
+      "community": 9,
+      "norm_label": "cahier des charges v2 (pdf)"
     },
     {
       "label": "TGFT platform",
       "file_type": "concept",
       "source_file": "docs/Projet Complet.md",
-      "source_location": "L31",
+      "source_location": "\u00a71",
       "source_url": null,
       "captured_at": null,
       "author": null,
@@ -1748,1068 +1792,815 @@
       "norm_label": "tgft platform"
     },
     {
-      "label": "Cahier des charges V2",
-      "file_type": "document",
-      "source_file": "docs/Projet Complet.md",
-      "source_location": "L5",
-      "source_url": null,
-      "captured_at": null,
-      "author": null,
-      "contributor": null,
-      "id": "docs_projet_complet_cahier_des_charges_v2",
-      "community": 11,
-      "norm_label": "cahier des charges v2"
-    },
-    {
-      "label": "Noyau minimal",
+      "label": "Noyau minimal (core)",
       "file_type": "concept",
       "source_file": "docs/Projet Complet.md",
-      "source_location": "L39",
+      "source_location": "\u00a71",
       "source_url": null,
       "captured_at": null,
       "author": null,
       "contributor": null,
       "id": "docs_projet_complet_noyau_minimal",
-      "community": 0,
-      "norm_label": "noyau minimal"
+      "community": 12,
+      "norm_label": "noyau minimal (core)"
     },
     {
-      "label": "Marketplace ouverte",
+      "label": "Marketplace (external modules)",
       "file_type": "concept",
       "source_file": "docs/Projet Complet.md",
-      "source_location": "L41",
+      "source_location": "\u00a76",
       "source_url": null,
       "captured_at": null,
       "author": null,
       "contributor": null,
-      "rationale": "Sa valeur premiere est la contrainte imposee au developpeur : tout passe par des contrats publics, empechant le monolithe accidentel.",
+      "rationale": "Primary value is the discipline it imposes: all features go through public contracts, preventing drift toward an accidental monolith.",
       "id": "docs_projet_complet_marketplace",
       "community": 12,
-      "norm_label": "marketplace ouverte"
+      "norm_label": "marketplace (external modules)"
     },
     {
-      "label": "Odoo (reference)",
+      "label": "Modules natifs / modules de base",
       "file_type": "concept",
       "source_file": "docs/Projet Complet.md",
-      "source_location": "L43",
+      "source_location": "\u00a75",
       "source_url": null,
       "captured_at": null,
       "author": null,
       "contributor": null,
-      "id": "docs_projet_complet_odoo",
-      "community": 12,
-      "norm_label": "odoo (reference)"
-    },
-    {
-      "label": "Shopify Functions (reference)",
-      "file_type": "concept",
-      "source_file": "docs/Projet Complet.md",
-      "source_location": "L43",
-      "source_url": null,
-      "captured_at": null,
-      "author": null,
-      "contributor": null,
-      "id": "docs_projet_complet_shopify_functions",
-      "community": 0,
-      "norm_label": "shopify functions (reference)"
-    },
-    {
-      "label": "Groupe (tenant)",
-      "file_type": "concept",
-      "source_file": "docs/Projet Complet.md",
-      "source_location": "L510",
-      "source_url": null,
-      "captured_at": null,
-      "author": null,
-      "contributor": null,
-      "id": "docs_projet_complet_groupe",
+      "id": "docs_projet_complet_modules_natifs",
       "community": 2,
-      "norm_label": "groupe (tenant)"
+      "norm_label": "modules natifs / modules de base"
     },
     {
-      "label": "Isolation multi-tenant structurelle",
-      "file_type": "rationale",
+      "label": "Modules externes (JS \u2192 Wasm)",
+      "file_type": "concept",
       "source_file": "docs/Projet Complet.md",
-      "source_location": "L260",
+      "source_location": "\u00a75",
       "source_url": null,
       "captured_at": null,
       "author": null,
       "contributor": null,
-      "rationale": "Une seule omission de filtre manuel suffit et elle est silencieuse.",
-      "id": "docs_projet_complet_multi_tenant_isolation",
+      "id": "docs_projet_complet_modules_externes",
       "community": 2,
-      "norm_label": "isolation multi-tenant structurelle"
+      "norm_label": "modules externes (js \u2192 wasm)"
     },
     {
-      "label": "Budget < 10 EUR/mois, un serveur x86",
+      "label": "Shared module contracts (manifest, activation, permissions, purge/anonymisation/export)",
       "file_type": "concept",
       "source_file": "docs/Projet Complet.md",
-      "source_location": "L76",
+      "source_location": "\u00a75",
       "source_url": null,
       "captured_at": null,
       "author": null,
       "contributor": null,
-      "id": "docs_projet_complet_budget_constraint",
-      "community": 8,
-      "norm_label": "budget < 10 eur/mois, un serveur x86"
-    },
-    {
-      "label": "Roles (Fondateur, Admin, Contributeur, Lecteur)",
-      "file_type": "concept",
-      "source_file": "docs/Projet Complet.md",
-      "source_location": "L84",
-      "source_url": null,
-      "captured_at": null,
-      "author": null,
-      "contributor": null,
-      "rationale": "Contributeur produit du contenu et rien d'autre (C7, C8), verifie par tests d'autorisation.",
-      "id": "docs_projet_complet_roles",
-      "community": 0,
-      "norm_label": "roles (fondateur, admin, contributeur, lecteur)"
-    },
-    {
-      "label": "Modules natifs",
-      "file_type": "concept",
-      "source_file": "docs/Projet Complet.md",
-      "source_location": "L106",
-      "source_url": null,
-      "captured_at": null,
-      "author": null,
-      "contributor": null,
-      "id": "docs_projet_complet_native_modules",
-      "community": 0,
-      "norm_label": "modules natifs"
-    },
-    {
-      "label": "Modules externes",
-      "file_type": "concept",
-      "source_file": "docs/Projet Complet.md",
-      "source_location": "L106",
-      "source_url": null,
-      "captured_at": null,
-      "author": null,
-      "contributor": null,
-      "id": "docs_projet_complet_external_modules",
-      "community": 12,
-      "norm_label": "modules externes"
-    },
-    {
-      "label": "Contrats partages des modules",
-      "file_type": "rationale",
-      "source_file": "docs/Projet Complet.md",
-      "source_location": "L115",
-      "source_url": null,
-      "captured_at": null,
-      "author": null,
-      "contributor": null,
-      "id": "docs_projet_complet_shared_module_contracts",
+      "id": "docs_projet_complet_contrats_communs_modules",
       "community": 2,
-      "norm_label": "contrats partages des modules"
+      "norm_label": "shared module contracts (manifest, activation, permissions, purge/anonymisation/export)"
     },
     {
-      "label": "Manifeste",
+      "label": "Team Builder module",
       "file_type": "concept",
       "source_file": "docs/Projet Complet.md",
-      "source_location": "L518",
+      "source_location": "\u00a75",
       "source_url": null,
       "captured_at": null,
       "author": null,
       "contributor": null,
-      "id": "docs_projet_complet_manifeste",
-      "community": 2,
-      "norm_label": "manifeste"
-    },
-    {
-      "label": "Team Builder",
-      "file_type": "concept",
-      "source_file": "docs/Projet Complet.md",
-      "source_location": "L124",
-      "source_url": null,
-      "captured_at": null,
-      "author": null,
-      "contributor": null,
+      "rationale": "Chosen for technical richness and visual demo value; state encoded in versioned URL so old links survive set changes.",
       "id": "docs_projet_complet_team_builder",
-      "community": 0,
-      "norm_label": "team builder"
+      "community": 2,
+      "norm_label": "team builder module"
     },
     {
-      "label": "Encodage d'URL versionne",
+      "label": "Tier Lists module",
       "file_type": "concept",
       "source_file": "docs/Projet Complet.md",
-      "source_location": "L124",
+      "source_location": "\u00a75",
       "source_url": null,
       "captured_at": null,
       "author": null,
       "contributor": null,
-      "id": "docs_projet_complet_versioned_url_encoding",
-      "community": 0,
-      "norm_label": "encodage d'url versionne"
-    },
-    {
-      "label": "Tier Lists",
-      "file_type": "concept",
-      "source_file": "docs/Projet Complet.md",
-      "source_location": "L125",
-      "source_url": null,
-      "captured_at": null,
-      "author": null,
-      "contributor": null,
+      "rationale": "Least costly module in the catalogue; two native modules needed to prove modularity rather than mere separation.",
       "id": "docs_projet_complet_tier_lists",
-      "community": 0,
-      "norm_label": "tier lists"
+      "community": 2,
+      "norm_label": "tier lists module"
     },
     {
-      "label": "Module Tournoi (M16)",
+      "label": "Tournoi demo module (M16)",
       "file_type": "concept",
       "source_file": "docs/Projet Complet.md",
-      "source_location": "L380",
+      "source_location": "\u00a710",
       "source_url": null,
       "captured_at": null,
       "author": null,
       "contributor": null,
-      "id": "docs_projet_complet_tournoi_module",
-      "community": 12,
-      "norm_label": "module tournoi (m16)"
+      "id": "docs_projet_complet_module_tournoi",
+      "community": 2,
+      "norm_label": "tournoi demo module (m16)"
     },
     {
-      "label": "Bac a sable WebAssembly",
-      "file_type": "concept",
-      "source_file": "docs/Projet Complet.md",
-      "source_location": "L137",
-      "source_url": null,
-      "captured_at": null,
-      "author": null,
-      "contributor": null,
-      "id": "docs_projet_complet_wasm_sandbox",
-      "community": 0,
-      "norm_label": "bac a sable webassembly"
-    },
-    {
-      "label": "Pas de fonctions hotes",
+      "label": "Paquet \u2192 r\u00e9ponse model (Shopify Functions)",
       "file_type": "rationale",
       "source_file": "docs/Projet Complet.md",
-      "source_location": "L139",
+      "source_location": "\u00a76.2",
       "source_url": null,
       "captured_at": null,
       "author": null,
       "contributor": null,
-      "rationale": "Chaque question posee par le module serait une porte de plus a surveiller.",
-      "id": "docs_projet_complet_no_host_functions",
-      "community": 0,
-      "norm_label": "pas de fonctions hotes"
+      "rationale": "Each question a module could ask is another door to watch; giving everything upfront leaves only the response to check.",
+      "id": "docs_projet_complet_modele_paquet_reponse",
+      "community": 12,
+      "norm_label": "paquet \u2192 reponse model (shopify functions)"
     },
     {
-      "label": "Paquet",
+      "label": "Call flow (event, preparation, execution, verification)",
       "file_type": "concept",
       "source_file": "docs/Projet Complet.md",
-      "source_location": "L512",
+      "source_location": "\u00a76.3",
       "source_url": null,
       "captured_at": null,
       "author": null,
       "contributor": null,
-      "id": "docs_projet_complet_paquet",
-      "community": 8,
-      "norm_label": "paquet"
+      "id": "docs_projet_complet_deroule_appel",
+      "community": 3,
+      "norm_label": "call flow (event, preparation, execution, verification)"
     },
     {
-      "label": "Reponse",
+      "label": "Salle des machines (isolated module host)",
       "file_type": "concept",
       "source_file": "docs/Projet Complet.md",
-      "source_location": "L513",
-      "source_url": null,
-      "captured_at": null,
-      "author": null,
-      "contributor": null,
-      "id": "docs_projet_complet_reponse",
-      "community": 8,
-      "norm_label": "reponse"
-    },
-    {
-      "label": "Zone de confiance (API)",
-      "file_type": "concept",
-      "source_file": "docs/Projet Complet.md",
-      "source_location": "L515",
-      "source_url": null,
-      "captured_at": null,
-      "author": null,
-      "contributor": null,
-      "id": "docs_projet_complet_zone_de_confiance",
-      "community": 8,
-      "norm_label": "zone de confiance (api)"
-    },
-    {
-      "label": "Salle des machines",
-      "file_type": "concept",
-      "source_file": "docs/Projet Complet.md",
-      "source_location": "L514",
+      "source_location": "\u00a76.4",
       "source_url": null,
       "captured_at": null,
       "author": null,
       "contributor": null,
       "id": "docs_projet_complet_salle_des_machines",
-      "community": 0,
-      "norm_label": "salle des machines"
+      "community": 3,
+      "norm_label": "salle des machines (isolated module host)"
     },
     {
-      "label": "Classeur (SQLite par module et par groupe)",
+      "label": "Classeur (SQLite per module per group)",
       "file_type": "concept",
       "source_file": "docs/Projet Complet.md",
-      "source_location": "L511",
+      "source_location": "\u00a76.4",
       "source_url": null,
       "captured_at": null,
       "author": null,
       "contributor": null,
       "id": "docs_projet_complet_classeur",
-      "community": 8,
-      "norm_label": "classeur (sqlite par module et par groupe)"
+      "community": 3,
+      "norm_label": "classeur (sqlite per module per group)"
     },
     {
-      "label": "Serialisation des appels",
+      "label": "8 layers of protection",
       "file_type": "concept",
       "source_file": "docs/Projet Complet.md",
-      "source_location": "L151",
+      "source_location": "\u00a76.4",
       "source_url": null,
       "captured_at": null,
       "author": null,
       "contributor": null,
-      "id": "docs_projet_complet_call_serialization",
-      "community": 8,
-      "norm_label": "serialisation des appels"
+      "rationale": "Layers are independent: failure of one does not compromise the system.",
+      "id": "docs_projet_complet_couches_protection",
+      "community": 3,
+      "norm_label": "8 layers of protection"
     },
     {
-      "label": "Pseudonymes",
+      "label": "Layer 3: R\u00e9ponse v\u00e9rifi\u00e9e",
       "file_type": "concept",
       "source_file": "docs/Projet Complet.md",
-      "source_location": "L519",
+      "source_location": "\u00a76.4",
+      "source_url": null,
+      "captured_at": null,
+      "author": null,
+      "contributor": null,
+      "id": "docs_projet_complet_reponse_verifiee",
+      "community": 3,
+      "norm_label": "layer 3: reponse verifiee"
+    },
+    {
+      "label": "Per-module pseudonyms",
+      "file_type": "concept",
+      "source_file": "docs/Projet Complet.md",
+      "source_location": "\u00a76.4",
       "source_url": null,
       "captured_at": null,
       "author": null,
       "contributor": null,
       "id": "docs_projet_complet_pseudonymes",
-      "community": 8,
-      "norm_label": "pseudonymes"
+      "community": 3,
+      "norm_label": "per-module pseudonyms"
     },
     {
-      "label": "Interface declarative",
+      "label": "Declarative UI (no third-party code in browser)",
       "file_type": "concept",
       "source_file": "docs/Projet Complet.md",
-      "source_location": "L163",
+      "source_location": "\u00a76.4",
       "source_url": null,
       "captured_at": null,
       "author": null,
       "contributor": null,
-      "id": "docs_projet_complet_declarative_ui",
-      "community": 0,
-      "norm_label": "interface declarative"
+      "id": "docs_projet_complet_interface_declarative",
+      "community": 3,
+      "norm_label": "declarative ui (no third-party code in browser)"
     },
     {
-      "label": "Niveaux de confiance + arret d'urgence",
+      "label": "Hostile module suite (M10)",
       "file_type": "concept",
       "source_file": "docs/Projet Complet.md",
-      "source_location": "L164",
+      "source_location": "\u00a76.4",
       "source_url": null,
       "captured_at": null,
       "author": null,
       "contributor": null,
-      "id": "docs_projet_complet_trust_levels",
-      "community": 0,
-      "norm_label": "niveaux de confiance + arret d'urgence"
+      "id": "docs_projet_complet_suite_modules_hostiles",
+      "community": 5,
+      "norm_label": "hostile module suite (m10)"
     },
     {
-      "label": "Suite de modules hostiles (M10)",
+      "label": "Trust levels and emergency stop (M5, M7)",
       "file_type": "concept",
       "source_file": "docs/Projet Complet.md",
-      "source_location": "L165",
+      "source_location": "\u00a76.4",
       "source_url": null,
       "captured_at": null,
       "author": null,
       "contributor": null,
-      "id": "docs_projet_complet_hostile_module_suite",
-      "community": 0,
-      "norm_label": "suite de modules hostiles (m10)"
+      "id": "docs_projet_complet_niveaux_confiance",
+      "community": 3,
+      "norm_label": "trust levels and emergency stop (m5, m7)"
     },
     {
-      "label": "8 couches de protection",
+      "label": "\u00a76.4 bis Module access to platform data",
       "file_type": "concept",
       "source_file": "docs/Projet Complet.md",
-      "source_location": "L153",
+      "source_location": "\u00a76.4 bis",
       "source_url": null,
       "captured_at": null,
       "author": null,
       "contributor": null,
-      "id": "docs_projet_complet_protection_layers",
-      "community": 0,
-      "norm_label": "8 couches de protection"
+      "id": "docs_projet_complet_acces_donnees_plateforme",
+      "community": 3,
+      "norm_label": "\u00a76.4 bis module access to platform data"
     },
     {
-      "label": "Javy",
+      "label": "External module lifecycle",
       "file_type": "concept",
       "source_file": "docs/Projet Complet.md",
-      "source_location": "L238",
+      "source_location": "\u00a76.5",
       "source_url": null,
       "captured_at": null,
       "author": null,
       "contributor": null,
-      "id": "docs_projet_complet_javy",
-      "community": 0,
-      "norm_label": "javy"
+      "id": "docs_projet_complet_cycle_vie_module_externe",
+      "community": 2,
+      "norm_label": "external module lifecycle"
+    },
+    {
+      "label": "RGPD made simple by architecture (purge, anonymisation, export)",
+      "file_type": "concept",
+      "source_file": "docs/Projet Complet.md",
+      "source_location": "\u00a76.7",
+      "source_url": null,
+      "captured_at": null,
+      "author": null,
+      "contributor": null,
+      "id": "docs_projet_complet_rgpd_architecture",
+      "community": 3,
+      "norm_label": "rgpd made simple by architecture (purge, anonymisation, export)"
+    },
+    {
+      "label": "D11 native module data contract",
+      "file_type": "concept",
+      "source_file": "docs/Projet Complet.md",
+      "source_location": "\u00a76.7",
+      "source_url": null,
+      "captured_at": null,
+      "author": null,
+      "contributor": null,
+      "rationale": "Must be set before the first module; cannot be retrofitted once the catalogue exists.",
+      "id": "docs_projet_complet_contrat_d11",
+      "community": 3,
+      "norm_label": "d11 native module data contract"
     },
     {
       "label": "Wasmtime .NET 48 LTS",
       "file_type": "concept",
       "source_file": "docs/Projet Complet.md",
-      "source_location": "L237",
+      "source_location": "\u00a77",
       "source_url": null,
       "captured_at": null,
       "author": null,
       "contributor": null,
+      "rationale": "Engine designed for untrusted code, public CVE process, 24 months security fixes, official .NET library.",
       "id": "docs_projet_complet_wasmtime",
-      "community": 0,
+      "community": 2,
       "norm_label": "wasmtime .net 48 lts"
     },
     {
-      "label": "Plan de repli Jint",
-      "file_type": "rationale",
+      "label": "Javy (JS \u2192 Wasm compiler)",
+      "file_type": "concept",
       "source_file": "docs/Projet Complet.md",
-      "source_location": "L221",
+      "source_location": "\u00a77",
+      "source_url": null,
+      "captured_at": null,
+      "author": null,
+      "contributor": null,
+      "rationale": "JS engine compiled into the module so its flaws stay confined; JS lowers the entry barrier.",
+      "id": "docs_projet_complet_javy",
+      "community": 2,
+      "norm_label": "javy (js \u2192 wasm compiler)"
+    },
+    {
+      "label": "Jint fallback plan",
+      "file_type": "concept",
+      "source_file": "docs/Projet Complet.md",
+      "source_location": "\u00a76.11",
       "source_url": null,
       "captured_at": null,
       "author": null,
       "contributor": null,
       "id": "docs_projet_complet_jint_fallback",
-      "community": 0,
-      "norm_label": "plan de repli jint"
-    },
-    {
-      "label": "Cycle de vie d'un module externe",
-      "file_type": "concept",
-      "source_file": "docs/Projet Complet.md",
-      "source_location": "L167",
-      "source_url": null,
-      "captured_at": null,
-      "author": null,
-      "contributor": null,
-      "id": "docs_projet_complet_module_lifecycle",
-      "community": 0,
-      "norm_label": "cycle de vie d'un module externe"
-    },
-    {
-      "label": "Kit de developpement TGFT",
-      "file_type": "concept",
-      "source_file": "docs/Projet Complet.md",
-      "source_location": "L168",
-      "source_url": null,
-      "captured_at": null,
-      "author": null,
-      "contributor": null,
-      "id": "docs_projet_complet_dev_kit",
-      "community": 0,
-      "norm_label": "kit de developpement tgft"
-    },
-    {
-      "label": "Compilation attestee (M4)",
-      "file_type": "concept",
-      "source_file": "docs/Projet Complet.md",
-      "source_location": "L169",
-      "source_url": null,
-      "captured_at": null,
-      "author": null,
-      "contributor": null,
-      "id": "docs_projet_complet_attested_build",
-      "community": 0,
-      "norm_label": "compilation attestee (m4)"
-    },
-    {
-      "label": "Commandes Discord des modules externes (P3)",
-      "file_type": "concept",
-      "source_file": "docs/Projet Complet.md",
-      "source_location": "L175",
-      "source_url": null,
-      "captured_at": null,
-      "author": null,
-      "contributor": null,
-      "id": "docs_projet_complet_discord_external_commands",
       "community": 2,
-      "norm_label": "commandes discord des modules externes (p3)"
+      "norm_label": "jint fallback plan"
     },
     {
-      "label": "RGPD",
+      "label": "Javy + Wasmtime end-to-end prototype (Q6)",
       "file_type": "concept",
       "source_file": "docs/Projet Complet.md",
-      "source_location": "L182",
+      "source_location": "\u00a76.11",
       "source_url": null,
       "captured_at": null,
       "author": null,
       "contributor": null,
-      "id": "docs_projet_complet_rgpd",
-      "community": 8,
-      "norm_label": "rgpd"
-    },
-    {
-      "label": "D11 contrat purge/anonymisation natif",
-      "file_type": "concept",
-      "source_file": "docs/Projet Complet.md",
-      "source_location": "L187",
-      "source_url": null,
-      "captured_at": null,
-      "author": null,
-      "contributor": null,
-      "id": "docs_projet_complet_d11_native_purge_contract",
-      "community": 8,
-      "norm_label": "d11 contrat purge/anonymisation natif"
-    },
-    {
-      "label": "B8 suppression du groupe",
-      "file_type": "concept",
-      "source_file": "docs/Projet Complet.md",
-      "source_location": "L328",
-      "source_url": null,
-      "captured_at": null,
-      "author": null,
-      "contributor": null,
-      "rationale": "Seule story qui exerce reellement le contrat de purge D11 et la suppression des classeurs M13.",
-      "id": "docs_projet_complet_b8_group_deletion",
-      "community": 8,
-      "norm_label": "b8 suppression du groupe"
-    },
-    {
-      "label": "Atlassian Forge SQL (reference)",
-      "file_type": "concept",
-      "source_file": "docs/Projet Complet.md",
-      "source_location": "L194",
-      "source_url": null,
-      "captured_at": null,
-      "author": null,
-      "contributor": null,
-      "id": "docs_projet_complet_atlassian_forge_sql",
-      "community": 8,
-      "norm_label": "atlassian forge sql (reference)"
-    },
-    {
-      "label": "Shopify UI extensions (reference)",
-      "file_type": "concept",
-      "source_file": "docs/Projet Complet.md",
-      "source_location": "L195",
-      "source_url": null,
-      "captured_at": null,
-      "author": null,
-      "contributor": null,
-      "id": "docs_projet_complet_shopify_ui_extensions",
-      "community": 0,
-      "norm_label": "shopify ui extensions (reference)"
-    },
-    {
-      "label": "Regles d'exploitation Wasmtime (x86, compilateur par defaut, MAJ rapides)",
-      "file_type": "rationale",
-      "source_file": "docs/Projet Complet.md",
-      "source_location": "L202",
-      "source_url": null,
-      "captured_at": null,
-      "author": null,
-      "contributor": null,
-      "id": "docs_projet_complet_wasmtime_x86_rules",
-      "community": 0,
-      "norm_label": "regles d'exploitation wasmtime (x86, compilateur par defaut, maj rapides)"
+      "id": "docs_projet_complet_prototype_javy_wasmtime",
+      "community": 2,
+      "norm_label": "javy + wasmtime end-to-end prototype (q6)"
     },
     {
       "label": "Clean Architecture (Domain/Application/Infrastructure/Api)",
       "file_type": "concept",
       "source_file": "docs/Projet Complet.md",
-      "source_location": "L261",
+      "source_location": "\u00a78",
       "source_url": null,
       "captured_at": null,
       "author": null,
       "contributor": null,
-      "rationale": "Domain et Application separes pour que la bascule Javy->Jint ne touche qu'Infrastructure et que NetArchTest verifie mecaniquement Domain.",
+      "rationale": "Domain and Application split so IModuleRunner port lets Javy\u2192Jint switch touch only Infrastructure, and NetArchTest can assert Domain references nothing (D8).",
       "id": "docs_projet_complet_clean_architecture",
-      "community": 9,
+      "community": 2,
       "norm_label": "clean architecture (domain/application/infrastructure/api)"
     },
     {
-      "label": "IModuleRunner (port)",
+      "label": "IModuleRunner port",
       "file_type": "concept",
       "source_file": "docs/Projet Complet.md",
-      "source_location": "L268",
+      "source_location": "\u00a78",
       "source_url": null,
       "captured_at": null,
       "author": null,
       "contributor": null,
       "id": "docs_projet_complet_imodulerunner",
-      "community": 9,
-      "norm_label": "imodulerunner (port)"
+      "community": 2,
+      "norm_label": "imodulerunner port"
     },
     {
-      "label": "WasmtimeModuleRunner",
+      "label": "Structural multi-tenant isolation",
       "file_type": "concept",
       "source_file": "docs/Projet Complet.md",
-      "source_location": "L269",
+      "source_location": "\u00a78",
       "source_url": null,
       "captured_at": null,
       "author": null,
       "contributor": null,
-      "id": "docs_projet_complet_wasmtimemodulerunner",
-      "community": 9,
-      "norm_label": "wasmtimemodulerunner"
+      "rationale": "Never rely on a manually added per-query filter: one silent omission suffices.",
+      "id": "docs_projet_complet_isolation_multi_tenant",
+      "community": 5,
+      "norm_label": "structural multi-tenant isolation"
     },
     {
-      "label": "IClasseurStore (port)",
+      "label": "NetArchTest boundaries (D8)",
       "file_type": "concept",
       "source_file": "docs/Projet Complet.md",
-      "source_location": "L268",
+      "source_location": "\u00a78",
       "source_url": null,
       "captured_at": null,
       "author": null,
       "contributor": null,
-      "id": "docs_projet_complet_iclasseurstore",
-      "community": 9,
-      "norm_label": "iclasseurstore (port)"
+      "id": "docs_projet_complet_netarchtest_frontieres",
+      "community": 2,
+      "norm_label": "netarchtest boundaries (d8)"
     },
     {
-      "label": "Frontieres NetArchTest (D8)",
-      "file_type": "concept",
-      "source_file": "docs/Projet Complet.md",
-      "source_location": "L275",
-      "source_url": null,
-      "captured_at": null,
-      "author": null,
-      "contributor": null,
-      "id": "docs_projet_complet_netarchtest_boundaries",
-      "community": 9,
-      "norm_label": "frontieres netarchtest (d8)"
-    },
-    {
-      "label": "Les tests sont la protection",
+      "label": "Tests are the security mechanism",
       "file_type": "rationale",
       "source_file": "docs/Projet Complet.md",
-      "source_location": "L276",
+      "source_location": "\u00a78",
       "source_url": null,
       "captured_at": null,
       "author": null,
       "contributor": null,
-      "id": "docs_projet_complet_tests_as_security",
-      "community": 9,
-      "norm_label": "les tests sont la protection"
+      "id": "docs_projet_complet_tests_sont_la_protection",
+      "community": 5,
+      "norm_label": "tests are the security mechanism"
     },
     {
-      "label": "Testcontainers",
+      "label": "Hosting budget < 10 \u20ac/month, single x86 VPS",
       "file_type": "concept",
       "source_file": "docs/Projet Complet.md",
-      "source_location": "L243",
+      "source_location": "\u00a73",
       "source_url": null,
       "captured_at": null,
       "author": null,
       "contributor": null,
-      "id": "docs_projet_complet_testcontainers",
-      "community": 2,
-      "norm_label": "testcontainers"
-    },
-    {
-      "label": "PostgreSQL Row Level Security",
-      "file_type": "concept",
-      "source_file": "docs/Projet Complet.md",
-      "source_location": "L231",
-      "source_url": null,
-      "captured_at": null,
-      "author": null,
-      "contributor": null,
-      "id": "docs_projet_complet_postgresql_rls",
-      "community": 2,
-      "norm_label": "postgresql row level security"
-    },
-    {
-      "label": "Filtres globaux EF Core",
-      "file_type": "concept",
-      "source_file": "docs/Projet Complet.md",
-      "source_location": "L232",
-      "source_url": null,
-      "captured_at": null,
-      "author": null,
-      "contributor": null,
-      "id": "docs_projet_complet_ef_core_global_filters",
-      "community": 2,
-      "norm_label": "filtres globaux ef core"
-    },
-    {
-      "label": "Caddy (proxy inverse)",
-      "file_type": "concept",
-      "source_file": "docs/Projet Complet.md",
-      "source_location": "L241",
-      "source_url": null,
-      "captured_at": null,
-      "author": null,
-      "contributor": null,
-      "id": "docs_projet_complet_caddy",
-      "community": 2,
-      "norm_label": "caddy (proxy inverse)"
-    },
-    {
-      "label": "Docker / Docker Compose",
-      "file_type": "concept",
-      "source_file": "docs/Projet Complet.md",
-      "source_location": "L240",
-      "source_url": null,
-      "captured_at": null,
-      "author": null,
-      "contributor": null,
-      "id": "docs_projet_complet_docker_compose",
-      "community": 2,
-      "norm_label": "docker / docker compose"
-    },
-    {
-      "label": "Angular, chargement differe",
-      "file_type": "concept",
-      "source_file": "docs/Projet Complet.md",
-      "source_location": "L230",
-      "source_url": null,
-      "captured_at": null,
-      "author": null,
-      "contributor": null,
-      "id": "docs_projet_complet_angular_lazy_loading",
-      "community": 0,
-      "norm_label": "angular, chargement differe"
-    },
-    {
-      "label": "ASP.NET Core (C#)",
-      "file_type": "concept",
-      "source_file": "docs/Projet Complet.md",
-      "source_location": "L229",
-      "source_url": null,
-      "captured_at": null,
-      "author": null,
-      "contributor": null,
-      "id": "docs_projet_complet_aspnet_core",
-      "community": 2,
-      "norm_label": "asp.net core (c#)"
-    },
-    {
-      "label": "Bot Discord (Discord.Net)",
-      "file_type": "concept",
-      "source_file": "docs/Projet Complet.md",
-      "source_location": "L234",
-      "source_url": null,
-      "captured_at": null,
-      "author": null,
-      "contributor": null,
-      "id": "docs_projet_complet_discord_bot",
-      "community": 2,
-      "norm_label": "bot discord (discord.net)"
-    },
-    {
-      "label": "Data Dragon (Riot)",
-      "file_type": "concept",
-      "source_file": "docs/Projet Complet.md",
-      "source_location": "L244",
-      "source_url": null,
-      "captured_at": null,
-      "author": null,
-      "contributor": null,
-      "id": "docs_projet_complet_data_dragon",
+      "id": "docs_projet_complet_budget_10_euros",
       "community": 12,
-      "norm_label": "data dragon (riot)"
+      "norm_label": "hosting budget < 10 \u20ac/month, single x86 vps"
     },
     {
-      "label": "Pas de Redis",
-      "file_type": "rationale",
-      "source_file": "docs/Projet Complet.md",
-      "source_location": "L434",
-      "source_url": null,
-      "captured_at": null,
-      "author": null,
-      "contributor": null,
-      "id": "docs_projet_complet_no_redis",
-      "community": 8,
-      "norm_label": "pas de redis"
-    },
-    {
-      "label": "Licence AGPL-3.0 + DCO",
+      "label": "Settled decisions \u2014 do not repropose",
       "file_type": "concept",
       "source_file": "docs/Projet Complet.md",
-      "source_location": "L283",
+      "source_location": "\u00a711",
       "source_url": null,
       "captured_at": null,
       "author": null,
       "contributor": null,
-      "rationale": "Clause reseau couvre l'exploitation en service en ligne.",
-      "id": "docs_projet_complet_agpl_license",
-      "community": 0,
-      "norm_label": "licence agpl-3.0 + dco"
-    },
-    {
-      "label": "Regles Riot Games",
-      "file_type": "concept",
-      "source_file": "docs/Projet Complet.md",
-      "source_location": "L288",
-      "source_url": null,
-      "captured_at": null,
-      "author": null,
-      "contributor": null,
-      "id": "docs_projet_complet_riot_rules",
+      "id": "docs_projet_complet_decisions_tranchees",
       "community": 12,
-      "norm_label": "regles riot games"
+      "norm_label": "settled decisions \u2014 do not repropose"
     },
     {
-      "label": "Pas de modules externes en DLL",
+      "label": "Riot Games legal constraints",
+      "file_type": "concept",
+      "source_file": "docs/Projet Complet.md",
+      "source_location": "\u00a79",
+      "source_url": null,
+      "captured_at": null,
+      "author": null,
+      "contributor": null,
+      "id": "docs_projet_complet_cadre_riot",
+      "community": 2,
+      "norm_label": "riot games legal constraints"
+    },
+    {
+      "label": "AGPL-3.0 licence + DCO",
+      "file_type": "concept",
+      "source_file": "docs/Projet Complet.md",
+      "source_location": "\u00a79",
+      "source_url": null,
+      "captured_at": null,
+      "author": null,
+      "contributor": null,
+      "rationale": "Network clause covers software offered as an online service; external modules require public OSI-licensed source.",
+      "id": "docs_projet_complet_licence_agpl",
+      "community": 2,
+      "norm_label": "agpl-3.0 licence + dco"
+    },
+    {
+      "label": "Open questions Q1\u2013Q9",
+      "file_type": "concept",
+      "source_file": "docs/Projet Complet.md",
+      "source_location": "\u00a712",
+      "source_url": null,
+      "captured_at": null,
+      "author": null,
+      "contributor": null,
+      "id": "docs_projet_complet_questions_ouvertes",
+      "community": 2,
+      "norm_label": "open questions q1\u2013q9"
+    },
+    {
+      "label": "User stories (epics A\u2013M)",
+      "file_type": "concept",
+      "source_file": "docs/Projet Complet.md",
+      "source_location": "\u00a710",
+      "source_url": null,
+      "captured_at": null,
+      "author": null,
+      "contributor": null,
+      "id": "docs_projet_complet_user_stories",
+      "community": 3,
+      "norm_label": "user stories (epics a\u2013m)"
+    },
+    {
+      "label": "Progress status (milestones)",
+      "file_type": "concept",
+      "source_file": "docs/Projet Complet.md",
+      "source_location": "\u00a713",
+      "source_url": null,
+      "captured_at": null,
+      "author": null,
+      "contributor": null,
+      "id": "docs_projet_complet_etat_avancement",
+      "community": 5,
+      "norm_label": "progress status (milestones)"
+    },
+    {
+      "label": "Decision log",
+      "file_type": "concept",
+      "source_file": "docs/Projet Complet.md",
+      "source_location": "\u00a714",
+      "source_url": null,
+      "captured_at": null,
+      "author": null,
+      "contributor": null,
+      "id": "docs_projet_complet_journal_decisions",
+      "community": 9,
+      "norm_label": "decision log"
+    },
+    {
+      "label": "Source hierarchy (cahier > Projet Complet > claude.md)",
       "file_type": "rationale",
       "source_file": "docs/Projet Complet.md",
-      "source_location": "L427",
+      "source_location": "\u00a716",
       "source_url": null,
       "captured_at": null,
       "author": null,
       "contributor": null,
-      "id": "docs_projet_complet_no_dll_modules",
-      "community": 0,
-      "norm_label": "pas de modules externes en dll"
+      "id": "docs_projet_complet_hierarchie_sources",
+      "community": 9,
+      "norm_label": "source hierarchy (cahier > projet complet > claude.md)"
     },
     {
-      "label": "Pas d'Extism",
+      "label": "TGFT \u2014 Plan du noyau",
+      "file_type": "document",
+      "source_file": "docs/TGFT \u2014 Plan du noyau.md",
+      "source_location": null,
+      "source_url": null,
+      "captured_at": null,
+      "author": "C\u00e9dric",
+      "contributor": null,
+      "id": "docs_tgft___plan_du_noyau_plan_du_noyau",
+      "community": 9,
+      "norm_label": "tgft \u2014 plan du noyau"
+    },
+    {
+      "label": "Core build order (CI, schema, users/groups, modules)",
+      "file_type": "concept",
+      "source_file": "docs/TGFT \u2014 Plan du noyau.md",
+      "source_location": "\u00a71",
+      "source_url": null,
+      "captured_at": null,
+      "author": "C\u00e9dric",
+      "contributor": null,
+      "id": "docs_tgft___plan_du_noyau_ordre_realisation",
+      "community": 9,
+      "norm_label": "core build order (ci, schema, users/groups, modules)"
+    },
+    {
+      "label": "Schema: utilisateurs, groupes, adh\u00e9sions, invitations, demandes",
+      "file_type": "concept",
+      "source_file": "docs/TGFT \u2014 Plan du noyau.md",
+      "source_location": "\u00a72",
+      "source_url": null,
+      "captured_at": null,
+      "author": "C\u00e9dric",
+      "contributor": null,
+      "id": "docs_tgft___plan_du_noyau_schema_utilisateurs_groupes",
+      "community": 19,
+      "norm_label": "schema: utilisateurs, groupes, adhesions, invitations, demandes"
+    },
+    {
+      "label": "Exactly one founder per group (DB-enforced)",
+      "file_type": "concept",
+      "source_file": "docs/TGFT \u2014 Plan du noyau.md",
+      "source_location": "\u00a72",
+      "source_url": null,
+      "captured_at": null,
+      "author": "C\u00e9dric",
+      "contributor": null,
+      "rationale": "Founder is a membership, not a column: unique partial index plus group created with its founder atomically; ownership transfer = two role changes.",
+      "id": "docs_tgft___plan_du_noyau_un_seul_fondateur",
+      "community": 19,
+      "norm_label": "exactly one founder per group (db-enforced)"
+    },
+    {
+      "label": "A module has no door of its own (same use cases as the site)",
       "file_type": "rationale",
-      "source_file": "docs/Projet Complet.md",
-      "source_location": "L431",
+      "source_file": "docs/TGFT \u2014 Plan du noyau.md",
+      "source_location": "\u00a73",
       "source_url": null,
       "captured_at": null,
-      "author": null,
+      "author": "C\u00e9dric",
       "contributor": null,
-      "id": "docs_projet_complet_no_extism",
-      "community": 0,
-      "norm_label": "pas d'extism"
+      "rationale": "A module can do nothing a member could not do with their own rights; security does not rely on the module.",
+      "id": "docs_tgft___plan_du_noyau_principe_pas_de_porte",
+      "community": 3,
+      "norm_label": "a module has no door of its own (same use cases as the site)"
     },
     {
-      "label": "Questions ouvertes (Q1-Q7)",
+      "label": "Seuil plancher (minimum role floor)",
       "file_type": "concept",
-      "source_file": "docs/Projet Complet.md",
-      "source_location": "L443",
+      "source_file": "docs/TGFT \u2014 Plan du noyau.md",
+      "source_location": "\u00a73",
       "source_url": null,
       "captured_at": null,
-      "author": null,
+      "author": "C\u00e9dric",
       "contributor": null,
-      "id": "docs_projet_complet_open_questions",
-      "community": 0,
-      "norm_label": "questions ouvertes (q1-q7)"
+      "id": "docs_tgft___plan_du_noyau_seuil_plancher",
+      "community": 3,
+      "norm_label": "seuil plancher (minimum role floor)"
     },
     {
-      "label": "Q6 prototype Javy + Wasmtime",
+      "label": "Schema: game data per set + group content (compos, classements)",
       "file_type": "concept",
-      "source_file": "docs/Projet Complet.md",
-      "source_location": "L454",
+      "source_file": "docs/TGFT \u2014 Plan du noyau.md",
+      "source_location": "\u00a74",
       "source_url": null,
       "captured_at": null,
-      "author": null,
+      "author": "C\u00e9dric",
       "contributor": null,
-      "id": "docs_projet_complet_q6_prototype",
-      "community": 0,
-      "norm_label": "q6 prototype javy + wasmtime"
-    },
-    {
-      "label": "TGFT.ModuleHost",
-      "file_type": "concept",
-      "source_file": "docs/Projet Complet.md",
-      "source_location": "L478",
-      "source_url": null,
-      "captured_at": null,
-      "author": null,
-      "contributor": null,
-      "id": "docs_projet_complet_tgft_modulehost",
-      "community": 0,
-      "norm_label": "tgft.modulehost"
-    },
-    {
-      "label": "Correctif CVE-2026-49451 (Microsoft.OpenApi)",
-      "file_type": "concept",
-      "source_file": "docs/Projet Complet.md",
-      "source_location": "L499",
-      "source_url": null,
-      "captured_at": null,
-      "author": null,
-      "contributor": null,
-      "id": "docs_projet_complet_cve_2026_49451_fix",
-      "community": 9,
-      "norm_label": "correctif cve-2026-49451 (microsoft.openapi)"
-    },
-    {
-      "label": "graphify-out versionne dans git",
-      "file_type": "concept",
-      "source_file": "docs/Projet Complet.md",
-      "source_location": "L494",
-      "source_url": null,
-      "captured_at": null,
-      "author": null,
-      "contributor": null,
-      "id": "docs_projet_complet_graphify_out_versioned",
-      "community": 11,
-      "norm_label": "graphify-out versionne dans git"
-    },
-    {
-      "label": "Squelette de solution (.NET 10 + Angular 22)",
-      "file_type": "concept",
-      "source_file": "docs/Projet Complet.md",
-      "source_location": "L498",
-      "source_url": null,
-      "captured_at": null,
-      "author": null,
-      "contributor": null,
-      "id": "docs_projet_complet_solution_skeleton",
-      "community": 9,
-      "norm_label": "squelette de solution (.net 10 + angular 22)"
-    },
-    {
-      "label": "Pile Docker locale (caddy, api, postgres)",
-      "file_type": "concept",
-      "source_file": "docs/Projet Complet.md",
-      "source_location": "L495",
-      "source_url": null,
-      "captured_at": null,
-      "author": null,
-      "contributor": null,
-      "id": "docs_projet_complet_local_docker_stack",
+      "rationale": "Compo tier list is the tier of each compo, not a separate table: data lives in one place.",
+      "id": "docs_tgft___plan_du_noyau_schema_contenu_jeu",
       "community": 2,
-      "norm_label": "pile docker locale (caddy, api, postgres)"
+      "norm_label": "schema: game data per set + group content (compos, classements)"
     },
     {
-      "label": "Depot git separe dans Desktop/TGFT",
+      "label": "Request isolation chain (group in URL, membership check, groupe en cours)",
       "file_type": "concept",
-      "source_file": "docs/Projet Complet.md",
-      "source_location": "L496",
+      "source_file": "docs/TGFT \u2014 Plan du noyau.md",
+      "source_location": "\u00a75",
       "source_url": null,
       "captured_at": null,
-      "author": null,
+      "author": "C\u00e9dric",
       "contributor": null,
-      "id": "docs_projet_complet_separate_git_repo",
-      "community": 9,
-      "norm_label": "depot git separe dans desktop/tgft"
+      "id": "docs_tgft___plan_du_noyau_chaine_isolation",
+      "community": 5,
+      "norm_label": "request isolation chain (group in url, membership check, groupe en cours)"
     },
     {
-      "label": "Compose project rename tgft -> tgft-platform (port 8080 -> 8081)",
+      "label": "Groupe en cours (per-request context)",
       "file_type": "concept",
-      "source_file": "docs/Projet Complet.md",
-      "source_location": "L493",
+      "source_file": "docs/TGFT \u2014 Plan du noyau.md",
+      "source_location": "\u00a75",
       "source_url": null,
       "captured_at": null,
-      "author": null,
+      "author": "C\u00e9dric",
       "contributor": null,
-      "id": "docs_projet_complet_compose_project_rename",
+      "id": "docs_tgft___plan_du_noyau_groupe_en_cours",
+      "community": 5,
+      "norm_label": "groupe en cours (per-request context)"
+    },
+    {
+      "label": "EF Core global query filters (first rampart)",
+      "file_type": "concept",
+      "source_file": "docs/TGFT \u2014 Plan du noyau.md",
+      "source_location": "\u00a75",
+      "source_url": null,
+      "captured_at": null,
+      "author": "C\u00e9dric",
+      "contributor": null,
+      "id": "docs_tgft___plan_du_noyau_ef_core_global_filters",
+      "community": 5,
+      "norm_label": "ef core global query filters (first rampart)"
+    },
+    {
+      "label": "PostgreSQL Row Level Security (second rampart)",
+      "file_type": "concept",
+      "source_file": "docs/TGFT \u2014 Plan du noyau.md",
+      "source_location": "\u00a75",
+      "source_url": null,
+      "captured_at": null,
+      "author": "C\u00e9dric",
+      "contributor": null,
+      "id": "docs_tgft___plan_du_noyau_postgresql_rls",
+      "community": 5,
+      "norm_label": "postgresql row level security (second rampart)"
+    },
+    {
+      "label": "Two PostgreSQL roles (owner vs application), forced RLS",
+      "file_type": "concept",
+      "source_file": "docs/TGFT \u2014 Plan du noyau.md",
+      "source_location": "\u00a75",
+      "source_url": null,
+      "captured_at": null,
+      "author": "C\u00e9dric",
+      "contributor": null,
+      "id": "docs_tgft___plan_du_noyau_deux_roles_postgresql",
+      "community": 5,
+      "norm_label": "two postgresql roles (owner vs application), forced rls"
+    },
+    {
+      "label": "Session cookie (site) + service key (bot)",
+      "file_type": "concept",
+      "source_file": "docs/TGFT \u2014 Plan du noyau.md",
+      "source_location": "\u00a76",
+      "source_url": null,
+      "captured_at": null,
+      "author": "C\u00e9dric",
+      "contributor": null,
+      "rationale": "Server-side session makes exclusion/deletion immediate; role re-read each request so changes apply at once.",
+      "id": "docs_tgft___plan_du_noyau_authentification",
+      "community": 5,
+      "norm_label": "session cookie (site) + service key (bot)"
+    },
+    {
+      "label": "Fixed permission grid with named permissions",
+      "file_type": "concept",
+      "source_file": "docs/TGFT \u2014 Plan du noyau.md",
+      "source_location": "\u00a77",
+      "source_url": null,
+      "captured_at": null,
+      "author": "C\u00e9dric",
+      "contributor": null,
+      "id": "docs_tgft___plan_du_noyau_grille_permissions",
+      "community": 5,
+      "norm_label": "fixed permission grid with named permissions"
+    },
+    {
+      "label": "Permission exhaustiveness and matrix tests",
+      "file_type": "concept",
+      "source_file": "docs/TGFT \u2014 Plan du noyau.md",
+      "source_location": "\u00a77",
+      "source_url": null,
+      "captured_at": null,
+      "author": "C\u00e9dric",
+      "contributor": null,
+      "id": "docs_tgft___plan_du_noyau_tests_exhaustivite_matrice",
+      "community": 5,
+      "norm_label": "permission exhaustiveness and matrix tests"
+    },
+    {
+      "label": "EF Core migrations applied by separate step",
+      "file_type": "concept",
+      "source_file": "docs/TGFT \u2014 Plan du noyau.md",
+      "source_location": "\u00a78",
+      "source_url": null,
+      "captured_at": null,
+      "author": "C\u00e9dric",
+      "contributor": null,
+      "rationale": "API never holds owner-role credentials; RLS/roles written as SQL inside migrations.",
+      "id": "docs_tgft___plan_du_noyau_migrations_ef_core",
+      "community": 5,
+      "norm_label": "ef core migrations applied by separate step"
+    },
+    {
+      "label": "Core test families (domain, API isolation, DB isolation, authorization, architecture)",
+      "file_type": "concept",
+      "source_file": "docs/TGFT \u2014 Plan du noyau.md",
+      "source_location": "\u00a710",
+      "source_url": null,
+      "captured_at": null,
+      "author": "C\u00e9dric",
+      "contributor": null,
+      "rationale": "DB isolation test disables EF filters on purpose to prove the two ramparts are independent.",
+      "id": "docs_tgft___plan_du_noyau_tests_noyau",
+      "community": 5,
+      "norm_label": "core test families (domain, api isolation, db isolation, authorization, architecture)"
+    },
+    {
+      "label": "Personal data lifecycle in modules (purge/anonymise/export table)",
+      "file_type": "concept",
+      "source_file": "docs/TGFT \u2014 Plan du noyau.md",
+      "source_location": "\u00a711",
+      "source_url": null,
+      "captured_at": null,
+      "author": "C\u00e9dric",
+      "contributor": null,
+      "id": "docs_tgft___plan_du_noyau_donnees_personnelles_modules",
+      "community": 3,
+      "norm_label": "personal data lifecycle in modules (purge/anonymise/export table)"
+    },
+    {
+      "label": "Core steps 0\u20136 (backend + Angular screens each)",
+      "file_type": "concept",
+      "source_file": "docs/TGFT \u2014 Plan du noyau.md",
+      "source_location": "\u00a712",
+      "source_url": null,
+      "captured_at": null,
+      "author": "C\u00e9dric",
+      "contributor": null,
+      "id": "docs_tgft___plan_du_noyau_etapes_noyau",
+      "community": 5,
+      "norm_label": "core steps 0\u20136 (backend + angular screens each)"
+    },
+    {
+      "label": "Data Dragon sync (traits/thresholds missing, Q8)",
+      "file_type": "concept",
+      "source_file": "docs/TGFT \u2014 Plan du noyau.md",
+      "source_location": "Annexe",
+      "source_url": null,
+      "captured_at": null,
+      "author": "C\u00e9dric",
+      "contributor": null,
+      "id": "docs_tgft___plan_du_noyau_data_dragon",
       "community": 2,
-      "norm_label": "compose project rename tgft -> tgft-platform (port 8080 -> 8081)"
+      "norm_label": "data dragon sync (traits/thresholds missing, q8)"
     },
     {
-      "label": "tests/TGFT.ArchitectureTests (xUnit + NetArchTest, 5 regles)",
-      "file_type": "concept",
-      "source_file": "docs/Projet Complet.md",
-      "source_location": "L491",
-      "source_url": null,
-      "captured_at": null,
-      "author": null,
-      "contributor": null,
-      "rationale": "Cree en premier pour que les frontieres soient verifiees des la premiere ligne de code metier.",
-      "id": "docs_projet_complet_architecture_tests_project",
-      "community": 9,
-      "norm_label": "tests/tgft.architecturetests (xunit + netarchtest, 5 regles)"
-    },
-    {
-      "label": "AssemblyMarker (classe vide par projet)",
-      "file_type": "concept",
-      "source_file": "docs/Projet Complet.md",
-      "source_location": "L491",
-      "source_url": null,
-      "captured_at": null,
-      "author": null,
-      "contributor": null,
-      "id": "docs_projet_complet_assembly_marker",
-      "community": 9,
-      "norm_label": "assemblymarker (classe vide par projet)"
-    },
-    {
-      "label": "Ordre de realisation (tests archi -> noyau -> modules natifs -> marketplace)",
+      "label": "Graphify update once before commit",
       "file_type": "rationale",
-      "source_file": "docs/Projet Complet.md",
-      "source_location": "L463",
+      "source_file": "CLAUDE.md",
+      "source_location": null,
       "source_url": null,
       "captured_at": null,
       "author": null,
       "contributor": null,
-      "rationale": "Q6 tranchee plus tard ; risque limite car le repli Jint ne touche qu'Infrastructure et la salle des machines.",
-      "id": "docs_projet_complet_realization_order",
-      "community": 0,
-      "norm_label": "ordre de realisation (tests archi -> noyau -> modules natifs -> marketplace)"
-    },
-    {
-      "label": "Decision 2026-10-21 : graphify mis a jour une seule fois avant le commit",
-      "file_type": "rationale",
-      "source_file": "docs/Projet Complet.md",
-      "source_location": "L490",
-      "source_url": null,
-      "captured_at": null,
-      "author": null,
-      "contributor": null,
-      "rationale": "Hook post-commit ecarte : il laisserait le graphe versionne avec un commit de retard.",
-      "id": "docs_projet_complet_graphify_single_update_decision",
-      "community": 11,
-      "norm_label": "decision 2026-10-21 : graphify mis a jour une seule fois avant le commit"
-    },
-    {
-      "label": "PostgreSQL",
-      "file_type": "concept",
-      "source_file": "docs/Projet Complet.md",
-      "source_location": "L231",
-      "source_url": null,
-      "captured_at": null,
-      "author": null,
-      "contributor": null,
-      "id": "docs_projet_complet_postgresql",
-      "community": 2,
-      "norm_label": "postgresql"
-    },
-    {
-      "label": "GitHub Actions (CI)",
-      "file_type": "concept",
-      "source_file": "docs/Projet Complet.md",
-      "source_location": "L242",
-      "source_url": null,
-      "captured_at": null,
-      "author": null,
-      "contributor": null,
-      "id": "docs_projet_complet_github_actions_ci",
-      "community": 0,
-      "norm_label": "github actions (ci)"
-    },
-    {
-      "label": "L4 commandes du bot selon modules actives",
-      "file_type": "concept",
-      "source_file": "docs/Projet Complet.md",
-      "source_location": "L419",
-      "source_url": null,
-      "captured_at": null,
-      "author": null,
-      "contributor": null,
-      "rationale": "Prouve que la modularite traverse toute la plateforme, pas seulement le web.",
-      "id": "docs_projet_complet_l4_bot_commands_per_module",
-      "community": 2,
-      "norm_label": "l4 commandes du bot selon modules actives"
-    },
-    {
-      "label": "M8 interruption d'un module depassant ses limites",
-      "file_type": "concept",
-      "source_file": "docs/Projet Complet.md",
-      "source_location": "L372",
-      "source_url": null,
-      "captured_at": null,
-      "author": null,
-      "contributor": null,
-      "id": "docs_projet_complet_resource_limits_m8",
-      "community": 0,
-      "norm_label": "m8 interruption d'un module depassant ses limites"
-    },
-    {
-      "label": "M12 modules externes ne connaissent jamais l'identite reelle",
-      "file_type": "concept",
-      "source_file": "docs/Projet Complet.md",
-      "source_location": "L376",
-      "source_url": null,
-      "captured_at": null,
-      "author": null,
-      "contributor": null,
-      "id": "docs_projet_complet_pseudonym_property_m12",
-      "community": 0,
-      "norm_label": "m12 modules externes ne connaissent jamais l'identite reelle"
+      "rationale": "Each update costs 15-20k tokens for code, ~100k for Projet Complet.md; versioned graph must match its commit.",
+      "id": "claude_graphify_update_rule",
+      "community": 9,
+      "norm_label": "graphify update once before commit"
     }
   ],
   "links": [
@@ -3848,40 +3639,10 @@
       "confidence": "EXTRACTED",
       "confidence_score": 1.0,
       "source_file": "docs/Cedric_Van_Overlop_-_Cahier_des_Charges_Projet_integration_V2.pdf",
-      "source_location": "\u00a75.1",
-      "weight": 1.0,
-      "source": "docs_cedric_van_overlop___cahier_des_charges_projet_integration_v2_technical_challenges",
-      "target": "docs_projet_complet_multi_tenant_isolation"
-    },
-    {
-      "relation": "references",
-      "confidence": "EXTRACTED",
-      "confidence_score": 1.0,
-      "source_file": "docs/Cedric_Van_Overlop_-_Cahier_des_Charges_Projet_integration_V2.pdf",
-      "source_location": "\u00a75.7",
-      "weight": 1.0,
-      "source": "docs_cedric_van_overlop___cahier_des_charges_projet_integration_v2_technical_challenges",
-      "target": "docs_projet_complet_tests_as_security"
-    },
-    {
-      "relation": "references",
-      "confidence": "EXTRACTED",
-      "confidence_score": 1.0,
-      "source_file": "docs/Cedric_Van_Overlop_-_Cahier_des_Charges_Projet_integration_V2.pdf",
       "source_location": "p.11",
       "weight": 1.0,
       "source": "docs_cedric_van_overlop___cahier_des_charges_projet_integration_v2_call_flow_diagram",
       "target": "docs_projet_complet_salle_des_machines"
-    },
-    {
-      "relation": "references",
-      "confidence": "EXTRACTED",
-      "confidence_score": 1.0,
-      "source_file": "docs/Cedric_Van_Overlop_-_Cahier_des_Charges_Projet_integration_V2.pdf",
-      "source_location": "p.11",
-      "weight": 1.0,
-      "source": "docs_cedric_van_overlop___cahier_des_charges_projet_integration_v2_call_flow_diagram",
-      "target": "docs_projet_complet_zone_de_confiance"
     },
     {
       "relation": "references",
@@ -3944,26 +3705,6 @@
       "target": "docker_compose_postgres_service"
     },
     {
-      "relation": "implements",
-      "confidence": "INFERRED",
-      "confidence_score": 0.95,
-      "source_file": "docker-compose.yml",
-      "source_location": null,
-      "weight": 1.0,
-      "source": "docker_compose",
-      "target": "docs_projet_complet_docker_compose"
-    },
-    {
-      "relation": "rationale_for",
-      "confidence": "EXTRACTED",
-      "confidence_score": 1.0,
-      "source_file": "docker-compose.yml",
-      "source_location": "L3",
-      "weight": 1.0,
-      "source": "docs_projet_complet_compose_project_rename",
-      "target": "docker_compose"
-    },
-    {
       "relation": "calls",
       "confidence": "EXTRACTED",
       "confidence_score": 1.0,
@@ -3972,26 +3713,6 @@
       "weight": 1.0,
       "source": "docker_compose_caddy_service",
       "target": "docker_compose_api_service"
-    },
-    {
-      "relation": "implements",
-      "confidence": "INFERRED",
-      "confidence_score": 0.95,
-      "source_file": "docker-compose.yml",
-      "source_location": "L8",
-      "weight": 1.0,
-      "source": "docker_compose_caddy_service",
-      "target": "docs_projet_complet_caddy"
-    },
-    {
-      "relation": "rationale_for",
-      "confidence": "INFERRED",
-      "confidence_score": 0.85,
-      "source_file": "docker-compose.yml",
-      "source_location": "L14",
-      "weight": 1.0,
-      "source": "docs_projet_complet_compose_project_rename",
-      "target": "docker_compose_caddy_service"
     },
     {
       "relation": "references",
@@ -4014,16 +3735,6 @@
       "target": "docker_compose_postgres_service"
     },
     {
-      "relation": "implements",
-      "confidence": "INFERRED",
-      "confidence_score": 0.85,
-      "source_file": "docker-compose.yml",
-      "source_location": "L19",
-      "weight": 1.0,
-      "source": "docker_compose_api_service",
-      "target": "docs_projet_complet_aspnet_core"
-    },
-    {
       "relation": "shares_data_with",
       "confidence": "EXTRACTED",
       "confidence_score": 1.0,
@@ -4042,16 +3753,6 @@
       "weight": 1.0,
       "source": "docker_compose_postgres_service",
       "target": "docker_compose_postgres_password"
-    },
-    {
-      "relation": "conceptually_related_to",
-      "confidence": "INFERRED",
-      "confidence_score": 0.75,
-      "source_file": "docker-compose.yml",
-      "source_location": "L31",
-      "weight": 1.0,
-      "source": "docker_compose_postgres_service",
-      "target": "docs_projet_complet_postgresql_rls"
     },
     {
       "relation": "contains",
@@ -4519,111 +4220,221 @@
       "relation": "references",
       "confidence": "EXTRACTED",
       "confidence_score": 1.0,
-      "source_file": "claude.md",
+      "source_file": "CLAUDE.md",
       "source_location": null,
       "weight": 1.0,
-      "source": "claude_document",
+      "source": "claude_claude_md",
       "target": "claude_graphify_update_rule"
     },
     {
       "relation": "references",
       "confidence": "EXTRACTED",
       "confidence_score": 1.0,
-      "source_file": "claude.md",
+      "source_file": "CLAUDE.md",
       "source_location": null,
       "weight": 1.0,
-      "source": "claude_document",
-      "target": "claude_rule_no_code_without_request"
+      "source": "claude_claude_md",
+      "target": "claude_regle_1_pas_de_code_sans_demande"
     },
     {
-      "relation": "cites",
+      "relation": "references",
       "confidence": "EXTRACTED",
       "confidence_score": 1.0,
-      "source_file": "claude.md",
+      "source_file": "CLAUDE.md",
       "source_location": null,
       "weight": 1.0,
-      "source": "claude_document",
+      "source": "claude_claude_md",
       "target": "docs_projet_complet_cahier_des_charges_v2"
     },
     {
       "relation": "references",
-      "confidence": "EXTRACTED",
-      "confidence_score": 1.0,
-      "source_file": "claude.md",
+      "confidence": "INFERRED",
+      "confidence_score": 0.95,
+      "source_file": "CLAUDE.md",
       "source_location": null,
       "weight": 1.0,
-      "source": "claude_document",
-      "target": "docs_projet_complet_clean_architecture"
+      "source": "claude_claude_md",
+      "target": "docs_projet_complet_couches_protection"
+    },
+    {
+      "relation": "references",
+      "confidence": "INFERRED",
+      "confidence_score": 0.95,
+      "source_file": "CLAUDE.md",
+      "source_location": null,
+      "weight": 1.0,
+      "source": "claude_claude_md",
+      "target": "docs_projet_complet_decisions_tranchees"
     },
     {
       "relation": "references",
       "confidence": "EXTRACTED",
       "confidence_score": 1.0,
-      "source_file": "claude.md",
+      "source_file": "CLAUDE.md",
       "source_location": null,
       "weight": 1.0,
-      "source": "claude_document",
+      "source": "claude_claude_md",
       "target": "docs_projet_complet_projet_complet"
     },
     {
       "relation": "references",
       "confidence": "EXTRACTED",
       "confidence_score": 1.0,
-      "source_file": "claude.md",
-      "source_location": null,
+      "source_file": "docs/Projet Complet.md",
+      "source_location": "\u00a716",
       "weight": 1.0,
-      "source": "claude_document",
-      "target": "docs_projet_complet_protection_layers"
+      "source": "docs_projet_complet_hierarchie_sources",
+      "target": "claude_claude_md"
     },
     {
       "relation": "references",
       "confidence": "EXTRACTED",
       "confidence_score": 1.0,
-      "source_file": "claude.md",
-      "source_location": null,
+      "source_file": "docs/Cahier des charges \u2014 \u00e9volutions/V2.1.md",
+      "source_location": "\u00a71",
       "weight": 1.0,
-      "source": "claude_document",
-      "target": "docs_projet_complet_tgft_platform"
+      "source": "docs_cahier_des_charges____volutions_v2_1_cahier_des_charges_v2_1",
+      "target": "docs_cahier_des_charges____volutions_v2_1_evolution_acces_modules_donnees"
     },
     {
       "relation": "references",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "source_file": "docs/Cahier des charges \u2014 \u00e9volutions/V2.1.md",
+      "source_location": "\u00a72",
+      "weight": 1.0,
+      "source": "docs_cahier_des_charges____volutions_v2_1_cahier_des_charges_v2_1",
+      "target": "docs_cahier_des_charges____volutions_v2_1_evolution_export_d11"
+    },
+    {
+      "relation": "references",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "source_file": "docs/Cahier des charges \u2014 \u00e9volutions/V2.1.md",
+      "source_location": "\u00a73",
+      "weight": 1.0,
+      "source": "docs_cahier_des_charges____volutions_v2_1_cahier_des_charges_v2_1",
+      "target": "docs_cahier_des_charges____volutions_v2_1_evolution_modules_base_defaut"
+    },
+    {
+      "relation": "references",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "source_file": "docs/Cahier des charges \u2014 \u00e9volutions/V2.1.md",
+      "source_location": null,
+      "weight": 1.0,
+      "source": "docs_cahier_des_charges____volutions_v2_1_cahier_des_charges_v2_1",
+      "target": "docs_projet_complet_cahier_des_charges_v2"
+    },
+    {
+      "relation": "cites",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "source_file": "docs/Cahier des charges \u2014 \u00e9volutions/V2.1.md",
+      "source_location": null,
+      "weight": 1.0,
+      "source": "docs_cahier_des_charges____volutions_v2_1_cahier_des_charges_v2_1",
+      "target": "docs_tgft___plan_du_noyau_plan_du_noyau"
+    },
+    {
+      "relation": "cites",
       "confidence": "EXTRACTED",
       "confidence_score": 1.0,
       "source_file": "docs/Projet Complet.md",
-      "source_location": null,
+      "source_location": "\u00a714",
       "weight": 1.0,
-      "source": "docs_projet_complet_source_hierarchy",
-      "target": "claude_document"
+      "source": "docs_projet_complet_journal_decisions",
+      "target": "docs_cahier_des_charges____volutions_v2_1_cahier_des_charges_v2_1"
     },
     {
-      "relation": "conceptually_related_to",
+      "relation": "cites",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "source_file": "docs/Projet Complet.md",
+      "source_location": "\u00a714",
+      "weight": 1.0,
+      "source": "docs_projet_complet_projet_complet",
+      "target": "docs_cahier_des_charges____volutions_v2_1_cahier_des_charges_v2_1"
+    },
+    {
+      "relation": "semantically_similar_to",
       "confidence": "INFERRED",
-      "confidence_score": 0.65,
-      "source_file": "claude.md",
-      "source_location": null,
+      "confidence_score": 0.95,
+      "source_file": "docs/Cahier des charges \u2014 \u00e9volutions/V2.1.md",
+      "source_location": "\u00a71",
       "weight": 1.0,
-      "source": "claude_rule_no_code_without_request",
-      "target": "docs_projet_complet_graphify_single_update_decision"
+      "source": "docs_cahier_des_charges____volutions_v2_1_evolution_acces_modules_donnees",
+      "target": "docs_projet_complet_acces_donnees_plateforme"
     },
     {
-      "relation": "conceptually_related_to",
+      "relation": "references",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "source_file": "docs/Cahier des charges \u2014 \u00e9volutions/V2.1.md",
+      "source_location": "\u00a71",
+      "weight": 1.0,
+      "source": "docs_cahier_des_charges____volutions_v2_1_evolution_acces_modules_donnees",
+      "target": "docs_projet_complet_modele_paquet_reponse"
+    },
+    {
+      "relation": "references",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "source_file": "docs/Cahier des charges \u2014 \u00e9volutions/V2.1.md",
+      "source_location": "\u00a71",
+      "weight": 1.0,
+      "source": "docs_cahier_des_charges____volutions_v2_1_evolution_acces_modules_donnees",
+      "target": "docs_projet_complet_reponse_verifiee"
+    },
+    {
+      "relation": "references",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "source_file": "docs/Cahier des charges \u2014 \u00e9volutions/V2.1.md",
+      "source_location": "\u00a71",
+      "weight": 1.0,
+      "source": "docs_cahier_des_charges____volutions_v2_1_evolution_acces_modules_donnees",
+      "target": "docs_tgft___plan_du_noyau_seuil_plancher"
+    },
+    {
+      "relation": "references",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "source_file": "docs/Cahier des charges \u2014 \u00e9volutions/V2.1.md",
+      "source_location": "\u00a72",
+      "weight": 1.0,
+      "source": "docs_cahier_des_charges____volutions_v2_1_evolution_export_d11",
+      "target": "docs_projet_complet_contrat_d11"
+    },
+    {
+      "relation": "semantically_similar_to",
       "confidence": "INFERRED",
       "confidence_score": 0.85,
-      "source_file": "claude.md",
-      "source_location": null,
+      "source_file": "docs/Cahier des charges \u2014 \u00e9volutions/V2.1.md",
+      "source_location": "\u00a72",
       "weight": 1.0,
-      "source": "claude_graphify_update_rule",
-      "target": "docs_projet_complet_graphify_out_versioned"
+      "source": "docs_cahier_des_charges____volutions_v2_1_evolution_export_d11",
+      "target": "docs_tgft___plan_du_noyau_donnees_personnelles_modules"
     },
     {
-      "relation": "rationale_for",
+      "relation": "references",
       "confidence": "EXTRACTED",
       "confidence_score": 1.0,
-      "source_file": "docs/Projet Complet.md",
-      "source_location": null,
+      "source_file": "docs/Cahier des charges \u2014 \u00e9volutions/V2.1.md",
+      "source_location": "\u00a73",
       "weight": 1.0,
-      "source": "docs_projet_complet_graphify_single_update_decision",
-      "target": "claude_graphify_update_rule"
+      "source": "docs_cahier_des_charges____volutions_v2_1_evolution_modules_base_defaut",
+      "target": "docs_projet_complet_modules_natifs"
+    },
+    {
+      "relation": "references",
+      "confidence": "INFERRED",
+      "confidence_score": 0.95,
+      "source_file": "docs/TGFT \u2014 Plan du noyau.md",
+      "source_location": "\u00a71",
+      "weight": 1.0,
+      "source": "docs_tgft___plan_du_noyau_ordre_realisation",
+      "target": "docs_cahier_des_charges____volutions_v2_1_evolution_modules_base_defaut"
     },
     {
       "relation": "cites",
@@ -4636,31 +4447,31 @@
       "target": "docs_projet_complet_cahier_des_charges_v2"
     },
     {
-      "relation": "references",
+      "relation": "cites",
       "confidence": "EXTRACTED",
       "confidence_score": 1.0,
       "source_file": "docs/Projet Complet.md",
       "source_location": null,
       "weight": 1.0,
       "source": "docs_projet_complet_projet_complet",
-      "target": "docs_projet_complet_source_hierarchy"
+      "target": "docs_tgft___plan_du_noyau_plan_du_noyau"
     },
     {
       "relation": "references",
       "confidence": "EXTRACTED",
       "confidence_score": 1.0,
       "source_file": "docs/Projet Complet.md",
-      "source_location": null,
+      "source_location": "\u00a73",
       "weight": 1.0,
-      "source": "docs_projet_complet_source_hierarchy",
-      "target": "docs_projet_complet_cahier_des_charges_v2"
+      "source": "docs_projet_complet_tgft_platform",
+      "target": "docs_projet_complet_budget_10_euros"
     },
     {
       "relation": "references",
       "confidence": "EXTRACTED",
       "confidence_score": 1.0,
       "source_file": "docs/Projet Complet.md",
-      "source_location": null,
+      "source_location": "\u00a71",
       "weight": 1.0,
       "source": "docs_projet_complet_tgft_platform",
       "target": "docs_projet_complet_marketplace"
@@ -4670,169 +4481,119 @@
       "confidence": "EXTRACTED",
       "confidence_score": 1.0,
       "source_file": "docs/Projet Complet.md",
-      "source_location": null,
+      "source_location": "\u00a71",
       "weight": 1.0,
       "source": "docs_projet_complet_tgft_platform",
       "target": "docs_projet_complet_noyau_minimal"
     },
     {
-      "relation": "cites",
+      "relation": "implements",
       "confidence": "EXTRACTED",
       "confidence_score": 1.0,
       "source_file": "docs/Projet Complet.md",
-      "source_location": null,
-      "weight": 1.0,
-      "source": "docs_projet_complet_tgft_platform",
-      "target": "docs_projet_complet_odoo"
-    },
-    {
-      "relation": "cites",
-      "confidence": "EXTRACTED",
-      "confidence_score": 1.0,
-      "source_file": "docs/Projet Complet.md",
-      "source_location": null,
-      "weight": 1.0,
-      "source": "docs_projet_complet_tgft_platform",
-      "target": "docs_projet_complet_shopify_functions"
-    },
-    {
-      "relation": "references",
-      "confidence": "EXTRACTED",
-      "confidence_score": 1.0,
-      "source_file": "docs/Projet Complet.md",
-      "source_location": null,
-      "weight": 1.0,
-      "source": "docs_projet_complet_realization_order",
-      "target": "docs_projet_complet_noyau_minimal"
-    },
-    {
-      "relation": "references",
-      "confidence": "EXTRACTED",
-      "confidence_score": 1.0,
-      "source_file": "docs/Projet Complet.md",
-      "source_location": null,
-      "weight": 1.0,
-      "source": "docs_projet_complet_roles",
-      "target": "docs_projet_complet_noyau_minimal"
-    },
-    {
-      "relation": "references",
-      "confidence": "EXTRACTED",
-      "confidence_score": 1.0,
-      "source_file": "docs/Projet Complet.md",
-      "source_location": null,
+      "source_location": "\u00a76.2",
       "weight": 1.0,
       "source": "docs_projet_complet_marketplace",
-      "target": "docs_projet_complet_external_modules"
-    },
-    {
-      "relation": "cites",
-      "confidence": "EXTRACTED",
-      "confidence_score": 1.0,
-      "source_file": "docs/Projet Complet.md",
-      "source_location": null,
-      "weight": 1.0,
-      "source": "docs_projet_complet_javy",
-      "target": "docs_projet_complet_shopify_functions"
-    },
-    {
-      "relation": "cites",
-      "confidence": "EXTRACTED",
-      "confidence_score": 1.0,
-      "source_file": "docs/Projet Complet.md",
-      "source_location": null,
-      "weight": 1.0,
-      "source": "docs_projet_complet_no_host_functions",
-      "target": "docs_projet_complet_shopify_functions"
+      "target": "docs_projet_complet_modele_paquet_reponse"
     },
     {
       "relation": "references",
       "confidence": "EXTRACTED",
       "confidence_score": 1.0,
       "source_file": "docs/Projet Complet.md",
-      "source_location": null,
+      "source_location": "\u00a76",
       "weight": 1.0,
-      "source": "docs_projet_complet_multi_tenant_isolation",
-      "target": "docs_projet_complet_groupe"
+      "source": "docs_projet_complet_marketplace",
+      "target": "docs_projet_complet_modules_externes"
+    },
+    {
+      "relation": "implements",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "source_file": "docs/Projet Complet.md",
+      "source_location": "\u00a75",
+      "weight": 1.0,
+      "source": "docs_projet_complet_modules_natifs",
+      "target": "docs_projet_complet_contrats_communs_modules"
+    },
+    {
+      "relation": "implements",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "source_file": "docs/Projet Complet.md",
+      "source_location": "\u00a75",
+      "weight": 1.0,
+      "source": "docs_projet_complet_team_builder",
+      "target": "docs_projet_complet_modules_natifs"
+    },
+    {
+      "relation": "implements",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "source_file": "docs/Projet Complet.md",
+      "source_location": "\u00a75",
+      "weight": 1.0,
+      "source": "docs_projet_complet_tier_lists",
+      "target": "docs_projet_complet_modules_natifs"
     },
     {
       "relation": "references",
       "confidence": "EXTRACTED",
       "confidence_score": 1.0,
       "source_file": "docs/Projet Complet.md",
-      "source_location": null,
+      "source_location": "\u00a79",
       "weight": 1.0,
-      "source": "docs_projet_complet_multi_tenant_isolation",
-      "target": "docs_projet_complet_ef_core_global_filters"
+      "source": "docs_projet_complet_cadre_riot",
+      "target": "docs_projet_complet_modules_externes"
     },
     {
       "relation": "references",
       "confidence": "EXTRACTED",
       "confidence_score": 1.0,
       "source_file": "docs/Projet Complet.md",
-      "source_location": null,
+      "source_location": "\u00a79",
       "weight": 1.0,
-      "source": "docs_projet_complet_multi_tenant_isolation",
-      "target": "docs_projet_complet_postgresql_rls"
+      "source": "docs_projet_complet_licence_agpl",
+      "target": "docs_projet_complet_modules_externes"
     },
     {
-      "relation": "references",
+      "relation": "implements",
       "confidence": "EXTRACTED",
       "confidence_score": 1.0,
       "source_file": "docs/Projet Complet.md",
-      "source_location": null,
+      "source_location": "\u00a75",
       "weight": 1.0,
-      "source": "docs_projet_complet_testcontainers",
-      "target": "docs_projet_complet_multi_tenant_isolation"
+      "source": "docs_projet_complet_module_tournoi",
+      "target": "docs_projet_complet_modules_externes"
     },
     {
-      "relation": "rationale_for",
+      "relation": "implements",
       "confidence": "EXTRACTED",
       "confidence_score": 1.0,
       "source_file": "docs/Projet Complet.md",
-      "source_location": null,
+      "source_location": "\u00a75",
       "weight": 1.0,
-      "source": "docs_projet_complet_budget_constraint",
-      "target": "docs_projet_complet_classeur"
+      "source": "docs_projet_complet_modules_externes",
+      "target": "docs_projet_complet_contrats_communs_modules"
     },
     {
       "relation": "conceptually_related_to",
       "confidence": "EXTRACTED",
       "confidence_score": 1.0,
-      "source_file": "docs/Projet Complet.md",
-      "source_location": null,
+      "source_file": "docs/TGFT \u2014 Plan du noyau.md",
+      "source_location": "Annexe",
       "weight": 1.0,
-      "source": "docs_projet_complet_no_redis",
-      "target": "docs_projet_complet_budget_constraint"
-    },
-    {
-      "relation": "references",
-      "confidence": "EXTRACTED",
-      "confidence_score": 1.0,
-      "source_file": "docs/Projet Complet.md",
-      "source_location": null,
-      "weight": 1.0,
-      "source": "docs_projet_complet_agpl_license",
-      "target": "docs_projet_complet_native_modules"
-    },
-    {
-      "relation": "references",
-      "confidence": "EXTRACTED",
-      "confidence_score": 1.0,
-      "source_file": "docs/Projet Complet.md",
-      "source_location": null,
-      "weight": 1.0,
-      "source": "docs_projet_complet_native_modules",
+      "source": "docs_tgft___plan_du_noyau_data_dragon",
       "target": "docs_projet_complet_team_builder"
     },
     {
-      "relation": "references",
-      "confidence": "EXTRACTED",
-      "confidence_score": 1.0,
-      "source_file": "docs/Projet Complet.md",
-      "source_location": null,
+      "relation": "shares_data_with",
+      "confidence": "INFERRED",
+      "confidence_score": 0.85,
+      "source_file": "docs/TGFT \u2014 Plan du noyau.md",
+      "source_location": "\u00a74",
       "weight": 1.0,
-      "source": "docs_projet_complet_native_modules",
+      "source": "docs_tgft___plan_du_noyau_schema_contenu_jeu",
       "target": "docs_projet_complet_tier_lists"
     },
     {
@@ -4840,369 +4601,89 @@
       "confidence": "EXTRACTED",
       "confidence_score": 1.0,
       "source_file": "docs/Projet Complet.md",
-      "source_location": null,
+      "source_location": "\u00a76.3",
       "weight": 1.0,
-      "source": "docs_projet_complet_realization_order",
-      "target": "docs_projet_complet_native_modules"
-    },
-    {
-      "relation": "references",
-      "confidence": "EXTRACTED",
-      "confidence_score": 1.0,
-      "source_file": "docs/Projet Complet.md",
-      "source_location": null,
-      "weight": 1.0,
-      "source": "docs_projet_complet_shared_module_contracts",
-      "target": "docs_projet_complet_native_modules"
-    },
-    {
-      "relation": "references",
-      "confidence": "EXTRACTED",
-      "confidence_score": 1.0,
-      "source_file": "docs/Projet Complet.md",
-      "source_location": null,
-      "weight": 1.0,
-      "source": "docs_projet_complet_external_modules",
-      "target": "docs_projet_complet_tournoi_module"
-    },
-    {
-      "relation": "references",
-      "confidence": "EXTRACTED",
-      "confidence_score": 1.0,
-      "source_file": "docs/Projet Complet.md",
-      "source_location": null,
-      "weight": 1.0,
-      "source": "docs_projet_complet_external_modules",
-      "target": "docs_projet_complet_wasm_sandbox"
-    },
-    {
-      "relation": "references",
-      "confidence": "EXTRACTED",
-      "confidence_score": 1.0,
-      "source_file": "docs/Projet Complet.md",
-      "source_location": null,
-      "weight": 1.0,
-      "source": "docs_projet_complet_riot_rules",
-      "target": "docs_projet_complet_external_modules"
-    },
-    {
-      "relation": "references",
-      "confidence": "EXTRACTED",
-      "confidence_score": 1.0,
-      "source_file": "docs/Projet Complet.md",
-      "source_location": null,
-      "weight": 1.0,
-      "source": "docs_projet_complet_shared_module_contracts",
-      "target": "docs_projet_complet_external_modules"
-    },
-    {
-      "relation": "references",
-      "confidence": "EXTRACTED",
-      "confidence_score": 1.0,
-      "source_file": "docs/Projet Complet.md",
-      "source_location": null,
-      "weight": 1.0,
-      "source": "docs_projet_complet_shared_module_contracts",
-      "target": "docs_projet_complet_d11_native_purge_contract"
-    },
-    {
-      "relation": "references",
-      "confidence": "EXTRACTED",
-      "confidence_score": 1.0,
-      "source_file": "docs/Projet Complet.md",
-      "source_location": null,
-      "weight": 1.0,
-      "source": "docs_projet_complet_shared_module_contracts",
-      "target": "docs_projet_complet_manifeste"
-    },
-    {
-      "relation": "references",
-      "confidence": "EXTRACTED",
-      "confidence_score": 1.0,
-      "source_file": "docs/Projet Complet.md",
-      "source_location": null,
-      "weight": 1.0,
-      "source": "docs_projet_complet_discord_external_commands",
-      "target": "docs_projet_complet_manifeste"
-    },
-    {
-      "relation": "references",
-      "confidence": "EXTRACTED",
-      "confidence_score": 1.0,
-      "source_file": "docs/Projet Complet.md",
-      "source_location": null,
-      "weight": 1.0,
-      "source": "docs_projet_complet_l4_bot_commands_per_module",
-      "target": "docs_projet_complet_manifeste"
-    },
-    {
-      "relation": "references",
-      "confidence": "EXTRACTED",
-      "confidence_score": 1.0,
-      "source_file": "docs/Projet Complet.md",
-      "source_location": null,
-      "weight": 1.0,
-      "source": "docs_projet_complet_team_builder",
-      "target": "docs_projet_complet_versioned_url_encoding"
-    },
-    {
-      "relation": "references",
-      "confidence": "EXTRACTED",
-      "confidence_score": 1.0,
-      "source_file": "docs/Projet Complet.md",
-      "source_location": null,
-      "weight": 1.0,
-      "source": "docs_projet_complet_open_questions",
-      "target": "docs_projet_complet_versioned_url_encoding"
-    },
-    {
-      "relation": "rationale_for",
-      "confidence": "EXTRACTED",
-      "confidence_score": 1.0,
-      "source_file": "docs/Projet Complet.md",
-      "source_location": null,
-      "weight": 1.0,
-      "source": "docs_projet_complet_no_dll_modules",
-      "target": "docs_projet_complet_wasm_sandbox"
-    },
-    {
-      "relation": "references",
-      "confidence": "EXTRACTED",
-      "confidence_score": 1.0,
-      "source_file": "docs/Projet Complet.md",
-      "source_location": null,
-      "weight": 1.0,
-      "source": "docs_projet_complet_protection_layers",
-      "target": "docs_projet_complet_wasm_sandbox"
-    },
-    {
-      "relation": "references",
-      "confidence": "EXTRACTED",
-      "confidence_score": 1.0,
-      "source_file": "docs/Projet Complet.md",
-      "source_location": null,
-      "weight": 1.0,
-      "source": "docs_projet_complet_resource_limits_m8",
-      "target": "docs_projet_complet_wasm_sandbox"
-    },
-    {
-      "relation": "references",
-      "confidence": "EXTRACTED",
-      "confidence_score": 1.0,
-      "source_file": "docs/Projet Complet.md",
-      "source_location": null,
-      "weight": 1.0,
-      "source": "docs_projet_complet_salle_des_machines",
-      "target": "docs_projet_complet_wasm_sandbox"
-    },
-    {
-      "relation": "references",
-      "confidence": "EXTRACTED",
-      "confidence_score": 1.0,
-      "source_file": "docs/Projet Complet.md",
-      "source_location": null,
-      "weight": 1.0,
-      "source": "docs_projet_complet_wasm_sandbox",
-      "target": "docs_projet_complet_no_host_functions"
-    },
-    {
-      "relation": "references",
-      "confidence": "EXTRACTED",
-      "confidence_score": 1.0,
-      "source_file": "docs/Projet Complet.md",
-      "source_location": null,
-      "weight": 1.0,
-      "source": "docs_projet_complet_wasm_sandbox",
-      "target": "docs_projet_complet_wasmtime"
-    },
-    {
-      "relation": "semantically_similar_to",
-      "confidence": "INFERRED",
-      "confidence_score": 0.65,
-      "source_file": "docs/Projet Complet.md",
-      "source_location": null,
-      "weight": 1.0,
-      "source": "docs_projet_complet_no_host_functions",
-      "target": "docs_projet_complet_declarative_ui"
-    },
-    {
-      "relation": "references",
-      "confidence": "EXTRACTED",
-      "confidence_score": 1.0,
-      "source_file": "docs/Projet Complet.md",
-      "source_location": null,
-      "weight": 1.0,
-      "source": "docs_projet_complet_paquet",
-      "target": "docs_projet_complet_classeur"
-    },
-    {
-      "relation": "references",
-      "confidence": "EXTRACTED",
-      "confidence_score": 1.0,
-      "source_file": "docs/Projet Complet.md",
-      "source_location": null,
-      "weight": 1.0,
-      "source": "docs_projet_complet_paquet",
-      "target": "docs_projet_complet_pseudonymes"
-    },
-    {
-      "relation": "references",
-      "confidence": "EXTRACTED",
-      "confidence_score": 1.0,
-      "source_file": "docs/Projet Complet.md",
-      "source_location": null,
-      "weight": 1.0,
-      "source": "docs_projet_complet_zone_de_confiance",
-      "target": "docs_projet_complet_paquet"
-    },
-    {
-      "relation": "references",
-      "confidence": "EXTRACTED",
-      "confidence_score": 1.0,
-      "source_file": "docs/Projet Complet.md",
-      "source_location": null,
-      "weight": 1.0,
-      "source": "docs_projet_complet_reponse",
-      "target": "docs_projet_complet_classeur"
-    },
-    {
-      "relation": "references",
-      "confidence": "EXTRACTED",
-      "confidence_score": 1.0,
-      "source_file": "docs/Projet Complet.md",
-      "source_location": null,
-      "weight": 1.0,
-      "source": "docs_projet_complet_zone_de_confiance",
-      "target": "docs_projet_complet_reponse"
-    },
-    {
-      "relation": "references",
-      "confidence": "EXTRACTED",
-      "confidence_score": 1.0,
-      "source_file": "docs/Projet Complet.md",
-      "source_location": null,
-      "weight": 1.0,
-      "source": "docs_projet_complet_jint_fallback",
-      "target": "docs_projet_complet_salle_des_machines"
-    },
-    {
-      "relation": "references",
-      "confidence": "EXTRACTED",
-      "confidence_score": 1.0,
-      "source_file": "docs/Projet Complet.md",
-      "source_location": null,
-      "weight": 1.0,
-      "source": "docs_projet_complet_protection_layers",
-      "target": "docs_projet_complet_salle_des_machines"
-    },
-    {
-      "relation": "implements",
-      "confidence": "EXTRACTED",
-      "confidence_score": 1.0,
-      "source_file": "docs/Projet Complet.md",
-      "source_location": null,
-      "weight": 1.0,
-      "source": "docs_projet_complet_tgft_modulehost",
-      "target": "docs_projet_complet_salle_des_machines"
-    },
-    {
-      "relation": "rationale_for",
-      "confidence": "EXTRACTED",
-      "confidence_score": 1.0,
-      "source_file": "docs/Projet Complet.md",
-      "source_location": null,
-      "weight": 1.0,
-      "source": "docs_projet_complet_wasmtime_x86_rules",
-      "target": "docs_projet_complet_salle_des_machines"
-    },
-    {
-      "relation": "references",
-      "confidence": "EXTRACTED",
-      "confidence_score": 1.0,
-      "source_file": "docs/Projet Complet.md",
-      "source_location": null,
-      "weight": 1.0,
-      "source": "docs_projet_complet_b8_group_deletion",
-      "target": "docs_projet_complet_classeur"
-    },
-    {
-      "relation": "references",
-      "confidence": "EXTRACTED",
-      "confidence_score": 1.0,
-      "source_file": "docs/Projet Complet.md",
-      "source_location": null,
-      "weight": 1.0,
-      "source": "docs_projet_complet_call_serialization",
-      "target": "docs_projet_complet_classeur"
-    },
-    {
-      "relation": "cites",
-      "confidence": "EXTRACTED",
-      "confidence_score": 1.0,
-      "source_file": "docs/Projet Complet.md",
-      "source_location": null,
-      "weight": 1.0,
-      "source": "docs_projet_complet_classeur",
-      "target": "docs_projet_complet_atlassian_forge_sql"
-    },
-    {
-      "relation": "references",
-      "confidence": "EXTRACTED",
-      "confidence_score": 1.0,
-      "source_file": "docs/Projet Complet.md",
-      "source_location": null,
-      "weight": 1.0,
-      "source": "docs_projet_complet_protection_layers",
-      "target": "docs_projet_complet_classeur"
-    },
-    {
-      "relation": "references",
-      "confidence": "EXTRACTED",
-      "confidence_score": 1.0,
-      "source_file": "docs/Projet Complet.md",
-      "source_location": null,
-      "weight": 1.0,
-      "source": "docs_projet_complet_discord_external_commands",
-      "target": "docs_projet_complet_pseudonymes"
-    },
-    {
-      "relation": "references",
-      "confidence": "EXTRACTED",
-      "confidence_score": 1.0,
-      "source_file": "docs/Projet Complet.md",
-      "source_location": null,
-      "weight": 1.0,
-      "source": "docs_projet_complet_protection_layers",
-      "target": "docs_projet_complet_pseudonymes"
-    },
-    {
-      "relation": "references",
-      "confidence": "EXTRACTED",
-      "confidence_score": 1.0,
-      "source_file": "docs/Projet Complet.md",
-      "source_location": null,
-      "weight": 1.0,
-      "source": "docs_projet_complet_pseudonym_property_m12",
-      "target": "docs_projet_complet_pseudonymes"
+      "source": "docs_projet_complet_deroule_appel",
+      "target": "docs_projet_complet_acces_donnees_plateforme"
     },
     {
       "relation": "shares_data_with",
       "confidence": "EXTRACTED",
       "confidence_score": 1.0,
       "source_file": "docs/Projet Complet.md",
-      "source_location": null,
+      "source_location": "\u00a76.3",
       "weight": 1.0,
-      "source": "docs_projet_complet_pseudonymes",
-      "target": "docs_projet_complet_postgresql"
+      "source": "docs_projet_complet_deroule_appel",
+      "target": "docs_projet_complet_classeur"
     },
     {
       "relation": "references",
       "confidence": "EXTRACTED",
       "confidence_score": 1.0,
       "source_file": "docs/Projet Complet.md",
-      "source_location": null,
+      "source_location": "\u00a76.3",
       "weight": 1.0,
-      "source": "docs_projet_complet_rgpd",
+      "source": "docs_projet_complet_deroule_appel",
+      "target": "docs_projet_complet_salle_des_machines"
+    },
+    {
+      "relation": "references",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "source_file": "docs/Projet Complet.md",
+      "source_location": "\u00a76.4",
+      "weight": 1.0,
+      "source": "docs_projet_complet_couches_protection",
+      "target": "docs_projet_complet_salle_des_machines"
+    },
+    {
+      "relation": "references",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "source_file": "docs/Projet Complet.md",
+      "source_location": "\u00a76.4",
+      "weight": 1.0,
+      "source": "docs_projet_complet_couches_protection",
+      "target": "docs_projet_complet_classeur"
+    },
+    {
+      "relation": "references",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "source_file": "docs/Projet Complet.md",
+      "source_location": "\u00a76.7",
+      "weight": 1.0,
+      "source": "docs_projet_complet_rgpd_architecture",
+      "target": "docs_projet_complet_classeur"
+    },
+    {
+      "relation": "references",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "source_file": "docs/Projet Complet.md",
+      "source_location": "\u00a76.4",
+      "weight": 1.0,
+      "source": "docs_projet_complet_couches_protection",
+      "target": "docs_projet_complet_interface_declarative"
+    },
+    {
+      "relation": "references",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "source_file": "docs/Projet Complet.md",
+      "source_location": "\u00a76.4",
+      "weight": 1.0,
+      "source": "docs_projet_complet_couches_protection",
+      "target": "docs_projet_complet_niveaux_confiance"
+    },
+    {
+      "relation": "references",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "source_file": "docs/Projet Complet.md",
+      "source_location": "\u00a76.4",
+      "weight": 1.0,
+      "source": "docs_projet_complet_couches_protection",
       "target": "docs_projet_complet_pseudonymes"
     },
     {
@@ -5210,119 +4691,29 @@
       "confidence": "EXTRACTED",
       "confidence_score": 1.0,
       "source_file": "docs/Projet Complet.md",
-      "source_location": null,
+      "source_location": "\u00a76.4",
       "weight": 1.0,
-      "source": "docs_projet_complet_angular_lazy_loading",
-      "target": "docs_projet_complet_declarative_ui"
-    },
-    {
-      "relation": "cites",
-      "confidence": "EXTRACTED",
-      "confidence_score": 1.0,
-      "source_file": "docs/Projet Complet.md",
-      "source_location": null,
-      "weight": 1.0,
-      "source": "docs_projet_complet_declarative_ui",
-      "target": "docs_projet_complet_shopify_ui_extensions"
+      "source": "docs_projet_complet_couches_protection",
+      "target": "docs_projet_complet_reponse_verifiee"
     },
     {
       "relation": "references",
       "confidence": "EXTRACTED",
       "confidence_score": 1.0,
       "source_file": "docs/Projet Complet.md",
-      "source_location": null,
+      "source_location": "\u00a76.4",
       "weight": 1.0,
-      "source": "docs_projet_complet_protection_layers",
-      "target": "docs_projet_complet_declarative_ui"
+      "source": "docs_projet_complet_couches_protection",
+      "target": "docs_projet_complet_suite_modules_hostiles"
     },
     {
       "relation": "references",
       "confidence": "EXTRACTED",
       "confidence_score": 1.0,
       "source_file": "docs/Projet Complet.md",
-      "source_location": null,
+      "source_location": "\u00a76.4",
       "weight": 1.0,
-      "source": "docs_projet_complet_module_lifecycle",
-      "target": "docs_projet_complet_trust_levels"
-    },
-    {
-      "relation": "references",
-      "confidence": "EXTRACTED",
-      "confidence_score": 1.0,
-      "source_file": "docs/Projet Complet.md",
-      "source_location": null,
-      "weight": 1.0,
-      "source": "docs_projet_complet_protection_layers",
-      "target": "docs_projet_complet_trust_levels"
-    },
-    {
-      "relation": "references",
-      "confidence": "EXTRACTED",
-      "confidence_score": 1.0,
-      "source_file": "docs/Projet Complet.md",
-      "source_location": null,
-      "weight": 1.0,
-      "source": "docs_projet_complet_hostile_module_suite",
-      "target": "docs_projet_complet_pseudonym_property_m12"
-    },
-    {
-      "relation": "references",
-      "confidence": "EXTRACTED",
-      "confidence_score": 1.0,
-      "source_file": "docs/Projet Complet.md",
-      "source_location": null,
-      "weight": 1.0,
-      "source": "docs_projet_complet_hostile_module_suite",
-      "target": "docs_projet_complet_resource_limits_m8"
-    },
-    {
-      "relation": "references",
-      "confidence": "EXTRACTED",
-      "confidence_score": 1.0,
-      "source_file": "docs/Projet Complet.md",
-      "source_location": null,
-      "weight": 1.0,
-      "source": "docs_projet_complet_protection_layers",
-      "target": "docs_projet_complet_hostile_module_suite"
-    },
-    {
-      "relation": "references",
-      "confidence": "EXTRACTED",
-      "confidence_score": 1.0,
-      "source_file": "docs/Projet Complet.md",
-      "source_location": null,
-      "weight": 1.0,
-      "source": "docs_projet_complet_tests_as_security",
-      "target": "docs_projet_complet_hostile_module_suite"
-    },
-    {
-      "relation": "references",
-      "confidence": "EXTRACTED",
-      "confidence_score": 1.0,
-      "source_file": "docs/Projet Complet.md",
-      "source_location": null,
-      "weight": 1.0,
-      "source": "docs_projet_complet_module_lifecycle",
-      "target": "docs_projet_complet_javy"
-    },
-    {
-      "relation": "references",
-      "confidence": "EXTRACTED",
-      "confidence_score": 1.0,
-      "source_file": "docs/Projet Complet.md",
-      "source_location": null,
-      "weight": 1.0,
-      "source": "docs_projet_complet_q6_prototype",
-      "target": "docs_projet_complet_javy"
-    },
-    {
-      "relation": "conceptually_related_to",
-      "confidence": "EXTRACTED",
-      "confidence_score": 1.0,
-      "source_file": "docs/Projet Complet.md",
-      "source_location": null,
-      "weight": 1.0,
-      "source": "docs_projet_complet_no_extism",
+      "source": "docs_projet_complet_couches_protection",
       "target": "docs_projet_complet_wasmtime"
     },
     {
@@ -5330,442 +4721,448 @@
       "confidence": "EXTRACTED",
       "confidence_score": 1.0,
       "source_file": "docs/Projet Complet.md",
-      "source_location": null,
+      "source_location": "\u00a76.4",
       "weight": 1.0,
-      "source": "docs_projet_complet_q6_prototype",
-      "target": "docs_projet_complet_wasmtime"
+      "source": "docs_projet_complet_acces_donnees_plateforme",
+      "target": "docs_projet_complet_reponse_verifiee"
+    },
+    {
+      "relation": "references",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "source_file": "docs/TGFT \u2014 Plan du noyau.md",
+      "source_location": "\u00a73",
+      "weight": 1.0,
+      "source": "docs_tgft___plan_du_noyau_principe_pas_de_porte",
+      "target": "docs_projet_complet_reponse_verifiee"
     },
     {
       "relation": "references",
       "confidence": "EXTRACTED",
       "confidence_score": 1.0,
       "source_file": "docs/Projet Complet.md",
-      "source_location": null,
+      "source_location": "\u00a76.7",
       "weight": 1.0,
-      "source": "docs_projet_complet_wasmtime_x86_rules",
-      "target": "docs_projet_complet_wasmtime"
+      "source": "docs_projet_complet_rgpd_architecture",
+      "target": "docs_projet_complet_pseudonymes"
     },
     {
       "relation": "references",
       "confidence": "EXTRACTED",
       "confidence_score": 1.0,
-      "source_file": "docs/Projet Complet.md",
-      "source_location": null,
+      "source_file": "docs/TGFT \u2014 Plan du noyau.md",
+      "source_location": "\u00a711",
       "weight": 1.0,
-      "source": "docs_projet_complet_wasmtimemodulerunner",
-      "target": "docs_projet_complet_wasmtime"
+      "source": "docs_tgft___plan_du_noyau_donnees_personnelles_modules",
+      "target": "docs_projet_complet_pseudonymes"
     },
     {
       "relation": "rationale_for",
       "confidence": "EXTRACTED",
       "confidence_score": 1.0,
       "source_file": "docs/Projet Complet.md",
-      "source_location": null,
+      "source_location": "\u00a78",
       "weight": 1.0,
-      "source": "docs_projet_complet_clean_architecture",
-      "target": "docs_projet_complet_jint_fallback"
+      "source": "docs_projet_complet_tests_sont_la_protection",
+      "target": "docs_projet_complet_suite_modules_hostiles"
+    },
+    {
+      "relation": "cites",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "source_file": "docs/Projet Complet.md",
+      "source_location": "\u00a76.4 bis",
+      "weight": 1.0,
+      "source": "docs_projet_complet_acces_donnees_plateforme",
+      "target": "docs_tgft___plan_du_noyau_principe_pas_de_porte"
     },
     {
       "relation": "references",
       "confidence": "EXTRACTED",
       "confidence_score": 1.0,
       "source_file": "docs/Projet Complet.md",
-      "source_location": null,
+      "source_location": "\u00a76.4 bis",
+      "weight": 1.0,
+      "source": "docs_projet_complet_acces_donnees_plateforme",
+      "target": "docs_tgft___plan_du_noyau_seuil_plancher"
+    },
+    {
+      "relation": "references",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "source_file": "docs/Projet Complet.md",
+      "source_location": "\u00a76.5",
+      "weight": 1.0,
+      "source": "docs_projet_complet_cycle_vie_module_externe",
+      "target": "docs_projet_complet_javy"
+    },
+    {
+      "relation": "references",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "source_file": "docs/Projet Complet.md",
+      "source_location": "\u00a76.7",
+      "weight": 1.0,
+      "source": "docs_projet_complet_rgpd_architecture",
+      "target": "docs_projet_complet_contrat_d11"
+    },
+    {
+      "relation": "semantically_similar_to",
+      "confidence": "INFERRED",
+      "confidence_score": 0.95,
+      "source_file": "docs/TGFT \u2014 Plan du noyau.md",
+      "source_location": "\u00a711",
+      "weight": 1.0,
+      "source": "docs_tgft___plan_du_noyau_donnees_personnelles_modules",
+      "target": "docs_projet_complet_rgpd_architecture"
+    },
+    {
+      "relation": "references",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "source_file": "docs/Projet Complet.md",
+      "source_location": "\u00a710",
+      "weight": 1.0,
+      "source": "docs_projet_complet_user_stories",
+      "target": "docs_projet_complet_contrat_d11"
+    },
+    {
+      "relation": "references",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "source_file": "docs/Projet Complet.md",
+      "source_location": "\u00a76.11",
+      "weight": 1.0,
+      "source": "docs_projet_complet_prototype_javy_wasmtime",
+      "target": "docs_projet_complet_wasmtime"
+    },
+    {
+      "relation": "references",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "source_file": "docs/Projet Complet.md",
+      "source_location": "\u00a76.11",
+      "weight": 1.0,
+      "source": "docs_projet_complet_prototype_javy_wasmtime",
+      "target": "docs_projet_complet_javy"
+    },
+    {
+      "relation": "rationale_for",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "source_file": "docs/Projet Complet.md",
+      "source_location": "\u00a78",
+      "weight": 1.0,
+      "source": "docs_projet_complet_imodulerunner",
+      "target": "docs_projet_complet_jint_fallback"
+    },
+    {
+      "relation": "rationale_for",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "source_file": "docs/Projet Complet.md",
+      "source_location": "\u00a76.11",
       "weight": 1.0,
       "source": "docs_projet_complet_jint_fallback",
-      "target": "docs_projet_complet_q6_prototype"
+      "target": "docs_projet_complet_prototype_javy_wasmtime"
     },
     {
       "relation": "references",
       "confidence": "EXTRACTED",
       "confidence_score": 1.0,
       "source_file": "docs/Projet Complet.md",
-      "source_location": null,
+      "source_location": "\u00a712 Q6",
       "weight": 1.0,
-      "source": "docs_projet_complet_realization_order",
-      "target": "docs_projet_complet_jint_fallback"
+      "source": "docs_projet_complet_questions_ouvertes",
+      "target": "docs_projet_complet_prototype_javy_wasmtime"
     },
     {
       "relation": "references",
       "confidence": "EXTRACTED",
       "confidence_score": 1.0,
       "source_file": "docs/Projet Complet.md",
-      "source_location": null,
-      "weight": 1.0,
-      "source": "docs_projet_complet_module_lifecycle",
-      "target": "docs_projet_complet_attested_build"
-    },
-    {
-      "relation": "references",
-      "confidence": "EXTRACTED",
-      "confidence_score": 1.0,
-      "source_file": "docs/Projet Complet.md",
-      "source_location": null,
-      "weight": 1.0,
-      "source": "docs_projet_complet_module_lifecycle",
-      "target": "docs_projet_complet_dev_kit"
-    },
-    {
-      "relation": "references",
-      "confidence": "EXTRACTED",
-      "confidence_score": 1.0,
-      "source_file": "docs/Projet Complet.md",
-      "source_location": null,
-      "weight": 1.0,
-      "source": "docs_projet_complet_agpl_license",
-      "target": "docs_projet_complet_attested_build"
-    },
-    {
-      "relation": "references",
-      "confidence": "EXTRACTED",
-      "confidence_score": 1.0,
-      "source_file": "docs/Projet Complet.md",
-      "source_location": null,
-      "weight": 1.0,
-      "source": "docs_projet_complet_attested_build",
-      "target": "docs_projet_complet_github_actions_ci"
-    },
-    {
-      "relation": "references",
-      "confidence": "EXTRACTED",
-      "confidence_score": 1.0,
-      "source_file": "docs/Projet Complet.md",
-      "source_location": null,
-      "weight": 1.0,
-      "source": "docs_projet_complet_discord_external_commands",
-      "target": "docs_projet_complet_discord_bot"
-    },
-    {
-      "relation": "references",
-      "confidence": "EXTRACTED",
-      "confidence_score": 1.0,
-      "source_file": "docs/Projet Complet.md",
-      "source_location": null,
-      "weight": 1.0,
-      "source": "docs_projet_complet_rgpd",
-      "target": "docs_projet_complet_b8_group_deletion"
-    },
-    {
-      "relation": "references",
-      "confidence": "EXTRACTED",
-      "confidence_score": 1.0,
-      "source_file": "docs/Projet Complet.md",
-      "source_location": null,
-      "weight": 1.0,
-      "source": "docs_projet_complet_rgpd",
-      "target": "docs_projet_complet_d11_native_purge_contract"
-    },
-    {
-      "relation": "references",
-      "confidence": "EXTRACTED",
-      "confidence_score": 1.0,
-      "source_file": "docs/Projet Complet.md",
-      "source_location": null,
-      "weight": 1.0,
-      "source": "docs_projet_complet_b8_group_deletion",
-      "target": "docs_projet_complet_d11_native_purge_contract"
-    },
-    {
-      "relation": "references",
-      "confidence": "EXTRACTED",
-      "confidence_score": 1.0,
-      "source_file": "docs/Projet Complet.md",
-      "source_location": null,
-      "weight": 1.0,
-      "source": "docs_projet_complet_architecture_tests_project",
-      "target": "docs_projet_complet_clean_architecture"
-    },
-    {
-      "relation": "references",
-      "confidence": "EXTRACTED",
-      "confidence_score": 1.0,
-      "source_file": "docs/Projet Complet.md",
-      "source_location": null,
-      "weight": 1.0,
-      "source": "docs_projet_complet_clean_architecture",
-      "target": "docs_projet_complet_iclasseurstore"
-    },
-    {
-      "relation": "references",
-      "confidence": "EXTRACTED",
-      "confidence_score": 1.0,
-      "source_file": "docs/Projet Complet.md",
-      "source_location": null,
+      "source_location": "\u00a78",
       "weight": 1.0,
       "source": "docs_projet_complet_clean_architecture",
       "target": "docs_projet_complet_imodulerunner"
     },
     {
-      "relation": "references",
+      "relation": "implements",
       "confidence": "EXTRACTED",
       "confidence_score": 1.0,
       "source_file": "docs/Projet Complet.md",
-      "source_location": null,
+      "source_location": "\u00a78",
       "weight": 1.0,
-      "source": "docs_projet_complet_netarchtest_boundaries",
+      "source": "docs_projet_complet_netarchtest_frontieres",
       "target": "docs_projet_complet_clean_architecture"
     },
     {
-      "relation": "implements",
+      "relation": "cites",
       "confidence": "EXTRACTED",
       "confidence_score": 1.0,
       "source_file": "docs/Projet Complet.md",
-      "source_location": null,
+      "source_location": "\u00a78",
       "weight": 1.0,
-      "source": "docs_projet_complet_solution_skeleton",
-      "target": "docs_projet_complet_clean_architecture"
-    },
-    {
-      "relation": "implements",
-      "confidence": "EXTRACTED",
-      "confidence_score": 1.0,
-      "source_file": "docs/Projet Complet.md",
-      "source_location": null,
-      "weight": 1.0,
-      "source": "docs_projet_complet_wasmtimemodulerunner",
-      "target": "docs_projet_complet_imodulerunner"
-    },
-    {
-      "relation": "implements",
-      "confidence": "EXTRACTED",
-      "confidence_score": 1.0,
-      "source_file": "docs/Projet Complet.md",
-      "source_location": null,
-      "weight": 1.0,
-      "source": "docs_projet_complet_architecture_tests_project",
-      "target": "docs_projet_complet_netarchtest_boundaries"
+      "source": "docs_projet_complet_isolation_multi_tenant",
+      "target": "docs_tgft___plan_du_noyau_chaine_isolation"
     },
     {
       "relation": "references",
       "confidence": "EXTRACTED",
       "confidence_score": 1.0,
-      "source_file": "docs/Projet Complet.md",
-      "source_location": null,
+      "source_file": "docs/TGFT \u2014 Plan du noyau.md",
+      "source_location": "\u00a710",
       "weight": 1.0,
-      "source": "docs_projet_complet_tests_as_security",
-      "target": "docs_projet_complet_netarchtest_boundaries"
+      "source": "docs_tgft___plan_du_noyau_tests_noyau",
+      "target": "docs_projet_complet_netarchtest_frontieres"
     },
     {
-      "relation": "conceptually_related_to",
-      "confidence": "INFERRED",
-      "confidence_score": 0.85,
+      "relation": "rationale_for",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
       "source_file": "docs/Projet Complet.md",
-      "source_location": null,
+      "source_location": "\u00a78",
       "weight": 1.0,
-      "source": "docs_projet_complet_tests_as_security",
-      "target": "docs_projet_complet_architecture_tests_project"
+      "source": "docs_projet_complet_tests_sont_la_protection",
+      "target": "docs_tgft___plan_du_noyau_tests_noyau"
+    },
+    {
+      "relation": "rationale_for",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "source_file": "docs/Projet Complet.md",
+      "source_location": "\u00a711",
+      "weight": 1.0,
+      "source": "docs_projet_complet_budget_10_euros",
+      "target": "docs_projet_complet_decisions_tranchees"
+    },
+    {
+      "relation": "references",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "source_file": "docs/Projet Complet.md",
+      "source_location": "\u00a712 Q8",
+      "weight": 1.0,
+      "source": "docs_projet_complet_questions_ouvertes",
+      "target": "docs_tgft___plan_du_noyau_data_dragon"
+    },
+    {
+      "relation": "cites",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "source_file": "docs/Projet Complet.md",
+      "source_location": "\u00a713",
+      "weight": 1.0,
+      "source": "docs_projet_complet_etat_avancement",
+      "target": "docs_tgft___plan_du_noyau_etapes_noyau"
+    },
+    {
+      "relation": "references",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "source_file": "docs/TGFT \u2014 Plan du noyau.md",
+      "source_location": "\u00a71",
+      "weight": 1.0,
+      "source": "docs_tgft___plan_du_noyau_plan_du_noyau",
+      "target": "docs_tgft___plan_du_noyau_ordre_realisation"
+    },
+    {
+      "relation": "implements",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "source_file": "docs/TGFT \u2014 Plan du noyau.md",
+      "source_location": "\u00a72",
+      "weight": 1.0,
+      "source": "docs_tgft___plan_du_noyau_schema_utilisateurs_groupes",
+      "target": "docs_tgft___plan_du_noyau_un_seul_fondateur"
+    },
+    {
+      "relation": "references",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "source_file": "docs/TGFT \u2014 Plan du noyau.md",
+      "source_location": "\u00a73",
+      "weight": 1.0,
+      "source": "docs_tgft___plan_du_noyau_principe_pas_de_porte",
+      "target": "docs_tgft___plan_du_noyau_seuil_plancher"
+    },
+    {
+      "relation": "references",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "source_file": "docs/TGFT \u2014 Plan du noyau.md",
+      "source_location": "\u00a77",
+      "weight": 1.0,
+      "source": "docs_tgft___plan_du_noyau_seuil_plancher",
+      "target": "docs_tgft___plan_du_noyau_grille_permissions"
+    },
+    {
+      "relation": "shares_data_with",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "source_file": "docs/TGFT \u2014 Plan du noyau.md",
+      "source_location": "\u00a74",
+      "weight": 1.0,
+      "source": "docs_tgft___plan_du_noyau_schema_contenu_jeu",
+      "target": "docs_tgft___plan_du_noyau_data_dragon"
+    },
+    {
+      "relation": "references",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "source_file": "docs/TGFT \u2014 Plan du noyau.md",
+      "source_location": "\u00a75",
+      "weight": 1.0,
+      "source": "docs_tgft___plan_du_noyau_chaine_isolation",
+      "target": "docs_tgft___plan_du_noyau_deux_roles_postgresql"
+    },
+    {
+      "relation": "references",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "source_file": "docs/TGFT \u2014 Plan du noyau.md",
+      "source_location": "\u00a75",
+      "weight": 1.0,
+      "source": "docs_tgft___plan_du_noyau_chaine_isolation",
+      "target": "docs_tgft___plan_du_noyau_ef_core_global_filters"
+    },
+    {
+      "relation": "references",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "source_file": "docs/TGFT \u2014 Plan du noyau.md",
+      "source_location": "\u00a75",
+      "weight": 1.0,
+      "source": "docs_tgft___plan_du_noyau_chaine_isolation",
+      "target": "docs_tgft___plan_du_noyau_groupe_en_cours"
+    },
+    {
+      "relation": "references",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "source_file": "docs/TGFT \u2014 Plan du noyau.md",
+      "source_location": "\u00a75",
+      "weight": 1.0,
+      "source": "docs_tgft___plan_du_noyau_chaine_isolation",
+      "target": "docs_tgft___plan_du_noyau_postgresql_rls"
+    },
+    {
+      "relation": "references",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "source_file": "docs/TGFT \u2014 Plan du noyau.md",
+      "source_location": "\u00a712",
+      "weight": 1.0,
+      "source": "docs_tgft___plan_du_noyau_etapes_noyau",
+      "target": "docs_tgft___plan_du_noyau_chaine_isolation"
+    },
+    {
+      "relation": "shares_data_with",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "source_file": "docs/TGFT \u2014 Plan du noyau.md",
+      "source_location": "\u00a75",
+      "weight": 1.0,
+      "source": "docs_tgft___plan_du_noyau_postgresql_rls",
+      "target": "docs_tgft___plan_du_noyau_groupe_en_cours"
     },
     {
       "relation": "semantically_similar_to",
       "confidence": "INFERRED",
       "confidence_score": 0.75,
-      "source_file": "docs/Projet Complet.md",
-      "source_location": null,
+      "source_file": "docs/TGFT \u2014 Plan du noyau.md",
+      "source_location": "\u00a75",
       "weight": 1.0,
-      "source": "docs_projet_complet_ef_core_global_filters",
-      "target": "docs_projet_complet_postgresql_rls"
+      "source": "docs_tgft___plan_du_noyau_ef_core_global_filters",
+      "target": "docs_tgft___plan_du_noyau_postgresql_rls"
     },
     {
       "relation": "references",
       "confidence": "EXTRACTED",
       "confidence_score": 1.0,
-      "source_file": "docs/Projet Complet.md",
-      "source_location": null,
+      "source_file": "docs/TGFT \u2014 Plan du noyau.md",
+      "source_location": "\u00a710",
       "weight": 1.0,
-      "source": "docs_projet_complet_postgresql_rls",
-      "target": "docs_projet_complet_postgresql"
+      "source": "docs_tgft___plan_du_noyau_tests_noyau",
+      "target": "docs_tgft___plan_du_noyau_ef_core_global_filters"
+    },
+    {
+      "relation": "implements",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "source_file": "docs/TGFT \u2014 Plan du noyau.md",
+      "source_location": "\u00a78",
+      "weight": 1.0,
+      "source": "docs_tgft___plan_du_noyau_migrations_ef_core",
+      "target": "docs_tgft___plan_du_noyau_postgresql_rls"
     },
     {
       "relation": "references",
       "confidence": "EXTRACTED",
       "confidence_score": 1.0,
-      "source_file": "docs/Projet Complet.md",
-      "source_location": null,
+      "source_file": "docs/TGFT \u2014 Plan du noyau.md",
+      "source_location": "\u00a78",
       "weight": 1.0,
-      "source": "docs_projet_complet_caddy",
-      "target": "docs_projet_complet_aspnet_core"
-    },
-    {
-      "relation": "references",
-      "confidence": "EXTRACTED",
-      "confidence_score": 1.0,
-      "source_file": "docs/Projet Complet.md",
-      "source_location": null,
-      "weight": 1.0,
-      "source": "docs_projet_complet_local_docker_stack",
-      "target": "docs_projet_complet_caddy"
-    },
-    {
-      "relation": "references",
-      "confidence": "EXTRACTED",
-      "confidence_score": 1.0,
-      "source_file": "docs/Projet Complet.md",
-      "source_location": null,
-      "weight": 1.0,
-      "source": "docs_projet_complet_local_docker_stack",
-      "target": "docs_projet_complet_docker_compose"
-    },
-    {
-      "relation": "references",
-      "confidence": "EXTRACTED",
-      "confidence_score": 1.0,
-      "source_file": "docs/Projet Complet.md",
-      "source_location": null,
-      "weight": 1.0,
-      "source": "docs_projet_complet_discord_bot",
-      "target": "docs_projet_complet_aspnet_core"
-    },
-    {
-      "relation": "references",
-      "confidence": "EXTRACTED",
-      "confidence_score": 1.0,
-      "source_file": "docs/Projet Complet.md",
-      "source_location": null,
-      "weight": 1.0,
-      "source": "docs_projet_complet_l4_bot_commands_per_module",
-      "target": "docs_projet_complet_discord_bot"
+      "source": "docs_tgft___plan_du_noyau_migrations_ef_core",
+      "target": "docs_tgft___plan_du_noyau_deux_roles_postgresql"
     },
     {
       "relation": "conceptually_related_to",
-      "confidence": "EXTRACTED",
-      "confidence_score": 1.0,
-      "source_file": "docs/Projet Complet.md",
-      "source_location": null,
+      "confidence": "INFERRED",
+      "confidence_score": 0.75,
+      "source_file": "docs/TGFT \u2014 Plan du noyau.md",
+      "source_location": "\u00a76",
       "weight": 1.0,
-      "source": "docs_projet_complet_riot_rules",
-      "target": "docs_projet_complet_data_dragon"
+      "source": "docs_tgft___plan_du_noyau_authentification",
+      "target": "docs_tgft___plan_du_noyau_grille_permissions"
     },
     {
       "relation": "references",
       "confidence": "EXTRACTED",
       "confidence_score": 1.0,
-      "source_file": "docs/Projet Complet.md",
-      "source_location": null,
+      "source_file": "docs/TGFT \u2014 Plan du noyau.md",
+      "source_location": "\u00a77",
       "weight": 1.0,
-      "source": "docs_projet_complet_open_questions",
-      "target": "docs_projet_complet_q6_prototype"
+      "source": "docs_tgft___plan_du_noyau_grille_permissions",
+      "target": "docs_tgft___plan_du_noyau_tests_exhaustivite_matrice"
     },
     {
       "relation": "references",
       "confidence": "EXTRACTED",
       "confidence_score": 1.0,
-      "source_file": "docs/Projet Complet.md",
-      "source_location": null,
+      "source_file": "docs/TGFT \u2014 Plan du noyau.md",
+      "source_location": "\u00a710",
       "weight": 1.0,
-      "source": "docs_projet_complet_q6_prototype",
-      "target": "docs_projet_complet_tgft_modulehost"
-    },
-    {
-      "relation": "references",
-      "confidence": "EXTRACTED",
-      "confidence_score": 1.0,
-      "source_file": "docs/Projet Complet.md",
-      "source_location": null,
-      "weight": 1.0,
-      "source": "docs_projet_complet_realization_order",
-      "target": "docs_projet_complet_q6_prototype"
-    },
-    {
-      "relation": "references",
-      "confidence": "EXTRACTED",
-      "confidence_score": 1.0,
-      "source_file": "docs/Projet Complet.md",
-      "source_location": null,
-      "weight": 1.0,
-      "source": "docs_projet_complet_solution_skeleton",
-      "target": "docs_projet_complet_cve_2026_49451_fix"
-    },
-    {
-      "relation": "references",
-      "confidence": "EXTRACTED",
-      "confidence_score": 1.0,
-      "source_file": "docs/Projet Complet.md",
-      "source_location": null,
-      "weight": 1.0,
-      "source": "docs_projet_complet_graphify_single_update_decision",
-      "target": "docs_projet_complet_graphify_out_versioned"
-    },
-    {
-      "relation": "references",
-      "confidence": "EXTRACTED",
-      "confidence_score": 1.0,
-      "source_file": "docs/Projet Complet.md",
-      "source_location": null,
-      "weight": 1.0,
-      "source": "docs_projet_complet_architecture_tests_project",
-      "target": "docs_projet_complet_solution_skeleton"
-    },
-    {
-      "relation": "references",
-      "confidence": "EXTRACTED",
-      "confidence_score": 1.0,
-      "source_file": "docs/Projet Complet.md",
-      "source_location": null,
-      "weight": 1.0,
-      "source": "docs_projet_complet_separate_git_repo",
-      "target": "docs_projet_complet_solution_skeleton"
-    },
-    {
-      "relation": "references",
-      "confidence": "EXTRACTED",
-      "confidence_score": 1.0,
-      "source_file": "docs/Projet Complet.md",
-      "source_location": null,
-      "weight": 1.0,
-      "source": "docs_projet_complet_compose_project_rename",
-      "target": "docs_projet_complet_local_docker_stack"
-    },
-    {
-      "relation": "references",
-      "confidence": "EXTRACTED",
-      "confidence_score": 1.0,
-      "source_file": "docs/Projet Complet.md",
-      "source_location": null,
-      "weight": 1.0,
-      "source": "docs_projet_complet_local_docker_stack",
-      "target": "docs_projet_complet_postgresql"
-    },
-    {
-      "relation": "references",
-      "confidence": "EXTRACTED",
-      "confidence_score": 1.0,
-      "source_file": "docs/Projet Complet.md",
-      "source_location": null,
-      "weight": 1.0,
-      "source": "docs_projet_complet_architecture_tests_project",
-      "target": "docs_projet_complet_assembly_marker"
-    },
-    {
-      "relation": "references",
-      "confidence": "EXTRACTED",
-      "confidence_score": 1.0,
-      "source_file": "docs/Projet Complet.md",
-      "source_location": null,
-      "weight": 1.0,
-      "source": "docs_projet_complet_architecture_tests_project",
-      "target": "docs_projet_complet_github_actions_ci"
-    },
-    {
-      "relation": "references",
-      "confidence": "EXTRACTED",
-      "confidence_score": 1.0,
-      "source_file": "docs/Projet Complet.md",
-      "source_location": null,
-      "weight": 1.0,
-      "source": "docs_projet_complet_realization_order",
-      "target": "docs_projet_complet_architecture_tests_project"
+      "source": "docs_tgft___plan_du_noyau_tests_noyau",
+      "target": "docs_tgft___plan_du_noyau_tests_exhaustivite_matrice"
     }
   ],
   "hyperedges": [
     {
-      "id": "marketplace_call_flow",
-      "label": "Deroule d'un appel de module externe",
+      "id": "two_rampart_tenant_isolation",
+      "label": "Two independent ramparts for tenant isolation",
       "nodes": [
-        "docs_projet_complet_paquet",
-        "docs_projet_complet_zone_de_confiance",
+        "docs_tgft___plan_du_noyau_groupe_en_cours",
+        "docs_tgft___plan_du_noyau_ef_core_global_filters",
+        "docs_tgft___plan_du_noyau_postgresql_rls",
+        "docs_tgft___plan_du_noyau_deux_roles_postgresql",
+        "docs_tgft___plan_du_noyau_tests_noyau"
+      ],
+      "relation": "form",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "source_file": "docs/TGFT \u2014 Plan du noyau.md"
+    },
+    {
+      "id": "external_module_call_pipeline",
+      "label": "External module call pipeline (paquet \u2192 sandbox \u2192 verified response)",
+      "nodes": [
+        "docs_projet_complet_deroule_appel",
+        "docs_projet_complet_modele_paquet_reponse",
         "docs_projet_complet_salle_des_machines",
-        "docs_projet_complet_reponse",
-        "docs_projet_complet_classeur"
+        "docs_projet_complet_wasmtime",
+        "docs_projet_complet_classeur",
+        "docs_projet_complet_reponse_verifiee"
       ],
       "relation": "participate_in",
       "confidence": "EXTRACTED",
@@ -5773,32 +5170,19 @@
       "source_file": "docs/Projet Complet.md"
     },
     {
-      "id": "structural_tenant_isolation",
-      "label": "Isolation multi-tenant structurelle a double rempart",
+      "id": "module_platform_data_access_v2_1",
+      "label": "V2.1 module access to platform data with member rights and role floor",
       "nodes": [
-        "docs_projet_complet_multi_tenant_isolation",
-        "docs_projet_complet_ef_core_global_filters",
-        "docs_projet_complet_postgresql_rls",
-        "docs_projet_complet_testcontainers"
+        "docs_cahier_des_charges____volutions_v2_1_evolution_acces_modules_donnees",
+        "docs_projet_complet_acces_donnees_plateforme",
+        "docs_tgft___plan_du_noyau_principe_pas_de_porte",
+        "docs_tgft___plan_du_noyau_seuil_plancher",
+        "docs_projet_complet_reponse_verifiee"
       ],
       "relation": "form",
       "confidence": "EXTRACTED",
       "confidence_score": 1.0,
-      "source_file": "docs/Projet Complet.md"
-    },
-    {
-      "id": "architecture_enforcement",
-      "label": "Frontieres d'architecture verifiees par tests",
-      "nodes": [
-        "docs_projet_complet_clean_architecture",
-        "docs_projet_complet_netarchtest_boundaries",
-        "docs_projet_complet_architecture_tests_project",
-        "docs_projet_complet_tests_as_security"
-      ],
-      "relation": "form",
-      "confidence": "EXTRACTED",
-      "confidence_score": 1.0,
-      "source_file": "docs/Projet Complet.md"
+      "source_file": "docs/Cahier des charges \u2014 \u00e9volutions/V2.1.md"
     },
     {
       "id": "docker_compose_local_stack",
@@ -5815,5 +5199,5 @@
       "source_file": "docker-compose.yml"
     }
   ],
-  "built_at_commit": "01311dfdf0806749a6e36709949376d6bb65373d"
+  "built_at_commit": "d63188080230af60d4b97cf67c60ceccd1348ba2"
 }
